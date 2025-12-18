@@ -99,8 +99,18 @@ section { padding:100px 20px; }
   margin-bottom:30px;
 }
 
-.typing span {
-  color:#c4b5fd;
+.typing .cursor {
+  display:inline-block;
+  width:2px;
+  height:1em;
+  background:#c4b5fd;
+  margin-left:6px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,50% { opacity:1; }
+  50.01%,100% { opacity:0; }
 }
 
 .search-bar {
@@ -108,7 +118,7 @@ section { padding:100px 20px; }
   background:#fff;
   border-radius:16px;
   overflow:hidden;
-  margin-bottom:20px;
+  margin-bottom:14px;
 }
 .search-bar input {
   flex:1;
@@ -120,6 +130,13 @@ section { padding:100px 20px; }
   border:none;
   background:#ede9fe;
   cursor:pointer;
+}
+
+.or-text {
+  text-align:center;
+  font-size:14px;
+  opacity:.8;
+  margin:12px 0;
 }
 
 .cta-main button {
@@ -215,17 +232,22 @@ section { padding:100px 20px; }
 }
 
 .nav-buttons {
-  margin-top:20px;
+  margin-top:24px;
   display:flex;
   justify-content:space-between;
+  gap:12px;
 }
 
+.nav-buttons a,
 .nav-buttons button {
   background:#ede9fe;
   border:none;
   padding:10px 16px;
   border-radius:10px;
   cursor:pointer;
+  text-decoration:none;
+  color:#4c1d95;
+  font-weight:500;
 }
 
 /* ================= FAQ ================= */
@@ -275,13 +297,16 @@ section { padding:100px 20px; }
     <div>
       <img src="https://dummy-s3/logo.png" class="logo">
       <div class="typing">
-        Votre IA agentique personnalisée pour <span id="typing"></span>
+        Votre IA agentique personnalisée pour
+        <span id="typing-text"></span><span class="cursor"></span>
       </div>
 
       <div class="search-bar">
         <input placeholder="Rechercher une IA existante">
         <button>Rechercher</button>
       </div>
+
+      <div class="or-text">Ou créez le vôtre</div>
 
       <div class="cta-main">
         <button>Créer mon agent</button>
@@ -355,7 +380,8 @@ section { padding:100px 20px; }
     </div>
 
     <div class="nav-buttons">
-      <button id="back" style="display:none">Retour</button>
+      <button id="back"></button>
+      <a id="contact" href="/contact" style="display:none">Contactez-nous</a>
     </div>
   </div>
 
@@ -370,10 +396,6 @@ section { padding:100px 20px; }
     <div class="faq-question">Question 1 <span>Montrer</span></div>
     <div class="faq-answer">Lorem ipsum dolor sit amet.</div>
   </div>
-  <div class="faq-item">
-    <div class="faq-question">Question 2 <span>Montrer</span></div>
-    <div class="faq-answer">Lorem ipsum dolor sit amet.</div>
-  </div>
 
   <div class="legal">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mentions légales regroupées dans un seul bloc.
@@ -381,18 +403,18 @@ section { padding:100px 20px; }
 </section>
 
 <script>
-/* Typing (write only) */
+/* Typing (write only + cursor) */
 const words=["l’industrie","l’ecommerce","le médical","le tertiaire"];
 let wi=0, ci=0;
-const t=document.getElementById("typing");
+const typing=document.getElementById("typing-text");
 
 (function type(){
   if(ci<=words[wi].length){
-    t.textContent=words[wi].slice(0,ci++);
+    typing.textContent=words[wi].slice(0,ci++);
     setTimeout(type,120);
   } else {
     setTimeout(()=>{
-      t.textContent="";
+      typing.textContent="";
       ci=0;
       wi=(wi+1)%words.length;
       type();
@@ -406,12 +428,26 @@ let prices=[0,0,0,0,0];
 const steps=document.querySelectorAll('.step');
 const priceEl=document.getElementById('price');
 const back=document.getElementById('back');
+const contact=document.getElementById('contact');
 
 function update(){
   steps.forEach(s=>s.classList.remove('active'));
   steps[step].classList.add('active');
-  back.style.display=step>0?'block':'none';
+
   priceEl.innerHTML=prices.reduce((a,b)=>a+b,0)+"€ <span>/mois</span>";
+
+  if(step===0){
+    back.style.display="none";
+    contact.style.display="none";
+  } else if(step===steps.length-1){
+    back.textContent="Recommencer";
+    back.style.display="inline-block";
+    contact.style.display="inline-block";
+  } else {
+    back.textContent="Retour";
+    back.style.display="inline-block";
+    contact.style.display="none";
+  }
 }
 
 steps.forEach((s,si)=>{
@@ -425,7 +461,15 @@ steps.forEach((s,si)=>{
   });
 });
 
-back.onclick=()=>{ if(step>0){ step--; update(); } };
+back.onclick=()=>{
+  if(step===steps.length-1){
+    step=0;
+    prices=[0,0,0,0,0];
+  } else if(step>0){
+    step--;
+  }
+  update();
+};
 
 update();
 
