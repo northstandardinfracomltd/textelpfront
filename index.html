@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Textelp – IA agentique</title>
+
+<style>
+/* ================= FONTS ================= */
+@font-face {
+  font-family: 'TextelpA';
+  src: url('https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeoMAIN.otf') format('opentype');
+}
+@font-face {
+  font-family: 'TextelpB';
+  src: url('https://civilpromaws.s3.eu-north-1.amazonaws.com/De%CC%81fibeoBold.otf') format('opentype');
+}
+
+/* ================= VARIABLES ================= */
+:root {
+  --primary:#0f172a;
+  --accent:#2563eb;
+  --soft:#e5e7eb;
+  --bg:#f8fafc;
+}
+
+/* ================= RESET ================= */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family:'TextelpA', sans-serif;
+  color:var(--primary);
+  background:#fff;
+}
+
+h1,h2,h3,h4 {
+  font-family:'TextelpB', sans-serif;
+}
+
+/* ================= WAVE LOADER ================= */
+.wave {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  animation: wave 4s linear infinite;
+  z-index: 2000;
+}
+@keyframes wave {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* ================= STICKY BAR ================= */
+.sticky-bar {
+  position: sticky;
+  top: 3px;
+  z-index: 1000;
+  background: #fff;
+  border-bottom: 1px solid var(--soft);
+  padding: 14px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.sticky-bar button {
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:12px 22px;
+  border-radius:999px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* ================= GLOBAL ================= */
+section { padding:90px 20px; }
+.container { max-width:1200px; margin:auto; }
+
+/* ================= SECTION A ================= */
+.section-a {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+.logo { width:140px; margin-bottom:24px; }
+
+.typing {
+  font-size:38px;
+  margin-bottom:30px;
+}
+.typing span {
+  color:var(--accent);
+  border-right:2px solid var(--accent);
+  padding-right:6px;
+}
+
+.search-bar {
+  display:flex;
+  border:1px solid var(--soft);
+  border-radius:16px;
+  overflow:hidden;
+  margin-bottom:20px;
+}
+.search-bar input {
+  flex:1;
+  padding:14px;
+  border:none;
+}
+.search-bar button {
+  padding:14px 18px;
+  border:none;
+  background:#fff;
+  cursor:pointer;
+}
+
+.cta-main button {
+  width:100%;
+  background:var(--accent);
+  color:#fff;
+  padding:18px;
+  border:none;
+  border-radius:18px;
+  font-size:18px;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 12px 30px rgba(37,99,235,.35);
+}
+
+.illustration {
+  width:100%;
+  border-radius:22px;
+}
+.subtext { margin-top:12px; opacity:.7; }
+
+/* ================= SECTION B ================= */
+.section-b {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+.card {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border:1px solid var(--soft);
+  border-radius:20px;
+  overflow:hidden;
+  background:#fff;
+}
+.card-left {
+  background:var(--bg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.card-left img { width:70%; }
+.card-right { padding:26px; }
+
+/* ================= SECTION C ================= */
+.section-c { background:var(--bg); }
+.section-c h2 { font-size:40px; margin-bottom:50px; }
+
+.features {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+}
+.feature {
+  display:flex;
+  align-items:center;
+  padding:20px;
+  border-radius:16px;
+  border:1px solid var(--soft);
+  background:#fff;
+}
+.feature img { width:32px; margin-right:14px; }
+
+/* ================= SECTION D ================= */
+.section-d {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:flex-start;
+}
+
+.calculator {
+  border:1px solid var(--soft);
+  border-radius:26px;
+  padding:32px;
+  background:#fff;
+}
+
+.price {
+  font-size:44px;
+}
+.price span { font-size:14px; opacity:.6; }
+
+.option {
+  margin-top:28px;
+  display:none;
+}
+.option.active { display:block; }
+
+.radio {
+  padding:14px;
+  border-radius:14px;
+  border:1px solid var(--soft);
+  margin-bottom:10px;
+  cursor:pointer;
+}
+.radio.active {
+  border-color:var(--accent);
+  background:rgba(37,99,235,.05);
+}
+
+/* ================= SECTION E ================= */
+.section-e h2 { font-size:40px; margin-bottom:30px; }
+
+.faq-item {
+  border-bottom:1px solid var(--soft);
+  padding:18px 0;
+}
+.faq-question {
+  display:flex;
+  justify-content:space-between;
+  cursor:pointer;
+  font-weight:600;
+}
+.faq-answer {
+  display:none;
+  margin-top:10px;
+  opacity:.7;
+}
+
+.legal {
+  margin-top:40px;
+  font-size:13px;
+  opacity:.6;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px) {
+  .section-a,
+  .section-b,
+  .section-d {
+    grid-template-columns:1fr;
+  }
+  .features { grid-template-columns:1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wave"></div>
+
+<div class="sticky-bar">
+  <div>Textelp – IA agentique</div>
+  <button>Démarrer</button>
+</div>
+
+<!-- SECTION A -->
+<section class="container section-a">
+  <div>
+    <img src="https://dummy-s3/logo.png" class="logo">
+    <div class="typing">
+      Votre IA agentique personnalisée pour <span id="typing"></span>
+    </div>
+
+    <div class="search-bar">
+      <input placeholder="Rechercher une IA existante">
+      <button>Rechercher</button>
+    </div>
+
+    <div class="cta-main">
+      <button>Créer mon agent</button>
+    </div>
+  </div>
+
+  <div>
+    <img src="https://dummy-s3/illu.png" class="illustration">
+    <p class="subtext">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+  </div>
+</section>
+
+<!-- SECTION B -->
+<section class="container section-b">
+  <div class="card">
+    <div class="card-left"><img src="https://dummy-s3/image.png"></div>
+    <div class="card-right">
+      <h3>Lorem ipsum</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipiscing.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-left"><img src="https://dummy-s3/image.png"></div>
+    <div class="card-right">
+      <h3>Lorem ipsum</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipiscing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION C -->
+<section class="section-c">
+  <div class="container">
+    <h2>Lorem ipsum dolor sit amet</h2>
+    <div class="features">
+      <div class="feature"><img src="https://dummy-s3/icon.png">Lorem ipsum colore enigma</div>
+      <div class="feature"><img src="https://dummy-s3/icon.png">Lorem ipsum colore enigma</div>
+      <div class="feature"><img src="https://dummy-s3/icon.png">Lorem ipsum colore enigma</div>
+      <div class="feature"><img src="https://dummy-s3/icon.png">Lorem ipsum colore enigma</div>
+      <div class="feature"><img src="https://dummy-s3/icon.png">Lorem ipsum colore enigma</div>
+      <div class="feature"><img src="https://dummy-s3/icon.png">Lorem ipsum colore enigma</div>
+      <div class="feature"><img src="https://dummy-s3/icon.png">Lorem ipsum colore enigma</div>
+      <div class="feature"><img src="https://dummy-s3/icon.png">Lorem ipsum colore enigma</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION D -->
+<section class="container section-d">
+  <div class="calculator">
+    <div class="price" id="price">0€ <span>/mois</span></div>
+
+    <div class="option active" data-step="1">
+      <h4>Volume ressources</h4>
+      <div class="radio" data-price="0">Moins de 5 ressources (+0€)</div>
+      <div class="radio" data-price="50">Moins de 50 ressources (+50€)</div>
+      <div class="radio" data-price="90">Plus de 50 ressources (+90€)</div>
+    </div>
+
+    <div class="option" data-step="2">
+      <h4>Moteur IA</h4>
+      <div class="radio" data-price="0">ChatGPT (+0€)</div>
+      <div class="radio" data-price="9">Gemini (+9€)</div>
+      <div class="radio" data-price="19">Mistral (+19€)</div>
+    </div>
+
+    <div class="option" data-step="3">
+      <h4>Grade</h4>
+      <div class="radio" data-price="0">Éditeur autonome (+0€)</div>
+      <div class="radio" data-price="99">Services Textelp (+99€)</div>
+    </div>
+
+    <div class="option" data-step="4">
+      <h4>Branding</h4>
+      <div class="radio" data-price="0">Avec Défibeo (+0€)</div>
+      <div class="radio" data-price="29">Marque blanche (+29€)</div>
+    </div>
+
+    <div class="option" data-step="5">
+      <h4>Volume requêtes</h4>
+      <div class="radio" data-price="0">Moins de 1000 messages (+0€)</div>
+      <div class="radio" data-price="39">Plus de 1000 messages (+39€)</div>
+    </div>
+  </div>
+
+  <div>
+    <img src="https://dummy-s3/illu.png" class="illustration">
+    <p class="subtext">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+  </div>
+</section>
+
+<!-- SECTION E -->
+<section class="container section-e">
+  <h2>Questions fréquentes</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">Question 1 <span>Montrer</span></div>
+    <div class="faq-answer">Lorem ipsum dolor sit amet.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">Question 2 <span>Montrer</span></div>
+    <div class="faq-answer">Lorem ipsum dolor sit amet.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">Question 3 <span>Montrer</span></div>
+    <div class="faq-answer">Lorem ipsum dolor sit amet.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">Question 4 <span>Montrer</span></div>
+    <div class="faq-answer">Lorem ipsum dolor sit amet.</div>
+  </div>
+
+  <div class="legal">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mentions légales regroupées dans un seul bloc de texte.
+  </div>
+</section>
+
+<script>
+/* Typing */
+const words=["l’industrie","l’ecommerce","le médical","le tertiaire"];
+let i=0,j=0,del=false;
+const t=document.getElementById("typing");
+(function type(){
+  if(!del && j<=words[i].length) t.textContent=words[i].slice(0,j++);
+  else if(del && j>=0) t.textContent=words[i].slice(0,j--);
+  if(j===words[i].length) del=true;
+  if(del && j===0){del=false;i=(i+1)%words.length;}
+  setTimeout(type,del?70:120);
+})();
+
+/* Calculator */
+let total=0;
+document.querySelectorAll('.option').forEach(opt=>{
+  opt.querySelectorAll('.radio').forEach(r=>{
+    r.onclick=()=>{
+      opt.querySelectorAll('.radio').forEach(x=>x.classList.remove('active'));
+      r.classList.add('active');
+      total+=Number(r.dataset.price);
+      document.getElementById("price").innerHTML=total+"€ <span>/mois</span>";
+      const next=document.querySelector(`.option[data-step="${+opt.dataset.step+1}"]`);
+      if(next) next.classList.add('active');
+    }
+  })
+});
+
+/* FAQ */
+document.querySelectorAll('.faq-question').forEach(q=>{
+  q.onclick=()=>{
+    const a=q.nextElementSibling;
+    const s=q.querySelector('span');
+    const o=a.style.display==="block";
+    a.style.display=o?"none":"block";
+    s.textContent=o?"Montrer":"Fermer";
+  }
+});
+</script>
+
+</body>
+</html>
