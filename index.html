@@ -177,6 +177,7 @@ background: radial-gradient(#281698, #020248) !important;
 }
 
 .pisaB {
+      line-height: 25px;
     font-family: 'TextelpA', sans-serif;
     font-weight: 100 !important;
   color: #000 !important;
@@ -187,9 +188,9 @@ background: radial-gradient(#281698, #020248) !important;
 
 
 .greco {
-    background: radial-gradient(circle, white 0%, white 70%, #fcdeff 100%) !important;
-    border-top: 1px solid #eaeaea !important ;
-        margin-top: 60px !important;
+    border-top: 1px solid #e7e7e7 !important;
+    margin-top: 60px !important;
+    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
 }
 
 .cta-main button {
@@ -370,22 +371,26 @@ background: #674eff !important;
 
 }
 .faq-item {
-border: 1px solid #e5e7eb;
-background: #272747;
-    color: #fff;
-    max-width: 900px;
+border: 1px solid #ffffff;
+    background: #ffffff;
+    color: #000000;
+    max-width: 700px;
     margin: auto;
     padding: 12px !important;
     border-radius: 13px;
     margin-bottom: 10px !important;
+        font-family: 'TextelpA', sans-serif !important;
 }
 .faq-question {
   display:flex;
   justify-content:space-between;
   cursor:pointer;
   font-weight:600;
+      font-family: 'TextelpA', sans-serif !important;
 }
-.faq-answer { display:none; margin-top:10px; opacity:.7; }
+.faq-answer { display:none;     opacity: 1;
+    color: #000000;    font-family: 'TextelpA', sans-serif !important;
+   }
 
 .legal {
 margin-top: 40px;
@@ -394,7 +399,7 @@ margin-top: 40px;
     opacity: 1;
     font-weight: 100;
     color: #fff;
-    max-width: 900px;
+    max-width: 100%;
     margin: auto;
     cursor: default;
     margin-top: 85px;
@@ -467,9 +472,8 @@ margin-top: 40px;
 
 
 .folk {
-background: #1c1c38;
+background: radial-gradient(circle, #080657 0%, #311ca7 60%, #201289 100%);
     width: 100% !important;
-    border-top: 1px solid #40405c;
     max-width: 100% !important;
 }
 
@@ -524,7 +528,7 @@ margin: auto;
 
 
 <div class="sticky-bar">
-      <img src="https://dummy-s3/logo.png" class="logo">
+      <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2026.svg" class="logo">
 <a href="connexion.html" class="iso">Connexion</a>
 </div>
 
@@ -568,65 +572,16 @@ margin: auto;
     <h2  class="booba">Lorem ipsum dolor sit amet</h2>
     <div class="features">
       <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp1.svg">Lorem ipsum colore enigma</div>
-      <div class="feature colorBLUE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2.svg">Lorem ipsum colore enigma</div>
-            <div class="feature colorRED"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp3.svg">Lorem ipsum colore enigma</div>
-                  <div class="feature colorGREEN"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp4.svg">Lorem ipsum colore enigma</div>
+      <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2.svg">Lorem ipsum colore enigma</div>
+            <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp3.svg">Lorem ipsum colore enigma</div>
+                  <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp4.svg">Lorem ipsum colore enigma</div>
                         <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp5.svg">Lorem ipsum colore enigma</div>
-                              <div class="feature colorBLUE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp6.svg">Lorem ipsum colore enigma</div>
-                                    <div class="feature colorRED"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp7.svg">Lorem ipsum colore enigma</div>
-                                          <div class="feature colorGREEN"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp8.svg">Lorem ipsum colore enigma</div>
+                              <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp6.svg">Lorem ipsum colore enigma</div>
+                                    <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp7.svg">Lorem ipsum colore enigma</div>
+                                          <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp8.svg">Lorem ipsum colore enigma</div>
 
     </div>
   </div>
-</section>
-
-<!-- SECTION D -->
-<section class="folk2 container section-d">
-
-  <div class="calculator">
-        <h2  class="booba">Mon tarif</h2>
-    <div class="price" id="price">0€ <span>/mois</span></div>
-
-    <div class="step active" data-step="0">
-      <h4 class="titrecc">Volume ressources</h4>
-      <div class="radio" data-price="0">Moins de 5 ressources (+0€)</div>
-      <div class="radio" data-price="50">Moins de 50 ressources (+50€)</div>
-      <div class="radio" data-price="90">Plus de 50 ressources (+90€)</div>
-    </div>
-
-    <div class="step" data-step="1">
-      <h4 class="titrecc">Moteur IA</h4>
-      <div class="radio" data-price="0">ChatGPT (+0€)</div>
-      <div class="radio" data-price="9">Gemini (+9€)</div>
-      <div class="radio" data-price="19">Mistral (+19€)</div>
-    </div>
-
-    <div class="step" data-step="2">
-      <h4 class="titrecc">Grade</h4>
-      <div class="radio" data-price="0">Éditeur autonome (+0€)</div>
-      <div class="radio" data-price="99">Services Textelp (+99€)</div>
-    </div>
-
-    <div class="step" data-step="3">
-      <h4 class="titrecc">Branding</h4>
-      <div class="radio" data-price="0">Avec Défibeo (+0€)</div>
-      <div class="radio" data-price="29">Marque blanche (+29€)</div>
-    </div>
-
-    <div class="step" data-step="4">
-      <h4 class="titrecc">Volume requêtes</h4>
-      <div class="radio" data-price="0">Moins de 1000 messages (+0€)</div>
-      <div class="radio" data-price="39">Plus de 1000 messages (+39€)</div>
-    </div>
-
-    <div class="nav-buttons">
-      <button id="back"></button>
-      <a id="contact" href="/contact" style="display:none">Contactez-nous</a>
-    </div>
-  </div>
-
-  <img class="imgside" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp9.svg" style="width:100%;border-radius:24px;">
-  <p class="pisaB">Lorem ipsum dolor sit amet.</p>
 </section>
 
 <!-- SECTION E -->
