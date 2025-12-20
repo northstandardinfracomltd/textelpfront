@@ -171,6 +171,9 @@ background: radial-gradient(#281698, #020248) !important;
     font-weight: 100 !important;
   color: #000 !important;
       font-size: 32px !important;
+          margin-bottom: 15px;
+    margin-top: 15px;
+    cursor: default;
 }
 
 .pisaB {
@@ -178,6 +181,8 @@ background: radial-gradient(#281698, #020248) !important;
     font-weight: 100 !important;
   color: #000 !important;
       font-size: 18px !important;
+          cursor: default;
+      
 }
 
 
@@ -222,7 +227,7 @@ background: radial-gradient(#281698, #020248) !important;
     background: #fff;
     border: 1px solid #e5e5e5e6;
     border-radius: 20px;
-    padding: 0px;
+    padding: 9px;
     box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
 }
 .card-left {
@@ -231,6 +236,7 @@ background: radial-gradient(#281698, #020248) !important;
   align-items:center;
   justify-content:center;
   min-height: 300px;
+      border-radius: 14px;
 }
 .card-left img { width:98%; }
 .card-right { padding:26px; }
@@ -278,7 +284,6 @@ display: flex;
     padding: 32px;
     max-width: 400px;
     min-width: 400px;
-    box-shadow: 0px 0px 20px 20px rgb(144 144 255 / 3%);
     margin-right: 40px;
 }
 
@@ -334,6 +339,11 @@ padding: 14px;
 }
 
 .nav-buttons {
+background: transparent !important;
+}
+
+.nav-buttons a,
+.nav-buttons button {
 background: #674eff !important;
     font-family: 'TextelpA', sans-serif !important;
     border: none !important;
@@ -345,18 +355,6 @@ background: #674eff !important;
     text-decoration: none !important;
     color: #ffffff !important;
     font-weight: 100;
-}
-
-.nav-buttons a,
-.nav-buttons button {
-  background:#ede9fe;
-  border:none;
-  padding:10px 16px;
-  border-radius:10px;
-  cursor:pointer;
-  text-decoration:none;
-  color:#4c1d95;
-  font-weight:500;
 }
 
 /* ================= FAQ ================= */
@@ -373,7 +371,8 @@ background: #674eff !important;
 }
 .faq-item {
 border: 1px solid #e5e7eb;
-    background: grey;
+background: #272747;
+    color: #fff;
     max-width: 900px;
     margin: auto;
     padding: 12px !important;
@@ -411,47 +410,6 @@ margin-top: 40px;
   .features { grid-template-columns:1fr; }
 }
 
-
-
-
-.color0 {
-    outline-offset: 2px !important;
-    border: 1px solid #248536;
-    outline: #248536 solid 3px;
-    background: linear-gradient(45deg, #248536, #248536);
-}
-
-.color1 {
-    outline-offset: 2px !important;
-    border: 1px solid #0275de;
-    outline: #0075DE solid 3px;
-    background: linear-gradient(45deg, #1482ff, #1482ff);
-        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
-}
-
-.color2 {
-    outline-offset: 2px !important;
-    border: 1px solid #21262e;
-    outline: #21262e solid 3px;
-    background: linear-gradient(45deg, #21262e, #21262e);
-        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
-}
-
-.color3 {
-    outline-offset: 2px !important;
-    border: 1px solid #8957e6;
-    outline: #8957e6 solid 3px;
-    background: linear-gradient(45deg, #8957e6, #8957e6);
-        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
-}
-
-.color4 {
-    outline-offset: 2px !important;
-    border: 1px solid #ed5853;
-    outline: #ed5853 solid 3px;
-    background: linear-gradient(45deg, #ed5853, #ed5853);
-        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
-}
 .colorPURPLE {
     outline-offset: 2px !important;
     border: 0px solid #622069;
@@ -473,20 +431,40 @@ margin-top: 40px;
     background: radial-gradient(circle, #ff5c56 0%, #ff6560 60%, #de2e28 100%);
         box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
 }
-.color8 {
+
+.colorGREEN {
     outline-offset: 2px !important;
-    border: 1px solid #000da1;
-    outline: #000da1 solid 3px;
-    background: linear-gradient(45deg, #000da1, #000da1);
+    border: 0px solid #2f9d45;
+    outline: #2f9d45 solid 3px;
+    background: radial-gradient(circle, #27893a 0%, #2f9d45 60%, #166e28 100%);
         box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
 }
-.color9 {
+
+.colorPINK {
     outline-offset: 2px !important;
-    border: 1px solid #fc4e0f;
-    outline: #fc4e0f solid 3px;
-    background: linear-gradient(45deg, #fc4e0f, #fc4e0f);
+    border: 0px solid #db2885;
+    outline: #db2885 solid 3px;
+    background: radial-gradient(circle, #eb2d90 0%, #ff66b5 60%, #db2885 100%);
         box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
 }
+
+.colorORANGE {
+    outline-offset: 2px !important;
+    border: 0px solid #dc632a;
+    outline: #dc632a solid 3px;
+    background: radial-gradient(circle, #e36a2e 0%, #ff874d 60%, #dc632a 100%);
+        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+}
+
+.colorYELLOW {
+    outline-offset: 2px !important;
+    border: 0px solid #cbdf18;
+    outline: #cbdf18 solid 3px;
+    background: radial-gradient(circle, #b9cd0e 0%, #cbdf18 60%, #8e9f05 100%);
+        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+}
+
+
 
 .folk {
 background: #1c1c38;
@@ -499,25 +477,45 @@ background: #1c1c38;
 background: #121233 !important;
 width: 100% !important;
 max-width: 100% !important;
-grid-template-columns: 50% 50% !important;
+grid-template-columns: 55% 45% !important;
 }
 
 .iso  {
     font-family: 'TextelpA', sans-serif !important;
     font-weight: 100 !important;
-  font-size: 18px !important;
-  border-radius: 13px !important;
-  background: black !important; 
-  border: none !important; 
-  padding: 12px !important;
-  padding-bottom: 13px !important;
-  color: #fff !important;
+    font-size: 18px !important;
+    text-decoration: none;
+    border-radius: 13px !important;
+    background: black !important;
+    border: none !important;
+    padding: 13px 20px;
+    padding-bottom: 14px !important;
+    color: #fff !important;
 }
+
+.iso:hover  {
+box-shadow: 0 0 0px 8px #0000001a;
+}
+
 
 .imgside {
-width: 42px; 
+    width: 70px !important;
+    margin-top: 80px;
 
 }
+
+.actiona {
+    width: 70px !important;
+    margin-top: 80px;
+
+}
+
+.booba {
+text-align: center;
+margin: auto;
+
+}
+
 
 </style>
 </head>
@@ -556,27 +554,27 @@ width: 42px;
 <section class="container section-b">
   <div class="card">
     <div class="card-left"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelpgo1.svg"></div>
-    <div class="card-right"><h3 class="pisaA">Lorem ipsum</h3><p class="pisaB">Lorem ipsum dolor sit amet.</p></div>
+    <div class="card-right"><h3 class="pisaA">Lorem ipsum</h3><p class="pisaB">Affinity inclut les studios Vecteur, Pixel et Mise en page, sans vous enfermer dans un univers figé.</p></div>
   </div>
   <div class="card">
     <div class="card-left"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelpgo2.svg"></div>
-    <div class="card-right"><h3 class="pisaA">Lorem ipsum</h3><p class="pisaB">Lorem ipsum dolor sit amet.</p></div>
+    <div class="card-right"><h3 class="pisaA">Lorem ipsum</h3><p class="pisaB">Affinity inclut les studios Vecteur, Pixel et Mise en page, sans vous enfermer dans un univers figé.</p></div>
   </div>
 </section>
 <br>
 <!-- SECTION C -->
 <section class="section-c greco">
   <div class="container">
-    <h2>Lorem ipsum dolor sit amet</h2>
+    <h2  class="booba">Lorem ipsum dolor sit amet</h2>
     <div class="features">
       <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp1.svg">Lorem ipsum colore enigma</div>
       <div class="feature colorBLUE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2.svg">Lorem ipsum colore enigma</div>
             <div class="feature colorRED"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp3.svg">Lorem ipsum colore enigma</div>
-                  <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp4.svg">Lorem ipsum colore enigma</div>
-                        <div class="feature colorBLUE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp5.svg">Lorem ipsum colore enigma</div>
-                              <div class="feature colorRED"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp6.svg">Lorem ipsum colore enigma</div>
-                                    <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp7.svg">Lorem ipsum colore enigma</div>
-                                          <div class="feature colorBLUE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp8.svg">Lorem ipsum colore enigma</div>
+                  <div class="feature colorGREEN"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp4.svg">Lorem ipsum colore enigma</div>
+                        <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp5.svg">Lorem ipsum colore enigma</div>
+                              <div class="feature colorBLUE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp6.svg">Lorem ipsum colore enigma</div>
+                                    <div class="feature colorRED"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp7.svg">Lorem ipsum colore enigma</div>
+                                          <div class="feature colorGREEN"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp8.svg">Lorem ipsum colore enigma</div>
 
     </div>
   </div>
@@ -584,7 +582,9 @@ width: 42px;
 
 <!-- SECTION D -->
 <section class="folk2 container section-d">
+
   <div class="calculator">
+        <h2  class="booba">Mon tarif</h2>
     <div class="price" id="price">0€ <span>/mois</span></div>
 
     <div class="step active" data-step="0">
@@ -626,6 +626,7 @@ width: 42px;
   </div>
 
   <img class="imgside" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp9.svg" style="width:100%;border-radius:24px;">
+  <p class="pisaB">Lorem ipsum dolor sit amet.</p>
 </section>
 
 <!-- SECTION E -->
@@ -633,19 +634,19 @@ width: 42px;
   <h2>Questions fréquentes</h2>
 
   <div class="faq-item">
-    <div class="faq-question">Question 1 <span>Montrer</span></div>
+    <div class="faq-question">Question 1 <span class="actiona">Montrer</span></div>
     <div class="faq-answer">Lorem1 ipsum dolor sit amet.</div>
   </div>
     <div class="faq-item">
-    <div class="faq-question">Question 2 <span>Montrer</span></div>
+    <div class="faq-question">Question 2 <span class="actiona">Montrer</span></div>
     <div class="faq-answer">Lorem2 ipsum dolor sit amet.</div>
   </div>
     <div class="faq-item">
-    <div class="faq-question">Question 3 <span>Montrer</span></div>
+    <div class="faq-question">Question 3 <span class="actiona">Montrer</span></div>
     <div class="faq-answer">Lorem3 ipsum dolor sit amet.</div>
   </div>
     <div class="faq-item">
-    <div class="faq-question">Question 4 <span>Montrer</span></div>
+    <div class="faq-question">Question 4 <span class="actiona">Montrer</span></div>
     <div class="faq-answer">Lorem4 ipsum dolor sit amet.</div>
   </div>
 
