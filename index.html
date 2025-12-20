@@ -44,26 +44,31 @@ h1,h2,h3,h4 {
 
 /* ================= STICKY BAR ================= */
 .sticky-bar {
-  position: sticky;
-  top: 3px;
-  z-index: 2000;
-  background: #fff;
-  border-bottom: 1px solid #e5e7eb;
-  padding: 14px 24px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+background: #16f1bb);
+    border-bottom: 1px solid #16f1bb;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .sticky-bar button {
-  background:#7c3aed;
-  color:#fff;
-  border:none;
-  padding:12px 22px;
-  border-radius:999px;
-  font-weight:600;
-  cursor:pointer;
+    background: #000;
+    font-family: 'TextelpA', sans-serif;
+    font-weight: 100 !important;
+    color: #fff;
+    font-size: 22px;
+    border: none;
+    padding: 13px 22px;
+    border-radius: 16px;
+    cursor: pointer;
 }
+
+.ctabttnhover:hover {
+box-shadow: 0 0 0px 8px #0000001a;
+}
+
+
 
 /* ================= GLOBAL ================= */
 section { padding:100px 20px; }
@@ -86,11 +91,22 @@ background: radial-gradient(#281698, #020248) !important;
 .logo { width:140px; margin-bottom:24px; }
 
 .typing {
-  font-size:38px;
-  margin-bottom:30px;
+    font-size: 46px;
+    margin-bottom: 30px;
+    font-family: TextelpA, sans-serif;
+    font-weight: 100 !important;
+    min-height: 155px;
+    cursor: default !important;
+    line-height: 47px !important;
 }
 
 .typing .cursor {
+  width: 3.5px !important;
+    height: 36px !important;
+    margin-bottom: -3px !important;
+    background: #16f1bb !important;
+
+
   display:inline-block;
   width:2px;
   height:1em;
@@ -119,13 +135,23 @@ background: radial-gradient(#281698, #020248) !important;
     outline-offset: 4px;
     font-family: 'TextelpA', sans-serif;
     font-weight: 100;
-    height: 50px;
+    height: 54px;
 }
 .search-bar input {
-  flex:1;
-  padding:14px;
-  border:none;
+    flex: 1;
+    padding: 14px;
+    font-size: 22px;
+    border: none;
+    text-align: center;
+    font-family: 'TextelpA', sans-serif;
+    font-weight: 100 !important;
+    color: #000 !important;
 }
+
+.search-bar:placeholder {
+    color: #000 !important;
+}
+
 .search-bar button {
   padding:14px 18px;
   border:none;
@@ -138,6 +164,27 @@ background: radial-gradient(#281698, #020248) !important;
   font-size:14px;
   opacity:.8;
   margin:12px 0;
+}
+
+.pisaA {
+    font-family: 'TextelpB', sans-serif;
+    font-weight: 100 !important;
+  color: #000 !important;
+      font-size: 32px !important;
+}
+
+.pisaB {
+    font-family: 'TextelpA', sans-serif;
+    font-weight: 100 !important;
+  color: #000 !important;
+      font-size: 18px !important;
+}
+
+
+.greco {
+    background: radial-gradient(circle, white 0%, white 70%, #fcdeff 100%) !important;
+    border-top: 1px solid #eaeaea !important ;
+        margin-top: 60px !important;
 }
 
 .cta-main button {
@@ -168,20 +215,24 @@ background: radial-gradient(#281698, #020248) !important;
     padding: 10px;
 }
 .card {
-  display:grid;
-      margin-top: 25px;
-  grid-template-columns:1fr 1fr;
-  border:1px solid #e5e7eb;
-  border-radius:22px;
-  overflow:hidden;
+    display: grid;
+    margin-top: 25px;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e5e5e5e6;
+    border-radius: 20px;
+    padding: 0px;
+    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
 }
 .card-left {
-  background:#611f69;
+  background:radial-gradient(circle, #622069 0%, #622069 60%, #8d3696 100%);
   display:flex;
   align-items:center;
   justify-content:center;
+  min-height: 300px;
 }
-.card-left img { width:70%; }
+.card-left img { width:98%; }
 .card-right { padding:26px; }
 
 /* ================= SECTION C ================= */
@@ -194,6 +245,10 @@ background: radial-gradient(#281698, #020248) !important;
   gap:22px;
 }
 .feature {
+    font-family: 'TextelpA', sans-serif;
+    font-weight: 100 !important;
+  font-size: 18px !important;
+
 display: flex;
     align-items: center;
     padding: 20px;
@@ -288,6 +343,97 @@ display: flex;
   }
   .features { grid-template-columns:1fr; }
 }
+
+
+
+
+.color0 {
+    outline-offset: 2px !important;
+    border: 1px solid #248536;
+    outline: #248536 solid 3px;
+    background: linear-gradient(45deg, #248536, #248536);
+}
+
+.color1 {
+    outline-offset: 2px !important;
+    border: 1px solid #0275de;
+    outline: #0075DE solid 3px;
+    background: linear-gradient(45deg, #1482ff, #1482ff);
+        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+}
+
+.color2 {
+    outline-offset: 2px !important;
+    border: 1px solid #21262e;
+    outline: #21262e solid 3px;
+    background: linear-gradient(45deg, #21262e, #21262e);
+        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+}
+
+.color3 {
+    outline-offset: 2px !important;
+    border: 1px solid #8957e6;
+    outline: #8957e6 solid 3px;
+    background: linear-gradient(45deg, #8957e6, #8957e6);
+        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+}
+
+.color4 {
+    outline-offset: 2px !important;
+    border: 1px solid #ed5853;
+    outline: #ed5853 solid 3px;
+    background: linear-gradient(45deg, #ed5853, #ed5853);
+        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+}
+.color5 {
+    outline-offset: 2px !important;
+    border: 1px solid #622069;
+    outline: #622069 solid 3px;
+    background: linear-gradient(45deg, #622069, #622069);
+        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+}
+.color6 {
+    outline-offset: 2px !important;
+    border: 1px solid #ff389f;
+    outline: #ff389f solid 3px;
+    background: linear-gradient(45deg, #ff389f, #ff389f);
+        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+}
+.color7 {
+    outline-offset: 2px !important;
+    border: 1px solid #5e5306;
+    outline: #5e5306 solid 3px;
+    background: linear-gradient(45deg, #5e5306, #5e5306);
+        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+}
+.color8 {
+    outline-offset: 2px !important;
+    border: 1px solid #000da1;
+    outline: #000da1 solid 3px;
+    background: linear-gradient(45deg, #000da1, #000da1);
+        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+}
+.color9 {
+    outline-offset: 2px !important;
+    border: 1px solid #fc4e0f;
+    outline: #fc4e0f solid 3px;
+    background: linear-gradient(45deg, #fc4e0f, #fc4e0f);
+        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+}
+
+.folk {
+background: radial-gradient(#281698, #020248) !important;
+width: 100% !important;
+max-width: 100% !important;
+}
+
+.folk2 {
+background: #0c1014 !important;
+width: 100% !important;
+max-width: 100% !important;
+}
+
+
 </style>
 </head>
 
@@ -295,15 +441,14 @@ display: flex;
 
 
 <div class="sticky-bar">
-  <div>Textelp – IA agentique</div>
-  <button>Démarrer</button>
+      <img src="https://dummy-s3/logo.png" class="logo">
+  <button>Connexion</button>
 </div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <img src="https://dummy-s3/logo.png" class="logo">
       <div class="typing">
         Votre IA agentique personnalisée pour
         <span id="typing-text"></span><span class="cursor"></span>
@@ -321,41 +466,39 @@ display: flex;
     <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelpillustrationA.svg">
   </div>
 </section>
-<div class="wave"></div>
 
 <!-- SECTION B -->
 <section class="container section-b">
   <div class="card">
     <div class="card-left"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelpgo1.svg"></div>
-    <div class="card-right"><h3>Lorem ipsum</h3><p>Lorem ipsum dolor sit amet.</p></div>
+    <div class="card-right"><h3 class="pisaA">Lorem ipsum</h3><p class="pisaB">Lorem ipsum dolor sit amet.</p></div>
   </div>
   <div class="card">
     <div class="card-left"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelpgo2.svg"></div>
-    <div class="card-right"><h3>Lorem ipsum</h3><p>Lorem ipsum dolor sit amet.</p></div>
+    <div class="card-right"><h3 class="pisaA">Lorem ipsum</h3><p class="pisaB">Lorem ipsum dolor sit amet.</p></div>
   </div>
 </section>
 
 <!-- SECTION C -->
-<section class="section-c">
+<section class="section-c greco">
   <div class="container">
     <h2>Lorem ipsum dolor sit amet</h2>
     <div class="features">
-      <div class="feature"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp1.svg">Lorem ipsum colore enigma</div>
-      <div class="feature"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2.svg">Lorem ipsum colore enigma</div>
-            <div class="feature"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp3.svg">Lorem ipsum colore enigma</div>
-                  <div class="feature"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp4.svg">Lorem ipsum colore enigma</div>
-                        <div class="feature"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp5.svg">Lorem ipsum colore enigma</div>
-                              <div class="feature"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp6.svg">Lorem ipsum colore enigma</div>
-                                    <div class="feature"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp7.svg">Lorem ipsum colore enigma</div>
-                                          <div class="feature"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp8.svg">Lorem ipsum colore enigma</div>
-                                                <div class="feature"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp9.svg">Lorem ipsum colore enigma</div>
+      <div class="feature color1"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp1.svg">Lorem ipsum colore enigma</div>
+      <div class="feature color2"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2.svg">Lorem ipsum colore enigma</div>
+            <div class="feature color3"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp3.svg">Lorem ipsum colore enigma</div>
+                  <div class="feature color4"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp4.svg">Lorem ipsum colore enigma</div>
+                        <div class="feature color5"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp5.svg">Lorem ipsum colore enigma</div>
+                              <div class="feature color6"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp6.svg">Lorem ipsum colore enigma</div>
+                                    <div class="feature color7"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp7.svg">Lorem ipsum colore enigma</div>
+                                          <div class="feature color8"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp8.svg">Lorem ipsum colore enigma</div>
 
     </div>
   </div>
 </section>
 
 <!-- SECTION D -->
-<section class="container section-d">
+<section class="folk2 container section-d">
   <div class="calculator">
     <div class="price" id="price">0€ <span>/mois</span></div>
 
@@ -397,11 +540,11 @@ display: flex;
     </div>
   </div>
 
-  <img src="https://dummy-s3/illu.png" style="width:100%;border-radius:24px;">
+  <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp9.svg" style="width:100%;border-radius:24px;">
 </section>
 
 <!-- SECTION E -->
-<section class="container section-e">
+<section class="folk container section-e">
   <h2>Questions fréquentes</h2>
 
   <div class="faq-item">
