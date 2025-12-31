@@ -606,398 +606,437 @@ width: 100%;
 <!-- SECTION C -->
 
 
-
-
 <div class="cv-demo-container">
     <style>
+        /* Importation de la police (Simulation si non installée localement) */
+        @font-face {
+            font-family: 'TextelpA';
+            src: local('sans-serif'); /* Remplacez par votre lien font réel */
+        }
+
+        .cv-demo-wrapper * {
+            font-family: 'TextelpA', sans-serif !important;
+            font-weight: 100 !important;
+            box-sizing: border-box;
+        }
+
         :root {
-            --cv-primary: #4f46e5;
-            --cv-bg: #f9fafb;
+            --cv-accent: #4f46e5;
+            --cv-chat-bg: #f9fafb;
+            --cv-bubble-user: #4f46e5;
+            --cv-bubble-agent: #ffffff;
+            --cv-text-main: #1f2937;
+            --cv-text-muted: #6b7280;
             --cv-border: #e5e7eb;
-            --cv-text: #1f2937;
-            --cv-agent-bg: #ffffff;
-            --cv-user-bg: #4f46e5;
-            --cv-user-text: #ffffff;
         }
 
         .cv-demo-wrapper {
             display: flex;
             width: 100%;
-            max-width: 1100px;
-            height: 700px;
+            max-width: 1200px;
+            height: 850px;
             background: #fff;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            font-family: 'Inter', system-ui, sans-serif;
-            color: var(--cv-text);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
             margin: 20px auto;
+            border: 1px solid var(--cv-border);
         }
 
         /* --- COLONNE GAUCHE : CONFIGURATION (40%) --- */
         .cv-demo-config {
             width: 40%;
             border-right: 1px solid var(--cv-border);
-            padding: 20px;
+            padding: 25px;
             overflow-y: auto;
-            background: #fff;
+            background: #ffffff;
         }
 
-        .cv-demo-section-title {
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #6b7280;
-            margin-bottom: 12px;
-            margin-top: 20px;
-        }
+        .cv-demo-title { font-size: 1.2rem; margin-bottom: 20px; font-weight: 400 !important; }
+        .cv-demo-section-title { font-size: 0.75rem; text-transform: uppercase; color: var(--cv-text-muted); margin: 25px 0 12px 0; letter-spacing: 1px; }
 
-        .cv-demo-field-group { margin-bottom: 20px; }
-
-        .cv-demo-label { display: block; font-size: 0.9rem; margin-bottom: 6px; font-weight: 500; }
-
-        .cv-demo-input {
-            width: 100%;
-            padding: 8px 12px;
-            border: 1px solid var(--cv-border);
-            border-radius: 6px;
-            font-size: 0.9rem;
-            box-sizing: border-box;
-        }
-
-        /* Grilles de sélection (Thèmes & IA) */
-        .cv-demo-grid {
-            display: grid;
-            gap: 10px;
-            grid-template-columns: repeat(3, 1fr);
-            width: 100%;
-        }
-        .cv-demo-grid-2 { grid-template-columns: repeat(2, 1fr); }
-
-        .cv-demo-selectable {
-            border: 2px solid transparent;
-            background: #f3f4f6;
+        /* Favicon Upload Custom */
+        .cv-favicon-upload-container {
+            width: 60px;
+            height: 60px;
+            border: 2px dashed var(--cv-border);
             border-radius: 8px;
-            padding: 10px;
-            cursor: pointer;
-            text-align: center;
-            transition: all 0.2s;
-            position: relative;
-        }
-
-        .cv-demo-selectable.active { border-color: var(--cv-primary); background: #eff6ff; }
-
-        .cv-demo-theme-color {
-            height: 25px;
-            width: 25px;
-            border-radius: 4px;
-            margin: 0 auto 5px;
-        }
-
-        .cv-demo-ia-logo {
-            height: 30px;
-            width: 30px;
-            background: #ddd; /* Placeholder pour vos images S3 */
-            margin: 0 auto 5px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 4px;
-        }
-
-        /* Ressources */
-        .cv-demo-resource-item {
-            background: #f9fafb;
-            padding: 8px;
-            border-radius: 6px;
-            margin-bottom: 8px;
-            font-size: 0.8rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: 1px solid var(--cv-border);
-        }
-
-        .cv-demo-btn-add {
-            width: 100%;
-            padding: 8px;
-            background: var(--cv-primary);
-            color: white;
-            border: none;
-            border-radius: 6px;
             cursor: pointer;
-            font-weight: 600;
+            overflow: hidden;
+            background: #fdfdfd;
         }
+        .cv-favicon-preview { width: 30px; height: 30px; object-fit: contain; }
+
+        /* Inputs */
+        .cv-demo-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--cv-border);
+            border-radius: 6px;
+            margin-bottom: 15px;
+            outline: none;
+        }
+
+        /* Grilles */
+        .cv-demo-grid { display: grid; gap: 10px; grid-template-columns: repeat(3, 1fr); margin-bottom: 15px; }
+        .cv-demo-grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+        .cv-demo-selectable {
+            border: 1px solid var(--cv-border);
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: 0.2s;
+        }
+        .cv-demo-selectable.active { outline: 2px solid var(--cv-accent); border-color: transparent; }
+        .cv-theme-swatch { width: 20px; height: 20px; border-radius: 3px; margin: 0 auto 5px; }
+
+        /* Resources Subform */
+        #cv-resource-form {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid var(--cv-border);
+            display: none;
+        }
+
+        /* Stats Grid */
+        .cv-stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .cv-stat-card { border: 1px solid var(--cv-border); padding: 10px; border-radius: 6px; text-align: center; }
+        .cv-stat-val { display: block; font-size: 1.1rem; font-weight: 400 !important; color: var(--cv-accent); }
+        .cv-stat-lab { font-size: 0.65rem; color: var(--cv-text-muted); }
 
         /* --- COLONNE DROITE : CHAT (60%) --- */
         .cv-demo-chat {
             width: 60%;
             display: flex;
             flex-direction: column;
-            background: var(--cv-bg);
+            background: var(--cv-chat-bg);
             position: relative;
+            transition: background 0.3s;
         }
 
-        /* Header Chat */
         .cv-demo-chat-header {
-            padding: 15px 20px;
-            background: #fff;
-            border-bottom: 1px solid var(--cv-border);
+            padding: 20px;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
             display: flex;
             align-items: center;
-            gap: 12px;
-            z-index: 10;
+            gap: 15px;
         }
 
-        .cv-demo-chat-favicon {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: #eee;
-            object-fit: cover;
-        }
-
-        /* Messages Area */
+        /* Message area with Bottom Align */
         .cv-demo-messages {
             flex-grow: 1;
             padding: 20px;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            justify-content: flex-end; /* Align bottom */
         }
+        .cv-messages-inner { display: flex; flex-direction: column; gap: 20px; width: 100%; }
 
-        .cv-demo-msg-wrapper { max-width: 85%; display: flex; flex-direction: column; }
-        .cv-demo-msg-agent { align-self: flex-start; }
-        .cv-demo-msg-user { align-self: flex-end; align-items: flex-end; }
+        .cv-msg { max-width: 80%; display: flex; flex-direction: column; }
+        .cv-msg-agent { align-self: flex-start; }
+        .cv-msg-user { align-self: flex-end; align-items: flex-end; }
 
-        .cv-demo-msg-header { font-size: 0.75rem; font-weight: 700; margin-bottom: 4px; color: #6b7280; }
-
-        .cv-demo-bubble {
-            padding: 12px 16px;
-            border-radius: 12px;
-            font-size: 0.95rem;
-            line-height: 1.4;
+        .cv-bubble {
+            padding: 12px 18px;
+            border-radius: 15px;
+            font-size: 0.9rem;
             position: relative;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
+        .cv-msg-agent .cv-bubble { background: var(--cv-bubble-agent); color: var(--cv-text-main); border: 1px solid var(--cv-border); }
+        .cv-msg-user .cv-bubble { background: var(--cv-bubble-user); color: #fff; }
 
-        .cv-demo-msg-agent .cv-demo-bubble { background: var(--cv-agent-bg); border-top-left-radius: 2px; border: 1px solid var(--cv-border); }
-        .cv-demo-msg-user .cv-demo-bubble { background: var(--cv-user-bg); color: var(--cv-user-text); border-top-right-radius: 2px; }
+        .cv-msg-meta { font-size: 0.7rem; color: var(--cv-text-muted); margin-bottom: 4px; }
+        .cv-msg-actions { display: flex; gap: 10px; margin-top: 8px; align-items: center; }
+        .cv-action-btn { background: none; border: 1px solid var(--cv-border); font-size: 0.65rem; padding: 2px 8px; cursor: pointer; border-radius: 4px; color: var(--cv-text-muted); }
 
-        /* Actions & Footer */
-        .cv-demo-msg-footer { display: flex; gap: 8px; margin-top: 6px; }
-        .cv-demo-msg-footer span { font-size: 0.7rem; color: #9ca3af; }
+        .cv-react-group { display: flex; flex-direction: column; align-items: center; }
+        .cv-react-circle { width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--cv-border); background: #fff; cursor: pointer; }
+        .cv-react-label { font-size: 0.55rem; color: var(--cv-text-muted); margin-top: 2px; }
 
-        .cv-demo-action-btn {
-            font-size: 0.7rem;
-            background: none;
-            border: 1px solid var(--cv-border);
-            padding: 2px 8px;
-            border-radius: 4px;
-            cursor: pointer;
-            color: #6b7280;
-            background: #fff;
-        }
+        /* Wave Thinking Animation */
+        .cv-thinking { display: none; padding: 10px; font-size: 0.8rem; color: var(--cv-text-muted); }
+        .cv-wave { display: inline-block; margin-left: 5px; }
+        .cv-wave span { display: inline-block; width: 3px; height: 3px; background: var(--cv-text-muted); border-radius: 50%; animation: cvWave 1.3s infinite; }
+        .cv-wave span:nth-child(2) { animation-delay: 0.2s; }
+        .cv-wave span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes cvWave { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-5px); } }
 
-        .cv-demo-emoji-btn {
-            border: none;
-            padding: 0;
-            cursor: pointer;
-            width: 20px;
-            height: 20px;
-            background: #eee; /* Placeholder S3 */
-            border-radius: 3px;
-        }
+        /* Footer Input */
+        .cv-chat-input-area { padding: 20px; }
+        .cv-input-box { background: #fff; border: 1px solid var(--cv-border); border-radius: 30px; padding: 8px 20px; display: flex; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .cv-input-box input { flex-grow: 1; border: none; outline: none; padding: 8px; background: transparent; }
 
-        /* Input area floating */
-        .cv-demo-chat-input-wrapper {
-            padding: 15px 20px;
-            background: transparent;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
+        /* Share & Embed */
+        .cv-share-field { background: #f3f4f6; padding: 8px; border-radius: 4px; font-size: 0.75rem; border: 1px solid var(--cv-border); width: 100%; color: #9ca3af; margin-bottom: 10px; }
 
-        .cv-demo-input-container {
-            background: #fff;
-            border: 1px solid var(--cv-border);
-            border-radius: 30px;
-            padding: 10px 20px;
-            display: flex;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        .cv-demo-chat-field { flex-grow: 1; border: none; outline: none; font-size: 0.9rem; }
+        /* Theme Variants */
+        .theme-dark { --cv-chat-bg: #111827; --cv-bubble-agent: #1f2937; --cv-text-main: #f9fafb; --cv-border: #374151; }
     </style>
 
     <div class="cv-demo-wrapper">
         <div class="cv-demo-config">
-            <h3 style="margin-top:0">Personnaliser l'agent</h3>
+            <div class="cv-demo-title">Configuration de l'agent</div>
 
-            <div class="cv-demo-field-group">
-                <label class="cv-demo-label">Favicon Agent (30x30)</label>
-                <input type="file" id="cv-upload-fav" accept="image/*" class="cv-demo-input">
+            <div class="cv-demo-section-title">Favicon Agent</div>
+            <div class="cv-favicon-upload-container" onclick="document.getElementById('cv-file-hidden').click()">
+                <img id="cv-favicon-main" src="https://via.placeholder.com/30" class="cv-favicon-preview">
+                <input type="file" id="cv-file-hidden" hidden accept="image/png, image/jpeg">
             </div>
 
-            <div class="cv-demo-field-group">
-                <label class="cv-demo-label">Nom de l'agent</label>
-                <input type="text" id="cv-agent-name-input" class="cv-demo-input" value="Mon Assistant IA" placeholder="Nom de l'agent...">
-            </div>
+            <div class="cv-demo-section-title">Nom de l'agent</div>
+            <input type="text" id="cv-name-input" class="cv-demo-input" maxlength="25" value="Textelp Agent">
 
-            <div class="cv-demo-section-title">Thème interface</div>
+            <div class="cv-demo-section-title">Thème Interface</div>
             <div class="cv-demo-grid">
-                <div class="cv-demo-selectable active" data-theme="gum">
-                    <div class="cv-demo-theme-color" style="background:#ff7eb9"></div>
-                    <span style="font-size:0.7rem">Gum</span>
+                <div class="cv-demo-selectable active" data-accent="#4f46e5" data-bg="#f9fafb" data-mode="light">
+                    <div class="cv-theme-swatch" style="background:#4f46e5"></div><span style="font-size:0.6rem">Classic</span>
                 </div>
-                <div class="cv-demo-selectable" data-theme="ice">
-                    <div class="cv-demo-theme-color" style="background:#93c5fd"></div>
-                    <span style="font-size:0.7rem">Ice</span>
+                <div class="cv-demo-selectable" data-accent="#ec4899" data-bg="#fff1f2" data-mode="light">
+                    <div class="cv-theme-swatch" style="background:#ec4899"></div><span style="font-size:0.6rem">Gum</span>
                 </div>
-                <div class="cv-demo-selectable" data-theme="funky">
-                    <div class="cv-demo-theme-color" style="background:#fbbf24"></div>
-                    <span style="font-size:0.7rem">Funky</span>
+                <div class="cv-demo-selectable" data-accent="#06b6d4" data-bg="#ecfeff" data-mode="light">
+                    <div class="cv-theme-swatch" style="background:#06b6d4"></div><span style="font-size:0.6rem">Ice</span>
                 </div>
-                <div class="cv-demo-selectable" data-theme="serious">
-                    <div class="cv-demo-theme-color" style="background:#1f2937"></div>
-                    <span style="font-size:0.7rem">Serious</span>
+                <div class="cv-demo-selectable" data-accent="#8b5cf6" data-bg="#f5f3ff" data-mode="light">
+                    <div class="cv-theme-swatch" style="background:#8b5cf6"></div><span style="font-size:0.6rem">Funky</span>
                 </div>
-                <div class="cv-demo-selectable" data-theme="plant">
-                    <div class="cv-demo-theme-color" style="background:#22c55e"></div>
-                    <span style="font-size:0.7rem">Plant</span>
+                <div class="cv-demo-selectable" data-accent="#10b981" data-bg="#111827" data-mode="dark">
+                    <div class="cv-theme-swatch" style="background:#10b981"></div><span style="font-size:0.6rem">Plant Dark</span>
                 </div>
-                <div class="cv-demo-selectable" data-theme="classic">
-                    <div class="cv-demo-theme-color" style="background:#4f46e5"></div>
-                    <span style="font-size:0.7rem">Classic</span>
+                <div class="cv-demo-selectable" data-accent="#f59e0b" data-bg="#0f172a" data-mode="dark">
+                    <div class="cv-theme-swatch" style="background:#f59e0b"></div><span style="font-size:0.6rem">Night</span>
                 </div>
             </div>
 
-            <div class="cv-demo-section-title">Moteur IA</div>
-            <div class="cv-demo-grid">
-                <div class="cv-demo-selectable active">
-                    <div class="cv-demo-ia-logo">GPT</div>
-                    <span style="font-size:0.7rem">ChatGPT</span>
+            <div class="cv-demo-section-title">Ressources</div>
+            <div id="cv-resource-container">
                 </div>
-                <div class="cv-demo-selectable">
-                    <div class="cv-demo-ia-logo">Mst</div>
-                    <span style="font-size:0.7rem">Mistral</span>
-                </div>
-                <div class="cv-demo-selectable">
-                    <div class="cv-demo-ia-logo">Gem</div>
-                    <span style="font-size:0.7rem">Gemini</span>
-                </div>
+            <div id="cv-resource-form">
+                <input type="text" id="cv-res-name" class="cv-demo-input" placeholder="Nom de la ressource">
+                <select id="cv-res-type" class="cv-demo-input">
+                    <option>Texte Brute</option>
+                    <option>URL Page Web</option>
+                    <option>Fichier PDF</option>
+                </select>
+                <button class="cv-demo-input" style="background:var(--cv-accent); color:white; border:none;" onclick="saveResource()">Enregistrer</button>
             </div>
-
-            <div class="cv-demo-section-title">Ressources (Contexte)</div>
-            <div id="cv-resource-list">
-                <div class="cv-demo-resource-item">
-                    <span>📄 Manuel_Utilisation.pdf</span>
-                    <div><button class="cv-demo-action-btn">Edit</button> <button class="cv-demo-action-btn">🗑️</button></div>
-                </div>
-                <div class="cv-demo-resource-item">
-                    <span>🌐 https://monsite.com</span>
-                    <div><button class="cv-demo-action-btn">Edit</button> <button class="cv-demo-action-btn">🗑️</button></div>
-                </div>
-                <div class="cv-demo-resource-item">
-                    <span>📝 Note_Projet.txt</span>
-                    <div><button class="cv-demo-action-btn">Edit</button> <button class="cv-demo-action-btn">🗑️</button></div>
-                </div>
-            </div>
-            <button class="cv-demo-btn-add">+ Ajouter une ressource</button>
+            <button class="cv-demo-input" style="cursor:pointer" onclick="showResForm()">+ Ajouter une ressource</button>
 
             <div class="cv-demo-section-title">Publication</div>
             <div class="cv-demo-grid cv-demo-grid-2">
-                <div class="cv-demo-selectable active">
-                    <div style="font-size:1.2rem">🔒</div>
-                    <span style="font-size:0.75rem">Privé</span>
-                </div>
-                <div class="cv-demo-selectable">
-                    <div style="font-size:1.2rem">🌍</div>
-                    <span style="font-size:0.75rem">Public</span>
-                </div>
+                <div class="cv-demo-selectable active">Privé</div>
+                <div class="cv-demo-selectable">Public</div>
+            </div>
+
+            <div class="cv-demo-section-title">Partager</div>
+            <label style="font-size:0.65rem">Lien direct</label>
+            <input type="text" class="cv-share-field" value="https://myagentshare.com/x829" disabled>
+            <label style="font-size:0.65rem">Embed code</label>
+            <input type="text" class="cv-share-field" value="<script src='https://textelp.com/widget.js'></script>" disabled>
+
+            <div class="cv-demo-section-title">Statistiques du mois</div>
+            <div class="cv-stats-grid">
+                <div class="cv-stat-card"><span class="cv-stat-val">1,284</span><span class="cv-stat-lab">Requêtes</span></div>
+                <div class="cv-stat-card"><span class="cv-stat-val">1,280</span><span class="cv-stat-lab">Réponses</span></div>
+                <div class="cv-stat-card"><span class="cv-stat-val">98%</span><span class="cv-stat-lab">Réussites</span></div>
+                <div class="cv-stat-card"><span class="cv-stat-val">2%</span><span class="cv-stat-lab">Échecs</span></div>
             </div>
         </div>
 
-        <div class="cv-demo-chat">
+        <div class="cv-demo-chat" id="cv-chat-col">
             <div class="cv-demo-chat-header">
-                <img id="cv-chat-favicon-view" src="https://via.placeholder.com/30" class="cv-demo-chat-favicon">
-                <strong id="cv-chat-name-view">Mon Assistant IA</strong>
+                <img id="cv-chat-favicon-view" src="https://via.placeholder.com/30" style="width:30px; height:30px; border-radius:50%">
+                <span id="cv-chat-name-view" style="font-weight:400 !important">Textelp Agent</span>
             </div>
 
-            <div class="cv-demo-messages" id="cv-chat-scroll">
-                <div class="cv-demo-msg-wrapper cv-demo-msg-agent">
-                    <div class="cv-demo-msg-header cv-agent-dynamic-name">Mon Assistant IA</div>
-                    <div class="cv-demo-bubble">Bonjour ! Comment puis-je vous aider aujourd'hui ? Je suis prêt à analyser vos ressources.</div>
-                    <div class="cv-demo-msg-footer">
-                        <button class="cv-demo-action-btn">Copier</button>
-                        <button class="cv-demo-action-btn">Reprendre</button>
-                        <button class="cv-demo-emoji-btn" title="React1"></button>
-                        <button class="cv-demo-emoji-btn" title="React2"></button>
+            <div class="cv-demo-messages" id="cv-scroll">
+                <div class="cv-messages-inner" id="cv-msg-container">
+                    <div class="cv-msg cv-msg-agent">
+                        <span class="cv-msg-meta cv-dyn-name">Textelp Agent</span>
+                        <div class="cv-bubble">Bienvenue! Je suis votre nouvel agent personnalisé.</div>
+                        <div class="cv-msg-actions">
+                            <button class="cv-action-btn">Copier</button>
+                            <button class="cv-action-btn">Reprendre</button>
+                            <div class="cv-react-group"><div class="cv-react-circle"></div><span class="cv-react-label">react1</span></div>
+                            <div class="cv-react-group"><div class="cv-react-circle"></div><span class="cv-react-label">react2</span></div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="cv-demo-msg-wrapper cv-demo-msg-user">
-                    <div class="cv-demo-msg-header">Vous</div>
-                    <div class="cv-demo-bubble">Peux-tu me résumer le document PDF que j'ai ajouté en ressources ?</div>
-                    <div class="cv-demo-msg-footer">
-                        <span>3 mins ago</span>
-                    </div>
-                </div>
-
-                <div class="cv-demo-msg-wrapper cv-demo-msg-agent">
-                    <div class="cv-demo-msg-header cv-agent-dynamic-name">Mon Assistant IA</div>
-                    <div class="cv-demo-bubble">Bien sûr. D'après le Manuel_Utilisation.pdf, les points clés concernent la configuration initiale et la gestion des accès utilisateurs.</div>
-                    <div class="cv-demo-msg-footer">
-                        <button class="cv-demo-action-btn">Copier</button>
-                        <button class="cv-demo-action-btn">Reprendre</button>
-                        <button class="cv-demo-emoji-btn"></button>
-                        <button class="cv-demo-emoji-btn"></button>
-                    </div>
+                <div id="cv-thinking-ui" class="cv-thinking">
+                    Réflexion <div class="cv-wave"><span></span><span></span><span></span></div>
                 </div>
             </div>
 
-            <div class="cv-demo-chat-input-wrapper">
-                <div class="cv-demo-input-container">
-                    <input type="text" class="cv-demo-chat-field" placeholder="Écrivez votre message...">
-                    <button style="border:none; background:none; cursor:pointer; color:var(--cv-primary); font-weight:bold;">Envoyer</button>
+            <div class="cv-chat-input-area">
+                <div class="cv-input-box">
+                    <input type="text" id="cv-user-input" placeholder="Envoyer un message...">
+                    <button onclick="handleSend()" style="border:none; background:none; color:var(--cv-accent); cursor:pointer;">Envoyer</button>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Logique simple pour la démonstration visuelle
-        document.getElementById('cv-agent-name-input').addEventListener('input', (e) => {
-            const val = e.target.value || 'Assistant';
-            document.getElementById('cv-chat-name-view').innerText = val;
-            document.querySelectorAll('.cv-agent-dynamic-name').forEach(el => el.innerText = val);
+        // --- LOGIQUE UI & THÈMES ---
+        const nameInput = document.getElementById('cv-name-input');
+        const chatCol = document.getElementById('cv-chat-col');
+
+        nameInput.addEventListener('input', (e) => {
+            document.getElementById('cv-chat-name-view').innerText = e.target.value;
+            document.querySelectorAll('.cv-dyn-name').forEach(el => el.innerText = e.target.value);
         });
 
-        document.getElementById('cv-upload-fav').addEventListener('change', function(e) {
+        document.getElementById('cv-file-hidden').addEventListener('change', function(e) {
             if (this.files && this.files[0]) {
-                const reader = new FileReader();
-                reader.onload = (ex) => {
-                    document.getElementById('cv-chat-favicon-view').src = ex.target.result;
-                };
-                reader.readAsDataURL(this.files[0]);
+                const url = URL.createObjectURL(this.files[0]);
+                document.getElementById('cv-favicon-main').src = url;
+                document.getElementById('cv-chat-favicon-view').src = url;
             }
         });
 
-        // Toggle Outline sur les grilles
-        document.querySelectorAll('.cv-demo-selectable').forEach(item => {
-            item.addEventListener('click', function() {
-                this.parentElement.querySelectorAll('.cv-demo-selectable').forEach(sib => sib.classList.remove('active'));
+        document.querySelectorAll('[data-accent]').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.cv-demo-selectable').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
+                
+                const accent = this.dataset.accent;
+                const bg = this.dataset.bg;
+                const mode = this.dataset.mode;
+
+                chatCol.style.setProperty('--cv-accent', accent);
+                chatCol.style.setProperty('--cv-bubble-user', accent);
+                chatCol.style.backgroundColor = bg;
+                
+                if(mode === 'dark') chatCol.classList.add('theme-dark');
+                else chatCol.classList.remove('theme-dark');
             });
         });
 
-        // Scroll auto vers le bas
-        const scrollDiv = document.getElementById('cv-chat-scroll');
-        scrollDiv.scrollTop = scrollDiv.scrollHeight;
+        // --- GESTION RESSOURCES ---
+        let resources = [
+            {id: 1, name: 'Base_Connaissance.pdf', type: 'Fichier PDF'},
+            {id: 2, name: 'Scripts_Vente.xlsx', type: 'Tableur xlsx'}
+        ];
+
+        function renderResources() {
+            const container = document.getElementById('cv-resource-container');
+            container.innerHTML = resources.map(res => `
+                <div class="cv-stat-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:5px; text-align:left">
+                    <span style="font-size:0.75rem">${res.name}</span>
+                    <div>
+                        <button class="cv-action-btn" onclick="deleteRes(${res.id})">Del</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+        renderResources();
+
+        function showResForm() { document.getElementById('cv-resource-form').style.display = 'block'; }
+        function saveResource() {
+            const name = document.getElementById('cv-res-name').value;
+            if(!name) return;
+            resources.push({id: Date.now(), name: name, type: document.getElementById('cv-res-type').value});
+            document.getElementById('cv-resource-form').style.display = 'none';
+            renderResources();
+        }
+        function deleteRes(id) {
+            resources = resources.filter(r => r.id !== id);
+            renderResources();
+        }
+
+        // --- LOGIQUE CHAT ---
+        const msgContainer = document.getElementById('cv-msg-container');
+        const scrollArea = document.getElementById('cv-scroll');
+
+        function handleSend() {
+            const input = document.getElementById('cv-user-input');
+            const text = input.value.trim();
+            if(!text) return;
+
+            // Ajout message utilisateur
+            appendMessage('Vous', text, 'user');
+            input.value = '';
+
+            // Animation de réflexion
+            const thinking = document.getElementById('cv-thinking-ui');
+            thinking.style.display = 'block';
+            scrollArea.scrollTop = scrollArea.scrollHeight;
+
+            setTimeout(() => {
+                thinking.style.display = 'none';
+                typeAgentMessage("Bravo pour votre premier message! Vous êtes en version d'essai, ouvrez un compte Textelp pour déployer votre agent.");
+            }, 3000);
+        }
+
+        function appendMessage(sender, text, type) {
+            const div = document.createElement('div');
+            div.className = `cv-msg cv-msg-${type}`;
+            const meta = type === 'user' ? '<span>3 sec ago</span>' : `<span class="cv-dyn-name">${nameInput.value}</span>`;
+            
+            div.innerHTML = `
+                <span class="cv-msg-meta">${type === 'user' ? 'Vous' : meta}</span>
+                <div class="cv-bubble">${text}</div>
+                ${type === 'user' ? `<div class="cv-msg-meta" style="margin-top:4px; font-size:0.6rem">3 sec ago</div>` : `
+                <div class="cv-msg-actions">
+                    <button class="cv-action-btn">Copier</button>
+                    <button class="cv-action-btn">Reprendre</button>
+                    <div class="cv-react-group"><div class="cv-react-circle"></div><span class="cv-react-label">react1</span></div>
+                    <div class="cv-react-group"><div class="cv-react-circle"></div><span class="cv-react-label">react2</span></div>
+                </div>`}
+            `;
+            msgContainer.appendChild(div);
+            scrollArea.scrollTop = scrollArea.scrollHeight;
+        }
+
+        function typeAgentMessage(fullText) {
+            const div = document.createElement('div');
+            div.className = `cv-msg cv-msg-agent`;
+            div.innerHTML = `
+                <span class="cv-msg-meta cv-dyn-name">${nameInput.value}</span>
+                <div class="cv-bubble" id="typing-box"></div>
+            `;
+            msgContainer.appendChild(div);
+            
+            const box = div.querySelector('#typing-box');
+            let i = 0;
+            const interval = setInterval(() => {
+                box.innerHTML += fullText.charAt(i);
+                i++;
+                scrollArea.scrollTop = scrollArea.scrollHeight;
+                if(i >= fullText.length) {
+                    clearInterval(interval);
+                    // On ajoute les actions après le typing
+                    const actions = document.createElement('div');
+                    actions.className = 'cv-msg-actions';
+                    actions.innerHTML = `
+                        <button class="cv-action-btn">Copier</button>
+                        <button class="cv-action-btn">Reprendre</button>
+                        <div class="cv-react-group"><div class="cv-react-circle"></div><span class="cv-react-label">react1</span></div>
+                        <div class="cv-react-group"><div class="cv-react-circle"></div><span class="cv-react-label">react2</span></div>
+                    `;
+                    div.appendChild(actions);
+                }
+            }, 30);
+        }
+
+        // Ecouter Entrée
+        document.getElementById('cv-user-input').addEventListener('keypress', (e) => {
+            if(e.key === 'Enter') handleSend();
+        });
     </script>
 </div>
+
+
 
 
 
