@@ -620,6 +620,15 @@ width: 100%;
             cursor: default;
         }
 
+        /* Masquage des scrollbars sur tous les navigateurs */
+        * {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE/Edge */
+        }
+        *::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
         :root {
             --cv-accent: #4f46e5;
             --cv-chat-bg: #f9fafb;
@@ -643,12 +652,12 @@ width: 100%;
             border: 1px solid var(--cv-border);
         }
 
-        /* --- COLONNE GAUCHE (40%) --- */
+        /* --- COLONNE GAUCHE --- */
         .cv-demo-config {
             width: 40%;
             border-right: 1px solid var(--cv-border);
             padding: 25px;
-            overflow-y: auto;
+            overflow-y: scroll;
             background: #ffffff;
         }
 
@@ -667,68 +676,47 @@ width: 100%;
         }
         select.cv-demo-input { appearance: none; background-image: none; cursor: pointer !important; }
 
-        /* Grilles & Sélections */
         .cv-demo-grid { display: grid; gap: 10px; grid-template-columns: repeat(3, 1fr); margin-bottom: 15px; }
         .cv-demo-grid-2 { grid-template-columns: repeat(2, 1fr); }
-        .cv-demo-selectable {
-            border: 1px solid var(--cv-border); padding: 12px; border-radius: 8px; cursor: pointer !important; text-align: center;
-        }
+        .cv-demo-selectable { border: 1px solid var(--cv-border); padding: 12px; border-radius: 8px; cursor: pointer !important; text-align: center; }
         .cv-demo-selectable.active { outline: 2px solid var(--cv-accent); border-color: transparent; }
         .cv-theme-swatch { width: 20px; height: 20px; border-radius: 3px; margin: 0 auto 5px; cursor: pointer !important; }
 
-        /* Ressources Form */
         #cv-resource-form { background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid var(--cv-border); margin-bottom: 15px; display: none; }
-        .cv-upload-trigger { 
-            width: 100%; padding: 20px; border: 2px dashed var(--cv-accent); border-radius: 8px; 
-            text-align: center; color: var(--cv-accent); cursor: pointer !important; font-size: 0.8rem;
-        }
+        .cv-upload-trigger { width: 100%; padding: 20px; border: 2px dashed var(--cv-accent); border-radius: 8px; text-align: center; color: var(--cv-accent); cursor: pointer !important; font-size: 0.8rem; }
 
-        /* Partage & Boutons */
         .cv-share-group { position: relative; margin-bottom: 10px; }
         .cv-share-field { background: #f3f4f6; padding: 10px 60px 10px 10px; border-radius: 6px; font-size: 0.75rem; border: 1px solid var(--cv-border); width: 100%; color: #6b7280; }
-        .cv-copy-btn { 
-            position: absolute; right: 5px; top: 50%; transform: translateY(-50%); 
-            background: var(--cv-accent); color: white; border: none; padding: 4px 8px; border-radius: 4px; font-size: 0.65rem; cursor: pointer !important;
-        }
+        .cv-copy-btn { position: absolute; right: 5px; top: 50%; transform: translateY(-50%); background: var(--cv-accent); color: white; border: none; padding: 4px 8px; border-radius: 4px; font-size: 0.65rem; cursor: pointer !important; }
 
         .cv-btn-action { cursor: pointer !important; }
         .cv-btn-main { background: var(--cv-accent); color: white; border: none; cursor: pointer !important; }
 
-        /* Stats */
         .cv-stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
         .cv-stat-card { border: 1px solid var(--cv-border); padding: 10px; border-radius: 6px; text-align: center; background: #fff; }
         .cv-stat-val { display: block; font-size: 1.1rem; color: var(--cv-accent); }
 
-        /* --- COLONNE DROITE (60%) --- */
+        /* --- COLONNE DROITE --- */
         .cv-demo-chat {
             width: 60%; display: flex; flex-direction: column; background: var(--cv-chat-bg); position: relative; transition: all 0.3s;
         }
 
-        /* Effets de Fade (Gradient) */
-        .cv-demo-chat::before {
-            content: ''; position: absolute; top: 70px; left: 0; right: 0; height: 40px;
-            background: linear-gradient(to bottom, var(--cv-chat-bg), transparent); z-index: 2; pointer-events: none;
-        }
-        .cv-demo-chat::after {
-            content: ''; position: absolute; bottom: 120px; left: 0; right: 0; height: 40px;
-            background: linear-gradient(to top, var(--cv-chat-bg), transparent); z-index: 2; pointer-events: none;
-        }
+        .cv-demo-chat::before { content: ''; position: absolute; top: 70px; left: 0; right: 0; height: 60px; background: linear-gradient(to bottom, var(--cv-chat-bg), transparent); z-index: 2; pointer-events: none; }
+        .cv-demo-chat::after { content: ''; position: absolute; bottom: 120px; left: 0; right: 0; height: 60px; background: linear-gradient(to top, var(--cv-chat-bg), transparent); z-index: 2; pointer-events: none; }
 
         .cv-demo-chat-header {
             padding: 20px; background: rgba(255,255,255,0.7); backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 15px; z-index: 10;
+            border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: space-between; z-index: 10;
         }
 
-        .cv-demo-messages {
-            flex-grow: 1; padding: 40px 25px; overflow-y: auto; display: flex; flex-direction: column;
-        }
+        .cv-demo-messages { flex-grow: 1; padding: 60px 25px; overflow-y: scroll; display: flex; flex-direction: column; }
         .cv-messages-inner { margin-top: auto; display: flex; flex-direction: column; gap: 25px; }
 
         .cv-msg { max-width: 85%; display: flex; flex-direction: column; }
         .cv-msg-agent { align-self: flex-start; }
         .cv-msg-user { align-self: flex-end; align-items: flex-end; }
 
-        .cv-bubble { padding: 14px 18px; border-radius: 18px; font-size: 0.95rem; line-height: 1.4; }
+        .cv-bubble { padding: 14px 18px; border-radius: 18px; font-size: 0.95rem; line-height: 1.4; white-space: pre-wrap; }
         .cv-msg-agent .cv-bubble { background: var(--cv-bubble-agent); color: var(--cv-text-main); border: 1px solid var(--cv-border); }
         .cv-msg-user .cv-bubble { background: var(--cv-bubble-user); color: #fff; }
 
@@ -740,26 +728,27 @@ width: 100%;
         .cv-react-circle { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--cv-border); background: #fff; cursor: pointer !important; }
         .cv-react-label { font-size: 0.55rem; color: var(--cv-text-muted); margin-top: 3px; cursor: pointer !important; }
 
-        /* Thinking & Typing */
+        /* Animation Réflexion Wave sur texte */
         #cv-thinking-ui { display: none; padding: 15px; font-size: 0.85rem; color: var(--cv-text-muted); }
-        .cv-wave span { display: inline-block; width: 4px; height: 4px; background: var(--cv-text-muted); border-radius: 50%; animation: cvWave 1.3s infinite; margin: 0 1px; }
-        @keyframes cvWave { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-6px); } }
+        .cv-text-wave span { display: inline-block; animation: cvWaveText 1.2s infinite; }
+        @keyframes cvWaveText {
+            0%, 40%, 100% { transform: translateY(0); }
+            20% { transform: translateY(-4px); }
+        }
 
-        /* Input Area */
         .cv-chat-input-area { padding: 20px; z-index: 10; position: relative; }
         .cv-input-box { background: #fff; border: 1px solid var(--cv-border); border-radius: 30px; padding: 10px 20px; display: flex; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
         .cv-input-box input { flex-grow: 1; border: none; outline: none; padding: 8px; background: transparent; cursor: text !important; }
         .cv-disclaimer { font-size: 0.65rem; color: #9ca3af; text-align: center; margin-top: 8px; display: block; }
 
-        /* Thèmes Dark */
         .theme-dark { --cv-chat-bg: #0f172a; --cv-bubble-agent: #1e293b; --cv-text-main: #f8fafc; --cv-border: #334155; }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .cv-demo-wrapper { flex-direction: column; height: auto; }
-            .cv-demo-config, .cv-demo-chat { width: 100%; }
-            .cv-demo-config { border-right: none; border-bottom: 1px solid var(--cv-border); height: 500px; }
-            .cv-demo-chat { height: 600px; }
+            .cv-demo-wrapper { flex-direction: column; height: auto; border: none; }
+            .cv-demo-config { width: 100%; overflow: visible; height: auto; }
+            .cv-demo-chat { width: 100%; height: 700px; position: sticky; bottom: 0; }
+            .cv-demo-messages { height: 400px; }
         }
     </style>
 
@@ -779,30 +768,19 @@ width: 100%;
 
             <div class="cv-demo-section-title">Thème Interface</div>
             <div class="cv-demo-grid">
-                <div class="cv-demo-selectable active" data-accent="#4f46e5" data-bg="#f9fafb" data-mode="light">
-                    <div class="cv-theme-swatch" style="background:#4f46e5"></div><span style="font-size:0.6rem">Classic</span>
-                </div>
-                <div class="cv-demo-selectable" data-accent="#ec4899" data-bg="#fff1f2" data-mode="light">
-                    <div class="cv-theme-swatch" style="background:#ec4899"></div><span style="font-size:0.6rem">Gum</span>
-                </div>
-                <div class="cv-demo-selectable" data-accent="#06b6d4" data-bg="#ecfeff" data-mode="light">
-                    <div class="cv-theme-swatch" style="background:#06b6d4"></div><span style="font-size:0.6rem">Ice</span>
-                </div>
-                <div class="cv-demo-selectable" data-accent="#8b5cf6" data-bg="#f5f3ff" data-mode="light">
-                    <div class="cv-theme-swatch" style="background:#8b5cf6"></div><span style="font-size:0.6rem">Funky</span>
-                </div>
-                <div class="cv-demo-selectable" data-accent="#10b981" data-bg="#0f172a" data-mode="dark">
-                    <div class="cv-theme-swatch" style="background:#10b981"></div><span style="font-size:0.6rem">Plant Dark</span>
-                </div>
-                <div class="cv-demo-selectable" data-accent="#f59e0b" data-bg="#020617" data-mode="dark">
-                    <div class="cv-theme-swatch" style="background:#f59e0b"></div><span style="font-size:0.6rem">Night</span>
-                </div>
+                <div class="cv-demo-selectable active" data-accent="#4f46e5" data-bg="#f9fafb" data-mode="light"><div class="cv-theme-swatch" style="background:#4f46e5"></div><span style="font-size:0.6rem">Classic</span></div>
+                <div class="cv-demo-selectable" data-accent="#ec4899" data-bg="#fff1f2" data-mode="light"><div class="cv-theme-swatch" style="background:#ec4899"></div><span style="font-size:0.6rem">Gum</span></div>
+                <div class="cv-demo-selectable" data-accent="#06b6d4" data-bg="#ecfeff" data-mode="light"><div class="cv-theme-swatch" style="background:#06b6d4"></div><span style="font-size:0.6rem">Ice</span></div>
+                <div class="cv-demo-selectable" data-accent="#8b5cf6" data-bg="#f5f3ff" data-mode="light"><div class="cv-theme-swatch" style="background:#8b5cf6"></div><span style="font-size:0.6rem">Funky</span></div>
+                <div class="cv-demo-selectable" data-accent="#10b981" data-bg="#0f172a" data-mode="dark"><div class="cv-theme-swatch" style="background:#10b981"></div><span style="font-size:0.6rem">Plant Dark</span></div>
+                <div class="cv-demo-selectable" data-accent="#f59e0b" data-bg="#020617" data-mode="dark"><div class="cv-theme-swatch" style="background:#f59e0b"></div><span style="font-size:0.6rem">Night</span></div>
             </div>
 
             <div class="cv-demo-section-title">Ressources</div>
             <div id="cv-resource-container"></div>
             
             <div id="cv-resource-form">
+                <input type="hidden" id="cv-edit-id" value="">
                 <input type="text" id="cv-res-name" class="cv-demo-input" placeholder="Nom du document" style="cursor:text !important">
                 <select id="cv-res-type" class="cv-demo-input" onchange="toggleResFields()">
                     <option value="txt">Texte Brute</option>
@@ -812,13 +790,14 @@ width: 100%;
                     <option value="csv">Données CSV</option>
                     <option value="xml">Données XML</option>
                 </select>
-                <div id="field-txt" class="res-field"><textarea class="cv-demo-input" placeholder="Collez votre texte ici..." style="height:80px; cursor:text !important"></textarea></div>
-                <div id="field-url" class="res-field" style="display:none"><input type="text" class="cv-demo-input" placeholder="https://..." style="cursor:text !important"></div>
+                <div id="field-txt" class="res-field"><textarea id="cv-res-txt-val" class="cv-demo-input" placeholder="Collez votre texte ici..." style="height:80px; cursor:text !important"></textarea></div>
+                <div id="field-url" class="res-field" style="display:none"><input type="text" id="cv-res-url-val" class="cv-demo-input" placeholder="https://..." style="cursor:text !important"></div>
                 <div id="field-file" class="res-field" style="display:none"><div class="cv-upload-trigger">Cliquez pour téléverser le fichier</div></div>
                 
                 <button class="cv-demo-input cv-btn-main" onclick="saveResource()">Enregistrer</button>
+                <button class="cv-demo-input cv-btn-action" onclick="closeResForm()" style="background:#eee; border:none">Annuler</button>
             </div>
-            <button class="cv-demo-input cv-btn-action" onclick="showResForm()">+ Ajouter une ressource</button>
+            <button class="cv-demo-input cv-btn-action" onclick="openCreateRes()">+ Ajouter une ressource</button>
 
             <div class="cv-demo-section-title">Publication</div>
             <div class="cv-demo-grid cv-demo-grid-2">
@@ -827,14 +806,8 @@ width: 100%;
             </div>
 
             <div class="cv-demo-section-title">Partager</div>
-            <div class="cv-share-group">
-                <input type="text" class="cv-share-field" value="https://myagentshare.com/x829" disabled>
-                <button class="cv-copy-btn">Copier</button>
-            </div>
-            <div class="cv-share-group">
-                <input type="text" class="cv-share-field" value="<script src='https://textelp.com/w.js'></script>" disabled>
-                <button class="cv-copy-btn">Copier</button>
-            </div>
+            <div class="cv-share-group"><input type="text" class="cv-share-field" value="https://myagentshare.com/x829" disabled><button class="cv-copy-btn">Copier</button></div>
+            <div class="cv-share-group"><input type="text" class="cv-share-field" value="<script src='https://textelp.com/w.js'></script>" disabled><button class="cv-copy-btn">Copier</button></div>
 
             <div class="cv-demo-section-title">Statistiques du mois <button class="cv-action-btn" style="float:right; font-size:0.5rem">Refresh</button></div>
             <div class="cv-stats-grid">
@@ -847,8 +820,11 @@ width: 100%;
 
         <div class="cv-demo-chat" id="cv-chat-col">
             <div class="cv-demo-chat-header">
-                <img id="cv-chat-favicon-view" src="https://via.placeholder.com/30" style="width:30px; height:30px; border-radius:50%">
-                <span id="cv-chat-name-view">Textelp Agent</span>
+                <div style="display:flex; align-items:center; gap:15px">
+                    <img id="cv-chat-favicon-view" src="https://via.placeholder.com/30" style="width:30px; height:30px; border-radius:50%">
+                    <span id="cv-chat-name-view">Textelp Agent</span>
+                </div>
+                <button class="cv-action-btn" style="cursor:pointer !important">Exporter</button>
             </div>
 
             <div class="cv-demo-messages" id="cv-scroll">
@@ -878,7 +854,7 @@ width: 100%;
                     </div>
                 </div>
                 <div id="cv-thinking-ui">
-                    Réflexion <div class="cv-wave"><span></span><span></span><span></span></div>
+                    <div class="cv-text-wave" id="cv-wave-txt"></div>
                 </div>
             </div>
 
@@ -893,7 +869,6 @@ width: 100%;
     </div>
 
     <script>
-        // --- LOGIQUE GÉNÉRALE ---
         const scrollArea = document.getElementById('cv-scroll');
         const nameInput = document.getElementById('cv-name-input');
         
@@ -902,6 +877,11 @@ width: 100%;
             document.getElementById('cv-chat-name-view').innerText = val;
             document.querySelectorAll('.cv-dyn-name').forEach(el => el.innerText = val);
         });
+
+        // Wave Text Effect logic
+        const waveBox = document.getElementById('cv-wave-txt');
+        const waveStr = "Réflexion...";
+        waveBox.innerHTML = waveStr.split('').map((char, i) => `<span style="animation-delay:${i*0.1}s">${char === ' ' ? '&nbsp;' : char}</span>`).join('');
 
         // Thèmes
         document.querySelectorAll('[data-accent]').forEach(btn => {
@@ -917,23 +897,56 @@ width: 100%;
             });
         });
 
-        // Publication
         function setPub(el) {
             document.querySelectorAll('.cv-pub-opt').forEach(opt => opt.classList.remove('active'));
             el.classList.add('active');
         }
 
-        // --- RESSOURCES ---
-        let resList = [{id:1, name:'Guide_Interne.pdf'}];
-        function showResForm() { document.getElementById('cv-resource-form').style.display = 'block'; }
+        // --- RESSOURCES LOGIC (FIXED) ---
+        let resList = [{id: 1, name: 'Guide_Interne.pdf', type: 'file'}];
         
+        function openCreateRes() {
+            document.getElementById('cv-edit-id').value = '';
+            document.getElementById('cv-res-name').value = '';
+            document.getElementById('cv-res-txt-val').value = '';
+            document.getElementById('cv-res-url-val').value = '';
+            document.getElementById('cv-resource-form').style.display = 'block';
+        }
+
+        function closeResForm() { document.getElementById('cv-resource-form').style.display = 'none'; }
+
         function toggleResFields() {
             const type = document.getElementById('cv-res-type').value;
             document.querySelectorAll('.res-field').forEach(f => f.style.display = 'none');
-            if(type === 'txt') document.getElementById('field-txt').style.display = 'block';
-            else if(type === 'url') document.getElementById('field-url').style.display = 'block';
-            else document.getElementById('field-file').style.display = 'block';
+            document.getElementById('field-' + (['txt','url'].includes(type) ? type : 'file')).style.display = 'block';
         }
+
+        function saveResource() {
+            const id = document.getElementById('cv-edit-id').value;
+            const name = document.getElementById('cv-res-name').value;
+            const type = document.getElementById('cv-res-type').value;
+            if(!name) return;
+
+            if(id) { // Mode Edit
+                const index = resList.findIndex(r => r.id == id);
+                resList[index] = { ...resList[index], name: name, type: type };
+            } else { // Mode Create
+                resList.push({ id: Date.now(), name: name, type: type });
+            }
+            closeResForm();
+            renderRes();
+        }
+
+        function editRes(id) {
+            const item = resList.find(r => r.id == id);
+            document.getElementById('cv-edit-id').value = item.id;
+            document.getElementById('cv-res-name').value = item.name;
+            document.getElementById('cv-res-type').value = item.type || 'file';
+            toggleResFields();
+            document.getElementById('cv-resource-form').style.display = 'block';
+        }
+
+        function delRes(id) { resList = resList.filter(r => r.id !== id); renderRes(); }
 
         function renderRes() {
             const container = document.getElementById('cv-resource-container');
@@ -941,37 +954,27 @@ width: 100%;
                 <div class="cv-stat-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; text-align:left">
                     <span style="font-size:0.75rem">${r.name}</span>
                     <div>
-                        <button class="cv-action-btn" onclick="showResForm()">Modifier</button>
+                        <button class="cv-action-btn" onclick="editRes(${r.id})">Modifier</button>
                         <button class="cv-action-btn" onclick="delRes(${r.id})">Supprimer</button>
                     </div>
                 </div>
             `).join('');
         }
-        function delRes(id) { resList = resList.filter(r => r.id !== id); renderRes(); }
-        function saveResource() {
-            const n = document.getElementById('cv-res-name').value;
-            if(n) resList.push({id:Date.now(), name:n});
-            document.getElementById('cv-resource-form').style.display = 'none';
-            renderRes();
-        }
         renderRes();
 
-        // --- CHAT LOGIC ---
+        // --- CHAT LOGIC (FIXED SPACES) ---
         function handleSend() {
             const input = document.getElementById('cv-user-input');
             const val = input.value.trim();
             if(!val) return;
-
             appendMsg('Vous', val, 'user');
             input.value = '';
-            
             const thinking = document.getElementById('cv-thinking-ui');
             thinking.style.display = 'block';
             scrollArea.scrollTop = scrollArea.scrollHeight;
-
             setTimeout(() => {
                 thinking.style.display = 'none';
-                typeMsg("Bravo pour votre premier message! Vous êtes en version d'essai, ouvrez un compte Textelp pour déployer votre agent.");
+                typeMsg("Bravo pour votre premier message ! Vous êtes en version d'essai, ouvrez un compte Textelp pour déployer votre agent.");
             }, 3000);
         }
 
@@ -980,11 +983,7 @@ width: 100%;
             const div = document.createElement('div');
             div.className = `cv-msg cv-msg-${type}`;
             const meta = type === 'user' ? 'Vous' : nameInput.value;
-            div.innerHTML = `
-                <span class="cv-msg-meta">${meta}</span>
-                <div class="cv-bubble">${text}</div>
-                ${type === 'user' ? '<span class="cv-msg-meta" style="margin-top:5px">Just now</span>' : ''}
-            `;
+            div.innerHTML = `<span class="cv-msg-meta">${meta}</span><div class="cv-bubble">${text}</div>${type === 'user' ? '<span class="cv-msg-meta" style="margin-top:5px">Just now</span>' : ''}`;
             container.appendChild(div);
             scrollArea.scrollTop = scrollArea.scrollHeight;
         }
@@ -995,11 +994,11 @@ width: 100%;
             div.className = 'cv-msg cv-msg-agent';
             div.innerHTML = `<span class="cv-msg-meta cv-dyn-name">${nameInput.value}</span><div class="cv-bubble"></div>`;
             container.appendChild(div);
-            
             const bubble = div.querySelector('.cv-bubble');
             let i = 0;
             const interval = setInterval(() => {
-                bubble.innerText += text[i];
+                // Utilisation de innerHTML pour préserver les espaces et le flow
+                bubble.innerHTML = text.substring(0, i + 1);
                 i++;
                 scrollArea.scrollTop = scrollArea.scrollHeight;
                 if(i >= text.length) {
@@ -1014,10 +1013,7 @@ width: 100%;
             }, 30);
         }
 
-        // Entrée clavier
         document.getElementById('cv-user-input').addEventListener('keypress', (e) => { if(e.key === 'Enter') handleSend(); });
-        
-        // Init Scroll
         scrollArea.scrollTop = scrollArea.scrollHeight;
     </script>
 </div>
