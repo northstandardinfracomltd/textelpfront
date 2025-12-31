@@ -44,12 +44,21 @@ h1,h2,h3,h4 {
 
 /* ================= STICKY BAR ================= */
 .sticky-bar {
-background: #674eff !important;
-    border-bottom: 1px solid #674eff;
+
+    background: #110852 !important;
     padding: 14px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 99%;
+    margin: auto;
+    margin-top: 7px;
+    border-radius: 10px;
+    border: 1px solid #41358c;
+    margin-bottom: -90px;
 }
 
 .sticky-bar button {
@@ -76,9 +85,11 @@ section { padding:100px 20px; }
 
 /* ================= HERO ================= */
 .hero {
-color: #fff;
-background: radial-gradient(#281698, #020248) !important;
-    background-size: 100% 100%, 120px 120px, 120px 120px, 30px 30px, 30px 30px;
+
+      color: #fff;
+    background: radial-gradient(#281698, #020248) !important;
+    padding: 100px 20px !important;
+    padding-bottom: 150px !important;
 }
 
 .hero-grid {
@@ -219,8 +230,11 @@ background: radial-gradient(#281698, #020248) !important;
 
 /* ================= SECTION B ================= */
 .section-b {
-  display:block;    max-width: 1000px !important;
+display: grid;
+    max-width: 1400px !important;
     padding: 10px;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
 }
 .card {
     display: grid;
@@ -526,6 +540,8 @@ margin: auto;
 
 {
 width: 100%;
+    margin-top: -380px;
+    margin-bottom: -200px;
 
 }
 
@@ -575,6 +591,7 @@ width: 100%;
 
 <br><br>
 <!-- SECTION B -->
+     <h2  class="booba">Lorem ipsum dolor sit ametA</h2>
 <section class="container section-b">
   <div class="card">
     <div class="card-left"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelpgo1.svg"></div>
