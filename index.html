@@ -567,8 +567,166 @@ width: 100%;
 
 <div class="speculative">
 <div class="sticky-bar">
-      <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/xc.svg" class="logo">
-<a href="connexion.html" class="iso">Connexion</a>
+<div class="sticky-bar" style="background: #000; padding: 10px 20px; display: flex; align-items: center;">
+    <style>
+        /* Conteneur interne pour ne pas impacter la sticky-bar parente */
+        .nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-family: 'TextelpA', monospace !important;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Style du texte dynamique */
+        #dynamic-string {
+            font-size: 18px;
+            color: #ffffff;
+            min-width: 150px;
+            display: inline-block;
+            white-space: pre;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .nav-link:hover { opacity: 1; }
+
+        .iso {
+            background: #ffffff;
+            color: #000 !important;
+            padding: 6px 15px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* Animation de clignotement (Blink) */
+        @keyframes charBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .blink-fast { animation: charBlink 0.3s infinite; }
+    </style>
+
+    <div class="nav-content">
+        <div class="nav-left">
+            <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/xc.svg" class="logo" style="height: 30px;">
+            <div id="dynamic-string"></div>
+        </div>
+
+        <div class="nav-right">
+            <a href="#" class="nav-link">Contactez-nous</a>
+            <a href="connexion.html" class="iso nav-link">Connexion</a>
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById('dynamic-string');
+
+        const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+        // --- Moteur d'Animation ---
+
+        async function runAnimation1() {
+            const strings = ["agent_help_", "/ / / \\ \\ \\", "— — —", "? @ ? @ ?", "agent_help_"];
+            
+            for (let loop = 0; loop < 2; loop++) {
+                for (let i = 0; i < strings.length; i++) {
+                    if (i === 4) { // Cas spécial E : Blink caractère par caractère
+                        display.innerHTML = "";
+                        const target = strings[i];
+                        for (let char of target) {
+                            const span = document.createElement('span');
+                            span.innerText = char;
+                            display.appendChild(span);
+                        }
+                        
+                        let endTime = Date.now() + 10000;
+                        while (Date.now() < endTime) {
+                            const spans = display.querySelectorAll('span');
+                            const randomSpan = spans[Math.floor(Math.random() * spans.length)];
+                            randomSpan.classList.add('blink-fast');
+                            await sleep(200);
+                            randomSpan.classList.remove('blink-fast');
+                        }
+                    } else {
+                        // Remplacement caractère par caractère (Simple transition)
+                        display.innerText = strings[i];
+                        await sleep(1500);
+                    }
+                }
+            }
+        }
+
+        async function runAnimation2() {
+            for (let loop = 0; loop < 3; loop++) {
+                const steps = [
+                    "_ _ _ dialog _ _ _", "_ _ _ dialog _ _", "_ _ _ dialog _", "_ _ _ dialog",
+                    "_ _ _ dialog _ _", "_ _ _ dialog _ _ _", "_ _  dialog _ _ _", "_  dialog _ _ _",
+                    "dialog _ _ _", "_  dialog _ _ _", "_ _  dialog _ _ _", "_ _ _ dialog _ _ _"
+                ];
+                for (let step of steps) {
+                    display.innerText = step;
+                    await sleep(1000); // 1 seconde par étape = 12 secondes total
+                }
+            }
+        }
+
+        async function typeAndBlink(text) {
+            display.innerText = "";
+            for (let char of text) {
+                display.innerText += char;
+                await sleep(100);
+            }
+            for (let i = 0; i < 4; i++) {
+                display.style.opacity = "0";
+                await sleep(200);
+                display.style.opacity = "1";
+                await sleep(200);
+            }
+        }
+
+        async function runAnimation3() {
+            await typeAndBlink("!collec /");
+            await typeAndBlink("!resources… /");
+            await typeAndBlink("!context… /");
+        }
+
+        async function runAnimation4() {
+            await typeAndBlink("sources≈ok≈1");
+            await typeAndBlink("knowledge≈ok≈1");
+            await typeAndBlink("process≈ok≈1");
+        }
+
+        async function mainLoop() {
+            while (true) {
+                await runAnimation1();
+                await runAnimation2();
+                await runAnimation3();
+                await runAnimation4();
+            }
+        }
+
+        mainLoop();
+    </script>
+</div>
 </div>
 </div>
 
