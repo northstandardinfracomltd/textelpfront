@@ -605,6 +605,9 @@ width: 100%;
 <br>
 <!-- SECTION C -->
 
+<div class="preventiaXBL"></div>
+   <h2  class="booba">Paramètrage simplifié et usage agréable. Essayez l'interface.</h2>
+   </div>
 
 <div class="cv-demo-container">
     <style>
@@ -1027,6 +1030,182 @@ width: 100%;
     </script>
 </div>
 
+
+
+
+
+
+<div class="tx-logos-section">
+    <style>
+        @font-face {
+            font-family: 'TextelpA';
+            src: local('sans-serif');
+        }
+
+        .tx-logos-wrapper {
+            width: 100%;
+            max-width: 1000px;
+            margin: 60px auto;
+            text-align: center;
+            font-family: 'TextelpA', sans-serif !important;
+            font-weight: 100 !important;
+            color: #1f2937;
+        }
+
+        .tx-logos-headline {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            padding: 0 20px;
+            line-height: 1.5;
+            color: #6b7280;
+        }
+
+        /* Grille des logos */
+        .tx-logos-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            align-items: center;
+            justify-items: center;
+        }
+
+        /* Conteneur d'un emplacement de logo (Slot) */
+        .tx-logo-slot {
+            width: 160px;
+            height: 80px;
+            position: relative;
+            overflow: hidden; /* Pour l'effet de swipe */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tx-logo-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s;
+            filter: grayscale(100%);
+            opacity: 0.7;
+        }
+
+        .tx-logo-img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        /* Classes de mouvement */
+        .tx-swipe-up-out { transform: translateY(-100%); opacity: 0; }
+        .tx-swipe-up-in { transform: translateY(100%); opacity: 0; }
+        
+        .tx-swipe-down-out { transform: translateY(100%); opacity: 0; }
+        .tx-swipe-down-in { transform: translateY(-100%); opacity: 0; }
+
+        .tx-active { transform: translateY(0); opacity: 0.7; }
+
+        /* Responsive Mobile */
+        @media (max-width: 768px) {
+            .tx-logos-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+            }
+            .tx-logo-slot { width: 120px; }
+            /* On ne montre que 4 slots au total sur mobile aussi, mais en 2x2 */
+        }
+    </style>
+
+    <div class="tx-logos-wrapper">
+        <h2 class="tx-logos-headline">
+            The world's most popular workflow automation platform for technical teams including
+        </h2>
+
+        <div class="tx-logos-grid">
+            <div class="tx-logo-slot" id="slot-0">
+                <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2026.svg" class="tx-logo-img tx-active">
+            </div>
+            <div class="tx-logo-slot" id="slot-1">
+                <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2026.svg" class="tx-logo-img tx-active">
+            </div>
+            <div class="tx-logo-slot" id="slot-2">
+                <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2026.svg" class="tx-logo-img tx-active">
+            </div>
+            <div class="tx-logo-slot" id="slot-3">
+                <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2026.svg" class="tx-logo-img tx-active">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const allLogos = [
+                "https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2026.svg",
+                "https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2026.svg",
+                "https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2026.svg",
+                "https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2026.svg",
+                "https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2026.svg",
+                "https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2026.svg",
+                "https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2026.svg",
+                "https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2026.svg",
+                "https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2026.svg",
+                "https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2026.svg",
+                "https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2026.svg",
+                "https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2026.svg"
+            ];
+
+            // Indices des logos actuellement affichés dans les 4 slots
+            let currentIndices = [0, 1, 2, 3];
+            let nextSlotToUpdate = 0;
+
+            function updateNextLogo() {
+                const slotId = `slot-${nextSlotToUpdate}`;
+                const container = document.getElementById(slotId);
+                const oldImg = container.querySelector('.tx-active');
+                
+                // Trouver un logo qui n'est pas déjà affiché
+                let nextLogoIndex;
+                do {
+                    nextLogoIndex = Math.floor(Math.random() * allLogos.length);
+                } while (currentIndices.includes(nextLogoIndex));
+
+                // Mettre à jour l'index
+                currentIndices[nextSlotToUpdate] = nextLogoIndex;
+
+                // Décider de la direction aléatoire (up ou down)
+                const isUp = Math.random() > 0.5;
+                const outClass = isUp ? 'tx-swipe-up-out' : 'tx-swipe-down-out';
+                const inClassInitial = isUp ? 'tx-swipe-up-in' : 'tx-swipe-down-in';
+
+                // Créer la nouvelle image
+                const newImg = document.createElement('img');
+                newImg.src = allLogos[nextLogoIndex];
+                newImg.className = `tx-logo-img ${inClassInitial}`;
+
+                container.appendChild(newImg);
+
+                // Déclencher l'animation
+                setTimeout(() => {
+                    oldImg.classList.remove('tx-active');
+                    oldImg.classList.add(outClass);
+
+                    newImg.classList.remove(inClassInitial);
+                    newImg.classList.add('tx-active');
+                }, 50);
+
+                // Nettoyer l'ancienne image après l'animation
+                setTimeout(() => {
+                    oldImg.remove();
+                }, 650);
+
+                // Passer au slot suivant (0 -> 1 -> 2 -> 3 -> 0...)
+                nextSlotToUpdate = (nextSlotToUpdate + 1) % 4;
+            }
+
+            // Lancer la rotation toutes les 2 secondes
+            setInterval(updateNextLogo, 2000);
+        })();
+    </script>
+</div>
 
 
 
