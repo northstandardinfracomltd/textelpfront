@@ -620,13 +620,13 @@ width: 100%;
             cursor: default;
         }
 
-        /* Masquage des scrollbars sur tous les navigateurs */
+        /* Masquage des scrollbars */
         * {
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE/Edge */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
         *::-webkit-scrollbar {
-            display: none; /* Chrome/Safari */
+            display: none;
         }
 
         :root {
@@ -728,12 +728,19 @@ width: 100%;
         .cv-react-circle { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--cv-border); background: #fff; cursor: pointer !important; }
         .cv-react-label { font-size: 0.55rem; color: var(--cv-text-muted); margin-top: 3px; cursor: pointer !important; }
 
-        /* Animation Réflexion Wave sur texte */
-        #cv-thinking-ui { display: none; padding: 15px; font-size: 0.85rem; color: var(--cv-text-muted); }
-        .cv-text-wave span { display: inline-block; animation: cvWaveText 1.2s infinite; }
-        @keyframes cvWaveText {
-            0%, 40%, 100% { transform: translateY(0); }
-            20% { transform: translateY(-4px); }
+        /* Animation Réflexion Shimmer (fixe mais qui brille) */
+        #cv-thinking-ui { display: none; padding: 15px; font-size: 0.85rem; }
+        .cv-shimmer-text {
+            background: linear-gradient(90deg, #9ca3af 0%, #1f2937 50%, #9ca3af 100%);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: cvShimmer 2s linear infinite;
+            display: inline-block;
+        }
+        @keyframes cvShimmer {
+            to { background-position: 200% center; }
         }
 
         .cv-chat-input-area { padding: 20px; z-index: 10; position: relative; }
@@ -854,7 +861,7 @@ width: 100%;
                     </div>
                 </div>
                 <div id="cv-thinking-ui">
-                    <div class="cv-text-wave" id="cv-wave-txt"></div>
+                    <span class="cv-shimmer-text">Réflexion en cours...</span>
                 </div>
             </div>
 
@@ -878,10 +885,13 @@ width: 100%;
             document.querySelectorAll('.cv-dyn-name').forEach(el => el.innerText = val);
         });
 
-        // Wave Text Effect logic
-        const waveBox = document.getElementById('cv-wave-txt');
-        const waveStr = "Réflexion...";
-        waveBox.innerHTML = waveStr.split('').map((char, i) => `<span style="animation-delay:${i*0.1}s">${char === ' ' ? '&nbsp;' : char}</span>`).join('');
+        document.getElementById('cv-file-hidden').addEventListener('change', function(e) {
+            if (this.files && this.files[0]) {
+                const url = URL.createObjectURL(this.files[0]);
+                document.getElementById('cv-favicon-main').src = url;
+                document.getElementById('cv-chat-favicon-view').src = url;
+            }
+        });
 
         // Thèmes
         document.querySelectorAll('[data-accent]').forEach(btn => {
@@ -902,7 +912,7 @@ width: 100%;
             el.classList.add('active');
         }
 
-        // --- RESSOURCES LOGIC (FIXED) ---
+        // --- RESSOURCES LOGIC ---
         let resList = [{id: 1, name: 'Guide_Interne.pdf', type: 'file'}];
         
         function openCreateRes() {
@@ -927,10 +937,10 @@ width: 100%;
             const type = document.getElementById('cv-res-type').value;
             if(!name) return;
 
-            if(id) { // Mode Edit
+            if(id) {
                 const index = resList.findIndex(r => r.id == id);
                 resList[index] = { ...resList[index], name: name, type: type };
-            } else { // Mode Create
+            } else {
                 resList.push({ id: Date.now(), name: name, type: type });
             }
             closeResForm();
@@ -962,7 +972,7 @@ width: 100%;
         }
         renderRes();
 
-        // --- CHAT LOGIC (FIXED SPACES) ---
+        // --- CHAT LOGIC ---
         function handleSend() {
             const input = document.getElementById('cv-user-input');
             const val = input.value.trim();
@@ -997,7 +1007,6 @@ width: 100%;
             const bubble = div.querySelector('.cv-bubble');
             let i = 0;
             const interval = setInterval(() => {
-                // Utilisation de innerHTML pour préserver les espaces et le flow
                 bubble.innerHTML = text.substring(0, i + 1);
                 i++;
                 scrollArea.scrollTop = scrollArea.scrollHeight;
