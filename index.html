@@ -1445,9 +1445,9 @@ async function transitionText(target, speed) {
             --color-none: #4285f4;    
         }
 
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: var(--gm-bg-color); }
 
         .gm-main-wrapper {
-            margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: var(--gm-bg-color);
             position: relative;
             width: 100%;
             height: 100vh;
@@ -1781,6 +1781,286 @@ async function transitionText(target, speed) {
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @font-face {
+            font-family: 'TextelpA';
+            src: local('TextelpA');
+            font-weight: 100;
+        }
+
+        :root {
+            --gm-bg-color: #fcfcfc;
+            --gm-grid-light: #f0f0f0;
+            --gm-grid-dark: #e2e2e2;
+            --gm-topic-bg: #f5f5f5;
+            --gm-text-main: #202124;
+            --gm-font-family: 'TextelpA', sans-serif;
+            --color-none: #4285f4;    
+            --color-perfect: #8e24aa; 
+            --color-partial: #d81b60; 
+        }
+
+
+        .gm-main-wrapper {
+            margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: var(--gm-bg-color);
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: 
+                linear-gradient(var(--gm-grid-light) 1px, transparent 1px),
+                linear-gradient(90deg, var(--gm-grid-light) 1px, transparent 1px),
+                linear-gradient(var(--gm-grid-dark) 1px, transparent 1px),
+                linear-gradient(90deg, var(--gm-grid-dark) 1px, transparent 1px);
+            background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
+            font-family: var(--gm-font-family);
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .gm-topics-container { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+
+        .gm-floating-topic {
+            position: absolute;
+            display: flex; align-items: center;
+            padding: 10px 18px;
+            background: var(--gm-topic-bg);
+            border: 1px solid #e0e0e0;
+            border-radius: 40px;
+            white-space: nowrap;
+            user-select: none;
+            z-index: 2;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            pointer-events: auto;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            will-change: left, top;
+        }
+
+        .gm-dot { width: 10px; height: 10px; border-radius: 50%; margin-right: 12px; position: relative; }
+        
+        .gm-shimmer-active {
+            background: linear-gradient(90deg, #202124 20%, #8e24aa 50%, #202124 80%);
+            background-size: 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shimmer 4s linear infinite;
+        }
+        @keyframes shimmer { 0% { background-position: -200%; } 100% { background-position: 200%; } }
+
+        .gm-dot-active::after {
+            content: ''; position: absolute; inset: -6px; border: 1.5px dashed currentColor;
+            border-radius: 50%; animation: rotate 4s linear infinite;
+        }
+        @keyframes rotate { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+
+        .gm-center-card {
+            position: relative; z-index: 50; width: 300px; padding: 30px;
+            background: white; text-align: center; box-shadow: 0 25px 70px rgba(0,0,0,0.1);
+            -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0,50 C0,5 5,0 50,0 C95,0 100,5 100,50 C100,95 95,100 50,100 C5,100 0,95 0,50' fill='black'/%3E%3C/svg%3E");
+        }
+
+        .gm-search-input {
+            width: 100%; padding: 12px 18px; border: 1px solid #ddd;
+            border-radius: 20px; outline: none; font-family: var(--gm-font-family); font-size: 14px;
+        }
+
+        .gm-warning { 
+            color: #d93025; font-size: 12px; margin-top: 15px; opacity: 0;
+            transition: opacity 0.4s ease; display: none;
+        }
+        .gm-warning.show { opacity: 1; display: block; }
+
+        .gm-modal-overlay {
+            position: fixed; inset: 0; background: rgba(255,255,255,0.85);
+            z-index: 2000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(10px);
+        }
+        .gm-answer-modal {
+            background: white; padding: 40px; border-radius: 28px;
+            max-width: 350px; width: 85%; box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            transform: scale(0.9); transition: all 0.3s ease;
+        }
+        .gm-answer-modal.active { transform: scale(1); }
+
+        @keyframes gmFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="gm-main-wrapper">
+    <div class="gm-topics-container" id="topicsContainer"></div>
+    <div class="gm-center-card" id="centerCard">
+        <p style="font-size:13px; color:#5f6368">Interrogez notre intelligence</p>
+        <input type="text" class="gm-search-input" id="gmSearch" placeholder="Recherchez...">
+        <div id="warningMsg" class="gm-warning">Peu de ressources trouvées...</div>
+    </div>
+
+    <div class="gm-modal-overlay" id="modalOverlay">
+        <div class="gm-answer-modal" id="answerModal">
+            <div id="modalTitle" style="font-size: 18px; margin-bottom:20px; color:#4285f4; font-weight:bold"></div>
+            <div id="modalBody" style="font-size: 15px; line-height: 1.6; color: #3c4043;"></div>
+            <div style="text-align: right; margin-top: 30px;">
+                <button class="gm-btn" style="background:#f1f3f4; border:none; padding:10px 20px; border-radius:10px; cursor:pointer" onclick="closeModal()">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const dataStore = [
+        { t: "Management d'équipe", r: "Le management moderne repose sur l'empathie et la clarté des objectifs. Favorisez des feedbacks réguliers." },
+        { t: "Intelligence Artificielle", r: "L'IA n'est pas qu'un outil, c'est un partenaire. Apprenez à rédiger des prompts précis pour gagner 2h par jour." },
+        { t: "Cloud Architecture", r: "Privilégiez les architectures scalables et serverless pour réduire vos coûts opérationnels de 30%." },
+        { t: "Cyber-résilience", r: "La sécurité commence par l'humain. Formez vos collaborateurs au phishing avant d'investir dans un firewall." },
+        { t: "UX Design", r: "L'utilisateur n'est pas vous. Testez vos interfaces avec des novices pour identifier les points de friction réels." },
+        { t: "Digital Marketing", r: "L'avenir du marketing est dans la donnée de première main et la personnalisation éthique." },
+        { t: "Analyse de Données", r: "Une donnée sans contexte est un bruit. Concentrez-vous sur les indicateurs qui déclenchent une action." },
+        { t: "Supply Chain", r: "La visibilité en temps réel est le nerf de la guerre. Automatisez vos stocks pour éviter les ruptures." },
+        { t: "Ventes B2B", r: "Arrêtez de vendre, commencez à aider. Le Social Selling sur LinkedIn est devenu incontournable." },
+        { t: "Ressources Humaines", r: "La marque employeur se construit de l'intérieur. Vos salariés sont vos meilleurs ambassadeurs." },
+        { t: "Growth Hacking", r: "Expérimentez vite, échouez vite. Trouvez le levier de croissance avant d'épuiser votre budget." },
+        { t: "Agilité Scrum", r: "Le Scrum Master est un facilitateur, pas un chef. Le succès dépend de l'autonomie de l'équipe." },
+        { t: "Blockchain", r: "La blockchain sécurise la traçabilité. Idéal pour le luxe et l'agroalimentaire." },
+        { t: "DevOps", r: "Le DevOps est une culture de collaboration totale. Automatisez tout le pipeline de déploiement." },
+        { t: "E-commerce", r: "70% de vos clients achètent sur mobile. Facilitez le paiement en un clic pour booster vos ventes." },
+        { t: "SaaS Strategy", r: "Le Churn est votre ennemi. Concentrez-vous sur l'onboarding pour prouver la valeur en moins de 5min." },
+        { t: "Machine Learning", r: "La qualité du modèle dépend de la donnée. 'Garbage in, garbage out' reste la règle d'or." },
+        { t: "Finance Durable", r: "L'investissement ESG est le nouveau standard pour attirer les investisseurs institutionnels." },
+        { t: "Recrutement IT", r: "Le salaire ne suffit plus. Offrez de la flexibilité et des projets techniquement stimulants." },
+        { t: "Innovation RH", r: "L'onboarding virtuel doit être chaleureux. Utilisez la vidéo et le mentorat pour intégrer vos talents." },
+        { t: "Web3", r: "Le Web3 redonne la propriété aux utilisateurs via la décentralisation et les DAO." },
+        { t: "Audit Interne", r: "L'audit doit être perçu comme un conseil stratégique pour sécuriser la croissance." },
+        { t: "Relation Client", r: "L'IA doit passer la main à un humain dès que l'émotion dépasse le factuel." },
+        { t: "Leadership", r: "Le leader de demain sait dire 'je ne sais pas'. L'humilité bâtit la confiance durable." },
+        { t: "Deep Learning", r: "Les réseaux neuronaux nécessitent une puissance de calcul massive. Pensez au coût carbone." }
+    ];
+
+    const container = document.getElementById('topicsContainer');
+    const searchInput = document.getElementById('gmSearch');
+    const warningMsg = document.getElementById('warningMsg');
+    const centerCard = document.getElementById('centerCard');
+    let isLocked = false;
+
+    function getRelevanceColor(topic, keyword) {
+        if (!keyword) return 'var(--color-none)';
+        const k = keyword.toLowerCase();
+        if (topic.t.toLowerCase().includes(k)) return 'var(--color-perfect)';
+        return 'var(--color-none)';
+    }
+
+    function updateDisplay(keyword = '') {
+        const filtered = dataStore.filter(d => d.t.toLowerCase().includes(keyword.toLowerCase()));
+        warningMsg.classList.toggle('show', keyword !== '' && filtered.length < 3);
+
+        container.innerHTML = '';
+        const placedElements = [];
+        const cardBox = centerCard.getBoundingClientRect();
+        const buffer = 20; // Espace entre les topics
+
+        // Limites de l'écran
+        const margin = 15;
+        const screenW = window.innerWidth;
+        const screenH = window.innerHeight;
+
+        filtered.concat(dataStore.filter(d => !filtered.includes(d))).slice(0, 20).forEach((data, i) => {
+            const el = document.createElement('div');
+            el.className = 'gm-floating-topic';
+            const dotColor = getRelevanceColor(data, keyword);
+            el.innerHTML = `<div class="gm-dot" style="background:${dotColor}; color:${dotColor}"></div><span>${data.t}</span>`;
+            container.appendChild(el);
+
+            const elW = el.offsetWidth;
+            const elH = el.offsetHeight;
+
+            let x, y, collisions = 0;
+            let foundPosition = false;
+
+            while (!foundPosition && collisions < 50) {
+                // Tentative de positionnement aléatoire dans le viewport safe
+                x = margin + Math.random() * (screenW - elW - margin * 2);
+                y = margin + Math.random() * (screenH - elH - margin * 2);
+
+                const rectA = { left: x, top: y, right: x + elW, bottom: y + elH };
+
+                // Vérification collision avec le centre
+                const hitCenter = !(rectA.right < cardBox.left - 20 || rectA.left > cardBox.right + 20 || 
+                                    rectA.bottom < cardBox.top - 20 || rectA.top > cardBox.bottom + 20);
+
+                // Vérification collision avec les autres topics déjà placés
+                const hitOthers = placedElements.some(rectB => {
+                    return !(rectA.right < rectB.left - buffer || rectA.left > rectB.right + buffer || 
+                             rectA.bottom < rectB.top - buffer || rectA.top > rectB.bottom + buffer);
+                });
+
+                if (!hitCenter && !hitOthers) {
+                    foundPosition = true;
+                }
+                collisions++;
+            }
+
+            el.style.left = x + 'px';
+            el.style.top = y + 'px';
+            placedElements.push({ left: x, top: y, right: x + elW, bottom: y + elH });
+
+            el.onclick = () => handleTopicClick(el, data);
+            
+            setTimeout(() => {
+                el.style.opacity = '1';
+                el.style.animation = `gmFloat ${3 + Math.random()*2}s ease-in-out infinite`;
+                el.style.animationDelay = `-${Math.random()*5}s`;
+            }, i * 30);
+        });
+    }
+
+    function handleTopicClick(el, data) {
+        if (isLocked) return;
+        isLocked = true;
+        const dot = el.querySelector('.gm-dot');
+        const text = el.querySelector('span');
+        dot.classList.add('gm-dot-active');
+        text.classList.add('gm-shimmer-active');
+
+        setTimeout(() => {
+            openModal(data);
+            dot.classList.remove('gm-dot-active');
+            text.classList.remove('gm-shimmer-active');
+        }, 4000);
+        setTimeout(() => { isLocked = false; }, 10000);
+    }
+
+    function openModal(data) {
+        document.getElementById('modalTitle').innerText = data.t;
+        const body = document.getElementById('modalBody');
+        body.textContent = '';
+        document.getElementById('modalOverlay').style.display = 'flex';
+        setTimeout(() => document.getElementById('answerModal').classList.add('active'), 50);
+        
+        let i = 0;
+        const timer = setInterval(() => {
+            if (i < data.r.length) body.textContent += data.r[i++];
+            else clearInterval(timer);
+        }, 20);
+    }
+
+    function closeModal() {
+        isLocked = false;
+        document.getElementById('answerModal').classList.remove('active');
+        setTimeout(() => { document.getElementById('modalOverlay').style.display = 'none'; }, 300);
+    }
+
+    searchInput.onkeypress = (e) => { if (e.key === 'Enter') updateDisplay(searchInput.value); };
+    window.onresize = () => updateDisplay(searchInput.value);
+    
+    // Initialisation
+    window.onload = () => updateDisplay();
+</script>
+</body>
+</html>
 
 
 <!-- SECTION E -->
