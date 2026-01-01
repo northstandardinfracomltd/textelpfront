@@ -775,7 +775,145 @@ async function transitionText(target, speed) {
   </div>
 </section>
  <div class="illustraBOB">
- <img class="illustraBOBimg" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/illsutration290382329399292.svg">
+<div id="nxl-complex-widget-container">
+    <style>
+        /* Utilisation de variables locales pour une modification facile */
+        #nxl-complex-widget-container {
+            --nxl-neon: #39FF14;
+            --nxl-bg: #050505;
+            --nxl-line-opacity: 0.6;
+            --nxl-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            
+            position: relative;
+            width: 100%;
+            height: 600px;
+            background-color: var(--nxl-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        /* Calque SVG pour la ligature "nœud papillon" */
+        .nxl-svg-connector-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Le Squircle Central (Ligature) */
+        .nxl-main-squircle-node {
+            position: relative;
+            z-index: 10;
+            width: 115px;
+            height: 115px;
+            background: var(--nxl-neon);
+            border-radius: 40px; /* Squircle effect */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 35px rgba(57, 255, 20, 0.4), inset 0 0 15px rgba(255,255,255,0.5);
+            transition: var(--nxl-transition);
+        }
+
+        .nxl-main-squircle-node:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(57, 255, 20, 0.7);
+        }
+
+        .nxl-main-squircle-node img {
+            width: 60%;
+            height: 60%;
+            object-fit: contain;
+        }
+
+        /* Conteneurs de cercles flottants décalés */
+        .nxl-floating-side-panel {
+            position: absolute;
+            z-index: 20;
+            width: 220px;
+            height: 250px;
+        }
+
+        .nxl-panel-left { left: 12%; }
+        .nxl-panel-right { right: 12%; }
+
+        .nxl-icon-circle-item {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(20, 20, 20, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            backdrop-filter: blur(8px);
+            transition: var(--nxl-transition);
+        }
+
+        .nxl-icon-circle-item:hover {
+            border-color: var(--nxl-neon);
+            transform: translateY(-5px);
+        }
+
+        .nxl-icon-circle-item img {
+            width: 35px;
+            height: 35px;
+            opacity: 0.9;
+        }
+
+        /* Positionnement spécifique en triangle décalé */
+        .nxl-pos-top { top: 0; left: 20%; }
+        .nxl-pos-mid { top: 40%; } /* Décalé vers l'extérieur */
+        .nxl-panel-left .nxl-pos-mid { left: 55%; } 
+        .nxl-panel-right .nxl-pos-mid { right: 55%; }
+        .nxl-pos-bot { bottom: 0; left: 20%; }
+
+        /* Définition des couleurs de lignes via SVG */
+        .nxl-path-st0 { stroke: url(#nxl-grad-multi); }
+        .nxl-path-center { stroke: var(--nxl-neon); }
+    </style>
+
+    <svg class="nxl-svg-connector-layer" viewBox="0 0 1000 600" preserveAspectRatio="none">
+        <defs>
+            <linearGradient id="nxl-grad-multi" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#FF00CC" /> <stop offset="45%" stop-color="#39FF14" /> <stop offset="55%" stop-color="#39FF14" /> <stop offset="100%" stop-color="#00D4FF" /> </linearGradient>
+        </defs>
+        
+        <path class="nxl-path-st0" d="M 0 80   C 350 80,  450 300, 500 300 C 550 300, 650 80,  1000 80"   stroke-width="1.5" fill="none" opacity="0.4"/>
+        <path class="nxl-path-st0" d="M 0 160  C 350 160, 450 300, 500 300 C 550 300, 650 160, 1000 160"  stroke-width="1.8" fill="none" opacity="0.5"/>
+        <path class="nxl-path-st0" d="M 0 240  C 350 240, 450 300, 500 300 C 550 300, 650 240, 1000 240"  stroke-width="2"   fill="none" opacity="0.7"/>
+        
+        <path class="nxl-path-center" d="M 0 300 L 1000 300" stroke-width="3" fill="none" opacity="1" />
+
+        <path class="nxl-path-st0" d="M 0 360  C 350 360, 450 300, 500 300 C 550 300, 650 360, 1000 360"  stroke-width="2"   fill="none" opacity="0.7"/>
+        <path class="nxl-path-st0" d="M 0 440  C 350 440, 450 300, 500 300 C 550 300, 650 440, 1000 440"  stroke-width="1.8" fill="none" opacity="0.5"/>
+        <path class="nxl-path-st0" d="M 0 520  C 350 520, 450 300, 500 300 C 550 300, 650 520, 1000 520"  stroke-width="1.5" fill="none" opacity="0.4"/>
+    </svg>
+
+    <div class="nxl-floating-side-panel nxl-panel-left">
+        <div class="nxl-icon-circle-item nxl-pos-top"><img src="#" alt="Icon L1"></div>
+        <div class="nxl-icon-circle-item nxl-pos-mid"><img src="#" alt="Icon L2"></div>
+        <div class="nxl-icon-circle-item nxl-pos-bot"><img src="#" alt="Icon L3"></div>
+    </div>
+
+    <div class="nxl-main-squircle-node">
+        <img src="TON_LIEN_S3_ICI" alt="Central Node">
+    </div>
+
+    <div class="nxl-floating-side-panel nxl-panel-right">
+        <div class="nxl-icon-circle-item nxl-pos-top"><img src="#" alt="Icon R1"></div>
+        <div class="nxl-icon-circle-item nxl-pos-mid"><img src="#" alt="Icon R2"></div>
+        <div class="nxl-icon-circle-item nxl-pos-bot"><img src="#" alt="Icon R3"></div>
+    </div>
+</div>
 </div>
 
 <br><br>
