@@ -637,38 +637,67 @@ font-family: 'TextelpA', sans-serif !important; font-weight: 100 !important; fon
 
         const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-        // --- Moteur d'Animation ---
+// --- Moteur d'Animation ---
 
-        async function runAnimation1() {
-            const strings = ["agent_help_", "/ / / \\ \\ \\", "— — —", "? @ ? @ ?", "agent_help_"];
-            
-            for (let loop = 0; loop < 2; loop++) {
-                for (let i = 0; i < strings.length; i++) {
-                    if (i === 4) { // Cas spécial E : Blink caractère par caractère
-                        display.innerHTML = "";
-                        const target = strings[i];
-                        for (let char of target) {
-                            const span = document.createElement('span');
-                            span.innerText = char;
-                            display.appendChild(span);
-                        }
-                        
-                        let endTime = Date.now() + 10000;
-                        while (Date.now() < endTime) {
-                            const spans = display.querySelectorAll('span');
-                            const randomSpan = spans[Math.floor(Math.random() * spans.length)];
-                            randomSpan.classList.add('blink-fast');
-                            await sleep(200);
-                            randomSpan.classList.remove('blink-fast');
-                        }
-                    } else {
-                        // Remplacement caractère par caractère (Simple transition)
-                        display.innerText = strings[i];
-                        await sleep(1500);
-                    }
+async function runAnimation1() {
+    const sequence = ["agent_help_", "/ / / \\ \\ \\", "— — —", "? @ ? @ ?", "agent_help_"];
+    
+    for (let loop = 0; loop < 2; loop++) {
+        // On part du texte actuel ou du premier de la liste
+        let currentText = display.innerText || sequence[0];
+        if (!display.innerText) display.innerText = currentText;
+
+        for (let i = 1; i < sequence.length; i++) {
+            const targetText = sequence[i];
+
+            if (i === 4) { 
+                // --- CAS E : Remplacement progressif + Blink pendant 10s ---
+                await transitionText(targetText, 100); // Transition vers agent_help_
+                
+                // Préparation des spans pour le blink
+                display.innerHTML = "";
+                for (let char of targetText) {
+                    const span = document.createElement('span');
+                    span.innerText = char === " " ? "\u00A0" : char;
+                    display.appendChild(span);
                 }
+                
+                let endTime = Date.now() + 10000;
+                const spans = display.querySelectorAll('span');
+                while (Date.now() < endTime) {
+                    const randomSpan = spans[Math.floor(Math.random() * spans.length)];
+                    randomSpan.classList.add('blink-fast');
+                    await sleep(150);
+                    randomSpan.classList.remove('blink-fast');
+                }
+            } else {
+                // --- CAS A, B, C, D : Remplacement caractère par caractère ---
+                await transitionText(targetText, 80); 
+                await sleep(1000); // Pause une fois le mot transformé
             }
         }
+    }
+}
+
+/**
+ * Fonction utilitaire pour transformer le texte lettre par lettre
+ * @param {string} target - Le texte final à atteindre
+ * @param {number} speed - Vitesse de remplacement en ms
+ */
+async function transitionText(target, speed) {
+    let current = display.innerText.split('');
+    const targetArray = target.split('');
+    const maxLength = Math.max(current.length, targetArray.length);
+
+    for (let j = 0; j < maxLength; j++) {
+        // On remplace le caractère à l'index J
+        current[j] = targetArray[j] !== undefined ? targetArray[j] : "";
+        
+        // On met à jour l'affichage (avec gestion des espaces pour le rendu HTML)
+        display.innerText = current.join('');
+        await sleep(speed);
+    }
+}
 
         async function runAnimation2() {
             for (let loop = 0; loop < 3; loop++) {
