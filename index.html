@@ -1469,7 +1469,7 @@ async function transitionText(target, speed) {
             position: absolute;
             display: flex;
             align-items: center;
-            cursor: grab;
+            cursor: pointer;
             padding: 10px 18px;
             background: var(--gm-topic-bg);
             border: 1px solid #e0e0e0;
@@ -1483,8 +1483,6 @@ async function transitionText(target, speed) {
             opacity: 0;
             will-change: transform, opacity;
         }
-
-        .gm-floating-topic:active { cursor: grabbing; z-index: 1000; }
 
         .gm-dot {
             width: 10px;
@@ -1616,7 +1614,7 @@ async function transitionText(target, speed) {
         { t: "Blockchain", r: "Au-delà de la crypto, la blockchain sécurise la traçabilité. Idéal pour le luxe et l'agroalimentaire." },
         { t: "DevOps", r: "Le DevOps est une culture de collaboration totale entre le dev et l'opérateur. Automatisez tout le pipeline." },
         { t: "E-commerce", r: "Le mobile-first n'est plus une option. 70% de vos clients achètent avec leur pouce, facilitez-leur la vie." },
-        { t: "SaaS Strategy", r: "Le Churn est votre ennemi. Concentrez-vous sur l'onboarding pour que l'utilisateur voit la valeur en < 5min." },
+        { t: "SaaS Strategy", r: "Le Churn est votre enemy. Concentrez-vous sur l'onboarding pour que l'utilisateur voit la valeur en < 5min." },
         { t: "Machine Learning", r: "Le succès d'un modèle dépend de la qualité de l'étiquetage. 'Garbage in, garbage out'." },
         { t: "Finance Durable", r: "L'investissement ESG n'est plus une niche. C'est le standard pour attirer les investisseurs institutionnels." },
         { t: "Recrutement IT", r: "Le salaire ne suffit plus. Offrez de la flexibilité et des projets techniquement stimulants." },
@@ -1656,72 +1654,62 @@ async function transitionText(target, speed) {
         return 'var(--color-none)';
     }
 
-    function getHomogeneousPositions(count) {
+    // ALGORITHME DE ZONAGE SANS SUPERPOSITION
+    function getStrictPositions(count) {
         const positions = [];
         const cardRect = document.getElementById('centerCard').getBoundingClientRect();
         
-        // PARAMÈTRES D'INCLUSION DES BORDS
-        const topicAvgWidth = 160; // Largeur moyenne d'un topic
-        const topicAvgHeight = 45; // Hauteur moyenne d'un topic
-        const safePadding = 20;    // Marge minimale du bord de l'écran
+        // Marges et dimensions moyennes
+        const topicW = 180; 
+        const topicH = 50; 
+        const margin = 20; 
+        const centerAvoidMargin = 40;
 
-        // Zone utile de l'écran (incluant les topics sans débordement)
-        const screenW = window.innerWidth;
-        const screenH = window.innerHeight;
-        
-        const usableWidth = screenW - (topicAvgWidth + safePadding * 2);
-        const usableHeight = screenH - (topicAvgHeight + safePadding * 2);
-
-        const cardMargin = 40; 
-        const cols = 10, rows = 8;
-        const cellWidth = usableWidth / cols;
-        const cellHeight = usableHeight / rows;
-        const availableCells = [];
+        // Grille de cellules exclusives
+        const cols = Math.floor(window.innerWidth / (topicW + margin));
+        const rows = Math.floor(window.innerHeight / (topicH + margin));
+        const cells = [];
 
         for (let r = 0; r < rows; r++) {
             for (let c = 0; c < cols; c++) {
-                // Calcul du centre réel de la cellule en tenant compte de la marge externe
-                const cellCenterX = (c * cellWidth + cellWidth / 2) + (topicAvgWidth/2 + safePadding);
-                const cellCenterY = (r * cellHeight + cellHeight / 2) + (topicAvgHeight/2 + safePadding);
+                const x = c * (topicW + margin) + margin + topicW/2;
+                const y = r * (topicH + margin) + margin + topicH/2;
+
+                // Exclusion du bloc central
+                const overX = x > (cardRect.left - centerAvoidMargin) && x < (cardRect.right + centerAvoidMargin);
+                const overY = y > (cardRect.top - centerAvoidMargin) && y < (cardRect.bottom + centerAvoidMargin);
                 
-                const inCardX = cellCenterX > (cardRect.left - cardMargin) && cellCenterX < (cardRect.right + cardMargin);
-                const inCardY = cellCenterY > (cardRect.top - cardMargin) && cellCenterY < (cardRect.bottom + cardMargin);
-                
-                if (!(inCardX && inCardY)) {
-                    availableCells.push({ c, r });
+                // Exclusion des bords extrêmes
+                const safeX = x > topicW/2 && x < (window.innerWidth - topicW/2);
+                const safeY = y > topicH/2 && y < (window.innerHeight - topicH/2);
+
+                if (!(overX && overY) && safeX && safeY) {
+                    cells.push({ x, y });
                 }
             }
         }
 
-        availableCells.sort(() => Math.random() - 0.5);
-        for (let i = 0; i < count; i++) {
-            const cell = availableCells[i % availableCells.length];
-            const baseX = (cell.c * cellWidth) + (topicAvgWidth/2 + safePadding);
-            const baseY = (cell.r * cellHeight) + (topicAvgHeight/2 + safePadding);
-
-            positions.push({
-                x: baseX + (Math.random() - 0.5) * (cellWidth * 0.5),
-                y: baseY + (Math.random() - 0.5) * (cellHeight * 0.5)
-            });
-        }
-        return positions;
+        // Mélange et sélection
+        cells.sort(() => Math.random() - 0.5);
+        return cells.slice(0, count);
     }
 
     function updateDisplay(keyword = '') {
         const filtered = dataStore.filter(d => d.t.toLowerCase().includes(keyword.toLowerCase()));
+        
         if (keyword !== '' && filtered.length < 5) warningMsg.classList.add('show');
         else warningMsg.classList.remove('show');
 
         Array.from(container.children).forEach((child, i) => {
             setTimeout(() => {
                 child.style.opacity = '0';
-                child.style.transform = 'scale(0.7)';
+                child.style.transform = 'scale(0.7) translate(-50%, -50%)';
                 setTimeout(() => child.remove(), 800);
             }, i * 15);
         });
 
         setTimeout(() => {
-            const pos = getHomogeneousPositions(25);
+            const pos = getStrictPositions(25);
             let list = [...filtered];
             if(list.length < 25) {
                 const extras = dataStore.filter(d => !list.includes(d));
@@ -1729,50 +1717,26 @@ async function transitionText(target, speed) {
             } else list = list.slice(0, 25);
 
             list.forEach((data, i) => {
+                if (!pos[i]) return;
                 const el = document.createElement('div');
                 el.className = 'gm-floating-topic';
-                // Utilisation de transform pour le placement précis au centre du point calculé
                 el.style.left = pos[i].x + 'px';
                 el.style.top = pos[i].y + 'px';
-                el.style.transform = 'translate(-50%, -50%)'; // Centre le topic sur ses coordonnées
+                el.style.transform = 'translate(-50%, -50%)';
                 
                 const dotColor = getRelevanceColor(data, keyword);
                 el.innerHTML = `<div class="gm-dot" style="background:${dotColor}; color:${dotColor}"></div><span>${data.t}</span>`;
                 
-                el.onmousedown = (e) => startDrag(e, el);
-                el.onclick = () => { if(el.dataset.dragged !== "true") handleTopicClick(el, data); };
+                el.onclick = () => handleTopicClick(el, data);
 
                 container.appendChild(el);
                 setTimeout(() => {
                     el.style.opacity = '1';
-                    // On combine le centrage et le flottement
                     el.style.animation = `gmFloat ${4 + Math.random()*2}s ease-in-out infinite`;
                     el.style.animationDelay = `-${Math.random()*5}s`;
                 }, i * 25);
             });
         }, 600);
-    }
-
-    function startDrag(e, el) {
-        el.dataset.dragged = "false";
-        const startX = e.clientX, startY = e.clientY;
-        const rect = el.getBoundingClientRect();
-        const offsetX = e.clientX - rect.left, offsetY = e.clientY - rect.top;
-        el.style.animation = 'none';
-
-        const move = (e) => {
-            if (Math.abs(e.clientX - startX) > 5 || Math.abs(e.clientY - startY) > 5) el.dataset.dragged = "true";
-            // On retire le translate(-50%, -50%) lors du drag pour une manipulation directe
-            el.style.transform = 'none';
-            el.style.left = (e.clientX - offsetX) + 'px';
-            el.style.top = (e.clientY - offsetY) + 'px';
-        };
-        const stop = () => {
-            document.removeEventListener('mousemove', move);
-            document.removeEventListener('mouseup', stop);
-        };
-        document.addEventListener('mousemove', move);
-        document.addEventListener('mouseup', stop);
     }
 
     function handleTopicClick(el, data) {
@@ -1816,6 +1780,7 @@ async function transitionText(target, speed) {
 </script>
 </body>
 </html>
+
 
 
 <!-- SECTION E -->
