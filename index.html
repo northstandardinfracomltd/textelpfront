@@ -775,145 +775,7 @@ async function transitionText(target, speed) {
   </div>
 </section>
  <div class="illustraBOB">
-<div id="nxl-complex-widget-container">
-    <style>
-        /* Utilisation de variables locales pour une modification facile */
-        #nxl-complex-widget-container {
-            --nxl-neon: #39FF14;
-            --nxl-bg: #050505;
-            --nxl-line-opacity: 0.6;
-            --nxl-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            
-            position: relative;
-            width: 100%;
-            height: 600px;
-            background-color: var(--nxl-bg);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-
-        /* Calque SVG pour la ligature "nœud papillon" */
-        .nxl-svg-connector-layer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        /* Le Squircle Central (Ligature) */
-        .nxl-main-squircle-node {
-            position: relative;
-            z-index: 10;
-            width: 115px;
-            height: 115px;
-            background: var(--nxl-neon);
-            border-radius: 40px; /* Squircle effect */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 0 35px rgba(57, 255, 20, 0.4), inset 0 0 15px rgba(255,255,255,0.5);
-            transition: var(--nxl-transition);
-        }
-
-        .nxl-main-squircle-node:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 50px rgba(57, 255, 20, 0.7);
-        }
-
-        .nxl-main-squircle-node img {
-            width: 60%;
-            height: 60%;
-            object-fit: contain;
-        }
-
-        /* Conteneurs de cercles flottants décalés */
-        .nxl-floating-side-panel {
-            position: absolute;
-            z-index: 20;
-            width: 220px;
-            height: 250px;
-        }
-
-        .nxl-panel-left { left: 12%; }
-        .nxl-panel-right { right: 12%; }
-
-        .nxl-icon-circle-item {
-            position: absolute;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: rgba(20, 20, 20, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-            backdrop-filter: blur(8px);
-            transition: var(--nxl-transition);
-        }
-
-        .nxl-icon-circle-item:hover {
-            border-color: var(--nxl-neon);
-            transform: translateY(-5px);
-        }
-
-        .nxl-icon-circle-item img {
-            width: 35px;
-            height: 35px;
-            opacity: 0.9;
-        }
-
-        /* Positionnement spécifique en triangle décalé */
-        .nxl-pos-top { top: 0; left: 20%; }
-        .nxl-pos-mid { top: 40%; } /* Décalé vers l'extérieur */
-        .nxl-panel-left .nxl-pos-mid { left: 55%; } 
-        .nxl-panel-right .nxl-pos-mid { right: 55%; }
-        .nxl-pos-bot { bottom: 0; left: 20%; }
-
-        /* Définition des couleurs de lignes via SVG */
-        .nxl-path-st0 { stroke: url(#nxl-grad-multi); }
-        .nxl-path-center { stroke: var(--nxl-neon); }
-    </style>
-
-    <svg class="nxl-svg-connector-layer" viewBox="0 0 1000 600" preserveAspectRatio="none">
-        <defs>
-            <linearGradient id="nxl-grad-multi" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#FF00CC" /> <stop offset="45%" stop-color="#39FF14" /> <stop offset="55%" stop-color="#39FF14" /> <stop offset="100%" stop-color="#00D4FF" /> </linearGradient>
-        </defs>
-        
-        <path class="nxl-path-st0" d="M 0 80   C 350 80,  450 300, 500 300 C 550 300, 650 80,  1000 80"   stroke-width="1.5" fill="none" opacity="0.4"/>
-        <path class="nxl-path-st0" d="M 0 160  C 350 160, 450 300, 500 300 C 550 300, 650 160, 1000 160"  stroke-width="1.8" fill="none" opacity="0.5"/>
-        <path class="nxl-path-st0" d="M 0 240  C 350 240, 450 300, 500 300 C 550 300, 650 240, 1000 240"  stroke-width="2"   fill="none" opacity="0.7"/>
-        
-        <path class="nxl-path-center" d="M 0 300 L 1000 300" stroke-width="3" fill="none" opacity="1" />
-
-        <path class="nxl-path-st0" d="M 0 360  C 350 360, 450 300, 500 300 C 550 300, 650 360, 1000 360"  stroke-width="2"   fill="none" opacity="0.7"/>
-        <path class="nxl-path-st0" d="M 0 440  C 350 440, 450 300, 500 300 C 550 300, 650 440, 1000 440"  stroke-width="1.8" fill="none" opacity="0.5"/>
-        <path class="nxl-path-st0" d="M 0 520  C 350 520, 450 300, 500 300 C 550 300, 650 520, 1000 520"  stroke-width="1.5" fill="none" opacity="0.4"/>
-    </svg>
-
-    <div class="nxl-floating-side-panel nxl-panel-left">
-        <div class="nxl-icon-circle-item nxl-pos-top"><img src="#" alt="Icon L1"></div>
-        <div class="nxl-icon-circle-item nxl-pos-mid"><img src="#" alt="Icon L2"></div>
-        <div class="nxl-icon-circle-item nxl-pos-bot"><img src="#" alt="Icon L3"></div>
-    </div>
-
-    <div class="nxl-main-squircle-node">
-        <img src="TON_LIEN_S3_ICI" alt="Central Node">
-    </div>
-
-    <div class="nxl-floating-side-panel nxl-panel-right">
-        <div class="nxl-icon-circle-item nxl-pos-top"><img src="#" alt="Icon R1"></div>
-        <div class="nxl-icon-circle-item nxl-pos-mid"><img src="#" alt="Icon R2"></div>
-        <div class="nxl-icon-circle-item nxl-pos-bot"><img src="#" alt="Icon R3"></div>
-    </div>
-</div>
+ <img class="illustraBOBimg" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/illsutration290382329399292.svg">
 </div>
 
 <br><br>
@@ -1555,27 +1417,409 @@ async function transitionText(target, speed) {
   </div>
 </section>
 
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @font-face {
+            font-family: 'TextelpA';
+            src: local('TextelpA');
+            font-weight: 100;
+        }
+
+        :root {
+            --gm-bg-color: #fcfcfc;
+            --gm-grid-light: #f0f0f0;
+            --gm-grid-dark: #e2e2e2;
+            --gm-topic-bg: #f5f5f5;
+            --gm-topic-hover: #ececec;
+            --gm-text-main: #202124;
+            --gm-font-family: 'TextelpA', sans-serif;
+            --color-perfect: #8e24aa; 
+            --color-partial: #d81b60; 
+            --color-none: #4285f4;    
+        }
+
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: var(--gm-bg-color); }
+
+        .gm-main-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: 
+                linear-gradient(var(--gm-grid-light) 1px, transparent 1px),
+                linear-gradient(90deg, var(--gm-grid-light) 1px, transparent 1px),
+                linear-gradient(var(--gm-grid-dark) 1px, transparent 1px),
+                linear-gradient(90deg, var(--gm-grid-dark) 1px, transparent 1px);
+            background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
+            font-family: var(--gm-font-family);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gm-topics-container { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+
+        .gm-floating-topic {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            cursor: grab;
+            padding: 10px 18px;
+            background: var(--gm-topic-bg);
+            border: 1px solid #e0e0e0;
+            border-radius: 40px;
+            white-space: nowrap;
+            user-select: none;
+            z-index: 2;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            pointer-events: auto;
+            transition: opacity 0.8s ease, transform 0.8s ease, background 0.2s;
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+
+        .gm-floating-topic:active { cursor: grabbing; z-index: 1000; }
+
+        .gm-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 12px;
+            position: relative;
+        }
+
+        .gm-shimmer-active {
+            background: linear-gradient(90deg, #202124 20%, #8e24aa 50%, #202124 80%);
+            background-size: 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 4s linear infinite;
+        }
+        @keyframes shimmer { 0% { background-position: -200%; } 100% { background-position: 200%; } }
+
+        .gm-dot-active::after {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border: 1.5px dashed currentColor;
+            border-radius: 50%;
+            animation: rotate 4s linear infinite;
+        }
+        @keyframes rotate { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+
+        .gm-center-card {
+            position: relative;
+            z-index: 50;
+            width: 320px;
+            padding: 35px;
+            background: white;
+            text-align: center;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.1);
+            -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0,50 C0,5 5,0 50,0 C95,0 100,5 100,50 C100,95 95,100 50,100 C5,100 0,95 0,50' fill='black'/%3E%3C/svg%3E");
+        }
+
+        .gm-center-card p { font-size: 14px; color: #5f6368; margin-bottom: 20px; line-height: 1.4; }
+
+        .gm-search-wrapper { position: relative; display: flex; align-items: center; }
+        .gm-search-input {
+            width: 100%;
+            padding: 12px 90px 12px 18px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+            font-family: var(--gm-font-family);
+            font-size: 14px;
+        }
+
+        .gm-enter-label { position: absolute; right: 15px; font-size: 10px; color: #9aa0a6; pointer-events: none; }
+
+        .gm-warning { 
+            color: #d93025; 
+            font-size: 12px; 
+            margin-top: 15px; 
+            opacity: 0;
+            transform: translateY(-5px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            pointer-events: none;
+        }
+        .gm-warning.show { opacity: 1; transform: translateY(0); }
+
+        .gm-modal-overlay {
+            position: fixed; inset: 0; background: rgba(255,255,255,0.85);
+            z-index: 2000; display: none; align-items: center; justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+        .gm-answer-modal {
+            background: white; padding: 40px; border-radius: 28px;
+            max-width: 350px; width: 90%; box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            transform: scale(0.95); opacity: 0; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .gm-answer-modal.active { transform: scale(1); opacity: 1; }
+        .gm-modal-body { font-size: 16px; line-height: 1.6; white-space: pre-wrap; color: #3c4043; }
+        .gm-btn { padding: 12px 24px; border-radius: 12px; border: none; cursor: pointer; font-family: var(--gm-font-family); }
+        .gm-btn-close { background: #f1f3f4; margin-right: 10px; }
+        .gm-btn-help { background: #4285f4; color: white; text-decoration: none; display: inline-block; }
+
+        @keyframes gmFloat {
+            0%, 100% { transform: translate(0, 0); }
+            33% { transform: translate(6px, -5px); }
+            66% { transform: translate(-5px, 6px); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="gm-main-wrapper">
+    <div class="gm-topics-container" id="topicsContainer"></div>
+
+    <div class="gm-center-card" id="centerCard">
+        <p>Interrogez notre intelligence,<br>sélectionnez un sujet ou une question</p>
+        <div class="gm-search-wrapper">
+            <input type="text" class="gm-search-input" id="gmSearch" placeholder="Recherchez...">
+            <span class="gm-enter-label">ENTER</span>
+        </div>
+        <div id="warningMsg" class="gm-warning">Il y a peu de ressources pour ce sujet, essayez un autre terme ou contactez nous.</div>
+    </div>
+
+    <div class="gm-modal-overlay" id="modalOverlay">
+        <div class="gm-answer-modal" id="answerModal">
+            <div id="modalTitle" style="font-size: 18px; margin-bottom:20px; color:#4285f4"></div>
+            <div class="gm-modal-body" id="modalBody"></div>
+            <div style="text-align: right; margin-top: 30px;">
+                <button class="gm-btn gm-btn-close" onclick="closeModal()">Fermer</button>
+                <a href="mailto:expert@ia-conseil.com" class="gm-btn gm-btn-help">Aide</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const dataStore = [
+        { t: "Management d'équipe", r: "Le management moderne repose sur l'empathie et la clarté des objectifs. Favorisez des feedbacks réguliers." },
+        { t: "Intelligence Artificielle", r: "L'IA n'est pas qu'un outil, c'est un partenaire. Apprenez à rédiger des prompts précis pour gagner 2h par jour." },
+        { t: "Cloud Architecture", r: "Privilégiez les architectures scalables et serverless pour réduire vos coûts opérationnels de 30%." },
+        { t: "Cyber-résilience", r: "La sécurité commence par l'humain. Formez vos collaborateurs au phishing avant d'investir dans un firewall." },
+        { t: "UX Design", r: "L'utilisateur n'est pas vous. Testez vos interfaces avec des novices pour identifier les points de friction réels." },
+        { t: "Digital Marketing", r: "L'avenir du marketing est dans la donnée de première main (First-party data) et la personnalisation éthique." },
+        { t: "Analyse de Données", r: "Une donnée sans contexte est un bruit. Concentrez-vous sur les indicateurs qui déclenchent une action." },
+        { t: "Supply Chain", r: "La visibilité en temps réel est le nerf de la guerre. Automatisez vos stocks pour éviter les ruptures." },
+        { t: "Ventes B2B", r: "Arrêtez de vendre, commencez à aider. Le Social Selling sur LinkedIn est devenu incontournable." },
+        { t: "Ressources Humaines", r: "La marque employeur se construit de l'intérieur. Vos salariés sont vos meilleurs ambassadeurs." },
+        { t: "Growth Hacking", r: "Expérimentez vite, échouez vite. Le but est de trouver le levier de croissance avant d'épuiser votre budget." },
+        { t: "Agilité Scrum", r: "Le Scrum Master est un facilitateur, pas un chef. Le succès dépend de l'autonomie de l'équipe." },
+        { t: "Blockchain", r: "Au-delà de la crypto, la blockchain sécurise la traçabilité. Idéal pour le luxe et l'agroalimentaire." },
+        { t: "DevOps", r: "Le DevOps est une culture de collaboration totale entre le dev et l'opérateur. Automatisez tout le pipeline." },
+        { t: "E-commerce", r: "Le mobile-first n'est plus une option. 70% de vos clients achètent avec leur pouce, facilitez-leur la vie." },
+        { t: "SaaS Strategy", r: "Le Churn est votre ennemi. Concentrez-vous sur l'onboarding pour que l'utilisateur voit la valeur en < 5min." },
+        { t: "Machine Learning", r: "Le succès d'un modèle dépend de la qualité de l'étiquetage. 'Garbage in, garbage out'." },
+        { t: "Finance Durable", r: "L'investissement ESG n'est plus une niche. C'est le standard pour attirer les investisseurs institutionnels." },
+        { t: "Recrutement IT", r: "Le salaire ne suffit plus. Offrez de la flexibilité et des projets techniquement stimulants." },
+        { t: "Innovation RH", r: "L'onboarding virtuel doit être aussi chaleureux qu'en physique. Utilisez la vidéo et le mentorat." },
+        { t: "Web3", r: "Le Web3 redonne la propriété aux utilisateurs. Préparez-vous à l'économie des tokens et des DAO." },
+        { t: "Audit Interne", r: "L'audit doit être perçu comme un conseil stratégique, pas comme une inspection policière." },
+        { t: "Relation Client", r: "L'IA conversationnelle doit passer la main à un humain dès que l'émotion dépasse le factuel." },
+        { t: "Leadership", r: "Le leader de demain sait dire 'je ne sais pas'. L'humilité est la base de la confiance d'équipe." },
+        { t: "Deep Learning", r: "Les réseaux neuronaux nécessitent une puissance de calcul massive. Pensez au coût carbone de vos modèles." },
+        { t: "Social Media", r: "L'algorithme privilégie le temps de rétention. Créez du contenu qui suscite une discussion réelle." },
+        { t: "Fiscalité IT", r: "Le crédit impôt recherche (CIR) est un levier majeur pour financer vos innovations technologiques." },
+        { t: "Mobile Dev", r: "Flutter ou React Native ? Choisissez selon la complexité de l'accès hardware nécessaire à votre app." },
+        { t: "Coaching", r: "Le coaching n'est pas du conseil. Posez les bonnes questions pour que le talent trouve sa propre solution." },
+        { t: "Négociation", r: "Préparez votre BATNA. Celui qui est prêt à quitter la table gagne toujours la négociation." },
+        { t: "Big Data", r: "Le lac de données (Data Lake) peut devenir un marécage sans gouvernance stricte de l'information." },
+        { t: "Innovation Santé", r: "La télémédecine doit garantir la souveraineté des données de santé. La sécurité est ici vitale." },
+        { t: "Automobile IT", r: "La voiture devient un smartphone sur roues. L'OS embarqué sera le prochain champ de bataille." },
+        { t: "Énergie Verte", r: "Le stockage par batterie est le chaînon manquant pour rendre le renouvelable totalement stable." },
+        { t: "Design Thinking", r: "L'empathie est la première étape. Ne cherchez pas de solution avant d'avoir bien compris le problème." },
+        { t: "SEO Strategy", r: "Google privilégie l'intention de recherche. Répondez à une question précise pour remonter en tête." },
+        { t: "Public Relations", r: "En cas de crise, la transparence absolue est la seule voie pour préserver votre réputation." },
+        { t: "Startups", r: "Le Product Market Fit est votre seule priorité. Tout le reste est de la distraction administrative." },
+        { t: "Loi du Travail", r: "Le télétravail nécessite un cadre juridique clair pour protéger le droit à la déconnexion." },
+        { t: "Internet of Things", r: "L'Edge Computing permet de traiter la donnée à la source pour réduire la latence des capteurs." }
+    ];
+
+    const container = document.getElementById('topicsContainer');
+    const searchInput = document.getElementById('gmSearch');
+    const warningMsg = document.getElementById('warningMsg');
+    let isLocked = false;
+
+    function getRelevanceColor(topic, keyword) {
+        if (!keyword) return 'var(--color-none)';
+        const k = keyword.toLowerCase();
+        if (topic.t.toLowerCase().includes(k)) return 'var(--color-perfect)';
+        if (k.length > 2 && topic.t.toLowerCase().split('').some(c => k.includes(c))) return 'var(--color-partial)';
+        return 'var(--color-none)';
+    }
+
+    function getHomogeneousPositions(count) {
+        const positions = [];
+        const cardRect = document.getElementById('centerCard').getBoundingClientRect();
+        
+        // PARAMÈTRES D'INCLUSION DES BORDS
+        const topicAvgWidth = 160; // Largeur moyenne d'un topic
+        const topicAvgHeight = 45; // Hauteur moyenne d'un topic
+        const safePadding = 20;    // Marge minimale du bord de l'écran
+
+        // Zone utile de l'écran (incluant les topics sans débordement)
+        const screenW = window.innerWidth;
+        const screenH = window.innerHeight;
+        
+        const usableWidth = screenW - (topicAvgWidth + safePadding * 2);
+        const usableHeight = screenH - (topicAvgHeight + safePadding * 2);
+
+        const cardMargin = 40; 
+        const cols = 10, rows = 8;
+        const cellWidth = usableWidth / cols;
+        const cellHeight = usableHeight / rows;
+        const availableCells = [];
+
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+                // Calcul du centre réel de la cellule en tenant compte de la marge externe
+                const cellCenterX = (c * cellWidth + cellWidth / 2) + (topicAvgWidth/2 + safePadding);
+                const cellCenterY = (r * cellHeight + cellHeight / 2) + (topicAvgHeight/2 + safePadding);
+                
+                const inCardX = cellCenterX > (cardRect.left - cardMargin) && cellCenterX < (cardRect.right + cardMargin);
+                const inCardY = cellCenterY > (cardRect.top - cardMargin) && cellCenterY < (cardRect.bottom + cardMargin);
+                
+                if (!(inCardX && inCardY)) {
+                    availableCells.push({ c, r });
+                }
+            }
+        }
+
+        availableCells.sort(() => Math.random() - 0.5);
+        for (let i = 0; i < count; i++) {
+            const cell = availableCells[i % availableCells.length];
+            const baseX = (cell.c * cellWidth) + (topicAvgWidth/2 + safePadding);
+            const baseY = (cell.r * cellHeight) + (topicAvgHeight/2 + safePadding);
+
+            positions.push({
+                x: baseX + (Math.random() - 0.5) * (cellWidth * 0.5),
+                y: baseY + (Math.random() - 0.5) * (cellHeight * 0.5)
+            });
+        }
+        return positions;
+    }
+
+    function updateDisplay(keyword = '') {
+        const filtered = dataStore.filter(d => d.t.toLowerCase().includes(keyword.toLowerCase()));
+        if (keyword !== '' && filtered.length < 5) warningMsg.classList.add('show');
+        else warningMsg.classList.remove('show');
+
+        Array.from(container.children).forEach((child, i) => {
+            setTimeout(() => {
+                child.style.opacity = '0';
+                child.style.transform = 'scale(0.7)';
+                setTimeout(() => child.remove(), 800);
+            }, i * 15);
+        });
+
+        setTimeout(() => {
+            const pos = getHomogeneousPositions(25);
+            let list = [...filtered];
+            if(list.length < 25) {
+                const extras = dataStore.filter(d => !list.includes(d));
+                list = list.concat(extras.slice(0, 25 - list.length));
+            } else list = list.slice(0, 25);
+
+            list.forEach((data, i) => {
+                const el = document.createElement('div');
+                el.className = 'gm-floating-topic';
+                // Utilisation de transform pour le placement précis au centre du point calculé
+                el.style.left = pos[i].x + 'px';
+                el.style.top = pos[i].y + 'px';
+                el.style.transform = 'translate(-50%, -50%)'; // Centre le topic sur ses coordonnées
+                
+                const dotColor = getRelevanceColor(data, keyword);
+                el.innerHTML = `<div class="gm-dot" style="background:${dotColor}; color:${dotColor}"></div><span>${data.t}</span>`;
+                
+                el.onmousedown = (e) => startDrag(e, el);
+                el.onclick = () => { if(el.dataset.dragged !== "true") handleTopicClick(el, data); };
+
+                container.appendChild(el);
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    // On combine le centrage et le flottement
+                    el.style.animation = `gmFloat ${4 + Math.random()*2}s ease-in-out infinite`;
+                    el.style.animationDelay = `-${Math.random()*5}s`;
+                }, i * 25);
+            });
+        }, 600);
+    }
+
+    function startDrag(e, el) {
+        el.dataset.dragged = "false";
+        const startX = e.clientX, startY = e.clientY;
+        const rect = el.getBoundingClientRect();
+        const offsetX = e.clientX - rect.left, offsetY = e.clientY - rect.top;
+        el.style.animation = 'none';
+
+        const move = (e) => {
+            if (Math.abs(e.clientX - startX) > 5 || Math.abs(e.clientY - startY) > 5) el.dataset.dragged = "true";
+            // On retire le translate(-50%, -50%) lors du drag pour une manipulation directe
+            el.style.transform = 'none';
+            el.style.left = (e.clientX - offsetX) + 'px';
+            el.style.top = (e.clientY - offsetY) + 'px';
+        };
+        const stop = () => {
+            document.removeEventListener('mousemove', move);
+            document.removeEventListener('mouseup', stop);
+        };
+        document.addEventListener('mousemove', move);
+        document.addEventListener('mouseup', stop);
+    }
+
+    function handleTopicClick(el, data) {
+        if (isLocked) return;
+        isLocked = true;
+        const dot = el.querySelector('.gm-dot'), text = el.querySelector('span');
+        dot.classList.add('gm-dot-active');
+        text.classList.add('gm-shimmer-active');
+
+        setTimeout(() => {
+            openModal(data);
+            dot.classList.remove('gm-dot-active');
+            text.classList.remove('gm-shimmer-active');
+        }, 4000);
+        setTimeout(() => { isLocked = false; }, 10000);
+    }
+
+    function openModal(data) {
+        document.getElementById('modalTitle').innerText = data.t;
+        const body = document.getElementById('modalBody');
+        body.textContent = '';
+        document.getElementById('modalOverlay').style.display = 'flex';
+        setTimeout(() => document.getElementById('answerModal').classList.add('active'), 50);
+        
+        let i = 0;
+        const timer = setInterval(() => {
+            if (i < data.r.length) { body.textContent += data.r[i++]; }
+            else clearInterval(timer);
+        }, 20);
+    }
+
+    function closeModal() {
+        isLocked = false;
+        document.getElementById('answerModal').classList.remove('active');
+        setTimeout(() => { document.getElementById('modalOverlay').style.display = 'none'; }, 400);
+    }
+
+    searchInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') updateDisplay(searchInput.value); });
+    window.addEventListener('resize', () => updateDisplay(searchInput.value));
+    updateDisplay();
+</script>
+</body>
+</html>
+
+
 <!-- SECTION E -->
 <section class="folk container section-e">
-  <h2>Questions fréquentes</h2>
-
-  <div class="faq-item">
-    <div class="faq-question">Question 1 <span class="actiona">Montrer</span></div>
-    <div class="faq-answer">Lorem1 ipsum dolor sit amet.</div>
-  </div>
-    <div class="faq-item">
-    <div class="faq-question">Question 2 <span class="actiona">Montrer</span></div>
-    <div class="faq-answer">Lorem2 ipsum dolor sit amet.</div>
-  </div>
-    <div class="faq-item">
-    <div class="faq-question">Question 3 <span class="actiona">Montrer</span></div>
-    <div class="faq-answer">Lorem3 ipsum dolor sit amet.</div>
-  </div>
-    <div class="faq-item">
-    <div class="faq-question">Question 4 <span class="actiona">Montrer</span></div>
-    <div class="faq-answer">Lorem4 ipsum dolor sit amet.</div>
-  </div>
-
   <div class="legal">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mentions légales regroupées dans un seul bloc.
   </div>
