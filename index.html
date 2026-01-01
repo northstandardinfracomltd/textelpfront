@@ -1700,88 +1700,81 @@ async function transitionText(target, speed) {
 </body>
 </html>
 
+
 <style>
-    /* Intégration de la police spécifiée */
     @font-face {
         font-family: 'TextelpA';
         src: local('TextelpA');
         font-weight: 100;
     }
 
-    .tpx-eval-container {
+    .tpx-eval-wrapper {
         max-width: 500px;
         font-family: 'TextelpA', sans-serif;
         font-weight: 100;
         color: #202124;
-        line-height: 1.5;
-        margin: 0 auto;
+        line-height: 1.6;
+        margin: 20px auto;
+        text-align: left;
     }
 
     .tpx-eval-main-title {
         font-size: 18px;
-        margin-bottom: 30px;
+        margin-bottom: 32px;
         color: #5f6368;
+        display: block;
     }
 
+    /* Style de la Carte */
     .tpx-eval-card {
+        display: block;
         border: 1px solid #e0e0e0;
         border-radius: 16px;
         padding: 24px;
         margin-bottom: 16px;
-        transition: all 0.3s ease;
         cursor: pointer;
-        position: relative;
+        transition: all 0.25s ease;
+        background-color: #ffffff;
+    }
+
+    /* État Actif (Border + Background) */
+    .tpx-eval-card.tpx-is-active {
+        border-color: #4285f4;
+        background-color: #f8faff;
     }
 
     .tpx-eval-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 0;
     }
 
     .tpx-eval-header h2 {
         font-size: 22px;
         margin: 0;
         font-weight: 100;
+        color: #202124;
     }
 
-    /* Style du Radio Custom */
-    .tpx-eval-radio-wrapper {
-        position: relative;
+    /* Radio Button Custom */
+    .tpx-eval-radio-custom {
         width: 24px;
         height: 24px;
-    }
-
-    .tpx-eval-radio-wrapper input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        width: 100%;
-        height: 100%;
-        z-index: 2;
-    }
-
-    .tpx-eval-checkmark {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 24px;
-        width: 24px;
-        background-color: #fff;
-        border: 2px solid #ddd;
+        border: 2px solid #dadce0;
         border-radius: 50%;
+        position: relative;
         transition: all 0.2s ease;
+        flex-shrink: 0;
+        background: white;
     }
 
-    .tpx-eval-radio-wrapper input:checked ~ .tpx-eval-checkmark {
+    .tpx-is-active .tpx-eval-radio-custom {
         border-color: #4285f4;
     }
 
-    .tpx-eval-checkmark:after {
+    .tpx-is-active .tpx-eval-radio-custom::after {
         content: "";
         position: absolute;
-        display: none;
         top: 5px;
         left: 5px;
         width: 10px;
@@ -1790,114 +1783,113 @@ async function transitionText(target, speed) {
         background: #4285f4;
     }
 
-    .tpx-eval-radio-wrapper input:checked ~ .tpx-eval-checkmark:after {
+    /* Contenu masqué par défaut */
+    .tpx-eval-collapsible {
+        display: none;
+        margin-top: 20px;
+        overflow: hidden;
+    }
+
+    .tpx-is-active .tpx-eval-collapsible {
         display: block;
     }
 
-    /* Logique de masquage/déroulage */
-    .tpx-eval-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
-        opacity: 0;
-    }
-
-    .tpx-eval-radio-wrapper input:checked ~ .tpx-eval-logic-anchor {
-        display: none; /* Element technique invisible */
-    }
-
-    /* Sélecteur complexe pour ouvrir le contenu si le radio parent est coché */
-    .tpx-eval-card:has(input:checked) .tpx-eval-content {
-        max-height: 500px;
-        opacity: 1;
-        margin-top: 20px;
-        transition: max-height 0.4s ease-in, opacity 0.3s ease-in;
-    }
-
-    .tpx-eval-card:has(input:checked) {
-        border-color: #4285f4;
-        background-color: #f8faff;
-    }
-
-    .tpx-eval-description {
+    .tpx-eval-desc {
         font-size: 18px;
+        color: #3c4043;
         margin: 0 0 20px 0;
     }
 
-    .tpx-eval-price-row {
+    .tpx-eval-price-box {
         display: flex;
         align-items: baseline;
-        gap: 8px;
+        gap: 6px;
         margin-bottom: 12px;
     }
 
-    .tpx-eval-price-big {
+    .tpx-eval-big-p {
         font-size: 26px;
+        margin: 0;
     }
 
-    .tpx-eval-price-small {
+    .tpx-eval-small-p {
         font-size: 12px;
         color: #70757a;
     }
 
-    .tpx-eval-badge {
+    .tpx-eval-label-host {
         display: inline-block;
-        background: #e8f0fe;
-        color: #1967d2;
+        background: #f1f3f4;
         padding: 6px 12px;
         border-radius: 8px;
         font-size: 14px;
+        color: #202124;
+    }
+    
+    /* Input invisible */
+    .tpx-eval-hidden-radio {
+        display: none;
     }
 </style>
 
-<div class="tpx-eval-container">
+<div class="tpx-eval-wrapper">
     <div class="tpx-eval-main-title">
         Évaluez le coût de l’outil, pour un usage jusqu’à 10,000 requêtes mensuelles, au delà veuillez nous contacter. 
         Le ROI est en moyenne de 23% et il représente un coût répercuté moyen de €0.09 par client ou utilisateur.
     </div>
 
-    <label class="tpx-eval-card">
+    <label class="tpx-eval-card tpx-is-active" id="card-1">
+        <input type="radio" name="tpx_pricing" class="tpx-eval-hidden-radio" checked onchange="tpxToggle(1)">
         <div class="tpx-eval-header">
             <h2>Deploy cost</h2>
-            <div class="tpx-eval-radio-wrapper">
-                <input type="radio" name="usage-cost" checked>
-                <span class="tpx-eval-checkmark"></span>
-            </div>
+            <div class="tpx-eval-radio-custom"></div>
         </div>
         
-        <div class="tpx-eval-content">
-            <p class="tpx-eval-description">
+        <div class="tpx-eval-collapsible">
+            <p class="tpx-eval-desc">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
             </p>
-            <div class="tpx-eval-price-row">
-                <span class="tpx-eval-price-big">€499</span>
-                <span class="tpx-eval-price-small">One time cost</span>
+            <div class="tpx-eval-price-box">
+                <span class="tpx-eval-big-p">€499</span>
+                <span class="tpx-eval-small-p">One time cost</span>
             </div>
-            <div class="tpx-eval-badge">+€198 par mois pour l’hébergement</div>
+            <div class="tpx-eval-label-host">+€198 par mois pour l’hébergement</div>
         </div>
     </label>
 
-    <label class="tpx-eval-card">
+    <label class="tpx-eval-card" id="card-2">
+        <input type="radio" name="tpx_pricing" class="tpx-eval-hidden-radio" onchange="tpxToggle(2)">
         <div class="tpx-eval-header">
             <h2>Custom solution</h2>
-            <div class="tpx-eval-radio-wrapper">
-                <input type="radio" name="usage-cost">
-                <span class="tpx-eval-checkmark"></span>
-            </div>
+            <div class="tpx-eval-radio-custom"></div>
         </div>
         
-        <div class="tpx-eval-content">
-            <p class="tpx-eval-description">
-                Une infrastructure dédiée adaptée à vos volumes spécifiques et vos besoins de sécurité avancés.
+        <div class="tpx-eval-collapsible">
+            <p class="tpx-eval-desc">
+                Configuration sur mesure pour les besoins spécifiques et volumes élevés.
             </p>
-            <div class="tpx-eval-price-row">
-                <span class="tpx-eval-price-big">€899</span>
-                <span class="tpx-eval-price-small">Setup fee</span>
+            <div class="tpx-eval-price-box">
+                <span class="tpx-eval-big-p">€899</span>
+                <span class="tpx-eval-small-p">Setup cost</span>
             </div>
-            <div class="tpx-eval-badge">+€350 par mois pour l’infogérance</div>
+            <div class="tpx-eval-label-host">+€350 par mois pour l’hébergement</div>
         </div>
     </label>
 </div>
+
+<script>
+    function tpxToggle(selectedId) {
+        // Supprimer la classe active de toutes les cartes
+        document.querySelectorAll('.tpx-eval-card').forEach(card => {
+            card.classList.remove('tpx-is-active');
+        });
+        // Ajouter la classe à la carte sélectionnée
+        document.getElementById('card-' + selectedId).classList.add('tpx-is-active');
+    }
+</script>
+
+
+
 <!-- SECTION E -->
 <section class="folk container section-e">
   <div class="legal">
