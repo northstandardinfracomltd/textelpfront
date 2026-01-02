@@ -44,17 +44,15 @@ body {
 
 /* ================= STICKY BAR ================= */
 .sticky-bar {
-    margin-top: 8px;
     background: #110852 !important;
-    padding: 14px 24px;
-    display: flex;
     justify-content: space-between;
-    align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 99%;
     margin: auto;
+    height: 65px;
+    margin-top: 8px !important;
     border-radius: 10px;
     border: 1px solid #41358c;
     margin-bottom: -90px;
@@ -98,7 +96,7 @@ padding-top: 200px !important;
   align-items:center;
 }
 
-.logo {     width: 210px;
+.logo {   
     margin-bottom: 0px;
   }
 
@@ -566,7 +564,7 @@ width: 100%;
 <body>
 
 <div class="speculative">
-<div class="sticky-bar" style="background: #000; padding: 10px 20px; display: flex; align-items: center;">
+<div class="sticky-bar" style="background: #000; padding: 10px 10px; display: flex; align-items: center;">
     <style>
         /* Conteneur interne pour ne pas impacter la sticky-bar parente */
         .nav-content {
@@ -591,11 +589,16 @@ width: 100%;
 
         /* Style du texte dynamique */
         #dynamic-string {
-            font-size: 18px;
-            color: #ffffff;
-            min-width: 150px;
-            display: inline-block;
-            white-space: pre;
+font-size: 20px;
+    min-width: 150px;
+    display: inline-block;
+    white-space: pre;
+    margin-left: -10px;
+    margin-top: -2px;
+    background: linear-gradient(to right, #ffffff0f, #ffffff40);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
         }
 
         .nav-link {
