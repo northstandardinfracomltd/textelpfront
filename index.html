@@ -613,14 +613,16 @@ font-size: 20px;
         }
 
         .nav-link {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 14px;
-            opacity: 0.8;
-            transition: opacity 0.2s;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 1;
+    transition: opacity 0.2s;
+    font-size: 18px;
+    margin-left: 2px;
         }
 
-        .nav-link:hover { opacity: 1; }
+        .nav-link:hover { opacity: 1;text-decoration: underline; }
 
         .iso {
 font-family: 'TextelpA', sans-serif !important;
@@ -637,7 +639,6 @@ font-family: 'TextelpA', sans-serif !important;
     <div class="nav-content">
         <div class="nav-left">
             <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/Textelp_White.svg" class="logo" style="height: 30px;">
-            <div id="dynamic-string"></div>
         </div>
 
         <div class="nav-right">
@@ -2106,6 +2107,8 @@ async function transitionText(target, speed) {
   <div class="legal">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mentions légales regroupées dans un seul bloc.
   </div>
+
+           <div id="dynamic-string"></div>
 </section>
 
 <script>
