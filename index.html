@@ -649,124 +649,6 @@ font-family: 'TextelpA', sans-serif !important;
         </div>
     </div>
 
-    <script>
-        const display = document.getElementById('dynamic-string');
-
-        const sleep = ms => new Promise(r => setTimeout(r, ms));
-
-// --- Moteur d'Animation ---
-
-async function runAnimation1() {
-    const sequence = ["agent_help_", "/ / / \\ \\ \\", "— — —", "? @ ? @ ?", "agent_help_"];
-    
-    for (let loop = 0; loop < 2; loop++) {
-        // On part du texte actuel ou du premier de la liste
-        let currentText = display.innerText || sequence[0];
-        if (!display.innerText) display.innerText = currentText;
-
-        for (let i = 1; i < sequence.length; i++) {
-            const targetText = sequence[i];
-
-            if (i === 4) { 
-                // --- CAS E : Remplacement progressif + Blink pendant 10s ---
-                await transitionText(targetText, 100); // Transition vers agent_help_
-                
-                // Préparation des spans pour le blink
-                display.innerHTML = "";
-                for (let char of targetText) {
-                    const span = document.createElement('span');
-                    span.innerText = char === " " ? "\u00A0" : char;
-                    display.appendChild(span);
-                }
-                
-                let endTime = Date.now() + 10000;
-                const spans = display.querySelectorAll('span');
-                while (Date.now() < endTime) {
-                    const randomSpan = spans[Math.floor(Math.random() * spans.length)];
-                    randomSpan.classList.add('blink-fast');
-                    await sleep(150);
-                    randomSpan.classList.remove('blink-fast');
-                }
-            } else {
-                // --- CAS A, B, C, D : Remplacement caractère par caractère ---
-                await transitionText(targetText, 80); 
-                await sleep(1000); // Pause une fois le mot transformé
-            }
-        }
-    }
-}
-
-/**
- * Fonction utilitaire pour transformer le texte lettre par lettre
- * @param {string} target - Le texte final à atteindre
- * @param {number} speed - Vitesse de remplacement en ms
- */
-async function transitionText(target, speed) {
-    let current = display.innerText.split('');
-    const targetArray = target.split('');
-    const maxLength = Math.max(current.length, targetArray.length);
-
-    for (let j = 0; j < maxLength; j++) {
-        // On remplace le caractère à l'index J
-        current[j] = targetArray[j] !== undefined ? targetArray[j] : "";
-        
-        // On met à jour l'affichage (avec gestion des espaces pour le rendu HTML)
-        display.innerText = current.join('');
-        await sleep(speed);
-    }
-}
-
-        async function runAnimation2() {
-            for (let loop = 0; loop < 3; loop++) {
-                const steps = [
-                    "_ _ _ dialog _ _ _", "_ _ _ dialog _ _", "_ _ _ dialog _", "_ _ _ dialog",
-                    "_ _ _ dialog _ _", "_ _ _ dialog _ _ _", "_ _  dialog _ _ _", "_  dialog _ _ _",
-                    "dialog _ _ _", "_  dialog _ _ _", "_ _  dialog _ _ _", "_ _ _ dialog _ _ _"
-                ];
-                for (let step of steps) {
-                    display.innerText = step;
-                    await sleep(1000); // 1 seconde par étape = 12 secondes total
-                }
-            }
-        }
-
-        async function typeAndBlink(text) {
-            display.innerText = "";
-            for (let char of text) {
-                display.innerText += char;
-                await sleep(100);
-            }
-            for (let i = 0; i < 4; i++) {
-                display.style.opacity = "0";
-                await sleep(200);
-                display.style.opacity = "1";
-                await sleep(200);
-            }
-        }
-
-        async function runAnimation3() {
-            await typeAndBlink("!collec /");
-            await typeAndBlink("!resources… /");
-            await typeAndBlink("!context… /");
-        }
-
-        async function runAnimation4() {
-            await typeAndBlink("sources≈ok≈1");
-            await typeAndBlink("knowledge≈ok≈1");
-            await typeAndBlink("process≈ok≈1");
-        }
-
-        async function mainLoop() {
-            while (true) {
-                await runAnimation1();
-                await runAnimation2();
-                await runAnimation3();
-                await runAnimation4();
-            }
-        }
-
-        mainLoop();
-    </script>
 </div>
 </div>
 
@@ -2106,9 +1988,127 @@ async function transitionText(target, speed) {
 <section class="folk container section-e">
   <div class="legal">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mentions légales regroupées dans un seul bloc.
+       <script>
+        const display = document.getElementById('dynamic-string');
+
+        const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+// --- Moteur d'Animation ---
+
+async function runAnimation1() {
+    const sequence = ["agent_help_", "/ / / \\ \\ \\", "— — —", "? @ ? @ ?", "agent_help_"];
+    
+    for (let loop = 0; loop < 2; loop++) {
+        // On part du texte actuel ou du premier de la liste
+        let currentText = display.innerText || sequence[0];
+        if (!display.innerText) display.innerText = currentText;
+
+        for (let i = 1; i < sequence.length; i++) {
+            const targetText = sequence[i];
+
+            if (i === 4) { 
+                // --- CAS E : Remplacement progressif + Blink pendant 10s ---
+                await transitionText(targetText, 100); // Transition vers agent_help_
+                
+                // Préparation des spans pour le blink
+                display.innerHTML = "";
+                for (let char of targetText) {
+                    const span = document.createElement('span');
+                    span.innerText = char === " " ? "\u00A0" : char;
+                    display.appendChild(span);
+                }
+                
+                let endTime = Date.now() + 10000;
+                const spans = display.querySelectorAll('span');
+                while (Date.now() < endTime) {
+                    const randomSpan = spans[Math.floor(Math.random() * spans.length)];
+                    randomSpan.classList.add('blink-fast');
+                    await sleep(150);
+                    randomSpan.classList.remove('blink-fast');
+                }
+            } else {
+                // --- CAS A, B, C, D : Remplacement caractère par caractère ---
+                await transitionText(targetText, 80); 
+                await sleep(1000); // Pause une fois le mot transformé
+            }
+        }
+    }
+}
+
+/**
+ * Fonction utilitaire pour transformer le texte lettre par lettre
+ * @param {string} target - Le texte final à atteindre
+ * @param {number} speed - Vitesse de remplacement en ms
+ */
+async function transitionText(target, speed) {
+    let current = display.innerText.split('');
+    const targetArray = target.split('');
+    const maxLength = Math.max(current.length, targetArray.length);
+
+    for (let j = 0; j < maxLength; j++) {
+        // On remplace le caractère à l'index J
+        current[j] = targetArray[j] !== undefined ? targetArray[j] : "";
+        
+        // On met à jour l'affichage (avec gestion des espaces pour le rendu HTML)
+        display.innerText = current.join('');
+        await sleep(speed);
+    }
+}
+
+        async function runAnimation2() {
+            for (let loop = 0; loop < 3; loop++) {
+                const steps = [
+                    "_ _ _ dialog _ _ _", "_ _ _ dialog _ _", "_ _ _ dialog _", "_ _ _ dialog",
+                    "_ _ _ dialog _ _", "_ _ _ dialog _ _ _", "_ _  dialog _ _ _", "_  dialog _ _ _",
+                    "dialog _ _ _", "_  dialog _ _ _", "_ _  dialog _ _ _", "_ _ _ dialog _ _ _"
+                ];
+                for (let step of steps) {
+                    display.innerText = step;
+                    await sleep(1000); // 1 seconde par étape = 12 secondes total
+                }
+            }
+        }
+
+        async function typeAndBlink(text) {
+            display.innerText = "";
+            for (let char of text) {
+                display.innerText += char;
+                await sleep(100);
+            }
+            for (let i = 0; i < 4; i++) {
+                display.style.opacity = "0";
+                await sleep(200);
+                display.style.opacity = "1";
+                await sleep(200);
+            }
+        }
+
+        async function runAnimation3() {
+            await typeAndBlink("!collec /");
+            await typeAndBlink("!resources… /");
+            await typeAndBlink("!context… /");
+        }
+
+        async function runAnimation4() {
+            await typeAndBlink("sources≈ok≈1");
+            await typeAndBlink("knowledge≈ok≈1");
+            await typeAndBlink("process≈ok≈1");
+        }
+
+        async function mainLoop() {
+            while (true) {
+                await runAnimation1();
+                await runAnimation2();
+                await runAnimation3();
+                await runAnimation4();
+            }
+        }
+
+        mainLoop();
+    </script> <div id="dynamic-string"></div>
   </div>
 
-           <div id="dynamic-string"></div>
+           
 </section>
 
 <script>
