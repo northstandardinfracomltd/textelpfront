@@ -1982,6 +1982,11 @@ font-family: 'TextelpA', sans-serif !important;
 </script>
 
 
+
+
+
+
+
 <div id="txlp-unique-wrapper-99">
     
     <div class="txlp-btn-container-init">
@@ -1991,7 +1996,7 @@ font-family: 'TextelpA', sans-serif !important;
 
     <div id="txlp-overlay-blur-99" class="txlp-overlay-hidden"></div>
 
-    <div id="txlp-modal-login-11" class="txlp-modal-hidden">
+    <div id="txlp-modal-login-11" class="txlp-modal-container txlp-modal-hidden">
         <p class="txlp-text-p">L’éditeur de votre agent est accessible avec le lien personnalisé que vous avez définit, si vous avez oublié le lien, renseignez votre email lié à votre compte.</p>
         
         <div id="txlp-login-error-msg" class="txlp-error-div txlp-hidden-element">
@@ -2008,201 +2013,197 @@ font-family: 'TextelpA', sans-serif !important;
         </div>
     </div>
 
-    <div id="txlp-modal-signup-22" class="txlp-modal-hidden">
+    <div id="txlp-modal-signup-22" class="txlp-modal-container txlp-modal-hidden">
         <p class="txlp-text-p">Ouvrez un compte pour créer votre environnement indépendant qui va héberger et orchestrer votre agent personnalisé. Pour recevoir un accompagnement par un membre de Textelp, veuillez nous contacter.</p>
         
         <div class="txlp-grid-form">
             <input type="email" id="txlp-reg-email" class="txlp-input-field" placeholder="Votre email">
             <input type="tel" id="txlp-reg-phone" class="txlp-input-field" placeholder="Votre téléphone">
-            <input type="text" id="txlp-reg-company" class="txlp-input-field" placeholder="Votre entreprise">
-            <input type="text" id="txlp-reg-domain" class="txlp-input-field" disabled value=".textelp.com">
+            <input type="text" id="txlp-reg-company" class="txlp-input-field" placeholder="Votre entreprise" maxlength="25">
+            
+            <div class="txlp-domain-wrapper">
+                <label class="txlp-small-label">Votre URL d'accès éditeur personnalisée :</label>
+                <input type="text" id="txlp-reg-domain" class="txlp-input-field" disabled value=".textelp.com">
+            </div>
         </div>
 
         <div class="txlp-offers-container">
-            <label class="txlp-offer-card">
+            <label class="txlp-radio-card">
                 <input type="radio" name="txlp-offer" value="off1" checked data-link="https://pay1.textelp.com">
+                <span class="txlp-custom-check"></span>
                 <div class="txlp-offer-content">
                     <span class="txlp-offer-title">Offre 'Go'</span>
-                    <span class="txlp-price">€499 One time</span>
-                    <span class="txlp-label-sub">+€198 / mois</span>
+                    <span class="txlp-price">€499 One time cost</span>
+                    <span class="txlp-label-sub">+€198 par mois pour l'hébergement</span>
                 </div>
             </label>
-            <label class="txlp-offer-card">
+            <label class="txlp-radio-card">
                 <input type="radio" name="txlp-offer" value="off2" data-link="https://pay2.textelp.com">
+                <span class="txlp-custom-check"></span>
                 <div class="txlp-offer-content">
                     <span class="txlp-offer-title">Offre 'Large'</span>
-                    <span class="txlp-price">€1,199 One time</span>
-                    <span class="txlp-label-sub">+€298 / mois</span>
+                    <span class="txlp-price">€1,199 One time cost</span>
+                    <span class="txlp-label-sub">+€298 par mois pour l'hébergement</span>
                 </div>
             </label>
         </div>
 
         <button id="txlp-cta-pay-btn" class="txlp-btn-cta">Pay and Edit Agent</button>
-        <button class="txlp-btn-cancel txlp-close-trigger">Annuler</button>
+        <button class="txlp-btn-secondary txlp-close-trigger txlp-full-width-btn">Annuler</button>
     </div>
 
     <style>
-        @import url('https://fonts.cdnfonts.com/css/textelpa'); /* Import théorique de la police */
-        
         #txlp-unique-wrapper-99 {
-            --txlp-main-font: 'TextelpA', sans-serif;
-            --txlp-bg-modal: #ffffff;
+            --txlp-font: 'TextelpA', sans-serif;
+            --txlp-bg: #ffffff;
             --txlp-primary: #000000;
             --txlp-accent: #2563eb;
+            --txlp-light-grey: #f3f4f6;
+            --txlp-border: #e5e7eb;
+        }
+
+        /* Suppression globale de l'outline bleu UNIQUEMENT dans ce bloc */
+        #txlp-unique-wrapper-99 *:focus {
+            outline: none !important;
         }
 
         #txlp-unique-wrapper-99 * {
-            font-family: var(--txlp-main-font);
+            font-family: var(--txlp-font);
             font-size: 18px;
             box-sizing: border-box;
         }
 
-        /* Overlay Background Blur */
         #txlp-overlay-blur-99 {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.3);
-            backdrop-filter: blur(8px);
-            z-index: 9998;
-            display: none;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.4); backdrop-filter: blur(8px);
+            z-index: 9998; display: none;
         }
 
-        /* Modals Styles */
-        #txlp-modal-login-11, #txlp-modal-signup-22 {
-            position: fixed;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            background: var(--txlp-bg-modal);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            z-index: 9999;
-            width: 90%;
-            max-width: 550px;
-            display: none;
+        .txlp-modal-container {
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background: var(--txlp-bg); padding: 30px; border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            z-index: 9999; width: 95%; max-width: 600px; display: none;
         }
 
         .txlp-modal-hidden { display: none; }
-        .txlp-overlay-hidden { display: none; }
 
-        /* Form Elements */
         .txlp-input-field {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 6px;
+            width: 100%; padding: 12px; margin: 8px 0;
+            border: 1px solid var(--txlp-border); border-radius: 8px;
         }
 
-        .txlp-input-field:disabled { background: #f0f0f0; color: #666; cursor: not-allowed; }
+        .txlp-small-label { font-size: 13px; color: #666; margin-top: 10px; display: block; }
 
-        .txlp-error-div {
-            background: #fee2e2;
-            color: #dc2626;
-            padding: 10px;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            font-size: 15px;
+        /* Custom Radio Buttons */
+        .txlp-offers-container { display: flex; gap: 12px; margin: 20px 0; }
+        .txlp-radio-card {
+            flex: 1; position: relative; border: 2px solid var(--txlp-border);
+            padding: 15px 15px 15px 45px; border-radius: 12px; cursor: pointer; transition: 0.2s;
+        }
+        .txlp-radio-card input { position: absolute; opacity: 0; cursor: pointer; }
+        .txlp-custom-check {
+            position: absolute; top: 18px; left: 15px; height: 20px; width: 20px;
+            background-color: #eee; border-radius: 50%; border: 2px solid #ddd;
+        }
+        .txlp-radio-card:hover { border-color: var(--txlp-accent); }
+        .txlp-radio-card input:checked ~ .txlp-custom-check {
+            background-color: var(--txlp-accent); border-color: var(--txlp-accent);
+        }
+        .txlp-radio-card input:checked ~ .txlp-custom-check:after {
+            content: ""; position: absolute; display: block;
+            top: 4px; left: 4px; width: 8px; height: 8px; border-radius: 50%; background: white;
         }
 
-        .txlp-hidden-element { display: none; }
+        .txlp-offer-title { font-weight: bold; display: block; margin-bottom: 4px; }
+        .txlp-price { font-size: 16px; display: block; }
+        .txlp-label-sub { font-size: 12px; color: var(--txlp-accent); font-weight: 600; }
 
         /* Buttons */
         .txlp-btn-primary, .txlp-btn-cta {
-            width: 100%; padding: 15px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;
+            width: 100%; padding: 14px; border: none; border-radius: 8px;
+            cursor: pointer; font-weight: 600; margin-top: 10px;
         }
-        .txlp-btn-primary { background: var(--txlp-primary); color: white; margin-top: 10px; }
-        .txlp-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+        .txlp-btn-primary { background: var(--txlp-primary); color: white; }
+        .txlp-btn-primary:disabled { background: #ccc; cursor: wait; }
         
-        .txlp-btn-cta { background: var(--txlp-accent); color: white; margin-top: 20px; transition: transform 0.2s; }
-        .txlp-btn-cta:hover { transform: scale(1.02); }
+        .txlp-btn-cta { background: var(--txlp-accent); color: white; margin-bottom: 10px; }
+        
+        .txlp-btn-secondary {
+            background: var(--txlp-light-grey); color: #333; border: none;
+            padding: 12px; border-radius: 8px; cursor: pointer; flex: 1; text-decoration: none; text-align: center;
+        }
+        .txlp-full-width-btn { width: 100%; display: block; margin-top: 5px; }
 
         .txlp-flex-row { display: flex; gap: 10px; margin-top: 15px; }
-        .txlp-btn-secondary {
-            flex: 1; text-align: center; padding: 12px; border: 1px solid #ccc; 
-            border-radius: 6px; text-decoration: none; color: #333; background: #fff; cursor: pointer;
-        }
-
-        .txlp-btn-cancel {
-            display: block; width: fit-content; margin: 15px auto 0;
-            background: none; border: none; color: #666; cursor: pointer; text-decoration: underline;
-        }
-
-        /* Offers Grid */
-        .txlp-offers-container { display: flex; gap: 15px; margin: 20px 0; }
-        .txlp-offer-card {
-            flex: 1; border: 2px solid #eee; padding: 15px; border-radius: 10px;
-            cursor: pointer; display: flex; align-items: flex-start; gap: 10px;
-        }
-        .txlp-offer-card:has(input:checked) { border-color: var(--txlp-accent); background: #f0f7ff; }
-        .txlp-offer-content { display: flex; flex-direction: column; }
-        .txlp-offer-title { font-weight: bold; display: block; }
-        .txlp-price { font-size: 16px; color: #333; }
-        .txlp-label-sub { font-size: 13px; color: var(--txlp-accent); font-weight: bold; }
-
-        .txlp-grid-form { display: grid; grid-template-columns: 1fr; gap: 5px; }
+        .txlp-error-div { background: #fee2e2; color: #dc2626; padding: 12px; border-radius: 8px; margin-bottom: 10px; font-size: 15px; }
+        .txlp-hidden-element { display: none; }
     </style>
 
     <script>
         (function() {
             const overlay = document.getElementById('txlp-overlay-blur-99');
+            const modals = document.querySelectorAll('.txlp-modal-container');
             const loginModal = document.getElementById('txlp-modal-login-11');
             const signupModal = document.getElementById('txlp-modal-signup-22');
-            const loginInput = document.getElementById('txlp-input-login-email');
-            const locateBtn = document.getElementById('txlp-btn-locate-action');
-            const errorDiv = document.getElementById('txlp-login-error-msg');
-            const companyInput = document.getElementById('txlp-reg-company');
-            const domainInput = document.getElementById('txlp-reg-domain');
-            const ctaPayBtn = document.getElementById('txlp-cta-pay-btn');
+            
+            // Fermeture
+            const closeAll = () => {
+                overlay.style.display = 'none';
+                modals.forEach(m => m.style.display = 'none');
+                document.getElementById('txlp-login-error-msg').classList.add('txlp-hidden-element');
+            };
 
-            // Ouvrir Popups
+            // Clic sur l'overlay pour fermer
+            overlay.onclick = closeAll;
+
+            // Triggers
             document.getElementById('txlp-trigger-login-8822').onclick = () => {
                 overlay.style.display = 'block';
                 loginModal.style.display = 'block';
             };
-
             document.getElementById('txlp-trigger-signup-7733').onclick = () => {
                 overlay.style.display = 'block';
                 signupModal.style.display = 'block';
-                updateCtaLink();
             };
+            document.querySelectorAll('.txlp-close-trigger').forEach(b => b.onclick = closeAll);
 
-            // Fermer Popups
-            document.querySelectorAll('.txlp-close-trigger').forEach(btn => {
-                btn.onclick = () => {
-                    overlay.style.display = 'none';
-                    loginModal.style.display = 'none';
-                    signupModal.style.display = 'none';
-                    errorDiv.classList.add('txlp-hidden-element');
-                };
-            });
+            // LOGIQUE CONNEXION + DELAY 3S
+            const loginEmail = document.getElementById('txlp-input-login-email');
+            const locateBtn = document.getElementById('txlp-btn-locate-action');
+            const errorMsg = document.getElementById('txlp-login-error-msg');
 
-            // Logic Connexion (Localiser)
-            loginInput.oninput = (e) => {
-                locateBtn.disabled = !e.target.value.includes('@');
-            };
+            loginEmail.oninput = (e) => locateBtn.disabled = !e.target.value.includes('@');
 
             locateBtn.onclick = () => {
-                errorDiv.classList.remove('txlp-hidden-element');
+                locateBtn.disabled = true;
+                loginEmail.disabled = true;
+                locateBtn.innerText = "Recherche...";
+                
+                setTimeout(() => {
+                    errorMsg.classList.remove('txlp-hidden-element');
+                    locateBtn.disabled = false;
+                    loginEmail.disabled = false;
+                    locateBtn.innerText = "Localiser";
+                }, 3000);
             };
 
-            // Logic Créer Compte (Autofill domaine)
-            companyInput.oninput = (e) => {
-                const slug = e.target.value.toLowerCase().replace(/[^a-z0-9]/g, '');
-                domainInput.value = slug ? `${slug}.textelp.com` : '.textelp.com';
+            // LOGIQUE CRÉATION COMPTE
+            const companyInp = document.getElementById('txlp-reg-company');
+            const domainInp = document.getElementById('txlp-reg-domain');
+            const ctaBtn = document.getElementById('txlp-cta-pay-btn');
+
+            companyInp.oninput = (e) => {
+                const slug = e.target.value.toLowerCase().replace(/[^a-z0-9]/g, '').substring(0, 25);
+                domainInp.value = slug ? `${slug}.textelp.com` : '.textelp.com';
             };
 
-            // Logic Prix & Lien Variable
-            function updateCtaLink() {
-                const selected = document.querySelector('input[name="txlp-offer"]:checked');
-                if(selected) {
-                    ctaPayBtn.onclick = () => { window.location.href = selected.dataset.link; };
-                }
-            }
-
-            document.querySelectorAll('input[name="txlp-offer"]').forEach(radio => {
-                radio.onchange = updateCtaLink;
-            });
+            const updateLink = () => {
+                const sel = document.querySelector('input[name="txlp-offer"]:checked');
+                ctaBtn.onclick = () => { window.location.href = sel.dataset.link; };
+            };
+            document.querySelectorAll('input[name="txlp-offer"]').forEach(r => r.onchange = updateLink);
+            updateLink();
         })();
     </script>
 </div>
