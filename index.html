@@ -1326,6 +1326,9 @@ font-family: 'TextelpA', sans-serif !important;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
 
+.flashXW {
+display: none !important;
+        }
         :root {
             --gm-bg-color: #fcfcfc;
             --gm-grid-light: #f0f0f0;
@@ -1427,6 +1430,11 @@ font-family: 'TextelpA', sans-serif !important;
 
 <div class="gm-main-wrapper">
     <div class="gm-topics-container" id="topicsContainer"></div>
+    <div class="gm-center-card flashXW" id="centerCard">
+        <p style="font-size:13px; color:#5f6368">Interrogez notre intelligence</p>
+        <input type="text" class="gm-search-input" id="gmSearch" placeholder="Recherchez...">
+        <div id="warningMsg" class="gm-warning">Peu de ressources trouvées...</div>
+    </div>
 
     <div class="gm-modal-overlay" id="modalOverlay">
         <div class="gm-answer-modal" id="answerModal">
