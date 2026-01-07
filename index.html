@@ -43,20 +43,6 @@ body {
 }
 
 /* ================= STICKY BAR ================= */
-.sticky-bar {
-    background: #1c0f7e !important;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 99%;
-    margin: auto;
-    height: 66px;
-    margin-top: 8px !important;
-    border-radius: 20px;
-    border: 1px solid #2b1aa2;
-    margin-bottom: -90px;
-}
 
 .sticky-bar button {
     background: #000;
@@ -649,6 +635,33 @@ font-family: 'TextelpA', sans-serif !important;
             50% { opacity: 0; }
         }
         .blink-fast { animation: charBlink 0.3s infinite; }
+
+        /* État de base de votre barre */
+.sticky-bar {
+
+    background: #1c0f7e !important;
+    justify-content: space-between;
+    width: 99%;
+    margin: auto;
+    height: 66px;
+    margin-top: 8px !important;
+    border-radius: 20px;
+    border: 1px solid #2b1aa2;
+    margin-bottom: -90px;
+
+  position: sticky;
+  top: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease; /* Animation fluide */
+  z-index: 1000;
+}
+
+/* Classe qui sera ajoutée par le JS */
+.sticky-bar.hidden {
+  transform: translateY(-100%); /* Fait remonter la barre hors de l'écran */
+  opacity: 0;
+  pointer-events: none; /* Empêche de cliquer sur les liens quand elle est invisible */
+}
+
     </style>
 
     <div class="nav-content">
@@ -666,6 +679,19 @@ font-family: 'TextelpA', sans-serif !important;
     </div>
 
 </div>
+
+<script>
+    window.addEventListener('scroll', function() {
+  const stickyBar = document.querySelector('.sticky-bar');
+  
+  // Vérifie si on a dépassé 500px de scroll
+  if (window.scrollY > 500) {
+    stickyBar.classList.add('hidden');
+  } else {
+    stickyBar.classList.remove('hidden');
+  }
+});
+</script>
 </div>
 
 <!-- HERO -->
