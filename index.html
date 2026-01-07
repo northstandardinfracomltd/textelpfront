@@ -183,6 +183,7 @@ padding-top: 200px !important;
   color: #fff !important;
       font-size: 18px !important;
           cursor: default;
+          margin-bottom: 35px;
       
 }
 .pisaBX {
@@ -486,7 +487,9 @@ margin-top: 40px;
 
 
 .folk {
-background: radial-gradient(circle, #080657 0%, #311ca7 60%, #201289 100%);
+    background: #1b1729;
+    border-top: 1px solid #383250;
+        margin-top: 100px;
     width: 100% !important;
     max-width: 100% !important;
 }
@@ -1385,38 +1388,44 @@ display: none !important;
 
 
         .gm-main-wrapper {
-             margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: var(--gm-bg-color); 
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            background-image: 
-                linear-gradient(var(--gm-grid-light) 1px, transparent 1px),
-                linear-gradient(90deg, var(--gm-grid-light) 1px, transparent 1px),
-                linear-gradient(var(--gm-grid-dark) 1px, transparent 1px),
-                linear-gradient(90deg, var(--gm-grid-dark) 1px, transparent 1px);
-            background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
-            font-family: var(--gm-font-family);
-            display: flex; align-items: center; justify-content: center;
+                border-bottom: 1px solid #2c2543;
+margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #181427;
+    position: relative;
+    width: 100%;
+    height: 102vh;
+    background-image: linear-gradient(#2c2543 1px, transparent 1px), linear-gradient(90deg, #2c2543 1px, transparent 1px), linear-gradient(var(--gm-grid-dark) 1px, transparent 1px), linear-gradient(90deg, #2c2543 1px, transparent 1px);
+    background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
+    font-family: var(--gm-font-family);
+    display: flex;
+    align-items: center;
+    justify-content: center;
         }
 
         .gm-topics-container { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
 
         .gm-floating-topic {
-            position: absolute;
-            display: flex; align-items: center;
-            padding: 10px 18px;
-            background: var(--gm-topic-bg);
-            border: 1px solid #e0e0e0;
-            border-radius: 40px;
-            white-space: nowrap;
-            user-select: none;
-            z-index: 2;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            pointer-events: auto;
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            will-change: left, top;
+position: absolute;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    padding: 10px 18px;
+    background: #181427;
+    border: 1px solid #241e37;
+    border-radius: 40px;
+    white-space: nowrap;
+    user-select: none;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    pointer-events: auto;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    will-change: left, top;
         }
 
         .gm-dot { width: 10px; height: 10px; border-radius: 50%; margin-right: 12px; position: relative; }
@@ -1656,26 +1665,26 @@ display: none !important;
     .tpx-eval-main-title {
         font-size: 18px;
         margin-bottom: 32px;
-        color: #5f6368;
+        color: #fff;
         display: block;
     }
 
     /* Style de la Carte */
     .tpx-eval-card {
-        display: block;
-        border: 1px solid #e0e0e0;
-        border-radius: 16px;
-        padding: 24px;
-        margin-bottom: 16px;
-        cursor: pointer;
-        transition: all 0.25s ease;
-        background-color: #ffffff;
+    display: block;
+    border: 1px solid #383250;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background-color: #1b1729;
     }
 
     /* État Actif (Border + Background) */
     .tpx-eval-card.tpx-is-active {
-        border-color: #4285f4;
-        background-color: #f8faff;
+    border-color: #383250;
+    background-color: #252138;
     }
 
     .tpx-eval-header {
@@ -1688,7 +1697,7 @@ display: none !important;
         font-size: 22px;
         margin: 0;
         font-weight: 100;
-        color: #202124;
+        color: #ffffff;
     }
 
     /* Radio Button Custom */
@@ -1700,11 +1709,11 @@ display: none !important;
         position: relative;
         transition: all 0.2s ease;
         flex-shrink: 0;
-        background: white;
+        background: transparent;
     }
 
     .tpx-is-active .tpx-eval-radio-custom {
-        border-color: #4285f4;
+        border-color: #ffffff;
     }
 
     .tpx-is-active .tpx-eval-radio-custom::after {
@@ -1715,7 +1724,7 @@ display: none !important;
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background: #4285f4;
+        background: #fff;
     }
 
     /* Contenu masqué par défaut */
@@ -1731,7 +1740,7 @@ display: none !important;
 
     .tpx-eval-desc {
         font-size: 18px;
-        color: #3c4043;
+        color: #ffffff;
         margin: 0 0 20px 0;
     }
 
@@ -1745,20 +1754,22 @@ display: none !important;
     .tpx-eval-big-p {
         font-size: 26px;
         margin: 0;
+        color: #fff !important;
     }
 
     .tpx-eval-small-p {
         font-size: 12px;
-        color: #70757a;
+        color: #ffffff;
     }
 
     .tpx-eval-label-host {
-        display: inline-block;
-        background: #f1f3f4;
-        padding: 6px 12px;
-        border-radius: 8px;
-        font-size: 14px;
-        color: #202124;
+    display: inline-block;
+    background: #1b172963;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    border: 1px solid #2a253e;
+    color: #ffffff8f;
     }
     
     /* Input invisible */
@@ -2263,7 +2274,7 @@ display: none !important;
 <!-- SECTION E -->
 <section class="folk container section-e">
   <div class="legal">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mentions légales regroupées dans un seul bloc. <div id="dynamic-string"></div>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mentions légales regroupées dans un seul bloc. <br><div id="dynamic-string"></div>
        <script>
         const display = document.getElementById('dynamic-string');
 
