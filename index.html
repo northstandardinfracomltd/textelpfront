@@ -26,7 +26,7 @@
 body {
   font-family:'TextelpA', sans-serif;
   color: #000;
-  background: #1b1729;
+  background: #100927;
 }
 
 /* ================= WAVE ================= */
@@ -240,14 +240,14 @@ display: grid;
     margin-top: 25px;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
-    background: #252137;
+    background: transparent;
     border: 1px solid #c2aeff1f;
     border-radius: 20px;
     padding: 9px;
     box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
 }
 .card-left {
-  background: #1b1729;
+  background: transparent;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -745,10 +745,68 @@ font-family: 'TextelpA', sans-serif !important;
 
 <div class="preventiaXBL"></div>
    <h2  class="booba">Un aperçu de votre console éditeur et l'affichage pour vos utilisateurs</h2>
+
+   <button id="ux-toggle-99x-trigger" class="ux-toggle-99x-btn">
+    Essayez pour mieux comprendre
+</button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const triggerBtn = document.getElementById('ux-toggle-99x-trigger');
+    const demoContainer = document.getElementById('cv-demo-container');
+
+    if (triggerBtn && demoContainer) {
+        triggerBtn.addEventListener('click', function() {
+            // 1. Masquer le bouton de manière fluide
+            triggerBtn.classList.add('ux-toggle-99x-fade-out');
+
+            // 2. Afficher le conteneur après un léger délai ou simultanément
+            demoContainer.classList.remove('ux-toggle-99x-hidden');
+            demoContainer.classList.add('ux-toggle-99x-visible');
+
+            // Optionnel : Supprimer totalement le bouton du DOM après l'animation
+            setTimeout(() => {
+                triggerBtn.style.display = 'none';
+            }, 500);
+        });
+    }
+});
+</script>
+
    </div>
 
-<div class="cv-demo-container">
+<div id="cv-demo-container" class="cv-demo-container ux-toggle-99x-hidden">
     <style>
+
+/* Style du bouton */
+.ux-toggle-99x-btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+/* État masqué initial pour le conteneur */
+.ux-toggle-99x-hidden {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+/* État affiché pour le conteneur */
+.ux-toggle-99x-visible {
+    opacity: 1;
+    visibility: visible;
+    height: auto; /* Permet au contenu de prendre sa place */
+}
+
+/* Classe pour masquer le bouton après clic */
+.ux-toggle-99x-fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Empêche de cliquer à nouveau pendant le fondu */
+}
 
         .cv-demo-wrapper * {
             font-family: 'TextelpA', sans-serif !important;
