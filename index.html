@@ -258,7 +258,7 @@ display: grid;
 .card-right { padding:26px; }
 
 /* ================= SECTION C ================= */
-.section-c { background: #181427; }
+.section-c { background: #100927; }
 .section-c h2 { font-size:40px; margin-bottom:50px; }
 
 .features {
@@ -487,7 +487,7 @@ margin-top: 40px;
 
 
 .folk {
-    background: #1b1729;
+    background: #100927;
     border-top: 1px solid #383250;
         margin-top: 100px;
     width: 100% !important;
@@ -751,23 +751,30 @@ font-family: 'TextelpA', sans-serif !important;
 </button>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    const triggerBtn = document.getElementById('ux-toggle-99x-trigger');
-    const demoContainer = document.getElementById('cv-demo-container');
+document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('ux-toggle-99x-trigger');
+    const container = document.getElementById('cv-demo-container');
 
-    if (triggerBtn && demoContainer) {
-        triggerBtn.addEventListener('click', function() {
-            // 1. Masquer le bouton de manière fluide
-            triggerBtn.classList.add('ux-toggle-99x-fade-out');
+    if (btn && container) {
+        btn.addEventListener('click', function() {
+            // 1. Modifier le texte et ajouter l'effet de chargement
+            btn.textContent = 'Chargement de l\'interface...';
+            btn.classList.add('ux-toggle-99x-loading');
 
-            // 2. Afficher le conteneur après un léger délai ou simultanément
-            demoContainer.classList.remove('ux-toggle-99x-hidden');
-            demoContainer.classList.add('ux-toggle-99x-visible');
-
-            // Optionnel : Supprimer totalement le bouton du DOM après l'animation
+            // 2. Lancer le compte à rebours de 4 secondes (4000ms)
             setTimeout(() => {
-                triggerBtn.style.display = 'none';
-            }, 500);
+                // Masquer le bouton proprement
+                btn.classList.add('ux-toggle-99x-fade-out');
+                
+                // Afficher la div de démo
+                container.classList.remove('ux-toggle-99x-hidden');
+                container.classList.add('ux-toggle-99x-visible');
+
+                // Supprimer le bouton du flux après l'animation de sortie
+                setTimeout(() => {
+                    btn.style.display = 'none';
+                }, 500);
+            }, 4000);
         });
     }
 });
@@ -778,34 +785,61 @@ font-family: 'TextelpA', sans-serif !important;
 <div id="cv-demo-container" class="cv-demo-container ux-toggle-99x-hidden">
     <style>
 
-/* Style du bouton */
+/* Style de base du bouton */
 .ux-toggle-99x-btn {
-    padding: 10px 20px;
+    padding: 12px 25px;
+    font-size: 16px;
     cursor: pointer;
-    transition: opacity 0.5s ease, visibility 0.5s;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-/* État masqué initial pour le conteneur */
+/* État de chargement avec rayures animées */
+.ux-toggle-99x-loading {
+    cursor: wait;
+    color: #333;
+    /* Création des rayures obliques */
+    background-image: linear-gradient(
+        45deg, 
+        rgba(0,0,0,0.05) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(0,0,0,0.05) 50%, 
+        rgba(0,0,0,0.05) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-size: 40px 40px;
+    animation: ux-stripes-move-99x 1s linear infinite;
+}
+
+/* Animation du mouvement des rayures */
+@keyframes ux-stripes-move-99x {
+    from { background-position: 0 0; }
+    to { background-position: 40px 0; }
+}
+
+/* Gestion de l'affichage du conteneur */
 .ux-toggle-99x-hidden {
     opacity: 0;
     visibility: hidden;
-    height: 0;
-    overflow: hidden;
-    transition: opacity 0.8s ease, visibility 0.8s;
+    max-height: 0;
+    transition: opacity 0.8s ease, max-height 0.8s ease;
 }
 
-/* État affiché pour le conteneur */
 .ux-toggle-99x-visible {
     opacity: 1;
     visibility: visible;
-    height: auto; /* Permet au contenu de prendre sa place */
+    max-height: 1000px; /* Valeur haute pour permettre l'expansion */
 }
 
-/* Classe pour masquer le bouton après clic */
+/* Disparition finale du bouton */
 .ux-toggle-99x-fade-out {
     opacity: 0;
-    visibility: hidden;
-    pointer-events: none; /* Empêche de cliquer à nouveau pendant le fondu */
+    pointer-events: none;
 }
 
         .cv-demo-wrapper * {
@@ -1452,7 +1486,7 @@ margin: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: #181427;
+    background: #100927;
     position: relative;
     width: 100%;
     height: 102vh;
