@@ -901,11 +901,11 @@ font-family: 'TextelpA', sans-serif !important;
 
 <section class="container section-b">
   <div class="card">
-    <div class="card-left"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelpgo1.svg"></div>
+    <div class="card-left"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/Illustration1TextelpURGE.svg"></div>
     <div class="card-right"><h3 class="pisaA">Contextes</h3><p class="pisaB">Affinity inclut les studios Vecteur, Pixel et Mise en page, sans vous enfermer dans un univers figé.</p><a href="#" class="gaybutton" id="txlp-trigger-signup-7733">Commencer</a></div>
   </div>
   <div class="card">
-    <div class="card-left"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelpgo2.svg"></div>
+    <div class="card-left"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/Illustration2TextelpURGE.svg"></div>
     <div class="card-right"><h3 class="pisaA">Lorem ipsum</h3><p class="pisaB">Affinity inclut les studios Vecteur, Pixel et Mise en page, sans vous enfermer dans un univers figé.</p><a href="#" class="gaybutton" id="txlp-trigger-signup-7733">Nous contacter</a></div>
   </div>
 </section>
@@ -1666,17 +1666,25 @@ max-width: 1365px !important;
     margin-top: 55px !important;
     margin: auto;
     border-radius: 22px;
-    border: 1px solid #e5e2ff;
+    border: 1px solid #120b7821;
     padding: 0;
     overflow: hidden;
-    background: radial-gradient(#c5c0ff, transparent);
+background-color: #ffffff; /* Fond blanc de base */
+  background-image: radial-gradient(
+    at top center, 
+    rgba(204, 175, 255, 0.5) 0%,   /* Mauve/Violet clair */
+    rgba(190, 230, 255, 0.4) 40%,  /* Bleu ciel très doux */
+    rgba(255, 255, 255, 0) 80%     /* Retour au blanc transparent */
+  );
+  background-repeat: no-repeat;
     position: relative;
     width: 98%;
-    height: 60vh;
+    height: 275px;
     font-family: var(--gm-font-family);
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
         }
 
         .gm-topics-container { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
@@ -1711,7 +1719,7 @@ position: absolute;
         @keyframes shimmer { 0% { background-position: -200%; } 100% { background-position: 200%; } }
 
         .gm-dot-active::after {
-            content: ''; position: absolute; inset: -6px; border: 1.5px dashed currentColor;
+            content: ''; position: absolute; inset: -4px; border: 1px dashed currentColor;
             border-radius: 50%; animation: rotate 4s linear infinite;
         }
         @keyframes rotate { from { transform: rotate(0); } to { transform: rotate(360deg); } }
