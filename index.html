@@ -1480,7 +1480,8 @@ text-align: center !important;
             margin-bottom: 40px;
             padding: 0 20px;
             line-height: 1.5;
-            color: #6b7280;
+            color: #000000;
+            cursor: default;
         }
 
         /* Grille des logos */
@@ -1639,7 +1640,7 @@ text-align: center !important;
 
 <section class="section-c greco">
   <div class="container">
-    <h2  class="booba">Lorem ipsum dolor sit amet</h2>
+    <h2  class="boobaBLANC">Lorem ipsum dolor sit amet</h2>
     <div class="features">
       <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp1.svg">Lorem ipsum colore enigma</div>
       <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2.svg">Lorem ipsum colore enigma</div>
@@ -1653,10 +1654,6 @@ text-align: center !important;
     </div>
   </div>
 
-
-      <h2  class="booba">Vous avez probablement des questions, explorons-ensemble ces sujets.</h2>
-
-
 </section>
 
 
@@ -1667,6 +1664,20 @@ text-align: center !important;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+
+.boobaBLANC {
+    text-align: center;
+    margin: auto;
+    font-size: 50px;
+    color: #ffffff !important;
+    max-width: 700px;
+    line-height: 75px;
+    margin-top: 55px;
+    margin-bottom: 20px;
+    -webkit-font-smoothing: antialiased;
+    cursor: default;
+}
+
 
 .flashXW {
 display: none !important;
@@ -1802,26 +1813,31 @@ position: absolute;
     .tpx-eval-main-title {
         font-size: 18px;
         margin-bottom: 32px;
-        color: #fff;
+        color: #000000;
         display: block;
+            text-align: center;
     }
 
     /* Style de la Carte */
     .tpx-eval-card {
     display: block;
-    border: 1px solid #383250;
     border-radius: 16px;
     padding: 24px;
     margin-bottom: 16px;
     cursor: pointer;
     transition: all 0.25s ease;
-    background-color: #1b1729;
+    border: 1px solid #e0dfee;
+    overflow: hidden;
+    background-image: radial-gradient(at top center, rgb(204 175 255 / 23%) 0%, /* Mauve/Violet clair */ rgba(190, 230, 255, 0.4) 40%, /* Bleu ciel très doux */ rgba(255, 255, 255, 0) 100% /* Retour au blanc transparent */);
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
     }
 
     /* État Actif (Border + Background) */
     .tpx-eval-card.tpx-is-active {
-    border-color: #383250;
-    background-color: #252138;
+border-color: #674eff;
+    border: 3px solid #674eff;
+    background-color: #ffffff;
     }
 
     .tpx-eval-header {
@@ -1841,7 +1857,7 @@ position: absolute;
     .tpx-eval-radio-custom {
         width: 24px;
         height: 24px;
-        border: 2px solid #dadce0;
+        border: 3px solid #674eff;;
         border-radius: 50%;
         position: relative;
         transition: all 0.2s ease;
@@ -1850,18 +1866,18 @@ position: absolute;
     }
 
     .tpx-is-active .tpx-eval-radio-custom {
-        border-color: #ffffff;
+        border-color: #674eff;
     }
 
     .tpx-is-active .tpx-eval-radio-custom::after {
         content: "";
         position: absolute;
-        top: 5px;
-        left: 5px;
-        width: 10px;
-        height: 10px;
+top: 3px;
+    left: 3px;
+    width: 12px;
+    height: 12px;
         border-radius: 50%;
-        background: #fff;
+        background: #674eff;
     }
 
     /* Contenu masqué par défaut */
@@ -1877,7 +1893,7 @@ position: absolute;
 
     .tpx-eval-desc {
         font-size: 18px;
-        color: #ffffff;
+        color: #000;
         margin: 0 0 20px 0;
     }
 
@@ -1891,22 +1907,22 @@ position: absolute;
     .tpx-eval-big-p {
         font-size: 26px;
         margin: 0;
-        color: #fff !important;
+        color: #000 !important;
     }
 
     .tpx-eval-small-p {
         font-size: 12px;
-        color: #ffffff;
+        color: #000;
     }
 
     .tpx-eval-label-host {
-    display: inline-block;
-    background: #1b172963;
+display: inline-block;
+    background: #ffffff;
     padding: 6px 12px;
     border-radius: 8px;
     font-size: 14px;
-    border: 1px solid #2a253e;
-    color: #ffffff8f;
+    border: 1px solid #674eff1c;
+    color: #000000;
     }
     
     /* Input invisible */
