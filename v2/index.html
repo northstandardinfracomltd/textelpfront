@@ -263,9 +263,11 @@ display: grid;
 .section-c h2 { font-size:40px; margin-bottom:50px; }
 
 .features {
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-    gap: 35px;
+display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 1100px;
+    margin: auto;
 }
 .feature {
     font-family: 'TextelpA', sans-serif;
@@ -433,9 +435,11 @@ margin-top: 40px;
 
 .colorPURPLE {
     outline-offset: 4px !important;
-    border: 0px solid #622069;
+    border: none !important;
     outline: #ffffff08 solid 4px;
-    background: #ffffff08;
+    background: #674fff;
+    padding: 23px;
+    border-radius: 18px;
     box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
 }
 .colorBLUE {
@@ -488,8 +492,8 @@ margin-top: 40px;
 
 
 .folk {
-    background: #100927;
-    border-top: 1px solid #383250;
+    background: #674fff;
+    border-top: none !important;
         margin-top: 100px;
     width: 100% !important;
     max-width: 100% !important;
@@ -915,14 +919,21 @@ font-family: 'TextelpA', sans-serif !important;
 
 
 <div class="txp-widget">
+
+    <h2 class="booba">Un aperçu</h2>
+
+
     <style>
 
         .featuresXW {
-    display: grid;
+display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 35px;
+    gap: 30px;
+    max-width: 1050px;
+    margin: auto;
 }
         .txp-widget {
+            margin-left: auto;
             --txp-primary-bg: #E0D7FF;
             --txp-accent-blue: #1A4BFF;
             --txp-btn-purple: #4A28C4;
@@ -2163,99 +2174,7 @@ display: inline-block;
         }
     </style>
 
-    <div class="tx-logos-wrapper">
-        <h2 class="tx-logos-headline">
-            The world's most popular workflow automation platform for technical teams including
-        </h2>
 
-        <div class="tx-logos-grid">
-            <div class="tx-logo-slot" id="slot-0">
-                <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo1.svg" class="tx-logo-img tx-active">
-            </div>
-            <div class="tx-logo-slot" id="slot-1">
-                <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo2.svg" class="tx-logo-img tx-active">
-            </div>
-            <div class="tx-logo-slot" id="slot-2">
-                <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo4.svg" class="tx-logo-img tx-active">
-            </div>
-            <div class="tx-logo-slot" id="slot-3">
-                <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo3.svg" class="tx-logo-img tx-active">
-            </div>
-        </div>
-    </div>
-
-    <script>
-        (function() {
-            const allLogos = [
-                                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo1.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo2.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo4.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo3.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo5.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo6.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo7.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo8.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo9.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo10.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo11.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo12.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo13.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo14.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo15.svg"
-            ];
-
-            // Indices des logos actuellement affichés dans les 4 slots
-            let currentIndices = [0, 1, 2, 3];
-            let nextSlotToUpdate = 0;
-
-            function updateNextLogo() {
-                const slotId = `slot-${nextSlotToUpdate}`;
-                const container = document.getElementById(slotId);
-                const oldImg = container.querySelector('.tx-active');
-                
-                // Trouver un logo qui n'est pas déjà affiché
-                let nextLogoIndex;
-                do {
-                    nextLogoIndex = Math.floor(Math.random() * allLogos.length);
-                } while (currentIndices.includes(nextLogoIndex));
-
-                // Mettre à jour l'index
-                currentIndices[nextSlotToUpdate] = nextLogoIndex;
-
-                // Décider de la direction aléatoire (up ou down)
-                const isUp = Math.random() > 0.5;
-                const outClass = isUp ? 'tx-swipe-up-out' : 'tx-swipe-down-out';
-                const inClassInitial = isUp ? 'tx-swipe-up-in' : 'tx-swipe-down-in';
-
-                // Créer la nouvelle image
-                const newImg = document.createElement('img');
-                newImg.src = allLogos[nextLogoIndex];
-                newImg.className = `tx-logo-img ${inClassInitial}`;
-
-                container.appendChild(newImg);
-
-                // Déclencher l'animation
-                setTimeout(() => {
-                    oldImg.classList.remove('tx-active');
-                    oldImg.classList.add(outClass);
-
-                    newImg.classList.remove(inClassInitial);
-                    newImg.classList.add('tx-active');
-                }, 50);
-
-                // Nettoyer l'ancienne image après l'animation
-                setTimeout(() => {
-                    oldImg.remove();
-                }, 650);
-
-                // Passer au slot suivant (0 -> 1 -> 2 -> 3 -> 0...)
-                nextSlotToUpdate = (nextSlotToUpdate + 1) % 4;
-            }
-
-            // Lancer la rotation toutes les 2 secondes
-            setInterval(updateNextLogo, 2000);
-        })();
-    </script>
 </div>
 
 <!-- SECTION E -->
