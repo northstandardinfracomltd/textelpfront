@@ -912,6 +912,330 @@ font-family: 'TextelpA', sans-serif !important;
 </section>
 
     <div class="features">
+
+
+<div class="txp-widget">
+    <style>
+        .txp-widget {
+            --txp-primary-bg: #E0D7FF;
+            --txp-accent-blue: #1A4BFF;
+            --txp-btn-purple: #4A28C4;
+            --txp-text-gray: #666;
+            --txp-border-light: #DDD;
+            --txp-shimmer-base: #999;
+            --txp-shimmer-bright: #000;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'TextelpA', sans-serif;
+        }
+
+        .txp-widget * { 
+            box-sizing: border-box; 
+            font-family: 'TextelpA', sans-serif; 
+            cursor: default;
+        }
+
+        .txp-chat-container {
+            width: 450px;
+            height: 600px;
+            background: white;
+            border-radius: 24px;
+            border: 1px solid #000;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* --- Header --- */
+        .txp-header {
+            background: var(--txp-primary-bg);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            height: 100px;
+        }
+
+        .txp-logo-circle {
+            width: 60px; height: 60px;
+            background: var(--txp-btn-purple);
+            border-radius: 50%;
+            border: 4px solid #B0A2E8;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-weight: bold; font-size: 12px;
+            opacity: 0; transform: scale(0.5);
+        }
+
+        .txp-header-info { display: flex; flex-direction: column; gap: 8px; }
+        .txp-agent-name { font-weight: bold; font-size: 1.1rem; opacity: 0; }
+        .txp-header-buttons { display: flex; gap: 8px; }
+        .txp-h-btn {
+            padding: 6px 12px; border-radius: 20px; background: var(--txp-btn-purple);
+            color: white; font-size: 0.75rem; opacity: 0; transform: translateY(10px);
+        }
+
+        /* --- Chat Area --- */
+        .txp-chat-content {
+            flex-grow: 1; padding: 20px; display: flex; flex-direction: column; gap: 15px;
+            overflow-y: auto; scrollbar-width: none;
+        }
+
+        .txp-bubble {
+            max-width: 80%; padding: 15px; border-radius: 18px;
+            font-size: 0.95rem; line-height: 1.4; display: none;
+        }
+        
+        .txp-label-msg { font-size: 0.85rem; font-weight: bold; margin-bottom: 5px; display: none; }
+
+        .txp-user-wrapper {
+            display: flex; flex-direction: column; align-items: flex-end; width: 100%;
+        }
+
+        .txp-user-bubble {
+            background: var(--txp-accent-blue); color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .txp-agent-wrapper {
+            display: flex; flex-direction: column; align-items: flex-start; width: 100%;
+        }
+
+        .txp-agent-bubble {
+            background: white; color: black;
+            border: 1px solid var(--txp-border-light); border-bottom-left-radius: 4px;
+        }
+
+        .txp-timestamp { font-size: 0.75rem; color: var(--txp-text-gray); margin-top: 4px; }
+
+        /* --- Effet Shimmer --- */
+        .txp-reflexion {
+            font-size: 0.9rem; font-weight: bold; display: none;
+            background: linear-gradient(90deg, var(--txp-shimmer-base) 0%, var(--txp-shimmer-bright) 50%, var(--txp-shimmer-base) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: txp-shimmer-move 1.5s linear infinite;
+        }
+
+        @keyframes txp-shimmer-move {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* --- Actions Buttons --- */
+        .txp-sub-btns { display: flex; gap: 8px; margin-top: 10px; }
+        .txp-sub-btn {
+            padding: 6px 15px; border-radius: 20px; background: var(--txp-btn-purple);
+            color: white; font-size: 0.75rem; border: none; opacity: 0; transform: scale(0);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s;
+        }
+        .txp-sub-btn.txp-pop-active { opacity: 1; transform: scale(1); }
+
+        /* --- Input Area --- */
+        .txp-input-area { padding: 20px; border-top: 1px solid #eee; opacity: 0; transform: translateY(20px); }
+        .txp-input-box {
+            width: 100%; border: 1px solid var(--txp-border-light); border-radius: 30px;
+            padding: 12px 20px; display: flex; justify-content: space-between;
+            align-items: center; background: #FAFAFA;
+        }
+        .txp-send-btn { color: var(--txp-accent-blue); font-weight: bold; font-size: 0.9rem; transition: transform 0.1s ease; }
+        .txp-click-effect { transform: scale(0.9); opacity: 0.7; }
+
+        /* Animations Globales */
+        .txp-pop { animation: txp-popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+        @keyframes txp-popIn { to { opacity: 1; transform: scale(1) translateY(0); } }
+    </style>
+
+    <div class="txp-chat-container">
+        <div class="txp-header">
+            <div class="txp-logo-circle" id="txp-logo">Logo</div>
+            <div class="txp-header-info">
+                <div class="txp-agent-name" id="txp-agent-name">You Agent Name</div>
+                <div class="txp-header-buttons">
+                    <div class="txp-h-btn" id="txp-btn1">Resources (74)</div>
+                    <div class="txp-h-btn" id="txp-btn2">Share</div>
+                    <div class="txp-h-btn" id="txp-btn3">New chat</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="txp-chat-content" id="txp-chat-content">
+            <div id="txp-u1-wrapper" class="txp-user-wrapper" style="display:none">
+                <div class="txp-label-msg" id="txp-u1-label">Vous</div>
+                <div class="txp-bubble txp-user-bubble" id="txp-u1"></div>
+                <div class="txp-timestamp" id="txp-t1" style="display:none">3 mins ago</div>
+            </div>
+
+            <div class="txp-reflexion" id="txp-thinking">Réflexion...</div>
+
+            <div id="txp-a1-wrapper" class="txp-agent-wrapper" style="display:none">
+                <div class="txp-label-msg" id="txp-a1-label">Textelp</div>
+                <div class="txp-bubble txp-agent-bubble" id="txp-a1"></div>
+                <div class="txp-sub-btns" id="txp-sub-btns">
+                    <button class="txp-sub-btn">Export</button>
+                    <button class="txp-sub-btn">Copy</button>
+                    <button class="txp-sub-btn">React</button>
+                </div>
+            </div>
+
+            <div id="txp-u2-wrapper" class="txp-user-wrapper" style="display:none">
+                <div class="txp-label-msg" id="txp-u2-label">Vous</div>
+                <div class="txp-bubble txp-user-bubble" id="txp-u2"></div>
+                <div class="txp-timestamp" id="txp-t2" style="display:none">2 mins ago</div>
+            </div>
+        </div>
+
+        <div class="txp-input-area" id="txp-footer">
+            <div class="txp-input-box">
+                <span id="txp-typing-input">Demander à Textelp</span>
+                <span class="txp-send-btn" id="txp-send-btn-ui">Envoyer</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const sleep = ms => new Promise(res => setTimeout(res, ms));
+
+            async function typeText(el, text, speed = 40) {
+                el.innerHTML = "";
+                for (let char of text) { el.innerHTML += char; await sleep(speed); }
+            }
+
+            async function txpStart() {
+                const dom = {
+                    logo: document.getElementById('txp-logo'),
+                    name: document.getElementById('txp-agent-name'),
+                    b1: document.getElementById('txp-btn1'),
+                    b2: document.getElementById('txp-btn2'),
+                    b3: document.getElementById('txp-btn3'),
+                    foot: document.getElementById('txp-footer'),
+                    input: document.getElementById('txp-typing-input'),
+                    send: document.getElementById('txp-send-btn-ui'),
+                    thinking: document.getElementById('txp-thinking')
+                };
+
+                while (true) {
+                    // Reset
+                    Object.values(dom).forEach(el => el && el.classList.remove('txp-pop'));
+                    document.querySelectorAll('.txp-sub-btn').forEach(b => b.classList.remove('txp-pop-active'));
+                    document.querySelectorAll('.txp-label-msg, .txp-bubble, .txp-timestamp, .txp-user-wrapper, .txp-agent-wrapper').forEach(e => e.style.display = 'none');
+                    dom.input.innerHTML = "Demander à Textelp";
+                    dom.thinking.style.display = 'none';
+
+                    await sleep(500);
+                    dom.logo.classList.add('txp-pop'); await sleep(150);
+                    dom.name.classList.add('txp-pop'); await sleep(150);
+                    [dom.b1, dom.b2, dom.b3, dom.foot].forEach(el => el.classList.add('txp-pop'));
+                    await sleep(800);
+
+                    // Q1
+                    const q1 = "Qu'est-ce que la réflexion ?";
+                    await typeText(dom.input, q1, 50); await sleep(400);
+                    dom.send.classList.add('txp-click-effect'); await sleep(150); dom.send.classList.remove('txp-click-effect');
+                    
+                    dom.input.innerHTML = "Demander à Textelp";
+                    document.getElementById('txp-u1-wrapper').style.display = 'flex';
+                    document.getElementById('txp-u1-label').style.display = 'block';
+                    const u1 = document.getElementById('txp-u1'); u1.style.display = 'block'; u1.textContent = q1;
+                    document.getElementById('txp-t1').style.display = 'block';
+                    await sleep(800);
+
+                    // Thinking
+                    dom.thinking.style.display = 'block'; await sleep(2500); dom.thinking.style.display = 'none';
+
+                    // Agent
+                    document.getElementById('txp-a1-wrapper').style.display = 'flex';
+                    document.getElementById('txp-a1-label').style.display = 'block';
+                    const a1 = document.getElementById('txp-a1'); a1.style.display = 'block';
+                    await typeText(a1, "La réflexion est un processus mental qui permet d'analyser une situation avec soin.", 30);
+                    
+                    const sBtns = document.querySelectorAll('.txp-sub-btn');
+                    for(let b of sBtns) { b.classList.add('txp-pop-active'); await sleep(150); }
+                    await sleep(1500);
+
+                    // Q2
+                    const q2 = "Merci pour cette aide !";
+                    await typeText(dom.input, q2, 50); await sleep(400);
+                    dom.send.classList.add('txp-click-effect'); await sleep(150); dom.send.classList.remove('txp-click-effect');
+                    
+                    dom.input.innerHTML = "Demander à Textelp";
+                    document.getElementById('txp-u2-wrapper').style.display = 'flex';
+                    document.getElementById('txp-u2-label').style.display = 'block';
+                    const u2 = document.getElementById('txp-u2'); u2.style.display = 'block'; u2.textContent = q2;
+                    document.getElementById('txp-t2').style.display = 'block';
+
+                    await sleep(6000);
+                }
+            }
+            window.addEventListener('load', txpStart);
+        })();
+    </script>
+</div>
+
+
+
+<div class="tpx-eval-wrapper">
+<h2 class="booba">Nos offres</h2>
+    <div class="tpx-eval-main-title">
+        Évaluez le coût de l’outil, pour un usage jusqu’à 10,000 requêtes mensuelles, au delà veuillez nous contacter. 
+        Le ROI est en moyenne de 23% et il représente un coût répercuté moyen de €0.09 par client ou utilisateur.
+    </div>
+
+    <label class="tpx-eval-card tpx-is-active" id="card-1">
+        <input type="radio" name="tpx_pricing" class="tpx-eval-hidden-radio" checked onchange="tpxToggle(1)">
+        <div class="tpx-eval-header">
+            <h2>Standard</h2>
+            <div class="tpx-eval-radio-custom"></div>
+        </div>
+        
+        <div class="tpx-eval-collapsible">
+            <p class="tpx-eval-desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            </p>
+            <div class="tpx-eval-price-box">
+                <span class="tpx-eval-big-p">€499</span>
+                <span class="tpx-eval-small-p">One time cost</span>
+            </div>
+            <div class="tpx-eval-label-host">+€198 par mois pour l’hébergement</div>
+        </div>
+    </label>
+
+    <label class="tpx-eval-card" id="card-2">
+        <input type="radio" name="tpx_pricing" class="tpx-eval-hidden-radio" onchange="tpxToggle(2)">
+        <div class="tpx-eval-header">
+            <h2>Access</h2>
+            <div class="tpx-eval-radio-custom"></div>
+        </div>
+        
+        <div class="tpx-eval-collapsible">
+            <p class="tpx-eval-desc">
+                Configuration sur mesure pour les besoins spécifiques et volumes élevés.
+            </p>
+            <div class="tpx-eval-price-box">
+                <span class="tpx-eval-big-p">€899</span>
+                <span class="tpx-eval-small-p">Setup cost</span>
+            </div>
+            <div class="tpx-eval-label-host">+€350 par mois pour l’hébergement</div>
+        </div>
+    </label>
+</div>
+
+<script>
+    function tpxToggle(selectedId) {
+        // Supprimer la classe active de toutes les cartes
+        document.querySelectorAll('.tpx-eval-card').forEach(card => {
+            card.classList.remove('tpx-is-active');
+        });
+        // Ajouter la classe à la carte sélectionnée
+        document.getElementById('card-' + selectedId).classList.add('tpx-is-active');
+    }
+</script>
+
+
       <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp1.svg">Lorem ipsum colore enigma</div>
       <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2.svg">Lorem ipsum colore enigma</div>
             <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp3.svg">Lorem ipsum colore enigma</div>
@@ -1316,62 +1640,6 @@ display: inline-block;
 
 
 
-<div class="tpx-eval-wrapper">
-<h2 class="booba">Nos offres</h2>
-    <div class="tpx-eval-main-title">
-        Évaluez le coût de l’outil, pour un usage jusqu’à 10,000 requêtes mensuelles, au delà veuillez nous contacter. 
-        Le ROI est en moyenne de 23% et il représente un coût répercuté moyen de €0.09 par client ou utilisateur.
-    </div>
-
-    <label class="tpx-eval-card tpx-is-active" id="card-1">
-        <input type="radio" name="tpx_pricing" class="tpx-eval-hidden-radio" checked onchange="tpxToggle(1)">
-        <div class="tpx-eval-header">
-            <h2>Standard</h2>
-            <div class="tpx-eval-radio-custom"></div>
-        </div>
-        
-        <div class="tpx-eval-collapsible">
-            <p class="tpx-eval-desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-            </p>
-            <div class="tpx-eval-price-box">
-                <span class="tpx-eval-big-p">€499</span>
-                <span class="tpx-eval-small-p">One time cost</span>
-            </div>
-            <div class="tpx-eval-label-host">+€198 par mois pour l’hébergement</div>
-        </div>
-    </label>
-
-    <label class="tpx-eval-card" id="card-2">
-        <input type="radio" name="tpx_pricing" class="tpx-eval-hidden-radio" onchange="tpxToggle(2)">
-        <div class="tpx-eval-header">
-            <h2>Access</h2>
-            <div class="tpx-eval-radio-custom"></div>
-        </div>
-        
-        <div class="tpx-eval-collapsible">
-            <p class="tpx-eval-desc">
-                Configuration sur mesure pour les besoins spécifiques et volumes élevés.
-            </p>
-            <div class="tpx-eval-price-box">
-                <span class="tpx-eval-big-p">€899</span>
-                <span class="tpx-eval-small-p">Setup cost</span>
-            </div>
-            <div class="tpx-eval-label-host">+€350 par mois pour l’hébergement</div>
-        </div>
-    </label>
-</div>
-
-<script>
-    function tpxToggle(selectedId) {
-        // Supprimer la classe active de toutes les cartes
-        document.querySelectorAll('.tpx-eval-card').forEach(card => {
-            card.classList.remove('tpx-is-active');
-        });
-        // Ajouter la classe à la carte sélectionnée
-        document.getElementById('card-' + selectedId).classList.add('tpx-is-active');
-    }
-</script>
 </div>
 
 </div>
@@ -1516,267 +1784,7 @@ display: inline-block;
 </style>
 
 
-<div class="txp-widget">
-    <style>
-        .txp-widget {
-            --txp-primary-bg: #E0D7FF;
-            --txp-accent-blue: #1A4BFF;
-            --txp-btn-purple: #4A28C4;
-            --txp-text-gray: #666;
-            --txp-border-light: #DDD;
-            --txp-shimmer-base: #999;
-            --txp-shimmer-bright: #000;
-            
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'TextelpA', sans-serif;
-        }
 
-        .txp-widget * { 
-            box-sizing: border-box; 
-            font-family: 'TextelpA', sans-serif; 
-            cursor: default;
-        }
-
-        .txp-chat-container {
-            width: 450px;
-            height: 600px;
-            background: white;
-            border-radius: 24px;
-            border: 1px solid #000;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        /* --- Header --- */
-        .txp-header {
-            background: var(--txp-primary-bg);
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            height: 100px;
-        }
-
-        .txp-logo-circle {
-            width: 60px; height: 60px;
-            background: var(--txp-btn-purple);
-            border-radius: 50%;
-            border: 4px solid #B0A2E8;
-            display: flex; align-items: center; justify-content: center;
-            color: white; font-weight: bold; font-size: 12px;
-            opacity: 0; transform: scale(0.5);
-        }
-
-        .txp-header-info { display: flex; flex-direction: column; gap: 8px; }
-        .txp-agent-name { font-weight: bold; font-size: 1.1rem; opacity: 0; }
-        .txp-header-buttons { display: flex; gap: 8px; }
-        .txp-h-btn {
-            padding: 6px 12px; border-radius: 20px; background: var(--txp-btn-purple);
-            color: white; font-size: 0.75rem; opacity: 0; transform: translateY(10px);
-        }
-
-        /* --- Chat Area --- */
-        .txp-chat-content {
-            flex-grow: 1; padding: 20px; display: flex; flex-direction: column; gap: 15px;
-            overflow-y: auto; scrollbar-width: none;
-        }
-
-        .txp-bubble {
-            max-width: 80%; padding: 15px; border-radius: 18px;
-            font-size: 0.95rem; line-height: 1.4; display: none;
-        }
-        
-        .txp-label-msg { font-size: 0.85rem; font-weight: bold; margin-bottom: 5px; display: none; }
-
-        .txp-user-wrapper {
-            display: flex; flex-direction: column; align-items: flex-end; width: 100%;
-        }
-
-        .txp-user-bubble {
-            background: var(--txp-accent-blue); color: white;
-            border-bottom-right-radius: 4px;
-        }
-
-        .txp-agent-wrapper {
-            display: flex; flex-direction: column; align-items: flex-start; width: 100%;
-        }
-
-        .txp-agent-bubble {
-            background: white; color: black;
-            border: 1px solid var(--txp-border-light); border-bottom-left-radius: 4px;
-        }
-
-        .txp-timestamp { font-size: 0.75rem; color: var(--txp-text-gray); margin-top: 4px; }
-
-        /* --- Effet Shimmer --- */
-        .txp-reflexion {
-            font-size: 0.9rem; font-weight: bold; display: none;
-            background: linear-gradient(90deg, var(--txp-shimmer-base) 0%, var(--txp-shimmer-bright) 50%, var(--txp-shimmer-base) 100%);
-            background-size: 200% auto;
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            animation: txp-shimmer-move 1.5s linear infinite;
-        }
-
-        @keyframes txp-shimmer-move {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
-        }
-
-        /* --- Actions Buttons --- */
-        .txp-sub-btns { display: flex; gap: 8px; margin-top: 10px; }
-        .txp-sub-btn {
-            padding: 6px 15px; border-radius: 20px; background: var(--txp-btn-purple);
-            color: white; font-size: 0.75rem; border: none; opacity: 0; transform: scale(0);
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s;
-        }
-        .txp-sub-btn.txp-pop-active { opacity: 1; transform: scale(1); }
-
-        /* --- Input Area --- */
-        .txp-input-area { padding: 20px; border-top: 1px solid #eee; opacity: 0; transform: translateY(20px); }
-        .txp-input-box {
-            width: 100%; border: 1px solid var(--txp-border-light); border-radius: 30px;
-            padding: 12px 20px; display: flex; justify-content: space-between;
-            align-items: center; background: #FAFAFA;
-        }
-        .txp-send-btn { color: var(--txp-accent-blue); font-weight: bold; font-size: 0.9rem; transition: transform 0.1s ease; }
-        .txp-click-effect { transform: scale(0.9); opacity: 0.7; }
-
-        /* Animations Globales */
-        .txp-pop { animation: txp-popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
-        @keyframes txp-popIn { to { opacity: 1; transform: scale(1) translateY(0); } }
-    </style>
-
-    <div class="txp-chat-container">
-        <div class="txp-header">
-            <div class="txp-logo-circle" id="txp-logo">Logo</div>
-            <div class="txp-header-info">
-                <div class="txp-agent-name" id="txp-agent-name">You Agent Name</div>
-                <div class="txp-header-buttons">
-                    <div class="txp-h-btn" id="txp-btn1">Resources (74)</div>
-                    <div class="txp-h-btn" id="txp-btn2">Share</div>
-                    <div class="txp-h-btn" id="txp-btn3">New chat</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="txp-chat-content" id="txp-chat-content">
-            <div id="txp-u1-wrapper" class="txp-user-wrapper" style="display:none">
-                <div class="txp-label-msg" id="txp-u1-label">Vous</div>
-                <div class="txp-bubble txp-user-bubble" id="txp-u1"></div>
-                <div class="txp-timestamp" id="txp-t1" style="display:none">3 mins ago</div>
-            </div>
-
-            <div class="txp-reflexion" id="txp-thinking">Réflexion...</div>
-
-            <div id="txp-a1-wrapper" class="txp-agent-wrapper" style="display:none">
-                <div class="txp-label-msg" id="txp-a1-label">Textelp</div>
-                <div class="txp-bubble txp-agent-bubble" id="txp-a1"></div>
-                <div class="txp-sub-btns" id="txp-sub-btns">
-                    <button class="txp-sub-btn">Export</button>
-                    <button class="txp-sub-btn">Copy</button>
-                    <button class="txp-sub-btn">React</button>
-                </div>
-            </div>
-
-            <div id="txp-u2-wrapper" class="txp-user-wrapper" style="display:none">
-                <div class="txp-label-msg" id="txp-u2-label">Vous</div>
-                <div class="txp-bubble txp-user-bubble" id="txp-u2"></div>
-                <div class="txp-timestamp" id="txp-t2" style="display:none">2 mins ago</div>
-            </div>
-        </div>
-
-        <div class="txp-input-area" id="txp-footer">
-            <div class="txp-input-box">
-                <span id="txp-typing-input">Demander à Textelp</span>
-                <span class="txp-send-btn" id="txp-send-btn-ui">Envoyer</span>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        (function() {
-            const sleep = ms => new Promise(res => setTimeout(res, ms));
-
-            async function typeText(el, text, speed = 40) {
-                el.innerHTML = "";
-                for (let char of text) { el.innerHTML += char; await sleep(speed); }
-            }
-
-            async function txpStart() {
-                const dom = {
-                    logo: document.getElementById('txp-logo'),
-                    name: document.getElementById('txp-agent-name'),
-                    b1: document.getElementById('txp-btn1'),
-                    b2: document.getElementById('txp-btn2'),
-                    b3: document.getElementById('txp-btn3'),
-                    foot: document.getElementById('txp-footer'),
-                    input: document.getElementById('txp-typing-input'),
-                    send: document.getElementById('txp-send-btn-ui'),
-                    thinking: document.getElementById('txp-thinking')
-                };
-
-                while (true) {
-                    // Reset
-                    Object.values(dom).forEach(el => el && el.classList.remove('txp-pop'));
-                    document.querySelectorAll('.txp-sub-btn').forEach(b => b.classList.remove('txp-pop-active'));
-                    document.querySelectorAll('.txp-label-msg, .txp-bubble, .txp-timestamp, .txp-user-wrapper, .txp-agent-wrapper').forEach(e => e.style.display = 'none');
-                    dom.input.innerHTML = "Demander à Textelp";
-                    dom.thinking.style.display = 'none';
-
-                    await sleep(500);
-                    dom.logo.classList.add('txp-pop'); await sleep(150);
-                    dom.name.classList.add('txp-pop'); await sleep(150);
-                    [dom.b1, dom.b2, dom.b3, dom.foot].forEach(el => el.classList.add('txp-pop'));
-                    await sleep(800);
-
-                    // Q1
-                    const q1 = "Qu'est-ce que la réflexion ?";
-                    await typeText(dom.input, q1, 50); await sleep(400);
-                    dom.send.classList.add('txp-click-effect'); await sleep(150); dom.send.classList.remove('txp-click-effect');
-                    
-                    dom.input.innerHTML = "Demander à Textelp";
-                    document.getElementById('txp-u1-wrapper').style.display = 'flex';
-                    document.getElementById('txp-u1-label').style.display = 'block';
-                    const u1 = document.getElementById('txp-u1'); u1.style.display = 'block'; u1.textContent = q1;
-                    document.getElementById('txp-t1').style.display = 'block';
-                    await sleep(800);
-
-                    // Thinking
-                    dom.thinking.style.display = 'block'; await sleep(2500); dom.thinking.style.display = 'none';
-
-                    // Agent
-                    document.getElementById('txp-a1-wrapper').style.display = 'flex';
-                    document.getElementById('txp-a1-label').style.display = 'block';
-                    const a1 = document.getElementById('txp-a1'); a1.style.display = 'block';
-                    await typeText(a1, "La réflexion est un processus mental qui permet d'analyser une situation avec soin.", 30);
-                    
-                    const sBtns = document.querySelectorAll('.txp-sub-btn');
-                    for(let b of sBtns) { b.classList.add('txp-pop-active'); await sleep(150); }
-                    await sleep(1500);
-
-                    // Q2
-                    const q2 = "Merci pour cette aide !";
-                    await typeText(dom.input, q2, 50); await sleep(400);
-                    dom.send.classList.add('txp-click-effect'); await sleep(150); dom.send.classList.remove('txp-click-effect');
-                    
-                    dom.input.innerHTML = "Demander à Textelp";
-                    document.getElementById('txp-u2-wrapper').style.display = 'flex';
-                    document.getElementById('txp-u2-label').style.display = 'block';
-                    const u2 = document.getElementById('txp-u2'); u2.style.display = 'block'; u2.textContent = q2;
-                    document.getElementById('txp-t2').style.display = 'block';
-
-                    await sleep(6000);
-                }
-            }
-            window.addEventListener('load', txpStart);
-        })();
-    </script>
-</div>
 
 <div class="tlp-popup-overlay" id="tlpOverlay">
     <div class="tlp-popup-window">
