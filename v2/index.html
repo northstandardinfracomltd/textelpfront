@@ -1010,21 +1010,21 @@ display: grid;
         }
 
         .txp-chat-container {
-            width: 450px;
-            height: 600px;
-            background: white;
-            border-radius: 24px;
-            border: 1px solid #000;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    width: 450px;
+    height: 600px;
+    background: radial-gradient(at top center, rgb(204 175 255 / 23%) 0%, /* Mauve/Violet clair */ rgba(190, 230, 255, 0.4) 40%, /* Bleu ciel très doux */ rgba(255, 255, 255, 0) 100% /* Retour au blanc transparent */);
+    border-radius: 22px;
+    border: 1px solid #e0dfee;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
         }
 
         /* --- Header --- */
         .txp-header {
-            background: var(--txp-primary-bg);
+            background: linear-gradient(145deg, #2a16a4, #04045b) !important;
             padding: 20px;
             display: flex;
             align-items: center;
@@ -1043,7 +1043,7 @@ display: grid;
         }
 
         .txp-header-info { display: flex; flex-direction: column; gap: 8px; }
-        .txp-agent-name { font-weight: bold; font-size: 1.1rem; opacity: 0; }
+        .txp-agent-name { font-weight: bold; font-size: 1.1rem; opacity: 0; color: #fff;}
         .txp-header-buttons { display: flex; gap: 8px; }
         .txp-h-btn {
             padding: 6px 12px; border-radius: 20px; background: var(--txp-btn-purple);
@@ -1068,7 +1068,9 @@ display: grid;
         }
 
         .txp-user-bubble {
-            background: var(--txp-accent-blue); color: white;
+            background: #000; color: white;
+            border: 1px solid #dfdfed; 
+            border-radius: 22px 22px 22px 5px;
             border-bottom-right-radius: 4px;
         }
 
@@ -1107,7 +1109,7 @@ display: grid;
         .txp-sub-btn.txp-pop-active { opacity: 1; transform: scale(1); }
 
         /* --- Input Area --- */
-        .txp-input-area { padding: 20px; border-top: 1px solid #eee; opacity: 0; transform: translateY(20px); }
+        .txp-input-area { padding: 20px; border-top: 1px solid #e0dfee; opacity: 0; transform: translateY(20px); }
         .txp-input-box {
             width: 100%; border: 1px solid var(--txp-border-light); border-radius: 30px;
             padding: 12px 20px; display: flex; justify-content: space-between;
@@ -1591,12 +1593,13 @@ position: absolute;
 
     /* Style de la Carte */
     .tpx-eval-card {
+            transition: 0s;
     display: block;
     border-radius: 16px;
     padding: 24px;
     margin-bottom: 16px;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: all 0s ease;
     border: 1px solid #e0dfee;
     overflow: hidden;
     background-image: radial-gradient(at top center, rgb(204 175 255 / 23%) 0%, /* Mauve/Violet clair */ rgba(190, 230, 255, 0.4) 40%, /* Bleu ciel très doux */ rgba(255, 255, 255, 0) 100% /* Retour au blanc transparent */);
@@ -1607,6 +1610,8 @@ position: absolute;
     /* État Actif (Border + Background) */
     .tpx-eval-card.tpx-is-active {
 border-color: #674eff;
+    transition: 0s;
+
     border: 3px solid #674eff;
     background-color: #ffffff;
     }
@@ -1621,7 +1626,7 @@ border-color: #674eff;
         font-size: 22px;
         margin: 0;
         font-weight: 100;
-        color: #ffffff;
+        color: #000;
     }
 
     /* Radio Button Custom */
