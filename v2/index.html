@@ -826,19 +826,19 @@ Textelp est utilisé par +10k utilisateurs journaliers!
         { t: "Machine Learning", r: "La qualité du modèle dépend de la donnée. 'Garbage in, garbage out' reste la règle d'or." },
         { t: "Finance Durable", r: "L'investissement ESG est le nouveau standard pour attirer les investisseurs institutionnels." },
         { t: "Recrutement IT", r: "Le salaire ne suffit plus. Offrez de la flexibilité et des projets techniquement stimulants." },
-        { t: "Innovation RH", r: "L'onboarding virtuel doit être chaleureux. Utilisez la vidéo et le mentorat pour intégrer vos talents." },
-        { t: "Web3", r: "Le Web3 redonne la propriété aux utilisateurs via la décentralisation et les DAO." },
-        { t: "Audit Interne", r: "L'audit doit être perçu comme un conseil stratégique pour sécuriser la croissance." },
-        { t: "Relation Client", r: "L'IA doit passer la main à un humain dès que l'émotion dépasse le factuel." },
-        { t: "Leadership", r: "Le leader de demain sait dire 'je ne sais pas'. L'humilité bâtit la confiance durable." },
-        { t: "Deep Learning", r: "Les réseaux neuronaux nécessitent une puissance de calcul massive. Pensez au coût carbone." }
+        { t: "Innovation RH", r: "L'onboarding virtuel doit être chaleureux. Utilisez la vidéo et le mentorat pour intégrer vos talents." }
     ];
 
     const container = document.getElementById('topicsContainer');
     const searchInput = document.getElementById('gmSearch');
     const warningMsg = document.getElementById('warningMsg');
     const centerCard = document.getElementById('centerCard');
+    const wrapper = document.querySelector('.gm-main-wrapper'); // On cible le wrapper parent
     let isLocked = false;
+
+    // Configuration des dimensions forcées
+    const MAX_H = 275;
+    const MAX_W = 1375;
 
     function getRelevanceColor(topic, keyword) {
         if (!keyword) return 'var(--color-none)';
@@ -853,15 +853,28 @@ Textelp est utilisé par +10k utilisateurs journaliers!
 
         container.innerHTML = '';
         const placedElements = [];
+        
+        // On récupère les dimensions réelles du wrapper (bornées par tes limites)
+        const rectWrapper = wrapper.getBoundingClientRect();
+        const currentW = Math.min(rectWrapper.width, MAX_W);
+        const currentH = Math.min(rectWrapper.height, MAX_H);
+        
+        // Position du centre relative au wrapper
         const cardBox = centerCard.getBoundingClientRect();
-        const buffer = 20; // Espace entre les topics
+        const cardRel = {
+            left: cardBox.left - rectWrapper.left,
+            right: cardBox.right - rectWrapper.left,
+            top: cardBox.top - rectWrapper.top,
+            bottom: cardBox.bottom - rectWrapper.top
+        };
 
-        // Limites de l'écran
-        const margin = 15;
-        const screenW = window.innerWidth;
-        const screenH = window.innerHeight;
+        const buffer = 15; 
+        const margin = 10;
+        
+        // Réduction du nombre à 12 pour la hauteur de 275px (plus lisible)
+        const limit = 12;
 
-        filtered.concat(dataStore.filter(d => !filtered.includes(d))).slice(0, 20).forEach((data, i) => {
+        filtered.concat(dataStore.filter(d => !filtered.includes(d))).slice(0, limit).forEach((data, i) => {
             const el = document.createElement('div');
             el.className = 'gm-floating-topic';
             const dotColor = getRelevanceColor(data, keyword);
@@ -871,21 +884,21 @@ Textelp est utilisé par +10k utilisateurs journaliers!
             const elW = el.offsetWidth;
             const elH = el.offsetHeight;
 
-            let x, y, collisions = 0;
+            let x, y, attempts = 0;
             let foundPosition = false;
 
-            while (!foundPosition && collisions < 50) {
-                // Tentative de positionnement aléatoire dans le viewport safe
-                x = margin + Math.random() * (screenW - elW - margin * 2);
-                y = margin + Math.random() * (screenH - elH - margin * 2);
+            while (!foundPosition && attempts < 100) {
+                // Calcul dans les limites strictes du conteneur
+                x = margin + Math.random() * (currentW - elW - margin * 2);
+                y = margin + Math.random() * (currentH - elH - margin * 2);
 
                 const rectA = { left: x, top: y, right: x + elW, bottom: y + elH };
 
-                // Vérification collision avec le centre
-                const hitCenter = !(rectA.right < cardBox.left - 20 || rectA.left > cardBox.right + 20 || 
-                                    rectA.bottom < cardBox.top - 20 || rectA.top > cardBox.bottom + 20);
+                // Collision avec le bloc central (avec buffer)
+                const hitCenter = !(rectA.right < cardRel.left - 25 || rectA.left > cardRel.right + 25 || 
+                                    rectA.bottom < cardRel.top - 20 || rectA.top > cardRel.bottom + 20);
 
-                // Vérification collision avec les autres topics déjà placés
+                // Collision avec les autres topics
                 const hitOthers = placedElements.some(rectB => {
                     return !(rectA.right < rectB.left - buffer || rectA.left > rectB.right + buffer || 
                              rectA.bottom < rectB.top - buffer || rectA.top > rectB.bottom + buffer);
@@ -894,7 +907,7 @@ Textelp est utilisé par +10k utilisateurs journaliers!
                 if (!hitCenter && !hitOthers) {
                     foundPosition = true;
                 }
-                collisions++;
+                attempts++;
             }
 
             el.style.left = x + 'px';
@@ -907,7 +920,7 @@ Textelp est utilisé par +10k utilisateurs journaliers!
                 el.style.opacity = '1';
                 el.style.animation = `gmFloat ${3 + Math.random()*2}s ease-in-out infinite`;
                 el.style.animationDelay = `-${Math.random()*5}s`;
-            }, i * 30);
+            }, i * 40);
         });
     }
 
@@ -948,12 +961,16 @@ Textelp est utilisé par +10k utilisateurs journaliers!
     }
 
     searchInput.onkeypress = (e) => { if (e.key === 'Enter') updateDisplay(searchInput.value); };
-    window.onresize = () => updateDisplay(searchInput.value);
     
-    // Initialisation
+    // Débounce sur le resize pour éviter les bugs de collision pendant le redimensionnement
+    let resizeTimer;
+    window.onresize = () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => updateDisplay(searchInput.value), 200);
+    };
+    
     window.onload = () => updateDisplay();
 </script>
-
 <section class="container section-b">
   <div class="card">
     <div class="card-left"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/2093782093298379203.svg"></div>
@@ -1278,7 +1295,7 @@ background: transparent;
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
             </p>
             <div class="tpx-eval-price-box">
-                <span class="tpx-eval-big-p">€499</span>
+                <span class="tpx-eval-big-p">€6,900</span>
                 <span class="tpx-eval-small-p">One time cost</span>
             </div>
             <div class="tpx-eval-label-host">+€198 par mois pour l’hébergement</div>
@@ -1297,7 +1314,7 @@ background: transparent;
                 Configuration sur mesure pour les besoins spécifiques et volumes élevés.
             </p>
             <div class="tpx-eval-price-box">
-                <span class="tpx-eval-big-p">€899</span>
+                <span class="tpx-eval-big-p">€9,900</span>
                 <span class="tpx-eval-small-p">Setup cost</span>
             </div>
             <div class="tpx-eval-label-host">+€350 par mois pour l’hébergement</div>
