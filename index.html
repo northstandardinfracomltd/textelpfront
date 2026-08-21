@@ -133,19 +133,21 @@
 
     .container {
       width: 100%;
-      max-width: 1160px;
+      max-width: 1300px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
     /* Top Announcement Bar */
     .announcement-bar {
-      background-color: var(--primary);
-      color: #ffffff;
-      text-align: center;
-      padding: 9px 15px;
-      font-size: 0.95rem; /* Augmenté */
-      letter-spacing: 0;
+background-color: #000000;
+    border-bottom: none;
+    color: #fff;
+    text-align: center;
+    padding: 15px 15px;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0;
     }
 
     /* Navigation */
@@ -153,7 +155,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.97);
+      background: rgb(60 15 255);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(0,0,0,0.06);
     }
@@ -212,8 +214,8 @@
     }
 
     .logo-sub {
-    font-size: 0.72rem;
-    color: #000000;
+font-size: 8.8px;
+    color: #ffffff;
     margin-top: -12px;
     }
 
@@ -225,29 +227,37 @@
     }
 
     .nav-links a {
-      font-size: 1rem;
-      color: #ffff;
-      transition: color 0.2s;
+    font-size: 18px;
+    color: #ffff;
+    font-weight: 600;
+    transition: none;
     }
 
     .nav-links a:hover {
-      color: #fff;
+    font-size: 18px;
+    color: #ffff;
+    font-weight: 600;
+    transition: none;
     }
 
     .btn-header {
-      background: #000000 !important;
-      color: #ffffff !important;
-      padding: 10px 22px;
-      border-radius: 6px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      transition: background 0.2s;
-      display: inline-block;
+background: #ffffff !important;
+    border: 1px solid #ffffff42;
+    color: #000000 !important;
+    padding: 10px 22px;
+    font-weight: 600;
+    font-size: 16px !important;
+    display: inline-block;
     }
 
     .btn-header:hover {
-      background: #262626 !important;
-      color: #ffffff !important;
+background: #ffffff !important;
+    border: 1px solid #ffffff42;
+    color: #000000 !important;
+    padding: 10px 22px;
+    font-weight: 600;
+    font-size: 16px !important;
+    display: inline-block;
     }
 
     /* Hero Section avec fond subtil et fondu */
@@ -292,16 +302,18 @@
     }
 
     .hero-insta-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #ffffff;
-      padding: 9px 20px;
-      border-radius: 30px;
-      font-size: 0.98rem; /* Augmenté */
-      color: #222;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-      margin-bottom: 35px;
+display: inline-flex;
+    align-items: center;
+    border: 1px solid #0000001a;
+    gap: 8px;
+    background: #ffffffc2;
+    padding: 9px 20px;
+    font-weight: 800;
+    border-radius: 30px;
+    font-size: 0.98rem;
+    color: #222;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    margin-bottom: 35px;
     }
 
     .hero-actions {
@@ -312,35 +324,29 @@
     }
 
     .btn-primary {
-      background-color: var(--primary);
-      color: #fff !important;
-      padding: 14px 30px;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      border: 1px solid var(--primary);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: inline-block;
-    }
-
-    .btn-primary:hover {
-      background-color: var(--primary-hover);
-      border-color: var(--primary-hover);
-      transform: translateY(-1px);
+    background-color: #3c0fff;
+    color: #fff !important;
+    padding: 14px 30px;
+    border-radius: 0px;
+    font-size: 17px;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
     }
 
     .btn-outline {
-      background-color: #fff;
-      color: #222;
-      padding: 14px 30px;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      border: 1px solid #d1d1d6;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: inline-block;
+    background-color: #000;
+    color: #fff !important;
+    padding: 14px 30px;
+    border-radius: 0px;
+    font-size: 17px;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
     }
 
     .btn-outline:hover {
@@ -393,11 +399,11 @@
 
     /* Section 1: Airbus H135 Big Card */
     .card-master {
-      background: #ffffff;
-      border-radius: 16px;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 10px 35px rgba(0,0,0,0.03);
-      padding: 36px;
+background: #ffffff;
+    border-radius: 0px;
+    border: 1px solid #e8e8e8;
+    box-shadow: none;
+    padding: 25px;
     }
 
     .aircraft-hero-row {
@@ -452,18 +458,18 @@
     }
 
     .btn-secondary-light {
-      background: #f7f7f8;
-      border: 1px solid #e5e5ea;
-      color: #333;
-      padding: 11px;
-      border-radius: 6px;
-      text-align: center;
-      font-size: 0.95rem; /* Augmenté */
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
+background: #000000;
+    border: none;
+    color: #fff;
+    padding: 15px;
+    border-radius: 0px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
     }
 
     /* Sub-routes table in card */
@@ -488,13 +494,14 @@
     }
 
     .on-demand-card {
-      background: #fcfcfd;
-      border: 1px solid #ececee;
-      border-radius: 8px;
-      padding: 14px 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    background: #ffffff;
+    border: 1px solid #e7e7e7;
+    border-radius: 0px;
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: default !important;
     }
 
     .od-route {
@@ -525,11 +532,11 @@
     }
 
     .od-badge-price {
-      background: var(--primary);
+      background: #3c0fff;
       color: #fff;
       font-size: 0.78rem; /* Augmenté */
       padding: 3px 8px;
-      border-radius: 4px;
+      border-radius: 100px;
       font-weight: 600;
           white-space: nowrap;
     }
@@ -538,7 +545,7 @@
     .amenities-heading {
       text-align: center;
       font-size: 0.95rem;
-      color: #555;
+      color: #000;
       margin-bottom: 20px;
     }
 
@@ -571,9 +578,9 @@
     }
 
     .amenity-text {
-      font-size: 0.92rem; /* Augmenté */
-      color: #666;
-      line-height: 1.5;
+font-size: 17px;
+    color: #000000;
+    line-height: 1.5;
     }
 
     /* Section 2: Burgundy Operations & Team */
@@ -666,20 +673,16 @@
     }
 
     .dest-card {
-      background: #ffffff;
-      border-radius: 12px;
-      border: 1px solid #ebebee;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-      transition: transform 0.2s, box-shadow 0.2s;
+background: #ffffff;
+    border-radius: 0px;
+    border: 1px solid #e6e6e6;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .dest-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-    }
 
     .dest-img-wrap {
       height: 170px;
@@ -700,7 +703,7 @@
     }
 
     .dest-tag {
-      color: var(--primary);
+      color: #3c0fff;
       font-size: 0.8rem; /* Augmenté */
       font-weight: 700;
       margin-bottom: 4px;
@@ -716,11 +719,11 @@
     }
 
     .dest-desc {
-      font-size: 0.92rem; /* Augmenté */
-      color: #666;
-      line-height: 1.5;
-      margin-bottom: 18px;
-      flex-grow: 1;
+font-size: 16px;
+    color: #000000;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    flex-grow: 1;
     }
 
     .dest-actions {
@@ -735,33 +738,26 @@
     height: 42px;
       color: #fff !important;
       font-family: 'Civilprom';
-      font-size: 15px; /* Augmenté */
+      font-size: 17px; /* Augmenté */
       padding: 10px;
-      border-radius: 6px;
+      border-radius: 0px;
       text-align: center;
       font-weight: 600;
       transition: background 0.2s;
       cursor: pointer;
     }
 
-    .btn-dest-contact:hover {
-      background: #252525;
-    }
 
     .btn-dest-maps {
-      background: var(--primary);
-      color: #fff !important;
-      font-size: 0.9rem; /* Augmenté */
-      padding: 10px;
-      border-radius: 6px;
-      text-align: center;
-      font-weight: 600;
-      transition: background 0.2s;
+background: #3c0fff;
+    color: #fff !important;
+    font-size: 17px;
+    padding: 8px;
+    border-radius: 0px;
+    text-align: center;
+    font-weight: 600;
     }
 
-    .btn-dest-maps:hover {
-      background: var(--primary-hover);
-    }
 
     /* Section 4: Tailored Helicopter Services */
     .services-grid-4 {
@@ -881,26 +877,22 @@
 
     .contact-info-card p {
       font-size: 0.92rem; /* Augmenté */
-      color: #666;
+      color: #000;
       line-height: 1.5;
       margin-bottom: 16px;
     }
 
     .btn-contact-action {
-      background: var(--primary);
-      color: #ffffff !important;
-      border-radius: 6px;
-      padding: 11px 16px;
-      font-size: 0.95rem; /* Augmenté */
-      font-weight: 600;
-      display: block;
-      text-align: center;
-      transition: background 0.2s;
+    background: #3c0fff;
+    color: #ffffff !important;
+    border-radius: 0px;
+    padding: 11px 16px;
+    font-size: 17px;
+    font-weight: 600;
+    display: block;
+    text-align: center;
     }
 
-    .btn-contact-action:hover {
-      background: var(--primary-hover);
-    }
 
     .inquiry-form-card {
       background: #ffffff;
@@ -1228,37 +1220,33 @@ text-align: left;
 
     /* Floating Contact Pill Button */
     .floating-contact-pill {
-      font-family: 'Civilprom';
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: var(--primary);
-      color: #ffffff !important;
-      padding: 12px 22px;
-      border-radius: 30px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      z-index: 999;
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
+    font-family: 'Civilprom';
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #3c0fff;
+    color: #ffffff !important;
+    padding: 15px 22px;
+    border-radius: 0px;
+    font-size: 17px;
+    font-weight: 800;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .floating-contact-pill:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 26px rgba(138, 36, 63, 0.55);
-    }
 
     .floating-dot {
-      width: 9px;
-      height: 9px;
-      background: #50e3c2;
-      border-radius: 50%;
-      display: inline-block;
-      box-shadow: 0 0 8px #50e3c2;
+width: 9px;
+    height: 9px;
+    background: #5cf6ff;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px #5cf6ff00;
     }
 
     /* Popup Chatbox Modal (Question by Question) */
@@ -1568,7 +1556,7 @@ text-align: left;
           </div>
           <div class="aircraft-specs">
             <h3>AIRBUS H135</h3>
-            <p style="font-size: 0.95rem; color: #666; margin-top: 8px;">
+            <p style="font-size: 17px; color: #000; margin-top: 8px;">
               The Airbus H135 is an exceptional light twin-engine helicopter, specially designed to deliver the highest level of safety, comfort, and responsiveness across all your inter-island and mainland journeys.
             </p>
             <div class="spec-table">
