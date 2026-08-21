@@ -144,7 +144,7 @@ background-color: #000000;
     border-bottom: none;
     color: #fff;
     text-align: center;
-    padding: 15px 15px;
+    padding: 20px 15px;
     font-size: 16px;
     font-weight: 800;
     letter-spacing: 0;
@@ -268,7 +268,7 @@ background: #ffffff !important;
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: #f7f7f8 url('https://civilprom.s3.eu-north-1.amazonaws.com/TLDDEEE.svg') center center/cover no-repeat;
+      background: #f7f7f8 url('https://civilprom.s3.eu-north-1.amazonaws.com/Charter+HeliBaleares+-+Hero+Helico.png') center center/cover no-repeat;
       padding: 90px 20px 110px 20px;
     }
 
@@ -349,10 +349,6 @@ display: inline-flex;
     display: inline-block;
     }
 
-    .btn-outline:hover {
-      border-color: #999;
-      background: #fafafa;
-    }
 
     .btn-black {
           font-family: 'Civilprom';
@@ -421,21 +417,24 @@ background: #ffffff;
     }
 
     .aircraft-image-box img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    box-shadow: none;
+    border: none;
+    border-radius: 15px;
     }
 
     .spec-table {
       margin: 20px 0 25px 0;
-      border-top: 1px solid #f0f0f2;
+      border-top: none;
     }
 
     .spec-row {
       display: flex;
       justify-content: space-between;
       padding: 11px 0;
-      border-bottom: 1px solid #f0f0f2;
+      border-bottom: none;
       font-size: 0.98rem; /* Augmenté */
     }
 
@@ -556,15 +555,15 @@ background: #000000;
     }
 
     .amenity-card {
-      border: 1px solid #ebebeb;
-      border-radius: 10px;
-      overflow: hidden;
-      background: #fff;
+    border: 1px solid #e7e7e7;
+    border-radius: 0px;
+    overflow: hidden;
+    background: #fff;
     }
 
     .amenity-card img {
       width: 100%;
-      height: 190px;
+      height: 400px;
       object-fit: cover;
     }
 
@@ -585,7 +584,7 @@ font-size: 17px;
 
     /* Section 2: Burgundy Operations & Team */
     .section-burgundy {
-      background-color: var(--primary);
+      background-color: #000;
       color: #ffffff;
     }
 
@@ -645,12 +644,14 @@ font-size: 17px;
     }
 
     .team-card img {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 0 auto 16px auto;
-      border: 3px solid rgba(255,255,255,0.3);
+width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 16px auto;
+    outline-offset: 7px;
+    outline: 3.5px solid #5df6ff;
+    border: none;
     }
 
     .team-card h4 {
@@ -660,9 +661,11 @@ font-size: 17px;
     }
 
     .team-card p {
-      font-size: 0.88rem; /* Augmenté */
-      color: rgba(255, 255, 255, 0.85);
-      line-height: 1.35;
+font-size: 17px;
+    color: #fff;
+    line-height: 1.35;
+    max-width: 210px;
+    margin: auto;
     }
 
     /* Section 3: Balearic Archipelago Destinations */
@@ -767,27 +770,29 @@ background: #3c0fff;
     }
 
     .service-box {
-      background: #ffffff;
-      border: 1px solid #ebebee;
-      border-radius: 12px;
-      padding: 30px;
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+background: #ffffff;
+    border: 1px solid #dedede;
+    border-radius: 0px;
+    padding: 30px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-shadow: none;
     }
 
     .service-icon {
-      width: 48px;
-      height: 48px;
-      min-width: 48px;
-      background: #efefef;
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
+outline-offset: 4px;
+    outline: 3.5px solid #5bf6ff;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background: #5df6ff59;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
     }
 
     .service-title {
@@ -796,8 +801,8 @@ background: #3c0fff;
     }
 
     .service-desc {
-      font-size: 0.95rem; /* Augmenté */
-      color: #666;
+    font-size: 17px;
+    color: #000;
       line-height: 1.55;
     }
 
@@ -809,10 +814,11 @@ background: #3c0fff;
     }
 
     .pop-route-card {
-      background: #ffffff;
-      border-radius: 14px;
+      background: #000;
+      border-radius: 0px;
+      border: none;
       overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      box-shadow: none;
       display: flex;
       flex-direction: column;
     }
@@ -829,21 +835,22 @@ background: #3c0fff;
     }
 
     .pop-route-content {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
+padding: 0px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     }
 
     .pop-route-title {
       font-size: 1.12rem;
-      color: #111;
+      color: #FFF;
       margin-bottom: 10px;
     }
 
     .pop-route-desc {
       font-size: 0.94rem; /* Augmenté */
-      color: #666;
+      color: #FFF;
       line-height: 1.55;
       margin-bottom: 20px;
       flex-grow: 1;
@@ -863,11 +870,11 @@ background: #3c0fff;
     }
 
     .contact-info-card {
-      background: #ffffff;
-      border: 1px solid #ebebee;
-      border-radius: 12px;
-      padding: 24px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    background: #ffffff;
+    border: 1px solid #dfdfdf;
+    border-radius: 0px;
+    padding: 24px;
+    box-shadow: none;
     }
 
     .contact-info-card h4 {
@@ -895,11 +902,11 @@ background: #3c0fff;
 
 
     .inquiry-form-card {
-      background: #ffffff;
-      border: 1px solid #ebebee;
-      border-radius: 14px;
-      padding: 32px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+background: #ffffff;
+    border: 1px solid #dfdfdf;
+    border-radius: 0px;
+    padding: 24px;
+    box-shadow: none;
     }
 
     .form-grid-2 {
@@ -926,20 +933,17 @@ background: #3c0fff;
     }
 
     .form-input, .form-select, .form-textarea {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid #dedee2;
-      border-radius: 6px;
-      font-family: inherit;
-      font-size: 0.96rem; /* Augmenté */
-      outline: none;
-      background: #fff;
-      transition: border-color 0.2s;
+    width: 100%;
+    padding: 17px 15px;
+    border: 1px solid #dfdfdf;
+    border-radius: 0px;
+    font-family: inherit;
+    font-size: 17px;
+    outline: none;
+    background: #fff;
+    transition: border-color 0.2s;
     }
 
-    .form-input:focus, .form-select:focus, .form-textarea:focus {
-      border-color: var(--primary);
-    }
 
     .form-textarea {
       resize: vertical;
@@ -947,14 +951,14 @@ background: #3c0fff;
     }
 
     .toggle-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #fdfdfd;
-      border: 1px solid #dedee2;
-      border-radius: 6px;
-      padding: 12px 16px;
-      margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #eeeeee91;
+    border: none;
+    border-radius: 0px;
+    padding: 13px;
+    margin-bottom: 16px;
     }
 
     .toggle-label {
@@ -1005,23 +1009,20 @@ background: #3c0fff;
     }
 
     .btn-form-submit {
-          font-family: 'Civilprom';
-      background: var(--primary);
-      color: #fff !important;
-      border: none;
-      width: 100%;
-      padding: 15px;
-      border-radius: 6px;
-      font-size: 1.05rem;
-      font-weight: 700;
-      cursor: pointer;
-      margin-top: 10px;
-      transition: background 0.2s, opacity 0.2s;
+font-family: 'Civilprom';
+    background: #3c0fff;
+    color: #fff !important;
+    border: none;
+    width: 100%;
+    padding: 20px;
+    border-radius: 0px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s, opacity 0.2s;
     }
 
-    .btn-form-submit:hover {
-      background: var(--primary-hover);
-    }
 
     .btn-form-submit:disabled {
       opacity: 0.6;
@@ -1036,11 +1037,11 @@ background: #3c0fff;
     }
 
     .safety-card {
-      background: #ffffff;
-      border: 1px solid #ebebee;
-      border-radius: 14px;
-      padding: 36px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 0px;
+    padding: 36px;
+    box-shadow: none;
     }
 
     .safety-tag {
@@ -1078,7 +1079,7 @@ background: #3c0fff;
     .crew-badge-banner {
       background: #0b0b0d;
       color: #ffffff;
-      border-radius: 10px;
+      border-radius: 0px;
       padding: 16px 20px;
       margin: 20px 0 24px 0;
     }
@@ -1143,15 +1144,15 @@ background: #3c0fff;
     }
 
     .footer-insta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--primary);
-      color: #fff !important;
-      padding: 9px 18px;
-      border-radius: 20px;
-      font-size: 0.92rem; /* Augmenté */
-      font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #3c0fff;
+    color: #fff !important;
+    padding: 13px 20px;
+    border-radius: 0px;
+    font-size: 17px;
+    font-weight: 600;
     }
 
     .footer-col h5 {
@@ -1174,7 +1175,7 @@ background: #3c0fff;
     }
 
     .footer-legal-block {
-      border-top: 1px solid #f0f0f2;
+      border-top: none;
       padding-top: 35px;
       margin-bottom: 30px;
     }
@@ -1182,12 +1183,12 @@ background: #3c0fff;
     .footer-legal-block h6 {
       font-size: 0.95rem;
       margin-bottom: 12px;
-      color: #222;
+      color: #000;
     }
 
     .footer-legal-block p {
       font-size: 0.88rem; /* Augmenté */
-      color: #777;
+      color: #000;
       line-height: 1.65;
       margin-bottom: 12px;
     }
@@ -1209,13 +1210,15 @@ text-align: left;
     }
 
     .footer-bottom-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid #f0f0f2;
-      padding-top: 25px;
-      font-size: 0.85rem; /* Augmenté */
-      color: #888;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+    border-top: 1px solid #f0f0f2;
+    padding: 25px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 800;
     }
 
     /* Floating Contact Pill Button */
@@ -1674,11 +1677,10 @@ width: 9px;
   <!-- Section 2: Operations Center & Team -->
   <section id="team" class="section-wrap section-burgundy">
     <div class="container">
-      <h2 class="section-title">OUR OFFICE &amp; OPERATIONS CENTER IN IBIZA</h2>
       
       <div class="ops-center-grid">
         <div class="ops-info">
-          <h3>AEROPUERTO DE IBIZA TERMINAL PRIVADA</h3>
+          <h3>OUR OFFICE IN IBIZA AND YOUR IBIZA LOCAL TEAM</h3>
           <p>
             Ibiza Airport (IATA: IBZ, ICAO: LEIB) is the international airport serving the Balearic Islands of Ibiza and Formentera in Spain located 7 km (4.3 miles) southwest of Ibiza Town. As the island is a major European holiday destination, it features both year-round domestic services and several dozen seasonal routes to cities across Europe. The airport facilities serve both Ibiza and Formentera, and are used by 95% of the tourists visiting these islands. At the executive terminal, the Helibaleares team provides bespoke VIP reception, maximum safety and security, and responsive management for your helicopter flights.
           </p>
@@ -1691,8 +1693,6 @@ width: 9px;
           </iframe>
         </div>
       </div>
-
-      <h3 class="team-subheading">OUR IBIZA LOCAL TEAM</h3>
       <div class="team-grid">
         <div class="team-card">
           <img src="https://civilprom.s3.eu-north-1.amazonaws.com/helibaleares+Devon.jpg" alt="Devon - Booking Assistant & Concierge">
@@ -1722,7 +1722,7 @@ width: 9px;
   <section id="destinations" class="section-wrap">
     <div class="container">
       <div class="section-heading-area">
-        <h2 class="section-title">BALEARIC ARCHIPELAGO DESTINATIONS</h2>
+        <h2 class="section-title">BALEARIC DESTINATIONS</h2>
       </div>
 
       <div class="destinations-grid-9">
@@ -1877,7 +1877,7 @@ width: 9px;
   <section id="activities" class="section-wrap" style="background-color: var(--bg-light);">
     <div class="container">
       <div class="section-heading-area">
-        <h2 class="section-title">TAILORED HELICOPTER SERVICES</h2>
+        <h2 class="section-title">ALL HELICOPTER SERVICES</h2>
       </div>
 
       <div class="services-grid-4">
@@ -1928,7 +1928,7 @@ width: 9px;
   <section class="section-wrap section-burgundy">
     <div class="container">
       <div class="section-heading-area">
-        <h2 class="section-title" style="color:#fff;">POPULAR ROUTES</h2>
+        <h2 class="section-title" style="color:#fff;">POPULAR EXPERIENCES</h2>
       </div>
 
       <div class="popular-routes-grid">
@@ -1942,7 +1942,6 @@ width: 9px;
             <p class="pop-route-desc">
               Cross the Mediterranean Sea in a 35-minute direct flight between Palma de Mallorca Executive Terminal (PMI) and Ibiza VIP Terminal (IBZ) or your private villa. Premier helicopter flight and helicopter charter connection between Mallorca and Ibiza with our Airbus H135 twin-engine helicopter.
             </p>
-            <button type="button" onclick="openChatboxWithRoute('Mallorca to Ibiza')" class="btn-black">Book this Flight</button>
           </div>
         </div>
 
@@ -1956,37 +1955,12 @@ width: 9px;
             <p class="pop-route-desc">
               The fastest and most comfortable transfer to Formentera directly from Ibiza Airport. Just 12 scenic minutes flying over the turquoise waters of Es Freus.
             </p>
-            <button type="button" onclick="openChatboxWithRoute('Ibiza to Formentera')" class="btn-black">Book this Flight</button>
           </div>
         </div>
 
-        <!-- Route 3 -->
-        <div class="pop-route-card">
-          <div class="pop-route-img">
-            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/Helibaleares+Image+Menorca.jpg" alt="Helicopter flight Mallorca to Menorca">
-          </div>
-          <div class="pop-route-content">
-            <h4 class="pop-route-title">HELICOPTER FLIGHT MALLORCA TO MENORCA</h4>
-            <p class="pop-route-desc">
-              Connect Mallorca to Menorca in a 25-minute tailored flight. Direct access to preserved private estates and helipads in Menorca.
-            </p>
-            <button type="button" onclick="openChatboxWithRoute('Mallorca to Menorca')" class="btn-black">Book this Flight</button>
-          </div>
-        </div>
 
-        <!-- Route 4 -->
-        <div class="pop-route-card">
-          <div class="pop-route-img">
-            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/Helibaleares+image+Costa+Blanca.jpg" alt="Mainland coast Alicante Valencia to Balearic Islands helicopter flight">
-          </div>
-          <div class="pop-route-content">
-            <h4 class="pop-route-title">MAINLAND COAST TO BALEARIC ISLANDS FLIGHT</h4>
-            <p class="pop-route-desc">
-              Direct helicopter charter connecting mainland coastal airports (Alicante / Valencia) directly to Ibiza and Mallorca.
-            </p>
-            <button type="button" onclick="openChatboxWithRoute('Mainland to Balearic Islands')" class="btn-black">Book this Flight</button>
-          </div>
-        </div>
+
+
       </div>
     </div>
   </section>
@@ -1995,7 +1969,7 @@ width: 9px;
   <section id="inquire" class="section-wrap" style="background-color: #fafafb;">
     <div class="container">
       <div class="section-heading-area">
-        <h2 class="section-title">INQUIRE FLIGHT AVAILABILITY</h2>
+        <h2 class="section-title">CONTACT HELIBALEARES</h2>
         <p class="section-desc">
           Helibaleares operates exclusively on a bespoke basis. Complete the form below to receive a direct quote within 15 minutes.
         </p>
@@ -2068,6 +2042,25 @@ width: 9px;
               <div class="form-group">
                 <label for="flightDate">Target Flight Date</label>
                 <input type="date" id="flightDate" name="FlightDate" class="form-input">
+                <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const targetInput = document.getElementById('flightDate');
+    
+    // 1. Récupérer la date du jour
+    const date = new Date();
+    
+    // 2. Ajouter 4 jours
+    date.setDate(date.getDate() + 4);
+    
+    // 3. Formater au format YYYY-MM-DD
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    
+    // 4. Assigner la valeur à l'input
+    targetInput.value = `${year}-${month}-${day}`;
+  });
+</script>
               </div>
               <div class="form-group">
                 <label for="flightTime">Flight Time Slot</label>
@@ -2104,9 +2097,6 @@ width: 9px;
   <!-- Section 7: Safety First & Prohibited Items -->
   <section class="section-wrap">
     <div class="container">
-      <div class="section-heading-area">
-        <h2 class="section-title">SAFETY FIRST: PROHIBITED ITEMS &amp; CREW STANDARDS</h2>
-      </div>
 
       <div class="safety-grid-2">
         <!-- Left: Prohibited -->
@@ -2180,7 +2170,7 @@ width: 9px;
             Operating premium on-demand helicopter transfers across the Balearic Archipelago and mainland Spain since 2003. Direct flight operator featuring our Airbus H135 twin-engine helicopter.
           </p>
           <a href="https://instagram.com/helibaleares" target="_blank" rel="noopener noreferrer" class="footer-insta-btn">
-            📷 @helibaleares
+Instagram: @helibaleares
           </a>
         </div>
 
@@ -2198,10 +2188,10 @@ width: 9px;
 
         <div class="footer-col">
           <h5>Direct Flight Dispatch</h5>
-          <p style="font-size:0.92rem; color:#666; line-height:1.55; margin-bottom:12px;">
+          <p style="font-size:0.92rem; color:#000; line-height:1.55; margin-bottom:12px;">
             For security, discretion, and instant flight scheduling, all transfers are operated directly by our flight crew. To reach our dispatch desk, email:
           </p>
-          <a href="mailto:infos@helibaleares.com" style="font-weight:700; font-size:0.95rem; color:var(--primary);">infos@helibaleares.com</a>
+          <a href="mailto:infos@helibaleares.com" style="font-weight:700; font-size:0.95rem; color: #3c0fff;">infos@helibaleares.com</a>
         </div>
       </div>
 
@@ -2221,17 +2211,14 @@ width: 9px;
         </p>
       </div>
 
-      <p style="font-size:0.92rem; color:#666; text-align:center; line-height:1.6; margin-top:20px;">
-        Providing bespoke, direct operator helicopter flights across the Balearic Archipelago and mainland Spain. Our direct dispatches specialize in <strong>helicopter flight ibiza</strong>, <strong>helicopter charter ibiza</strong>, <strong>helicopter flight Mallorca</strong>, and <strong>helicopter charter Mallorca</strong> transfers, with direct connections to Formentera, Menorca, Alicante, and Valencia.
-      </p>
 
       <!-- Targeted Search Engine Keyword Indexing Cloud -->
       <div class="seo-keyword-cloud">
-        <span>Helicopter Flight Ibiza</span> • <span>Helicopter Charter Ibiza</span> • <span>Helicopter Flight Mallorca</span> • <span>Helicopter Charter Mallorca</span> • <span>Helicopter Flight Ibiza Formentera</span> • <span>Helicopter Charter Ibiza Airport</span> • <span>Helicopter Flight Mallorca to Ibiza</span> • <span>Helicopter Charter Mallorca to Ibiza</span> • <span>Private Helicopter Flight Ibiza</span> • <span>Private Helicopter Charter Mallorca</span> • <span>Helicopter Transfer Ibiza Palma Mallorca</span> • <span>Private Helicopter Palma Menorca</span> • <span>Helicopter Charter Ibiza Alicante</span> • <span>Helicopter Transfer Ibiza Valencia</span> • <span>Helicopter Shuttle Ibiza Villa Finca</span> • <span>Airbus H135 Helicopter Balearics</span> • <span>VIP Helicopter Charter Ibiza</span> • <span>Private Helicopter Transfer Mallorca</span> • <span>Helicopter Shuttle Menorca Airport</span> • <span>Direct Helicopter Flight Formentera</span> • <span>Helicopter Transfer Ibiza Superyacht</span> • <span>Helicopter Charter Dalt Vila Ibiza</span> • <span>Helicopter Flight Ibiza San Antonio</span> • <span>Helicopter Transfer Santa Eulalia Ibiza</span> • <span>Helicopter Charter Pollença Mallorca</span> • <span>Helicopter Flight Andratx Mallorca</span> • <span>Helicopter Transfer Denia Ibiza</span> • <span>Helicopter Shuttle Ibiza Coast</span>
+<span>Helicopter Flight Ibiza</span> • <span>Helicopter Charter Ibiza</span> • <span>Helicopter Flight Mallorca</span> • <span>Helicopter Charter Mallorca</span> • <span>Helicopter Flight Ibiza Formentera</span> • <span>Helicopter Charter Ibiza Airport</span> • <span>Helicopter Flight Mallorca to Ibiza</span> • <span>Helicopter Charter Mallorca to Ibiza</span> • <span>Private Helicopter Flight Ibiza</span> • <span>Private Helicopter Charter Mallorca</span> • <span>Helicopter Transfer Ibiza Palma Mallorca</span> • <span>Private Helicopter Palma Menorca</span> • <span>Helicopter Charter Ibiza Alicante</span> • <span>Helicopter Transfer Ibiza Valencia</span> • <span>Helicopter Shuttle Ibiza Villa Finca</span> • <span>Airbus H135 Helicopter Balearics</span> • <span>VIP Helicopter Charter Ibiza</span> • <span>Private Helicopter Transfer Mallorca</span> • <span>Helicopter Shuttle Menorca Airport</span> • <span>Direct Helicopter Flight Formentera</span> • <span>Helicopter Transfer Ibiza Superyacht</span> • <span>Helicopter Charter Dalt Vila Ibiza</span> • <span>Helicopter Flight Ibiza San Antonio</span> • <span>Helicopter Transfer Santa Eulalia Ibiza</span> • <span>Helicopter Charter Pollença Mallorca</span> • <span>Helicopter Flight Andratx Mallorca</span> • <span>Helicopter Transfer Denia Ibiza</span> • <span>Helicopter Shuttle Ibiza Coast</span>
       </div>
 
       <div class="footer-bottom-bar">
-        <div>🌐 Eliance Civil HIS GROUP S.A — Since 2003!</div>
+        <div>Eliance Civil HIS GROUP S.A — Since 2003!</div>
         <div>© 2026 Eliance Civil HIS GROUP S.A. [AOC] ES.AOC.131 – EC 135. All rights reserved.</div>
       </div>
     </div>
