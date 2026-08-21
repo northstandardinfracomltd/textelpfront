@@ -1,2636 +1,2586 @@
-<!DOCTYPE html>
-<html lang="fr">
+html_content = r'''<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Textelp – IA agentique</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helicopter Flight Mallorca Ibiza | Private & Shared Helicopter Charter Balearic Islands</title>
+  <meta name="description" content="Direct operator helicopter flights & private transfers in Ibiza, Palma de Mallorca, Formentera, Menorca, Alicante, and Valencia. Book your Airbus H135 helicopter flight today.">
+  <meta name="keywords" content="Helicopter flight mallorca ibiza, helicopter ibiza mallorca, helicopter mallorca ibiza, helicopter palma ibiza, helicopter ibiza palma, helicopter ibiza, helicopter mallorca, helicopter palma, helicopter charter palma, helicopter charter ibiza, helicopter charter mallorca, helicopter flight balearic, helicopter balearic helicopter eivissa, helicopter flight valencia, helicopter flight alicante, helicopter flight alicante ibiza, helicopter alicante ibiza, helicopter ride ibiza">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.helibaleares.com/">
 
-<style>
-/* ================= FONTS ================= */
-@font-face {
-  font-family: 'TextelpA';
-  src: url('https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2.otf') format('opentype');
-}
-@font-face {
-  font-family: 'TextelpRAG';
-  src: url('https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2.otf') format('opentype');
-}
-@font-face {
-  font-family: 'TextelpB';
-  src: url('https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp.otf') format('opentype');
-}
+  <!-- 1. Google Site Verification (Search Console) -->
+  <meta name="google-site-verification" content="google-site-verification=2038472910384729" />
 
-/* ================= RESET ================= */
-* { margin:0; padding:0; box-sizing:border-box; }
+  <!-- 2. Google Ads Tracking (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18387261005"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18387261005');
+  </script>
 
-body {
-  font-family:'TextelpA', sans-serif;
-  color: #000;
-  background: #fff;
-}
+  <!-- Open Graph / SEO -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Helicopter Flight Mallorca Ibiza | Helibaleares">
+  <meta property="og:description" content="Direct operator helicopter flights & private transfers in Ibiza, Palma de Mallorca, Formentera, Menorca, Alicante, and Valencia.">
+  <meta property="og:image" content="https://civilprom.s3.eu-north-1.amazonaws.com/Charter+HeliBaleares+-+Hero+Helico.png">
 
-/* ================= WAVE ================= */
-.wave {
-  height: 3px;
-  width: 100%;
-  background: linear-gradient(90deg, transparent, #7c3aed, transparent);
-  animation: wave 4s linear infinite;
-  z-index: 3000;
-}
-@keyframes wave {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(100%); }
-}
+  <!-- JSON-LD Structured Data for Google Indexing -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AviationBusiness",
+    "name": "HELIBALEARES",
+    "legalName": "Eliance Civil HIS GROUP S.A.",
+    "url": "https://www.helibaleares.com",
+    "logo": "https://civilprom.s3.eu-north-1.amazonaws.com/Charter+HeliBaleares+-+Hero+Helico.png",
+    "description": "Premium on-demand helicopter transfers and private charter across the Balearic Archipelago and mainland Spain since 2003.",
+    "email": "infos@helibaleares.com",
+    "areaServed": ["Ibiza", "Mallorca", "Menorca", "Formentera", "Alicante", "Valencia"],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Helicopter Flight Mallorca Ibiza"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Helicopter Charter Ibiza"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Helicopter Charter Mallorca"
+        }
+      }
+    ]
+  }
+  </script>
 
-/* ================= STICKY BAR ================= */
+  <style>
+    @font-face {
+      font-family: 'Civilprom';
+      src: url('https://civilprom.s3.eu-north-1.amazonaws.com/Civilprom1.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
 
-.sticky-bar button {
-    background: #000;
-    font-family: 'TextelpRAG', sans-serif;
-    font-weight: 100 !important;
-    color: #fff;
-    font-size: 22px;
-    border: none;
-    padding: 13px 22px;
-    border-radius: 16px;
-    cursor: pointer;
-}
+    @font-face {
+      font-family: 'DefibeoBold';
+      src: url('https://datacenter64000pau.s3.eu-north-1.amazonaws.com/De%CC%81fibeoBold+(1).otf') format('opentype');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
 
-.ctabttnhover:hover {
-box-shadow: 0 0 0px 8px #0000001a;
-}
+    :root {
+      --primary: #8a243f;
+      --primary-hover: #721b32;
+      --text-main: #1d1d1f;
+      --text-muted: #666668;
+      --bg-light: #f7f7f8;
+      --bg-white: #ffffff;
+      --border-color: #e5e5ea;
+      --font-body: 'Civilprom', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-title: 'DefibeoBold', 'Civilprom', sans-serif;
+    }
 
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
 
-/* ================= GLOBAL ================= */
-section { padding:100px 20px; }
-.container { max-width:1200px; margin:auto; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text-main);
+      background-color: var(--bg-white);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
 
-/* ================= HERO ================= */
-.hero {
-    padding-bottom: 90px !important;
-padding-top: 200px !important;
+    h1, h2, h3, h4, .brand-title {
+      font-family: var(--font-title);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0; /* Letter spacing supprimé */
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Top Announcement Bar */
+    .announcement-bar {
+      background-color: var(--primary);
+      color: #ffffff;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 0.95rem; /* Augmenté */
+      letter-spacing: 0;
+    }
+
+    /* Navigation */
+    .header-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-dots {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 26px;
+      height: 18px;
+    }
+
+    .dot-blue {
+      width: 15px;
+      height: 15px;
+      background: #4070b8;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      opacity: 0.85;
+    }
+
+    .dot-red {
+      width: 15px;
+      height: 15px;
+      background: var(--primary);
+      border-radius: 50%;
+      position: absolute;
+      left: 9px;
+      opacity: 0.85;
+    }
+
+    .logo-text-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.1;
+    }
+
+    .logo-sub {
+      font-size: 0.72rem; /* Augmenté */
+      color: #777;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 1rem;
+      color: #333;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn-header {
+      background: #000000 !important;
+      color: #ffffff !important;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: background 0.2s;
+      display: inline-block;
+    }
+
+    .btn-header:hover {
+      background: #262626 !important;
+      color: #ffffff !important;
+    }
+
+    /* Hero Section avec fond subtil et fondu */
+    .hero-section {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #f7f7f8 url('https://civilprom.s3.eu-north-1.amazonaws.com/Charter+HeliBaleares+-+Hero+Helico.png') center center/cover no-repeat;
+      padding: 90px 20px 110px 20px;
+    }
+
+    /* Overlay fort pour estomper et fondre l'image d'arrière plan */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.82) 50%, rgba(255,255,255,0.94) 100%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.15;
+      color: #0b0b0d;
+      margin-bottom: 24px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.12rem; /* Augmenté */
+      color: #333336;
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+
+    .hero-insta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      padding: 9px 20px;
+      border-radius: 30px;
+      font-size: 0.98rem; /* Augmenté */
+      color: #222;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      margin-bottom: 35px;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #fff !important;
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: 1px solid var(--primary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      border-color: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background-color: #fff;
+      color: #222;
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: 1px solid #d1d1d6;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      border-color: #999;
+      background: #fafafa;
+    }
+
+    .btn-black {
+      background: #0b0b0d;
+      color: #ffffff !important;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 0.95rem; /* Augmenté */
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+      transition: background 0.2s;
+      display: block;
+    }
+
+    .btn-black:hover {
+      background: #2a2a2e;
+    }
+
+    /* Section Styles */
+    .section-wrap {
+      padding: 90px 0;
+    }
+
+    .section-heading-area {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 50px auto;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+
+    .section-desc {
+      font-size: 1.05rem; /* Augmenté */
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Section 1: Airbus H135 Big Card */
+    .card-master {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.03);
+      padding: 36px;
+    }
+
+    .aircraft-hero-row {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 36px;
+      align-items: center;
+      margin-bottom: 45px;
+    }
+
+    .aircraft-image-box {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .aircraft-image-box img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+
+    .spec-table {
+      margin: 20px 0 25px 0;
+      border-top: 1px solid #f0f0f2;
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 11px 0;
+      border-bottom: 1px solid #f0f0f2;
+      font-size: 0.98rem; /* Augmenté */
+    }
+
+    .spec-label {
+      color: #666;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .spec-value {
+      font-weight: 700;
+      color: #111;
+    }
+
+    .spec-btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-secondary-light {
+      background: #f7f7f8;
+      border: 1px solid #e5e5ea;
+      color: #333;
+      padding: 11px;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 0.95rem; /* Augmenté */
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* Sub-routes table in card */
+    .routes-grid-title {
+      text-align: center;
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .routes-grid-desc {
+      text-align: center;
+      font-size: 0.95rem; /* Augmenté */
+      color: #777;
+      margin-bottom: 24px;
+    }
+
+    .on-demand-routes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 45px;
+    }
+
+    .on-demand-card {
+      background: #fcfcfd;
+      border: 1px solid #ececee;
+      border-radius: 8px;
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .od-route {
+      font-weight: 700;
+      font-size: 0.95rem; /* Augmenté */
+      color: #222;
+    }
+
+    .od-type {
+      font-size: 0.82rem; /* Augmenté */
+      color: #888;
+    }
+
+    .od-badge-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+    }
+
+    .od-badge-time {
+      background: #000;
       color: #fff;
-    background: radial-gradient(#281698, #020248) !important;
-    padding: 200px 20px !important;
-        border-bottom: 1px solid #2c1aa3;
-}
+      font-size: 0.78rem; /* Augmenté */
+      padding: 3px 8px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
 
-.hero-grid {
-    display: grid;
-    grid-template-columns: 47% 53%;
-    gap: 5px;
-    align-items: center;
-    max-width: 1200px;
-}
+    .od-badge-price {
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.78rem; /* Augmenté */
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
 
-.logo {   
-        margin-left: 15px;
-    margin-bottom: 0px;
-  }
+    /* Onboard Amenities 2-col */
+    .amenities-heading {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
 
-.typing {
-    padding-right: 160px;
-    font-size: 46px;
-    margin-bottom: 30px;
-    font-family: 'TextelpRAG', sans-serif;
-    font-weight: 100 !important;
-    min-height: 200px;
-    cursor: default !important;
-    line-height: 60px !important;
-}
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
 
-.typing .cursor {
-  width: 3.5px !important;
-    height: 36px !important;
-    margin-bottom: -3px !important;
-    background: #16f1bb !important;
+    .amenity-card {
+      border: 1px solid #ebebeb;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+    }
 
+    .amenity-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
 
-  display:inline-block;
-  width:2px;
-  height:1em;
-  background:#c4b5fd;
-  margin-left:6px;
-  animation: blink 1s infinite;
-}
+    .amenity-info {
+      padding: 18px;
+    }
 
-@keyframes blink {
-  0%,50% { opacity:1; }
-  50.01%,100% { opacity:0; }
-}
+    .amenity-title {
+      font-size: 1.02rem;
+      margin-bottom: 6px;
+    }
 
-.search-bar {
-  display:flex;
-  overflow:hidden;
-  margin-bottom:14px;
+    .amenity-text {
+      font-size: 0.92rem; /* Augmenté */
+      color: #666;
+      line-height: 1.5;
+    }
 
-  background-color: rgb(255, 255, 255);
-    border-color: rgb(255, 255, 255);
-    color: black;
-    border-radius: 12px;
-    font-size: 1rem;
-    text-align: center;
-    outline: rgb(25, 240, 187) solid 3px;
-    outline-offset: 4px;
-    font-family: 'TextelpRAG', sans-serif;
-    font-weight: 100;
-    height: 54px;
-}
-.search-bar input {
-    flex: 1;
-    padding: 14px;
-    font-size: 22px;
-    border: none;
-    text-align: center;
-    font-family: 'TextelpRAG', sans-serif;
-    font-weight: 100 !important;
-    color: #000 !important;
-}
+    /* Section 2: Burgundy Operations & Team */
+    .section-burgundy {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
 
-.search-bar:placeholder {
-    color: #000 !important;
-}
+    .section-burgundy .section-title {
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 45px;
+    }
 
-.search-bar button {
-  padding:14px 18px;
-  border:none;
-  background:#ede9fe;
-  cursor:pointer;
-}
+    .ops-center-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 70px;
+    }
 
-.or-text {
-  text-align:center;
-  font-size:14px;
-  opacity:.8;
-  margin:12px 0;
-}
+    .ops-info h3 {
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+      color: #fff;
+    }
 
-.pisaA {
-    font-family: 'TextelpB', sans-serif;
-    font-weight: 100 !important;
-  color: #fff !important;
-      font-size: 32px !important;
-          margin-bottom: 15px;
-    margin-top: 15px;
-    cursor: default;
-}
+    .ops-info p {
+      font-size: 1rem; /* Augmenté */
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.92);
+    }
 
-.pisaB {
-      line-height: 25px;
-    font-family: 'TextelpA', sans-serif;
-    font-weight: 100 !important;
-  color: #fff !important;
-      font-size: 18px !important;
-          cursor: default;
-          margin-bottom: 35px;
-      
-}
-.pisaBX {
-    line-height: 32px;
-    font-family: 'TextelpA', sans-serif;
-    font-weight: 100 !important;
-    color: #fff !important;
-    font-size: 22px !important;
-    cursor: default;
-margin-top: -25px;
-    margin-bottom: 15px;
-    padding-right: 5px;
-      
-}
+    .map-embed-container {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      background: #fff;
+      border: 3px solid rgba(255,255,255,0.2);
+    }
 
-.greco {
-    border-top: 1px solid #262139 !important;
-    margin-top: 60px !important;
-}
+    .map-embed-container iframe {
+      width: 100%;
+      height: 260px;
+      border: 0;
+      display: block;
+    }
 
-.cta-main button {
-font-family: 'TextelpA', sans-serif;
-    font-weight: 100 !important;
-    width: 100%;
-    padding: 14px;
-    padding-bottom: 16px;
-    font-size: 22px;
-    cursor: pointer;
-    background: linear-gradient(126deg, #008eee, #6c1aff) !important;
-    color: rgb(255 255 255);
-    border-radius: 12px;
-    border: none;
-    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
-    opacity: 1;
-        max-width: 240px;
-    margin-top: 15px;
-}
+    .team-subheading {
+      text-align: center;
+      font-size: 1.35rem;
+      color: #fff;
+      margin-bottom: 40px;
+    }
 
-.hero img {
-  width:100%;
-  border-radius:24px;
-}
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      text-align: center;
+    }
 
-/* ================= SECTION B ================= */
-.section-b {
-display: grid;
-    max-width: 1385px !important;
-    padding: 10px;
-    gap: 20px;
-    margin-top: -12px;
-    grid-template-columns: 1fr 1fr;
-}
-.card {
-display: grid;
-    margin-top: 25px;
-    grid-template-columns: 1fr 1fr;
-    overflow: hidden;
-    background: radial-gradient(#2a16a4, #04045b) !important;
-    border: none;
-    border-radius: 20px;
-    padding: 9px;
-    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
-}
-.card-left {
-  background: transparent;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height: 300px;
+    .team-card img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 16px auto;
+      border: 3px solid rgba(255,255,255,0.3);
+    }
+
+    .team-card h4 {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .team-card p {
+      font-size: 0.88rem; /* Augmenté */
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.35;
+    }
+
+    /* Section 3: Balearic Archipelago Destinations */
+    .destinations-grid-9 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .dest-card {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #ebebee;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .dest-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    }
+
+    .dest-img-wrap {
+      height: 170px;
+      overflow: hidden;
+    }
+
+    .dest-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .dest-content {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .dest-tag {
+      color: var(--primary);
+      font-size: 0.8rem; /* Augmenté */
+      font-weight: 700;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .dest-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 8px;
+      min-height: 42px;
+    }
+
+    .dest-desc {
+      font-size: 0.92rem; /* Augmenté */
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .dest-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .btn-dest-contact {
+      background: #000;
+      color: #fff !important;
+      font-size: 0.9rem; /* Augmenté */
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: 600;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-dest-contact:hover {
+      background: #252525;
+    }
+
+    .btn-dest-maps {
+      background: var(--primary);
+      color: #fff !important;
+      font-size: 0.9rem; /* Augmenté */
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .btn-dest-maps:hover {
+      background: var(--primary-hover);
+    }
+
+    /* Section 4: Tailored Helicopter Services */
+    .services-grid-4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .service-box {
+      background: #ffffff;
+      border: 1px solid #ebebee;
+      border-radius: 12px;
+      padding: 30px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .service-title {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .service-desc {
+      font-size: 0.95rem; /* Augmenté */
+      color: #666;
+      line-height: 1.55;
+    }
+
+    /* Section 5: Popular Routes (Burgundy Section) */
+    .popular-routes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .pop-route-card {
+      background: #ffffff;
       border-radius: 14px;
-}
-.card-left img { width:98%; }
-.card-right { padding:26px; }
-
-/* ================= SECTION C ================= */
-.section-c { background: radial-gradient(#281698, #020248) !important; }
-.section-c h2 { font-size:40px; margin-bottom:50px; }
-
-.features {
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-    gap: 35px;
-}
-.feature {
-    font-family: 'TextelpA', sans-serif;
-    font-weight: 100 !important;
-  font-size: 18px !important;
-
-display: flex;
-    align-items: center;
-    padding: 20px;
-    border-radius: 16px;
-    border: 1px solid #0275de;
-    outline: #0075de solid 3px;
-    background: linear-gradient(45deg, #1482ff, #1482ff);
-    outline-offset: 4px;
-    cursor: default !important;
-    color: #fff !important;
-}
-.feature img { width:42px; margin-right:14px; }
-
-/* ================= SECTION D ================= */
-.section-d {
-  display:grid;
-  grid-template-columns:70% 30%;
-  gap:40px;
-}
-
-.calculator {
-    margin-left: auto;
-        padding-bottom: 10px;
-    border: 1px solid #40405c;
-    border-radius: 13px;
-    background: #1c1c38;
-    padding: 32px;
-    max-width: 400px;
-    min-width: 400px;
-    margin-right: 40px;
-}
-
-.price {
-    font-size: 48px;
-    text-align: center;
-    font-family: 'TextelpB', sans-serif;
-    color: #fff !important;
-}
-.price span { 
-      font-size: 18px;
-          margin-left: -10px;
-  font-size:14px; opacity:1;
-  color: #fff !important;
-      font-family: 'TextelpA', sans-serif !important;
- }
-
-.step { display:none; margin-top:30px; }
-.step.active { display:block; }
-
-.titrecc {
-color: #fff !important;
-font-family: 'TextelpB', sans-serif !important;
-font-weight: 100;
-font-size: 18px !important;
-margin-bottom: 15px !important;
-cursor: default; 
-}
-.radio {
-padding: 14px;
-    border-radius: 14px;
-    border: 1px solid #363851;
-    margin-bottom: 10px;
-    cursor: pointer;
-    background: #292a40;
-    color: #fff !important;
-    font-weight: 100;
-    font-family: 'TextelpA', sans-serif !important;
-    text-align: center;
-    font-size: 18px;
-}
-
-.radio:hover {
-    background: #674eff;
-        border: 1px solid #674eff;
-
-}
-
-
-.radio.active {
-  border-color:#7c3aed;
-  background:rgba(124,58,237,.08);
-}
-
-.nav-buttons {
-background: transparent !important;
-}
-
-.nav-buttons a,
-.nav-buttons button {
-background: #674eff !important;
-    font-family: 'TextelpA', sans-serif !important;
-    border: none !important;
-    margin-bottom: 17px !important;
-    padding: 12px 18px !important;
-    font-size: 18px !important;
-    border-radius: 13px !important;
-    cursor: pointer !important;
-    text-decoration: none !important;
-    color: #ffffff !important;
-    font-weight: 100;
-}
-
-/* ================= FAQ ================= */
-.section-e h2 { 
-
-      font-size: 40px;
-    margin-bottom: 30px;
-    font-family: 'TextelpB', sans-serif;
-    color: #fff;
-    text-align: center;
-    cursor: default;
-
-
-}
-.faq-item {
-border: 1px solid #ffffff;
-    background: #ffffff;
-    color: #000000;
-    max-width: 700px;
-    margin: auto;
-    padding: 12px !important;
-    border-radius: 13px;
-    margin-bottom: 10px !important;
-        font-family: 'TextelpA', sans-serif !important;
-}
-.faq-question {
-  display:flex;
-  justify-content:space-between;
-  cursor:pointer;
-  font-weight:600;
-      font-family: 'TextelpA', sans-serif !important;
-}
-.faq-answer { display:none;     opacity: 1;
-    color: #000000;    font-family: 'TextelpA', sans-serif !important;
-   }
-
-.legal {
-margin-top: 40px;
-    font-size: 18px;
-    font-family: 'TextelpA', sans-serif !important;
-    opacity: 1;
-    font-weight: 100;
-    color: #fff;
-    max-width: 100%;
-    margin: auto;
-    cursor: default;
-    margin-top: 85px;
-}
-
-/* ================= RESPONSIVE ================= */
-@media(max-width:900px) {
-  .hero-grid,
-  .section-b,
-  .section-d {
-    grid-template-columns:1fr;
-  }
-  .features { grid-template-columns:1fr; }
-}
-
-.colorPURPLE {
-    outline-offset: 4px !important;
-    border: 0px solid #622069;
-    outline: #000 solid 4px;
-    background: #000;
-    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
-}
-.colorBLUE {
-    outline-offset: 2px !important;
-    border: 0px solid #301ba6;
-    outline: #2d199f solid 3px;
-    background: radial-gradient(circle, #080657 0%, #311ca7 60%, #201289 100%);
-    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
-}
-.colorRED {
-    outline-offset: 2px !important;
-    border: 0px solid #ff6560;
-    outline: #ff6560 solid 3px;
-    background: radial-gradient(circle, #ff5c56 0%, #ff6560 60%, #de2e28 100%);
-        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
-}
-
-.colorGREEN {
-    outline-offset: 2px !important;
-    border: 0px solid #2f9d45;
-    outline: #2f9d45 solid 3px;
-    background: radial-gradient(circle, #27893a 0%, #2f9d45 60%, #166e28 100%);
-        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
-}
-
-.colorPINK {
-    outline-offset: 2px !important;
-    border: 0px solid #db2885;
-    outline: #db2885 solid 3px;
-    background: radial-gradient(circle, #eb2d90 0%, #ff66b5 60%, #db2885 100%);
-        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
-}
-
-.colorORANGE {
-    outline-offset: 2px !important;
-    border: 0px solid #dc632a;
-    outline: #dc632a solid 3px;
-    background: radial-gradient(circle, #e36a2e 0%, #ff874d 60%, #dc632a 100%);
-        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
-}
-
-.colorYELLOW {
-    outline-offset: 2px !important;
-    border: 0px solid #cbdf18;
-    outline: #cbdf18 solid 3px;
-    background: radial-gradient(circle, #b9cd0e 0%, #cbdf18 60%, #8e9f05 100%);
-        box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
-}
-
-
-
-.folk {
-    background: #100927;
-    border-top: 1px solid #383250;
-        margin-top: 100px;
-    width: 100% !important;
-    max-width: 100% !important;
-}
-
-.folk2 {
-background: #121233 !important;
-width: 100% !important;
-max-width: 100% !important;
-grid-template-columns: 55% 45% !important;
-}
-
-.iso  {
-font-family: 'TextelpA', sans-serif !important;
-    font-weight: 100 !important;
-    font-size: 18px !important;
-    text-decoration: none;
-    border: none !important;
-    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
-    border-radius: 13px !important;
-
-    background: linear-gradient(126deg, #008eee, #6c1aff) !important;
-    padding: 13px 20px;
-    padding-bottom: 14px !important;
-    color: #fff !important;
-}
-
-
-
-.imgside {
-    width: 70px !important;
-    margin-top: 80px;
-
-}
-
-.actiona {
-    width: 70px !important;
-    margin-top: 80px;
-
-}
-
-.booba {
-    text-align: center;
-    margin: auto;
-    font-size: 50px;
-    color: #000 !important;
-    max-width: 700px;
-    line-height: 75px;
-    margin-top: 55px;
-    margin-bottom: 20px;
-    -webkit-font-smoothing: antialiased;
-        cursor: default;
-
-}
-
-.illustraBOB
-
-{
-width: 100%;
-    margin-top: -380px;
-    margin-bottom: -200px;
-
-}
-
-.illustraBOBimg
-
-{
-width: 100%;
-}
-
-
-.speculative {
-    display: flex;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    margin-top: 0px;
-    margin-bottom: -90px;
-        z-index: 90000;
-}
-</style>
-</head>
-
-<body>
-
-<div class="speculative">
-<div class="sticky-bar" style="background: #000; padding: 10px 10px; display: flex; align-items: center;">
-    <style>
-        /* Conteneur interne pour ne pas impacter la sticky-bar parente */
-        .nav-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            font-family: 'TextelpA', monospace !important;
-        }
-
-        .nav-left {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        /* Style du texte dynamique */
-        #dynamic-string {
-font-size: 20px;
-    min-width: 150px;
-    display: inline-block;
-    white-space: pre;
-    margin-left: -10px;
-    margin-top: -2px;
-    background: linear-gradient(to right, #ffffff0f, #ffffff40);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-        }
-
-        .nav-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
-    opacity: 1;
-    transition: opacity 0.2s;
-    font-size: 18px;
-    margin-left: 2px;
-        }
-
-        .nav-link:hover { opacity: 1;text-decoration: none; }
-
-        .iso {
-font-family: 'TextelpA', sans-serif !important;
-        }
-
-        /* Animation de clignotement (Blink) */
-        @keyframes charBlink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-        .blink-fast { animation: charBlink 0.3s infinite; }
-
-        /* État de base de votre barre */
-.sticky-bar {
-
-    background: #1c0f7e !important;
-    justify-content: space-between;
-    width: 99%;
-    margin: auto;
-    height: 66px;
-    margin-top: 8px !important;
-    border-radius: 20px;
-    border: 1px solid #2b1aa2;
-    margin-bottom: -90px;
-
-  position: sticky;
-  top: 0;
-  transition: transform 0.4s ease, opacity 0.4s ease; /* Animation fluide */
-  z-index: 1000;
-}
-
-/* Classe qui sera ajoutée par le JS */
-.sticky-bar.hidden {
-  transform: translateY(-100%); /* Fait remonter la barre hors de l'écran */
-  opacity: 0;
-  pointer-events: none; /* Empêche de cliquer sur les liens quand elle est invisible */
-}
-
-
-.gaybutton {
-    font-family: 'TextelpA', sans-serif !important;
-    font-weight: 100 !important;
-    font-size: 18px !important;
-    text-decoration: none;
-    border: none !important;
-    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
-    border-radius: 13px !important;
-    background: linear-gradient(126deg, #008eee, #6c1aff) !important;
-    padding: 13px 20px;
-    padding-bottom: 14px !important;
-    color: #fff !important;
-}
-
-    </style>
-
-    <div class="nav-content">
-        <div class="nav-left">
-            <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/Textelp_White.svg" class="logo" style="height: 30px;">
-        </div>
-
-        <div class="nav-right">
-            <a href="#" class="nav-link">Fonctionnement</a>
-            <a href="#" class="nav-link">Offres</a>
-            <a href="#" class="nav-link" onclick="openTlpPopup()">Être rappelé</a>
-            <a href="#" class="nav-link" id="txlp-trigger-login-8822">Connexion</a>
-           <a href="#" class="iso nav-link" id="txlp-trigger-signup-7733">Ouvrir un compte</a>
-        </div>
-    </div>
-
-</div>
-
-<script>
-    window.addEventListener('scroll', function() {
-  const stickyBar = document.querySelector('.sticky-bar');
-  
-  // Vérifie si on a dépassé 500px de scroll
-  if (window.scrollY > 700) {
-    stickyBar.classList.add('hidden');
-  } else {
-    stickyBar.classList.remove('hidden');
-  }
-});
-</script>
-</div>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="typing">
-        Votre IA agentique personnalisée pour
-        <span id="typing-text"></span><span class="cursor"></span>
-      </div>
-
-      <div class="cta-main">
-        <p class="pisaBX">Avec Textelp, déployez votre propre solution d’IA agentique RAG, un système qui combine les meilleurs modèles de langage (LLM) pour la logique d’action et s'appuie sur vos ressources d'entreprise pour garantir la pertinence des réponses, qu'il s'agisse d'un agent interne ou externe. Au-delà de son outil phare, Textelp c’est aussi une agence de solutions IA réunissant des talents en ingénierie de modèles de langage, développement logiciel et design UI/UX, permettant ainsi à ses clients d’obtenir des produits personnalisés répondant à des exigences de haute performance.</p>
-        <button id="txlp-trigger-signup-7733">Créer mon agent</button>
-      </div>
-    </div>
-
-    <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelpillustrationA.svg">
-  </div>
-</section>
-
-<br><br>
-<!-- SECTION B -->
-     <h2  class="booba">Votre IA alimentée par vos ressources </h2>
-             <p class="pisaBXX">Affinity inclut les studios Vecteur, Pixel et Mise en page, sans vous enfermer dans un univers figé. Nous créons à la demande, votre agent IA contextualisé, intégrable et performant ; à votre dimension, avec un environnement indépendant et propriétaire.</p>
-<div class="gm-main-wrapper">
-    <div class="gm-topics-container" id="topicsContainer"></div>
-    <div class="gm-center-card flashXW" id="centerCard">
-        <p style="font-size:13px; color:#5f6368">Interrogez notre intelligence</p>
-        <input type="text" class="gm-search-input" id="gmSearch" placeholder="Recherchez...">
-        <div id="warningMsg" class="gm-warning">Peu de ressources trouvées...</div>
-    </div>
-
-    <div class="gm-modal-overlay" id="modalOverlay">
-        <div class="gm-answer-modal" id="answerModal">
-            <div id="modalTitle" style="font-size: 18px; margin-bottom:20px; color:#4285f4; font-weight:bold"></div>
-            <div id="modalBody" style="font-size: 15px; line-height: 1.6; color: #3c4043;"></div>
-            <div style="text-align: right; margin-top: 30px;">
-                <button class="gm-btn" style="background:#f1f3f4; border:none; padding:10px 20px; border-radius:10px; cursor:pointer" onclick="closeModal()">Fermer</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    const dataStore = [
-        { t: "Management d'équipe", r: "Le management moderne repose sur l'empathie et la clarté des objectifs. Favorisez des feedbacks réguliers." },
-        { t: "Intelligence Artificielle", r: "L'IA n'est pas qu'un outil, c'est un partenaire. Apprenez à rédiger des prompts précis pour gagner 2h par jour." },
-        { t: "Cloud Architecture", r: "Privilégiez les architectures scalables et serverless pour réduire vos coûts opérationnels de 30%." },
-        { t: "Cyber-résilience", r: "La sécurité commence par l'humain. Formez vos collaborateurs au phishing avant d'investir dans un firewall." },
-        { t: "UX Design", r: "L'utilisateur n'est pas vous. Testez vos interfaces avec des novices pour identifier les points de friction réels." },
-        { t: "Digital Marketing", r: "L'avenir du marketing est dans la donnée de première main et la personnalisation éthique." },
-        { t: "Analyse de Données", r: "Une donnée sans contexte est un bruit. Concentrez-vous sur les indicateurs qui déclenchent une action." },
-        { t: "Supply Chain", r: "La visibilité en temps réel est le nerf de la guerre. Automatisez vos stocks pour éviter les ruptures." },
-        { t: "Ventes B2B", r: "Arrêtez de vendre, commencez à aider. Le Social Selling sur LinkedIn est devenu incontournable." },
-        { t: "Ressources Humaines", r: "La marque employeur se construit de l'intérieur. Vos salariés sont vos meilleurs ambassadeurs." },
-        { t: "Growth Hacking", r: "Expérimentez vite, échouez vite. Trouvez le levier de croissance avant d'épuiser votre budget." },
-        { t: "Agilité Scrum", r: "Le Scrum Master est un facilitateur, pas un chef. Le succès dépend de l'autonomie de l'équipe." },
-        { t: "Blockchain", r: "La blockchain sécurise la traçabilité. Idéal pour le luxe et l'agroalimentaire." },
-        { t: "DevOps", r: "Le DevOps est une culture de collaboration totale. Automatisez tout le pipeline de déploiement." },
-        { t: "E-commerce", r: "70% de vos clients achètent sur mobile. Facilitez le paiement en un clic pour booster vos ventes." },
-        { t: "SaaS Strategy", r: "Le Churn est votre ennemi. Concentrez-vous sur l'onboarding pour prouver la valeur en moins de 5min." },
-        { t: "Machine Learning", r: "La qualité du modèle dépend de la donnée. 'Garbage in, garbage out' reste la règle d'or." },
-        { t: "Finance Durable", r: "L'investissement ESG est le nouveau standard pour attirer les investisseurs institutionnels." },
-        { t: "Recrutement IT", r: "Le salaire ne suffit plus. Offrez de la flexibilité et des projets techniquement stimulants." },
-        { t: "Innovation RH", r: "L'onboarding virtuel doit être chaleureux. Utilisez la vidéo et le mentorat pour intégrer vos talents." },
-        { t: "Web3", r: "Le Web3 redonne la propriété aux utilisateurs via la décentralisation et les DAO." },
-        { t: "Audit Interne", r: "L'audit doit être perçu comme un conseil stratégique pour sécuriser la croissance." },
-        { t: "Relation Client", r: "L'IA doit passer la main à un humain dès que l'émotion dépasse le factuel." },
-        { t: "Leadership", r: "Le leader de demain sait dire 'je ne sais pas'. L'humilité bâtit la confiance durable." },
-        { t: "Deep Learning", r: "Les réseaux neuronaux nécessitent une puissance de calcul massive. Pensez au coût carbone." }
-    ];
-
-    const container = document.getElementById('topicsContainer');
-    const searchInput = document.getElementById('gmSearch');
-    const warningMsg = document.getElementById('warningMsg');
-    const centerCard = document.getElementById('centerCard');
-    let isLocked = false;
-
-    function getRelevanceColor(topic, keyword) {
-        if (!keyword) return 'var(--color-none)';
-        const k = keyword.toLowerCase();
-        if (topic.t.toLowerCase().includes(k)) return 'var(--color-perfect)';
-        return 'var(--color-none)';
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
     }
 
-    function updateDisplay(keyword = '') {
-        const filtered = dataStore.filter(d => d.t.toLowerCase().includes(keyword.toLowerCase()));
-        warningMsg.classList.toggle('show', keyword !== '' && filtered.length < 3);
-
-        container.innerHTML = '';
-        const placedElements = [];
-        const cardBox = centerCard.getBoundingClientRect();
-        const buffer = 20; // Espace entre les topics
-
-        // Limites de l'écran
-        const margin = 15;
-        const screenW = window.innerWidth;
-        const screenH = window.innerHeight;
-
-        filtered.concat(dataStore.filter(d => !filtered.includes(d))).slice(0, 20).forEach((data, i) => {
-            const el = document.createElement('div');
-            el.className = 'gm-floating-topic';
-            const dotColor = getRelevanceColor(data, keyword);
-            el.innerHTML = `<div class="gm-dot" style="background:${dotColor}; color:${dotColor}"></div><span>${data.t}</span>`;
-            container.appendChild(el);
-
-            const elW = el.offsetWidth;
-            const elH = el.offsetHeight;
-
-            let x, y, collisions = 0;
-            let foundPosition = false;
-
-            while (!foundPosition && collisions < 50) {
-                // Tentative de positionnement aléatoire dans le viewport safe
-                x = margin + Math.random() * (screenW - elW - margin * 2);
-                y = margin + Math.random() * (screenH - elH - margin * 2);
-
-                const rectA = { left: x, top: y, right: x + elW, bottom: y + elH };
-
-                // Vérification collision avec le centre
-                const hitCenter = !(rectA.right < cardBox.left - 20 || rectA.left > cardBox.right + 20 || 
-                                    rectA.bottom < cardBox.top - 20 || rectA.top > cardBox.bottom + 20);
-
-                // Vérification collision avec les autres topics déjà placés
-                const hitOthers = placedElements.some(rectB => {
-                    return !(rectA.right < rectB.left - buffer || rectA.left > rectB.right + buffer || 
-                             rectA.bottom < rectB.top - buffer || rectA.top > rectB.bottom + buffer);
-                });
-
-                if (!hitCenter && !hitOthers) {
-                    foundPosition = true;
-                }
-                collisions++;
-            }
-
-            el.style.left = x + 'px';
-            el.style.top = y + 'px';
-            placedElements.push({ left: x, top: y, right: x + elW, bottom: y + elH });
-
-            el.onclick = () => handleTopicClick(el, data);
-            
-            setTimeout(() => {
-                el.style.opacity = '1';
-                el.style.animation = `gmFloat ${3 + Math.random()*2}s ease-in-out infinite`;
-                el.style.animationDelay = `-${Math.random()*5}s`;
-            }, i * 30);
-        });
+    .pop-route-img {
+      height: 220px;
+      overflow: hidden;
     }
 
-    function handleTopicClick(el, data) {
-        if (isLocked) return;
-        isLocked = true;
-        const dot = el.querySelector('.gm-dot');
-        const text = el.querySelector('span');
-        dot.classList.add('gm-dot-active');
-        text.classList.add('gm-shimmer-active');
-
-        setTimeout(() => {
-            openModal(data);
-            dot.classList.remove('gm-dot-active');
-            text.classList.remove('gm-shimmer-active');
-        }, 4000);
-        setTimeout(() => { isLocked = false; }, 10000);
+    .pop-route-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    function openModal(data) {
-        document.getElementById('modalTitle').innerText = data.t;
-        const body = document.getElementById('modalBody');
-        body.textContent = '';
-        document.getElementById('modalOverlay').style.display = 'flex';
-        setTimeout(() => document.getElementById('answerModal').classList.add('active'), 50);
-        
-        let i = 0;
-        const timer = setInterval(() => {
-            if (i < data.r.length) body.textContent += data.r[i++];
-            else clearInterval(timer);
-        }, 20);
+    .pop-route-content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
-    function closeModal() {
-        isLocked = false;
-        document.getElementById('answerModal').classList.remove('active');
-        setTimeout(() => { document.getElementById('modalOverlay').style.display = 'none'; }, 300);
+    .pop-route-title {
+      font-size: 1.12rem;
+      color: #111;
+      margin-bottom: 10px;
     }
 
-    searchInput.onkeypress = (e) => { if (e.key === 'Enter') updateDisplay(searchInput.value); };
-    window.onresize = () => updateDisplay(searchInput.value);
-    
-    // Initialisation
-    window.onload = () => updateDisplay();
-</script>
-
-<section class="container section-b">
-  <div class="card">
-    <div class="card-left"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/2093782093298379203.svg"></div>
-    <div class="card-right"><h3 class="pisaA">Contextes</h3><p class="pisaB">Affinity inclut les studios Vecteur, Pixel et Mise en page, sans vous enfermer dans un univers figé.</p><a href="#" class="gaybutton" id="txlp-trigger-signup-7733">Commencer</a></div>
-  </div>
-  <div class="card">
-    <div class="card-left"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/Illustration2TextelpURGE.svg"></div>
-    <div class="card-right"><h3 class="pisaA">Lorem ipsum</h3><p class="pisaB">Affinity inclut les studios Vecteur, Pixel et Mise en page, sans vous enfermer dans un univers figé.</p><a href="#" class="gaybutton" id="txlp-trigger-signup-7733">Nous contacter</a></div>
-  </div>
-</section>
-<br>
-<!-- SECTION C -->
-
-<div class="preventiaXBL"></div>
-   <h2  class="booba">Un aperçu de votre console éditeur et l'affichage pour vos utilisateurs</h2>
-
-   <div class="cuddle">
-   <button id="ux-toggle-99x-trigger" class="ux-toggle-99x-btn">
-    Essayez pour mieux comprendre
-</button>
-</div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const btn = document.getElementById('ux-toggle-99x-trigger');
-    const container = document.getElementById('cv-demo-container');
-
-    if (btn && container) {
-        btn.addEventListener('click', function() {
-            // 1. Modifier le texte et ajouter l'effet de chargement
-            btn.textContent = 'Chargement de l\'interface...';
-            btn.classList.add('ux-toggle-99x-loading');
-
-            // 2. Lancer le compte à rebours de 4 secondes (4000ms)
-            setTimeout(() => {
-                // Masquer le bouton proprement
-                btn.classList.add('ux-toggle-99x-fade-out');
-                
-                // Afficher la div de démo
-                container.classList.remove('ux-toggle-99x-hidden');
-                container.classList.add('ux-toggle-99x-visible');
-
-                // Supprimer le bouton du flux après l'animation de sortie
-                setTimeout(() => {
-                    btn.style.display = 'none';
-                }, 500);
-            }, 4000);
-        });
-    }
-});
-</script>
-
-   </div>
-
-<div id="cv-demo-container" class="cv-demo-container ux-toggle-99x-hidden">
-    <style>
-
-.pisaBXX {
-    line-height: 32px;
-    font-family: 'TextelpA', sans-serif;
-    font-weight: 100 !important;
-    color: #000000 !important;
-    font-size: 22px !important;
-    text-align: center;
-    cursor: default;
-    margin-top: -25px;
-    margin-bottom: 15px;
-    padding-right: 5px;
-}
-
-/* Style de base du bouton */
-.ux-toggle-99x-btn {
-    cursor: pointer;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-    outline: #674eff solid 3px;
-    outline-offset: 4px;
-    background: #674eff;
-    color: #fff;
-    margin-bottom: 85px !important;
-    font-family: 'TextelpA', sans-serif;
-    font-weight: 100 !important;
-    border: none !important;
-    padding: 10px 20px;
-    font-size: 18px !important;
-    border-radius: 13px !important;
-    padding-top: 13px;
-    padding-bottom: 14px;
-    padding-left: 22px;
-    padding-right: 22px;
-    margin: auto;
-    text-align: center;
-    margin-left: auto;
-}
-
-.cuddle {
-text-align: center !important;
-}
-
-/* État de chargement avec rayures animées */
-.ux-toggle-99x-loading {
-    cursor: wait;
-    color: #333;
-    /* Création des rayures obliques */
-    background-image: linear-gradient(
-        45deg, 
-        rgba(0,0,0,0.05) 25%, 
-        transparent 25%, 
-        transparent 50%, 
-        rgba(0,0,0,0.05) 50%, 
-        rgba(0,0,0,0.05) 75%, 
-        transparent 75%, 
-        transparent
-    );
-    background-size: 40px 40px;
-    animation: ux-stripes-move-99x 1s linear infinite;
-}
-
-/* Animation du mouvement des rayures */
-@keyframes ux-stripes-move-99x {
-    from { background-position: 0 0; }
-    to { background-position: 40px 0; }
-}
-
-/* Gestion de l'affichage du conteneur */
-.ux-toggle-99x-hidden {
-    opacity: 0;
-    visibility: hidden;
-    max-height: 0;
-    transition: opacity 0.8s ease, max-height 0.8s ease;
-}
-
-.ux-toggle-99x-visible {
-    opacity: 1;
-    visibility: visible;
-    max-height: 1000px; /* Valeur haute pour permettre l'expansion */
-}
-
-/* Disparition finale du bouton */
-.ux-toggle-99x-fade-out {
-    opacity: 0;
-    pointer-events: none;
-}
-
-        .cv-demo-wrapper * {
-            font-family: 'TextelpA', sans-serif !important;
-            font-weight: 100 !important;
-            box-sizing: border-box;
-            cursor: default;
-        }
-
-        /* Masquage des scrollbars */
-        * {
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        *::-webkit-scrollbar {
-            display: none;
-        }
-
-        :root {
-            --cv-accent: #4f46e5;
-            --cv-chat-bg: #f9fafb;
-            --cv-bubble-user: #4f46e5;
-            --cv-bubble-agent: #ffffff;
-            --cv-text-main: #1f2937;
-            --cv-text-muted: #6b7280;
-            --cv-border: #e5e7eb;
-        }
-
-        .cv-demo-wrapper {
-            display: flex;
-            width: 100%;
-            max-width: 1200px;
-            height: 900px;
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            margin: 20px auto;
-            border: 1px solid var(--cv-border);
-        }
-
-        /* --- COLONNE GAUCHE --- */
-        .cv-demo-config {
-            width: 40%;
-            border-right: 1px solid var(--cv-border);
-            padding: 25px;
-            overflow-y: scroll;
-            background: #ffffff;
-        }
-
-        .cv-demo-title { font-size: 1.2rem; margin-bottom: 2px; }
-        .cv-demo-subtitle { font-size: 0.7rem; color: var(--cv-text-muted); margin-bottom: 20px; display: block; }
-        .cv-demo-section-title { font-size: 0.75rem; text-transform: uppercase; color: var(--cv-text-muted); margin: 25px 0 12px 0; letter-spacing: 1px; }
-
-        .cv-favicon-upload-container {
-            width: 60px; height: 60px; border: 2px dashed var(--cv-border); border-radius: 8px;
-            display: flex; align-items: center; justify-content: center; cursor: pointer !important; background: #fdfdfd;
-        }
-        .cv-favicon-preview { width: 30px; height: 30px; object-fit: contain; cursor: pointer !important; }
-
-        .cv-demo-input {
-            width: 100%; padding: 10px; border: 1px solid var(--cv-border); border-radius: 6px; margin-bottom: 12px; outline: none; background: #fff;
-        }
-        select.cv-demo-input { appearance: none; background-image: none; cursor: pointer !important; }
-
-        .cv-demo-grid { display: grid; gap: 10px; grid-template-columns: repeat(3, 1fr); margin-bottom: 15px; }
-        .cv-demo-grid-2 { grid-template-columns: repeat(2, 1fr); }
-        .cv-demo-selectable { border: 1px solid var(--cv-border); padding: 12px; border-radius: 8px; cursor: pointer !important; text-align: center; }
-        .cv-demo-selectable.active { outline: 2px solid var(--cv-accent); border-color: transparent; }
-        .cv-theme-swatch { width: 20px; height: 20px; border-radius: 3px; margin: 0 auto 5px; cursor: pointer !important; }
-
-        #cv-resource-form { background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid var(--cv-border); margin-bottom: 15px; display: none; }
-        .cv-upload-trigger { width: 100%; padding: 20px; border: 2px dashed var(--cv-accent); border-radius: 8px; text-align: center; color: var(--cv-accent); cursor: pointer !important; font-size: 0.8rem; }
-
-        .cv-share-group { position: relative; margin-bottom: 10px; }
-        .cv-share-field { background: #f3f4f6; padding: 10px 60px 10px 10px; border-radius: 6px; font-size: 0.75rem; border: 1px solid var(--cv-border); width: 100%; color: #6b7280; }
-        .cv-copy-btn { position: absolute; right: 5px; top: 50%; transform: translateY(-50%); background: var(--cv-accent); color: white; border: none; padding: 4px 8px; border-radius: 4px; font-size: 0.65rem; cursor: pointer !important; }
-
-        .cv-btn-action { cursor: pointer !important; }
-        .cv-btn-main { background: var(--cv-accent); color: white; border: none; cursor: pointer !important; }
-
-        .cv-stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-        .cv-stat-card { border: 1px solid var(--cv-border); padding: 10px; border-radius: 6px; text-align: center; background: #fff; }
-        .cv-stat-val { display: block; font-size: 1.1rem; color: var(--cv-accent); }
-
-        /* --- COLONNE DROITE --- */
-        .cv-demo-chat {
-            width: 60%; display: flex; flex-direction: column; background: var(--cv-chat-bg); position: relative; transition: all 0.3s;
-        }
-
-        .cv-demo-chat::before { content: ''; position: absolute; top: 70px; left: 0; right: 0; height: 60px; background: linear-gradient(to bottom, var(--cv-chat-bg), transparent); z-index: 2; pointer-events: none; }
-        .cv-demo-chat::after { content: ''; position: absolute; bottom: 120px; left: 0; right: 0; height: 60px; background: linear-gradient(to top, var(--cv-chat-bg), transparent); z-index: 2; pointer-events: none; }
-
-        .cv-demo-chat-header {
-            padding: 20px; background: rgba(255,255,255,0.7); backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: space-between; z-index: 10;
-        }
-
-        .cv-demo-messages { flex-grow: 1; padding: 60px 25px; overflow-y: scroll; display: flex; flex-direction: column; }
-        .cv-messages-inner { margin-top: auto; display: flex; flex-direction: column; gap: 25px; }
-
-        .cv-msg { max-width: 85%; display: flex; flex-direction: column; }
-        .cv-msg-agent { align-self: flex-start; }
-        .cv-msg-user { align-self: flex-end; align-items: flex-end; }
-
-        .cv-bubble { padding: 14px 18px; border-radius: 18px; font-size: 0.95rem; line-height: 1.4; white-space: pre-wrap; }
-        .cv-msg-agent .cv-bubble { background: var(--cv-bubble-agent); color: var(--cv-text-main); border: 1px solid var(--cv-border); }
-        .cv-msg-user .cv-bubble { background: var(--cv-bubble-user); color: #fff; }
-
-        .cv-msg-meta { font-size: 0.7rem; color: var(--cv-text-muted); margin-bottom: 5px; }
-        .cv-msg-actions { display: flex; gap: 12px; margin-top: 8px; align-items: center; }
-        .cv-action-btn { background: #fff; border: 1px solid var(--cv-border); font-size: 0.65rem; padding: 3px 10px; cursor: pointer !important; border-radius: 5px; color: var(--cv-text-muted); }
-
-        .cv-react-group { display: flex; flex-direction: column; align-items: center; cursor: pointer !important; }
-        .cv-react-circle { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--cv-border); background: #fff; cursor: pointer !important; }
-        .cv-react-label { font-size: 0.55rem; color: var(--cv-text-muted); margin-top: 3px; cursor: pointer !important; }
-
-        /* Animation Réflexion Shimmer (fixe mais qui brille) */
-        #cv-thinking-ui { display: none; padding: 15px; font-size: 0.85rem; }
-        .cv-shimmer-text {
-            background: linear-gradient(90deg, #9ca3af 0%, #1f2937 50%, #9ca3af 100%);
-            background-size: 200% auto;
-            color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-            animation: cvShimmer 2s linear infinite;
-            display: inline-block;
-        }
-        @keyframes cvShimmer {
-            to { background-position: 200% center; }
-        }
-
-        .cv-chat-input-area { padding: 20px; z-index: 10; position: relative; }
-        .cv-input-box { background: #fff; border: 1px solid var(--cv-border); border-radius: 30px; padding: 10px 20px; display: flex; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-        .cv-input-box input { flex-grow: 1; border: none; outline: none; padding: 8px; background: transparent; cursor: text !important; }
-        .cv-disclaimer { font-size: 0.65rem; color: #9ca3af; text-align: center; margin-top: 8px; display: block; }
-
-        .theme-dark { --cv-chat-bg: #0f172a; --cv-bubble-agent: #1e293b; --cv-text-main: #f8fafc; --cv-border: #334155; }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .cv-demo-wrapper { flex-direction: column; height: auto; border: none; }
-            .cv-demo-config { width: 100%; overflow: visible; height: auto; }
-            .cv-demo-chat { width: 100%; height: 700px; position: sticky; bottom: 0; }
-            .cv-demo-messages { height: 400px; }
-        }
-    </style>
-
-    <div class="cv-demo-wrapper">
-        <div class="cv-demo-config">
-            <div class="cv-demo-title">Configuration de l'agent</div>
-            <span class="cv-demo-subtitle">Invisible pour les utilisateurs</span>
-
-            <div class="cv-demo-section-title">Favicon Agent</div>
-            <div class="cv-favicon-upload-container" onclick="document.getElementById('cv-file-hidden').click()">
-                <img id="cv-favicon-main" src="https://via.placeholder.com/30" class="cv-favicon-preview">
-                <input type="file" id="cv-file-hidden" hidden accept="image/png, image/jpeg">
-            </div>
-
-            <div class="cv-demo-section-title">Nom de l'agent</div>
-            <input type="text" id="cv-name-input" class="cv-demo-input" maxlength="25" value="Textelp Agent" style="cursor:text !important">
-
-            <div class="cv-demo-section-title">Thème Interface</div>
-            <div class="cv-demo-grid">
-                <div class="cv-demo-selectable active" data-accent="#4f46e5" data-bg="#f9fafb" data-mode="light"><div class="cv-theme-swatch" style="background:#4f46e5"></div><span style="font-size:0.6rem">Classic</span></div>
-                <div class="cv-demo-selectable" data-accent="#ec4899" data-bg="#fff1f2" data-mode="light"><div class="cv-theme-swatch" style="background:#ec4899"></div><span style="font-size:0.6rem">Gum</span></div>
-                <div class="cv-demo-selectable" data-accent="#06b6d4" data-bg="#ecfeff" data-mode="light"><div class="cv-theme-swatch" style="background:#06b6d4"></div><span style="font-size:0.6rem">Ice</span></div>
-                <div class="cv-demo-selectable" data-accent="#8b5cf6" data-bg="#f5f3ff" data-mode="light"><div class="cv-theme-swatch" style="background:#8b5cf6"></div><span style="font-size:0.6rem">Funky</span></div>
-                <div class="cv-demo-selectable" data-accent="#10b981" data-bg="#0f172a" data-mode="dark"><div class="cv-theme-swatch" style="background:#10b981"></div><span style="font-size:0.6rem">Plant Dark</span></div>
-                <div class="cv-demo-selectable" data-accent="#f59e0b" data-bg="#020617" data-mode="dark"><div class="cv-theme-swatch" style="background:#f59e0b"></div><span style="font-size:0.6rem">Night</span></div>
-            </div>
-
-            <div class="cv-demo-section-title">Ressources</div>
-            <div id="cv-resource-container"></div>
-            
-            <div id="cv-resource-form">
-                <input type="hidden" id="cv-edit-id" value="">
-                <input type="text" id="cv-res-name" class="cv-demo-input" placeholder="Nom du document" style="cursor:text !important">
-                <select id="cv-res-type" class="cv-demo-input" onchange="toggleResFields()">
-                    <option value="txt">Texte Brute</option>
-                    <option value="url">URL Page Web</option>
-                    <option value="file">Fichier PDF</option>
-                    <option value="xlsx">Tableur XLSX</option>
-                    <option value="csv">Données CSV</option>
-                    <option value="xml">Données XML</option>
-                </select>
-                <div id="field-txt" class="res-field"><textarea id="cv-res-txt-val" class="cv-demo-input" placeholder="Collez votre texte ici..." style="height:80px; cursor:text !important"></textarea></div>
-                <div id="field-url" class="res-field" style="display:none"><input type="text" id="cv-res-url-val" class="cv-demo-input" placeholder="https://..." style="cursor:text !important"></div>
-                <div id="field-file" class="res-field" style="display:none"><div class="cv-upload-trigger">Cliquez pour téléverser le fichier</div></div>
-                
-                <button class="cv-demo-input cv-btn-main" onclick="saveResource()">Enregistrer</button>
-                <button class="cv-demo-input cv-btn-action" onclick="closeResForm()" style="background:#eee; border:none">Annuler</button>
-            </div>
-            <button class="cv-demo-input cv-btn-action" onclick="openCreateRes()">+ Ajouter une ressource</button>
-
-            <div class="cv-demo-section-title">Publication</div>
-            <div class="cv-demo-grid cv-demo-grid-2">
-                <div class="cv-demo-selectable cv-pub-opt active" onclick="setPub(this)">Privé</div>
-                <div class="cv-demo-selectable cv-pub-opt" onclick="setPub(this)">Public</div>
-            </div>
-
-            <div class="cv-demo-section-title">Partager</div>
-            <div class="cv-share-group"><input type="text" class="cv-share-field" value="https://myagentshare.com/x829" disabled><button class="cv-copy-btn">Copier</button></div>
-            <div class="cv-share-group"><input type="text" class="cv-share-field" value="<script src='https://textelp.com/w.js'></script>" disabled><button class="cv-copy-btn">Copier</button></div>
-
-            <div class="cv-demo-section-title">Statistiques du mois <button class="cv-action-btn" style="float:right; font-size:0.5rem">Refresh</button></div>
-            <div class="cv-stats-grid">
-                <div class="cv-stat-card"><span class="cv-stat-val">1,284</span><span class="cv-react-label">Requêtes</span></div>
-                <div class="cv-stat-card"><span class="cv-stat-val">1,280</span><span class="cv-react-label">Réponses</span></div>
-                <div class="cv-stat-card"><span class="cv-stat-val">98%</span><span class="cv-react-label">Réussites</span></div>
-                <div class="cv-stat-card"><span class="cv-stat-val">2%</span><span class="cv-react-label">Échecs</span></div>
-            </div>
-        </div>
-
-        <div class="cv-demo-chat" id="cv-chat-col">
-            <div class="cv-demo-chat-header">
-                <div style="display:flex; align-items:center; gap:15px">
-                    <img id="cv-chat-favicon-view" src="https://via.placeholder.com/30" style="width:30px; height:30px; border-radius:50%">
-                    <span id="cv-chat-name-view">Textelp Agent</span>
-                </div>
-                <button class="cv-action-btn" style="cursor:pointer !important">Exporter</button>
-            </div>
-
-            <div class="cv-demo-messages" id="cv-scroll">
-                <div class="cv-messages-inner" id="cv-msg-container">
-                    <div class="cv-msg cv-msg-agent">
-                        <span class="cv-msg-meta cv-dyn-name">Textelp Agent</span>
-                        <div class="cv-bubble">Bonjour ! Je suis votre agent prêt à être déployé. Comment puis-je vous aider ?</div>
-                        <div class="cv-msg-actions">
-                            <button class="cv-action-btn">Copier</button><button class="cv-action-btn">Reprendre</button>
-                            <div class="cv-react-group"><div class="cv-react-circle"></div><span class="cv-react-label">react1</span></div>
-                            <div class="cv-react-group"><div class="cv-react-circle"></div><span class="cv-react-label">react2</span></div>
-                        </div>
-                    </div>
-                    <div class="cv-msg cv-msg-user">
-                        <span class="cv-msg-meta">Vous</span>
-                        <div class="cv-bubble">Peux-tu m'expliquer tes fonctionnalités ?</div>
-                        <div class="cv-msg-meta" style="margin-top:5px">3 mins ago</div>
-                    </div>
-                    <div class="cv-msg cv-msg-agent">
-                        <span class="cv-msg-meta cv-dyn-name">Textelp Agent</span>
-                        <div class="cv-bubble">Je peux analyser vos documents PDF, XLSX et CSV en temps réel pour répondre à vos clients ou collaborateurs.</div>
-                        <div class="cv-msg-actions">
-                            <button class="cv-action-btn">Copier</button><button class="cv-action-btn">Reprendre</button>
-                            <div class="cv-react-group"><div class="cv-react-circle"></div><span class="cv-react-label">react1</span></div>
-                            <div class="cv-react-group"><div class="cv-react-circle"></div><span class="cv-react-label">react2</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div id="cv-thinking-ui">
-                    <span class="cv-shimmer-text">Réflexion en cours...</span>
-                </div>
-            </div>
-
-            <div class="cv-chat-input-area">
-                <div class="cv-input-box">
-                    <input type="text" id="cv-user-input" placeholder="Envoyer un message...">
-                    <button class="cv-btn-action" onclick="handleSend()" style="border:none; background:none; color:var(--cv-accent); font-weight:bold">Envoyer</button>
-                </div>
-                <span class="cv-disclaimer">L'agent peut commettre des erreurs. Il est recommandé de vérifier les informations importantes.</span>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const scrollArea = document.getElementById('cv-scroll');
-        const nameInput = document.getElementById('cv-name-input');
-        
-        nameInput.addEventListener('input', (e) => {
-            const val = e.target.value || 'Agent';
-            document.getElementById('cv-chat-name-view').innerText = val;
-            document.querySelectorAll('.cv-dyn-name').forEach(el => el.innerText = val);
-        });
-
-        document.getElementById('cv-file-hidden').addEventListener('change', function(e) {
-            if (this.files && this.files[0]) {
-                const url = URL.createObjectURL(this.files[0]);
-                document.getElementById('cv-favicon-main').src = url;
-                document.getElementById('cv-chat-favicon-view').src = url;
-            }
-        });
-
-        // Thèmes
-        document.querySelectorAll('[data-accent]').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.cv-demo-selectable').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                const chat = document.getElementById('cv-chat-col');
-                chat.style.setProperty('--cv-accent', this.dataset.accent);
-                chat.style.setProperty('--cv-bubble-user', this.dataset.accent);
-                chat.style.setProperty('--cv-chat-bg', this.dataset.bg);
-                if(this.dataset.mode === 'dark') chat.classList.add('theme-dark');
-                else chat.classList.remove('theme-dark');
-            });
-        });
-
-        function setPub(el) {
-            document.querySelectorAll('.cv-pub-opt').forEach(opt => opt.classList.remove('active'));
-            el.classList.add('active');
-        }
-
-        // --- RESSOURCES LOGIC ---
-        let resList = [{id: 1, name: 'Guide_Interne.pdf', type: 'file'}];
-        
-        function openCreateRes() {
-            document.getElementById('cv-edit-id').value = '';
-            document.getElementById('cv-res-name').value = '';
-            document.getElementById('cv-res-txt-val').value = '';
-            document.getElementById('cv-res-url-val').value = '';
-            document.getElementById('cv-resource-form').style.display = 'block';
-        }
-
-        function closeResForm() { document.getElementById('cv-resource-form').style.display = 'none'; }
-
-        function toggleResFields() {
-            const type = document.getElementById('cv-res-type').value;
-            document.querySelectorAll('.res-field').forEach(f => f.style.display = 'none');
-            document.getElementById('field-' + (['txt','url'].includes(type) ? type : 'file')).style.display = 'block';
-        }
-
-        function saveResource() {
-            const id = document.getElementById('cv-edit-id').value;
-            const name = document.getElementById('cv-res-name').value;
-            const type = document.getElementById('cv-res-type').value;
-            if(!name) return;
-
-            if(id) {
-                const index = resList.findIndex(r => r.id == id);
-                resList[index] = { ...resList[index], name: name, type: type };
-            } else {
-                resList.push({ id: Date.now(), name: name, type: type });
-            }
-            closeResForm();
-            renderRes();
-        }
-
-        function editRes(id) {
-            const item = resList.find(r => r.id == id);
-            document.getElementById('cv-edit-id').value = item.id;
-            document.getElementById('cv-res-name').value = item.name;
-            document.getElementById('cv-res-type').value = item.type || 'file';
-            toggleResFields();
-            document.getElementById('cv-resource-form').style.display = 'block';
-        }
-
-        function delRes(id) { resList = resList.filter(r => r.id !== id); renderRes(); }
-
-        function renderRes() {
-            const container = document.getElementById('cv-resource-container');
-            container.innerHTML = resList.map(r => `
-                <div class="cv-stat-card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; text-align:left">
-                    <span style="font-size:0.75rem">${r.name}</span>
-                    <div>
-                        <button class="cv-action-btn" onclick="editRes(${r.id})">Modifier</button>
-                        <button class="cv-action-btn" onclick="delRes(${r.id})">Supprimer</button>
-                    </div>
-                </div>
-            `).join('');
-        }
-        renderRes();
-
-        // --- CHAT LOGIC ---
-        function handleSend() {
-            const input = document.getElementById('cv-user-input');
-            const val = input.value.trim();
-            if(!val) return;
-            appendMsg('Vous', val, 'user');
-            input.value = '';
-            const thinking = document.getElementById('cv-thinking-ui');
-            thinking.style.display = 'block';
-            scrollArea.scrollTop = scrollArea.scrollHeight;
-            setTimeout(() => {
-                thinking.style.display = 'none';
-                typeMsg("Bravo pour votre premier message ! Vous êtes en version d'essai, ouvrez un compte Textelp pour déployer votre agent.");
-            }, 3000);
-        }
-
-        function appendMsg(sender, text, type) {
-            const container = document.getElementById('cv-msg-container');
-            const div = document.createElement('div');
-            div.className = `cv-msg cv-msg-${type}`;
-            const meta = type === 'user' ? 'Vous' : nameInput.value;
-            div.innerHTML = `<span class="cv-msg-meta">${meta}</span><div class="cv-bubble">${text}</div>${type === 'user' ? '<span class="cv-msg-meta" style="margin-top:5px">Just now</span>' : ''}`;
-            container.appendChild(div);
-            scrollArea.scrollTop = scrollArea.scrollHeight;
-        }
-
-        function typeMsg(text) {
-            const container = document.getElementById('cv-msg-container');
-            const div = document.createElement('div');
-            div.className = 'cv-msg cv-msg-agent';
-            div.innerHTML = `<span class="cv-msg-meta cv-dyn-name">${nameInput.value}</span><div class="cv-bubble"></div>`;
-            container.appendChild(div);
-            const bubble = div.querySelector('.cv-bubble');
-            let i = 0;
-            const interval = setInterval(() => {
-                bubble.innerHTML = text.substring(0, i + 1);
-                i++;
-                scrollArea.scrollTop = scrollArea.scrollHeight;
-                if(i >= text.length) {
-                    clearInterval(interval);
-                    const actions = document.createElement('div');
-                    actions.className = 'cv-msg-actions';
-                    actions.innerHTML = `<button class="cv-action-btn">Copier</button><button class="cv-action-btn">Reprendre</button>
-                        <div class="cv-react-group"><div class="cv-react-circle"></div><span class="cv-react-label">react1</span></div>
-                        <div class="cv-react-group"><div class="cv-react-circle"></div><span class="cv-react-label">react2</span></div>`;
-                    div.appendChild(actions);
-                }
-            }, 30);
-        }
-
-        document.getElementById('cv-user-input').addEventListener('keypress', (e) => { if(e.key === 'Enter') handleSend(); });
-        scrollArea.scrollTop = scrollArea.scrollHeight;
-    </script>
-</div>
-
-
-
-
-
-
-<div class="tx-logos-section">
-    <style>
-        .tx-logos-wrapper {
-            width: 100%;
-            max-width: 1000px;
-            margin: 60px auto;
-            text-align: center;
-            font-family: 'TextelpA', sans-serif !important;
-            font-weight: 100 !important;
-            color: #1f2937;
-        }
-
-        .tx-logos-headline {
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-            padding: 0 20px;
-            line-height: 1.5;
-            color: #000000;
-            cursor: default;
-        }
-
-        /* Grille des logos */
-        .tx-logos-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            align-items: center;
-            justify-items: center;
-        }
-
-        /* Conteneur d'un emplacement de logo (Slot) */
-        .tx-logo-slot {
-            width: 160px;
-            height: 80px;
-            position: relative;
-            overflow: hidden; /* Pour l'effet de swipe */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .tx-logo-img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s;
-            filter: grayscale(100%);
-            opacity: 1 !important;
-        }
-
-        .tx-logo-img:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-
-        /* Classes de mouvement */
-        .tx-swipe-up-out { transform: translateY(-100%); opacity: 0; }
-        .tx-swipe-up-in { transform: translateY(100%); opacity: 0; }
-        
-        .tx-swipe-down-out { transform: translateY(100%); opacity: 0; }
-        .tx-swipe-down-in { transform: translateY(-100%); opacity: 0; }
-
-        .tx-active { transform: translateY(0); opacity: 0.7; }
-
-        /* Responsive Mobile */
-        @media (max-width: 768px) {
-            .tx-logos-grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(2, 1fr);
-            }
-            .tx-logo-slot { width: 120px; }
-            /* On ne montre que 4 slots au total sur mobile aussi, mais en 2x2 */
-        }
-    </style>
-
-    <div class="tx-logos-wrapper">
-        <h2 class="tx-logos-headline">
-            The world's most popular workflow automation platform for technical teams including
-        </h2>
-
-        <div class="tx-logos-grid">
-            <div class="tx-logo-slot" id="slot-0">
-                <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo1.svg" class="tx-logo-img tx-active">
-            </div>
-            <div class="tx-logo-slot" id="slot-1">
-                <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo2.svg" class="tx-logo-img tx-active">
-            </div>
-            <div class="tx-logo-slot" id="slot-2">
-                <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo4.svg" class="tx-logo-img tx-active">
-            </div>
-            <div class="tx-logo-slot" id="slot-3">
-                <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo3.svg" class="tx-logo-img tx-active">
-            </div>
-        </div>
-    </div>
-
-    <script>
-        (function() {
-            const allLogos = [
-                                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo1.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo2.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo4.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo3.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo5.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo6.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo7.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo8.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo9.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo10.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo11.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo12.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo13.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo14.svg",
-                "https://civilpromaws.s3.eu-north-1.amazonaws.com/testimonialslogo15.svg"
-            ];
-
-            // Indices des logos actuellement affichés dans les 4 slots
-            let currentIndices = [0, 1, 2, 3];
-            let nextSlotToUpdate = 0;
-
-            function updateNextLogo() {
-                const slotId = `slot-${nextSlotToUpdate}`;
-                const container = document.getElementById(slotId);
-                const oldImg = container.querySelector('.tx-active');
-                
-                // Trouver un logo qui n'est pas déjà affiché
-                let nextLogoIndex;
-                do {
-                    nextLogoIndex = Math.floor(Math.random() * allLogos.length);
-                } while (currentIndices.includes(nextLogoIndex));
-
-                // Mettre à jour l'index
-                currentIndices[nextSlotToUpdate] = nextLogoIndex;
-
-                // Décider de la direction aléatoire (up ou down)
-                const isUp = Math.random() > 0.5;
-                const outClass = isUp ? 'tx-swipe-up-out' : 'tx-swipe-down-out';
-                const inClassInitial = isUp ? 'tx-swipe-up-in' : 'tx-swipe-down-in';
-
-                // Créer la nouvelle image
-                const newImg = document.createElement('img');
-                newImg.src = allLogos[nextLogoIndex];
-                newImg.className = `tx-logo-img ${inClassInitial}`;
-
-                container.appendChild(newImg);
-
-                // Déclencher l'animation
-                setTimeout(() => {
-                    oldImg.classList.remove('tx-active');
-                    oldImg.classList.add(outClass);
-
-                    newImg.classList.remove(inClassInitial);
-                    newImg.classList.add('tx-active');
-                }, 50);
-
-                // Nettoyer l'ancienne image après l'animation
-                setTimeout(() => {
-                    oldImg.remove();
-                }, 650);
-
-                // Passer au slot suivant (0 -> 1 -> 2 -> 3 -> 0...)
-                nextSlotToUpdate = (nextSlotToUpdate + 1) % 4;
-            }
-
-            // Lancer la rotation toutes les 2 secondes
-            setInterval(updateNextLogo, 2000);
-        })();
-    </script>
-</div>
-
-
-
-
-
-<section class="section-c greco">
-  <div class="container">
-    <h2  class="boobaBLANC">Lorem ipsum dolor sit amet</h2>
-    <div class="features">
-      <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp1.svg">Lorem ipsum colore enigma</div>
-      <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp2.svg">Lorem ipsum colore enigma</div>
-            <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp3.svg">Lorem ipsum colore enigma</div>
-                  <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp4.svg">Lorem ipsum colore enigma</div>
-                        <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp5.svg">Lorem ipsum colore enigma</div>
-                              <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp6.svg">Lorem ipsum colore enigma</div>
-                                    <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp7.svg">Lorem ipsum colore enigma</div>
-                                          <div class="feature colorPURPLE"><img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/textelp8.svg">Lorem ipsum colore enigma</div>
-
-    </div>
-  </div>
-
-</section>
-
-
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-
-.boobaBLANC {
-    text-align: center;
-    margin: auto;
-    font-size: 50px;
-    color: #ffffff !important;
-    max-width: 700px;
-    line-height: 75px;
-    margin-top: 55px;
-    margin-bottom: 20px;
-    -webkit-font-smoothing: antialiased;
-    cursor: default;
-}
-
-
-.flashXW {
-display: none !important;
-        }
-        :root {
-            --gm-bg-color: #fcfcfc;
-            --gm-grid-light: #f0f0f0;
-            --gm-grid-dark: #e2e2e2;
-            --gm-topic-bg: #f5f5f5;
-            --gm-text-main: #202124;
-            --gm-font-family: 'TextelpA', sans-serif;
-            --color-none: #ffffff;    
-            --color-perfect: #8e24aa; 
-            --color-partial: #d81b60; 
-        }
-
-
-        .gm-main-wrapper {
-max-width: 1365px !important;
-    margin-top: 55px !important;
-    margin: auto;
-    border-radius: 22px;
-    border: 1px solid #120b7821;
-    padding: 0;
-    overflow: hidden;
-background-color: #ffffff; /* Fond blanc de base */
-  background-image: radial-gradient(
-    at top center, 
-    rgba(204, 175, 255, 0.5) 0%,   /* Mauve/Violet clair */
-    rgba(190, 230, 255, 0.4) 40%,  /* Bleu ciel très doux */
-    rgba(255, 255, 255, 0) 80%     /* Retour au blanc transparent */
-  );
-  background-repeat: no-repeat;
-    position: relative;
-    width: 98%;
-    height: 275px;
-    font-family: var(--gm-font-family);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
-        }
-
-        .gm-topics-container { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
-
-        .gm-floating-topic {
-position: absolute;
-    display: flex;
-    color: #fff;
-    align-items: center;
-    padding: 10px 18px;
-    background: linear-gradient(126deg, #008eee, #6c1aff) !important;
-    border: none;
-    border-radius: 40px;
-    white-space: nowrap;
-    user-select: none;
-    z-index: 2;
-    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
-    pointer-events: auto;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    will-change: left, top;
-        }
-
-        .gm-dot { width: 10px; height: 10px; border-radius: 50%; margin-right: 12px; position: relative; }
-        
-        .gm-shimmer-active {
-            background: linear-gradient(90deg, #ffffff 20%, #3769f6 50%, #fafbff 80%);
-            background-size: 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            animation: shimmer 4s linear infinite;
-        }
-        @keyframes shimmer { 0% { background-position: -200%; } 100% { background-position: 200%; } }
-
-        .gm-dot-active::after {
-            content: ''; position: absolute; inset: -4px; border: 1px dashed currentColor;
-            border-radius: 50%; animation: rotate 4s linear infinite;
-        }
-        @keyframes rotate { from { transform: rotate(0); } to { transform: rotate(360deg); } }
-
-        .gm-center-card {
-            position: relative; z-index: 50; width: 300px; padding: 30px;
-            background: white; text-align: center; box-shadow: 0 25px 70px rgba(0,0,0,0.1);
-            -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0,50 C0,5 5,0 50,0 C95,0 100,5 100,50 C100,95 95,100 50,100 C5,100 0,95 0,50' fill='black'/%3E%3C/svg%3E");
-        }
-
-        .gm-search-input {
-            width: 100%; padding: 12px 18px; border: 1px solid #ddd;
-            border-radius: 20px; outline: none; font-family: var(--gm-font-family); font-size: 14px;
-        }
-
-        .gm-warning { 
-            color: #d93025; font-size: 12px; margin-top: 15px; opacity: 0;
-            transition: opacity 0.4s ease; display: none;
-        }
-        .gm-warning.show { opacity: 1; display: block; }
-
-        .gm-modal-overlay {
-            position: fixed; inset: 0; background: rgba(255,255,255,0.85);
-            z-index: 2000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(10px);
-        }
-        .gm-answer-modal {
-            background: white; padding: 40px; border-radius: 28px;
-            max-width: 350px; width: 85%; box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-            transform: scale(0.9); transition: all 0.3s ease;
-        }
-        .gm-answer-modal.active { transform: scale(1); }
-
-        @keyframes gmFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-    </style>
-</head>
-<body>
-
-</body>
-</html>
-
-
-<style>
-
-    .tpx-eval-wrapper {
-        max-width: 500px;
-        font-family: 'TextelpRAG', sans-serif;
-        font-weight: 100;
-        color: #202124;
-        line-height: 1.6;
-        margin: 20px auto;
-        text-align: left;
+    .pop-route-desc {
+      font-size: 0.94rem; /* Augmenté */
+      color: #666;
+      line-height: 1.55;
+      margin-bottom: 20px;
+      flex-grow: 1;
     }
 
-    .tpx-eval-main-title {
-        font-size: 18px;
-        margin-bottom: 32px;
-        color: #000000;
-        display: block;
-            text-align: center;
+    /* Section 6: Contact & Flight Inquiry Form */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 30px;
     }
 
-    /* Style de la Carte */
-    .tpx-eval-card {
-    display: block;
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 16px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    border: 1px solid #e0dfee;
-    overflow: hidden;
-    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+    .contact-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
-    /* État Actif (Border + Background) */
-    .tpx-eval-card.tpx-is-active {
-border-color: #1a4bff;
-    border: 3px solid #1a4bff;
-    background-color: #ffffff;
+    .contact-info-card {
+      background: #ffffff;
+      border: 1px solid #ebebee;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
     }
 
-    .tpx-eval-header {
+    .contact-info-card h4 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-info-card p {
+      font-size: 0.92rem; /* Augmenté */
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .btn-contact-action {
+      background: var(--primary);
+      color: #ffffff !important;
+      border-radius: 6px;
+      padding: 11px 16px;
+      font-size: 0.95rem; /* Augmenté */
+      font-weight: 600;
+      display: block;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    .btn-contact-action:hover {
+      background: var(--primary-hover);
+    }
+
+    .inquiry-form-card {
+      background: #ffffff;
+      border: 1px solid #ebebee;
+      border-radius: 14px;
+      padding: 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 0.92rem; /* Augmenté */
+      font-weight: 600;
+      color: #333;
+    }
+
+    .form-group label span {
+      color: #d9383a;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #dedee2;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.96rem; /* Augmenté */
+      outline: none;
+      background: #fff;
+      transition: border-color 0.2s;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fdfdfd;
+      border: 1px solid #dedee2;
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+    }
+
+    .toggle-label {
+      font-size: 0.95rem; /* Augmenté */
+      color: #444;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      inset: 0;
+      background-color: #ccc;
+      transition: .3s;
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .3s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: var(--primary);
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+
+    .btn-form-submit {
+      background: var(--primary);
+      color: #fff !important;
+      border: none;
+      width: 100%;
+      padding: 15px;
+      border-radius: 6px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.2s, opacity 0.2s;
+    }
+
+    .btn-form-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-form-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* Section 7: Safety & Pilot Standards */
+    .safety-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .safety-card {
+      background: #ffffff;
+      border: 1px solid #ebebee;
+      border-radius: 14px;
+      padding: 36px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    }
+
+    .safety-tag {
+      color: #e04b6b;
+      font-size: 0.82rem; /* Augmenté */
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .prohibited-list {
+      list-style: none;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .prohibited-list li {
+      position: relative;
+      padding-left: 22px;
+      font-size: 0.95rem; /* Augmenté */
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .prohibited-list li::before {
+      content: "•";
+      color: #e04b6b;
+      font-size: 1.4rem;
+      position: absolute;
+      left: 0;
+      top: -4px;
+    }
+
+    .crew-badge-banner {
+      background: #0b0b0d;
+      color: #ffffff;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 20px 0 24px 0;
+    }
+
+    .crew-badge-banner h5 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .crew-badge-banner p {
+      font-size: 0.88rem; /* Augmenté */
+      color: #bbb;
+    }
+
+    .standards-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .standard-item h5 {
+      font-size: 0.98rem;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .standard-item h5::before {
+      content: "•";
+      font-size: 1.2rem;
+    }
+
+    .standard-item p {
+      font-size: 0.92rem; /* Augmenté */
+      color: #666;
+      padding-left: 14px;
+      line-height: 1.5;
+    }
+
+    /* Section 8: Footer */
+    .site-footer {
+      background: #ffffff;
+      border-top: 1px solid #ebebee;
+      padding: 70px 0 30px 0;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-brand p {
+      font-size: 0.95rem; /* Augmenté */
+      color: #666;
+      line-height: 1.6;
+      margin: 14px 0 20px 0;
+      max-width: 340px;
+    }
+
+    .footer-insta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #fff !important;
+      padding: 9px 18px;
+      border-radius: 20px;
+      font-size: 0.92rem; /* Augmenté */
+      font-weight: 600;
+    }
+
+    .footer-col h5 {
+      font-size: 1rem;
+      margin-bottom: 16px;
+      color: #111;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.92rem; /* Augmenté */
+      color: #666;
+    }
+
+    .footer-links-list a:hover {
+      color: var(--primary);
+    }
+
+    .footer-legal-block {
+      border-top: 1px solid #f0f0f2;
+      padding-top: 35px;
+      margin-bottom: 30px;
+    }
+
+    .footer-legal-block h6 {
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+      color: #222;
+    }
+
+    .footer-legal-block p {
+      font-size: 0.88rem; /* Augmenté */
+      color: #777;
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+
+    .seo-keyword-cloud {
+      background: #fafafa;
+      border: 1px solid #f0f0f2;
+      border-radius: 8px;
+      padding: 18px;
+      margin: 25px 0;
+      font-size: 0.85rem; /* Augmenté */
+      color: #888;
+      line-height: 1.9;
+      text-align: center;
+    }
+
+    .seo-keyword-cloud span {
+      margin: 0 4px;
+    }
+
+    .footer-bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #f0f0f2;
+      padding-top: 25px;
+      font-size: 0.85rem; /* Augmenté */
+      color: #888;
+    }
+
+    /* Floating Contact Pill Button */
+    .floating-contact-pill {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--primary);
+      color: #ffffff !important;
+      padding: 12px 22px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      box-shadow: 0 6px 22px rgba(138, 36, 63, 0.45);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .floating-contact-pill:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 26px rgba(138, 36, 63, 0.55);
+    }
+
+    .floating-dot {
+      width: 9px;
+      height: 9px;
+      background: #50e3c2;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 8px #50e3c2;
+    }
+
+    /* Popup Chatbox Modal (Question by Question) */
+    .chatbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 24px;
+    }
+
+    .chatbox-overlay.active {
+      display: flex;
+      animation: fadeIn 0.25s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .chatbox-container {
+      width: 100%;
+      max-width: 420px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      max-height: 85vh;
+      animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .chatbox-header {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .chatbox-header-title {
+      font-size: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .chatbox-close {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+    }
+
+    .chatbox-body {
+      padding: 20px;
+      overflow-y: auto;
+      flex-grow: 1;
+    }
+
+    .chat-step {
+      display: none;
+      animation: stepFade 0.3s ease;
+    }
+
+    .chat-step.active {
+      display: block;
+    }
+
+    @keyframes stepFade {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .chat-msg-bot {
+      background: #f1f2f6;
+      color: #1f1f23;
+      padding: 12px 16px;
+      border-radius: 12px 12px 12px 2px;
+      font-size: 0.95rem;
+      line-height: 1.45;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .chat-input-wrap {
+      margin-top: 10px;
+    }
+
+    .chat-actions-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .btn-chat-next {
+      background: var(--primary);
+      color: #ffffff !important;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      cursor: pointer;
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .btn-chat-next:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-chat-prev {
+      background: #eef0f3;
+      color: #333;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 0.92rem;
+      cursor: pointer;
+    }
+
+    .chat-progress-bar {
+      height: 4px;
+      background: #eee;
+      width: 100%;
+    }
+
+    .chat-progress-fill {
+      height: 100%;
+      background: var(--primary);
+      width: 10%;
+      transition: width 0.3s ease;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .aircraft-hero-row {
+        grid-template-columns: 1fr;
+      }
+      .on-demand-routes-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .destinations-grid-9 {
+        grid-template-columns: 1fr 1fr;
+      }
+      .ops-center-grid {
+        grid-template-columns: 1fr;
+      }
+      .team-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .popular-routes-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      /* Mobile Nav Bar fixée : Logo à gauche et bouton contact noir à droite sur la même ligne */
+      .nav-links {
+        display: none;
+      }
+      .nav-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
-
-    .tpx-eval-header h2 {
-        font-size: 22px;
-        margin: 0;
-        font-weight: 100;
-        color: #ffffff;
-    }
-
-    /* Radio Button Custom */
-    .tpx-eval-radio-custom {
-        width: 24px;
-        height: 24px;
-        border: 3px solid #1a4bff;;
-        border-radius: 50%;
-        position: relative;
-        transition: all 0.2s ease;
-        flex-shrink: 0;
-        background: transparent;
-    }
-
-    .tpx-is-active .tpx-eval-radio-custom {
-        border-color: #1a4bff;
-    }
-
-    .tpx-is-active .tpx-eval-radio-custom::after {
-        content: "";
-        position: absolute;
-top: 3px;
-    left: 3px;
-    width: 12px;
-    height: 12px;
-        border-radius: 50%;
-        background: #1a4bff;
-    }
-
-    /* Contenu masqué par défaut */
-    .tpx-eval-collapsible {
-        display: none;
-        margin-top: 20px;
-        overflow: hidden;
-    }
-
-    .tpx-is-active .tpx-eval-collapsible {
-        display: block;
-    }
-
-    .tpx-eval-desc {
-        font-size: 18px;
-        color: #000;
-        margin: 0 0 20px 0;
-    }
-
-    .tpx-eval-price-box {
-        display: flex;
-        align-items: baseline;
-        gap: 6px;
-        margin-bottom: 12px;
-    }
-
-    .tpx-eval-big-p {
-        font-size: 26px;
-        margin: 0;
-        color: #000 !important;
-    }
-
-    .tpx-eval-small-p {
-        font-size: 12px;
-        color: #000;
-    }
-
-    .tpx-eval-label-host {
-display: inline-block;
-    background: #ffffff;
-    padding: 6px 12px;
-    border-radius: 8px;
-    font-size: 14px;
-    border: 1px solid #674eff1c;
-    color: #000000;
-    }
-    
-    /* Input invisible */
-    .tpx-eval-hidden-radio {
-        display: none;
-    }
-</style>
-
-<div class="tpx-eval-wrapper">
-<h2 class="booba">Nos offres</h2>
-    <div class="tpx-eval-main-title">
-        Évaluez le coût de l’outil, pour un usage jusqu’à 10,000 requêtes mensuelles, au delà veuillez nous contacter. 
-        Le ROI est en moyenne de 23% et il représente un coût répercuté moyen de €0.09 par client ou utilisateur.
-    </div>
-
-    <label class="tpx-eval-card tpx-is-active" id="card-1">
-        <input type="radio" name="tpx_pricing" class="tpx-eval-hidden-radio" checked onchange="tpxToggle(1)">
-        <div class="tpx-eval-header">
-            <h2>Standard</h2>
-            <div class="tpx-eval-radio-custom"></div>
-        </div>
-        
-        <div class="tpx-eval-collapsible">
-            <p class="tpx-eval-desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-            </p>
-            <div class="tpx-eval-price-box">
-                <span class="tpx-eval-big-p">€6,790</span>
-                <span class="tpx-eval-small-p">One time cost</span>
-            </div>
-            <div class="tpx-eval-label-host">+€198 par mois pour l’hébergement</div>
-        </div>
-    </label>
-
-    <label class="tpx-eval-card" id="card-2">
-        <input type="radio" name="tpx_pricing" class="tpx-eval-hidden-radio" onchange="tpxToggle(2)">
-        <div class="tpx-eval-header">
-            <h2>Access</h2>
-            <div class="tpx-eval-radio-custom"></div>
-        </div>
-        
-        <div class="tpx-eval-collapsible">
-            <p class="tpx-eval-desc">
-                Configuration sur mesure pour les besoins spécifiques et volumes élevés.
-            </p>
-            <div class="tpx-eval-price-box">
-                <span class="tpx-eval-big-p">€9,790</span>
-                <span class="tpx-eval-small-p">Setup cost</span>
-            </div>
-            <div class="tpx-eval-label-host">+€350 par mois pour l’hébergement</div>
-        </div>
-    </label>
-</div>
-
-<script>
-    function tpxToggle(selectedId) {
-        // Supprimer la classe active de toutes les cartes
-        document.querySelectorAll('.tpx-eval-card').forEach(card => {
-            card.classList.remove('tpx-is-active');
-        });
-        // Ajouter la classe à la carte sélectionnée
-        document.getElementById('card-' + selectedId).classList.add('tpx-is-active');
-    }
-</script>
-
-
-
-
-<style>
-    /* Intégration de la police spécifiée */
-
-    /* Style du bouton déclencheur (pour l'exemple) */
-    .tlp-trigger-btn {
-        font-family: 'TextelpRAG', sans-serif;
-        font-weight: 100;
-        font-size: 18px;
-        padding: 12px 24px;
-        background: #202124;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-    }
-
-    /* Overlay de fond (le Blur) */
-    .tlp-popup-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        display: none; /* Masqué par défaut */
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        padding: 20px;
-    }
-
-    /* Fenêtre Popup */
-    .tlp-popup-window {
-        background: white;
         width: 100%;
-        max-width: 500px;
-        border-radius: 20px;
-        padding: 30px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        font-family: 'TextelpRAG', sans-serif;
-        font-weight: 100;
-        font-size: 18px;
-        color: #202124;
-        position: relative;
-    }
-
-    .tlp-popup-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .tlp-popup-header h2 {
-        font-size: 22px;
-        margin: 0;
-        font-weight: 100;
-    }
-
-    .tlp-close-btn {
-        background: #f1f3f4;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-family: inherit;
-    }
-
-    .tlp-popup-text {
-        margin-bottom: 25px;
-        line-height: 1.5;
-    }
-
-    .tlp-popup-text a {
-        color: #4285f4;
-        text-decoration: none;
-    }
-
-    /* Bloc Appel */
-    .tlp-call-box {
-        background: #f8f9fa;
-        border-radius: 12px;
-        padding: 15px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 25px;
-    }
-
-    .tlp-compose-btn {
-        background: #4285f4;
-        color: white;
-        text-decoration: none;
-        padding: 8px 18px;
-        border-radius: 8px;
-        font-size: 16px;
-    }
-
-    /* Formulaire */
-    .tlp-form-group {
-        margin-bottom: 15px;
-    }
-
-    .tlp-form-group label {
-        display: block;
-        margin-bottom: 8px;
-    }
-
-    .tlp-input {
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        font-family: inherit;
-        font-size: 16px;
-        box-sizing: border-box;
-    }
-
-    .tlp-submit-btn {
-        width: 100%;
-        background: #202124;
-        color: white;
-        border: none;
-        padding: 14px;
-        border-radius: 8px;
-        font-family: inherit;
-        font-size: 18px;
-        cursor: pointer;
-        margin-top: 10px;
-    }
-
-    #tlp-success-msg {
-        display: none;
-        margin-top: 20px;
-        color: #1e8e3e;
+      }
+      .nav-mobile-btn {
+        display: inline-block !important;
+      }
+      .logo-sub {
+        display: none; /* Simplifier pour mobile */
+      }
+      .on-demand-routes-grid {
+        grid-template-columns: 1fr;
+      }
+      .amenities-grid {
+        grid-template-columns: 1fr;
+      }
+      .destinations-grid-9 {
+        grid-template-columns: 1fr;
+      }
+      .services-grid-4 {
+        grid-template-columns: 1fr;
+      }
+      .safety-grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .form-grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom-bar {
+        flex-direction: column;
+        gap: 10px;
         text-align: center;
-        font-weight: bold;
+      }
+      .chatbox-overlay {
+        padding: 0;
+        align-items: flex-end;
+      }
+      .chatbox-container {
+        max-width: 100%;
+        border-radius: 16px 16px 0 0;
+        max-height: 90vh;
+      }
     }
-</style>
+  </style>
+</head>
+<body>
 
-
-<div class="tlp-popup-overlay" id="tlpOverlay">
-    <div class="tlp-popup-window">
-        
-        <div class="tlp-popup-header">
-            <h2>Dialoguez avec un conseiller</h2>
-            <button class="tlp-close-btn" onclick="closeTlpPopup()">Fermer</button>
-        </div>
-
-        <p class="tlp-popup-text">
-            Appelez-nous ou enregistrez vos coordonnées pour qu’un conseiller vous rappelle. 
-            Vous pouvez aussi nous contacter par email à <a href="mailto:fr@textelp.com">fr@textelp.com</a>
-        </p>
-
-        <div class="tlp-call-box">
-            <span>Appel gratuit : +33 6 51 51 70 65</span>
-            <a href="tel:+33651517065" class="tlp-compose-btn">Composer</a>
-        </div>
-
-        <form id="tlpLeadForm" onsubmit="handleTlpSubmit(event)">
-            <div class="tlp-form-group">
-                <label>Votre Téléphone</label>
-                <input type="tel" class="tlp-input" required>
-            </div>
-            <div class="tlp-form-group">
-                <label>Votre Email</label>
-                <input type="email" class="tlp-input" required>
-            </div>
-            <button type="submit" class="tlp-submit-btn">Être rappelé</button>
-        </form>
-
-        <div id="tlp-success-msg">Merci ! Vous allez recevoir un appel.</div>
-    </div>
-</div>
-
-<script>
-    const tlpOverlay = document.getElementById('tlpOverlay');
-    const tlpSuccessMsg = document.getElementById('tlp-success-msg');
-    const tlpForm = document.getElementById('tlpLeadForm');
-
-    function openTlpPopup() {
-        tlpOverlay.style.display = 'flex';
-        // Empêcher le scroll du body en arrière-plan
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeTlpPopup() {
-        tlpOverlay.style.display = 'none';
-        document.body.style.overflow = 'auto';
-        // Reset du message de succès si on réouvre plus tard
-        tlpSuccessMsg.style.display = 'none';
-        tlpForm.style.display = 'block';
-    }
-
-    function handleTlpSubmit(event) {
-        event.preventDefault();
-        // Simulation de l'envoi
-        tlpForm.style.display = 'none';
-        tlpSuccessMsg.style.display = 'block';
-        
-        // Optionnel : fermer automatiquement après 3 secondes
-        // setTimeout(closeTlpPopup, 3000);
-    }
-
-    // Fermer si on clique sur l'overlay (en dehors de la fenêtre blanche)
-    tlpOverlay.addEventListener('click', function(e) {
-        if (e.target === tlpOverlay) {
-            closeTlpPopup();
-        }
-    });
-</script>
-
-
-
-
-
-
-
-<div id="txlp-unique-wrapper-99">
-    
-    <div id="txlp-overlay-blur-99" class="txlp-overlay-hidden"></div>
-
-    <div id="txlp-modal-login-11" class="txlp-modal-container txlp-modal-hidden">
-        <p class="txlp-text-p">L’éditeur de votre agent est accessible avec le lien personnalisé que vous avez définit, si vous avez oublié le lien, renseignez votre email lié à votre compte.</p>
-        
-        <div id="txlp-login-error-msg" class="txlp-error-div txlp-hidden-element">
-            Nous n’avons pas localisé d’environnement correspondant à votre email, réessayez ou contactez l’assistance.
-        </div>
-
-        <input type="email" id="txlp-input-login-email" class="txlp-input-field" placeholder="votre@email.com">
-        
-        <button id="txlp-btn-locate-action" class="txlp-btn-primary" disabled>Localiser</button>
-        
-        <div class="txlp-flex-row">
-            <a href="mailto:support@textelp.com" class="txlp-btn-secondary">Assistance</a>
-            <button class="txlp-btn-secondary txlp-close-trigger">Fermer</button>
-        </div>
-    </div>
-
-    <div id="txlp-modal-signup-22" class="txlp-modal-container txlp-modal-hidden">
-        <p class="txlp-text-p">Ouvrez un compte pour créer votre environnement indépendant qui va héberger et orchestrer votre agent personnalisé. Pour recevoir un accompagnement par un membre de Textelp, veuillez nous contacter.</p>
-        
-        <div class="txlp-grid-form">
-            <input type="email" id="txlp-reg-email" class="txlp-input-field" placeholder="Votre email">
-            <input type="tel" id="txlp-reg-phone" class="txlp-input-field" placeholder="Votre téléphone">
-            <input type="text" id="txlp-reg-company" class="txlp-input-field" placeholder="Votre entreprise" maxlength="25">
-            
-            <div class="txlp-domain-wrapper">
-                <label class="txlp-small-label">Votre URL d'accès éditeur personnalisée :</label>
-                <input type="text" id="txlp-reg-domain" class="txlp-input-field" disabled value=".textelp.com">
-            </div>
-        </div>
-
-        <div class="txlp-offers-container">
-            <label class="txlp-radio-card">
-                <input type="radio" name="txlp-offer" value="off1" checked data-link="https://pay1.textelp.com">
-                <span class="txlp-custom-check"></span>
-                <div class="txlp-offer-content">
-                    <span class="txlp-offer-title">Offre 'Go'</span>
-                    <span class="txlp-price">€499 One time cost</span>
-                    <span class="txlp-label-sub">+€198 par mois pour l'hébergement</span>
-                </div>
-            </label>
-            <label class="txlp-radio-card">
-                <input type="radio" name="txlp-offer" value="off2" data-link="https://pay2.textelp.com">
-                <span class="txlp-custom-check"></span>
-                <div class="txlp-offer-content">
-                    <span class="txlp-offer-title">Offre 'Large'</span>
-                    <span class="txlp-price">€1,199 One time cost</span>
-                    <span class="txlp-label-sub">+€298 par mois pour l'hébergement</span>
-                </div>
-            </label>
-        </div>
-
-        <button id="txlp-cta-pay-btn" class="txlp-btn-cta">Pay and Edit Agent</button>
-        <button class="txlp-btn-secondary txlp-close-trigger txlp-full-width-btn">Annuler</button>
-    </div>
-
-    <style>
-        #txlp-unique-wrapper-99 {
-            --txlp-font: 'TextelpA', sans-serif;
-            --txlp-bg: #ffffff;
-            --txlp-primary: #000000;
-            --txlp-accent: #2563eb;
-            --txlp-light-grey: #f3f4f6;
-            --txlp-border: #e5e7eb;
-        }
-
-        /* Suppression globale de l'outline bleu UNIQUEMENT dans ce bloc */
-        #txlp-unique-wrapper-99 *:focus {
-            outline: none !important;
-        }
-
-        #txlp-unique-wrapper-99 * {
-            font-family: var(--txlp-font);
-            font-size: 18px;
-            box-sizing: border-box;
-        }
-
-        #txlp-overlay-blur-99 {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.4); backdrop-filter: blur(8px);
-            z-index: 9998; display: none;
-        }
-
-        .txlp-modal-container {
-            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            background: var(--txlp-bg); padding: 30px; border-radius: 16px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            z-index: 9999; width: 95%; max-width: 600px; display: none;
-        }
-
-        .txlp-modal-hidden { display: none; }
-
-        .txlp-input-field {
-            width: 100%; padding: 12px; margin: 8px 0;
-            border: 1px solid var(--txlp-border); border-radius: 8px;
-        }
-
-        .txlp-small-label { font-size: 13px; color: #666; margin-top: 10px; display: block; }
-
-        /* Custom Radio Buttons */
-        .txlp-offers-container { display: flex; gap: 12px; margin: 20px 0; }
-        .txlp-radio-card {
-            flex: 1; position: relative; border: 2px solid var(--txlp-border);
-            padding: 15px 15px 15px 45px; border-radius: 12px; cursor: pointer; transition: 0.2s;
-        }
-        .txlp-radio-card input { position: absolute; opacity: 0; cursor: pointer; }
-        .txlp-custom-check {
-            position: absolute; top: 18px; left: 15px; height: 20px; width: 20px;
-            background-color: #eee; border-radius: 50%; border: 2px solid #ddd;
-        }
-        .txlp-radio-card:hover { border-color: var(--txlp-accent); }
-        .txlp-radio-card input:checked ~ .txlp-custom-check {
-            background-color: var(--txlp-accent); border-color: var(--txlp-accent);
-        }
-        .txlp-radio-card input:checked ~ .txlp-custom-check:after {
-            content: ""; position: absolute; display: block;
-            top: 4px; left: 4px; width: 8px; height: 8px; border-radius: 50%; background: white;
-        }
-
-        .txlp-offer-title { font-weight: bold; display: block; margin-bottom: 4px; }
-        .txlp-price { font-size: 16px; display: block; }
-        .txlp-label-sub { font-size: 12px; color: var(--txlp-accent); font-weight: 600; }
-
-        /* Buttons */
-        .txlp-btn-primary, .txlp-btn-cta {
-            width: 100%; padding: 14px; border: none; border-radius: 8px;
-            cursor: pointer; font-weight: 600; margin-top: 10px;
-        }
-        .txlp-btn-primary { background: var(--txlp-primary); color: white; }
-        .txlp-btn-primary:disabled { background: #ccc; cursor: wait; }
-        
-        .txlp-btn-cta { background: var(--txlp-accent); color: white; margin-bottom: 10px; }
-        
-        .txlp-btn-secondary {
-            background: var(--txlp-light-grey); color: #333; border: none;
-            padding: 12px; border-radius: 8px; cursor: pointer; flex: 1; text-decoration: none; text-align: center;
-        }
-        .txlp-full-width-btn { width: 100%; display: block; margin-top: 5px; }
-
-        .txlp-flex-row { display: flex; gap: 10px; margin-top: 15px; }
-        .txlp-error-div { background: #fee2e2; color: #dc2626; padding: 12px; border-radius: 8px; margin-bottom: 10px; font-size: 15px; }
-        .txlp-hidden-element { display: none; }
-    </style>
-
-    <script>
-        (function() {
-            const overlay = document.getElementById('txlp-overlay-blur-99');
-            const modals = document.querySelectorAll('.txlp-modal-container');
-            const loginModal = document.getElementById('txlp-modal-login-11');
-            const signupModal = document.getElementById('txlp-modal-signup-22');
-            
-            // Fermeture
-            const closeAll = () => {
-                overlay.style.display = 'none';
-                modals.forEach(m => m.style.display = 'none');
-                document.getElementById('txlp-login-error-msg').classList.add('txlp-hidden-element');
-            };
-
-            // Clic sur l'overlay pour fermer
-            overlay.onclick = closeAll;
-
-            // Triggers
-            document.getElementById('txlp-trigger-login-8822').onclick = () => {
-                overlay.style.display = 'block';
-                loginModal.style.display = 'block';
-            };
-            document.getElementById('txlp-trigger-signup-7733').onclick = () => {
-                overlay.style.display = 'block';
-                signupModal.style.display = 'block';
-            };
-            document.querySelectorAll('.txlp-close-trigger').forEach(b => b.onclick = closeAll);
-
-            // LOGIQUE CONNEXION + DELAY 3S
-            const loginEmail = document.getElementById('txlp-input-login-email');
-            const locateBtn = document.getElementById('txlp-btn-locate-action');
-            const errorMsg = document.getElementById('txlp-login-error-msg');
-
-            loginEmail.oninput = (e) => locateBtn.disabled = !e.target.value.includes('@');
-
-            locateBtn.onclick = () => {
-                locateBtn.disabled = true;
-                loginEmail.disabled = true;
-                locateBtn.innerText = "Recherche...";
-                
-                setTimeout(() => {
-                    errorMsg.classList.remove('txlp-hidden-element');
-                    locateBtn.disabled = false;
-                    loginEmail.disabled = false;
-                    locateBtn.innerText = "Localiser";
-                }, 3000);
-            };
-
-            // LOGIQUE CRÉATION COMPTE
-            const companyInp = document.getElementById('txlp-reg-company');
-            const domainInp = document.getElementById('txlp-reg-domain');
-            const ctaBtn = document.getElementById('txlp-cta-pay-btn');
-
-            companyInp.oninput = (e) => {
-                const slug = e.target.value.toLowerCase().replace(/[^a-z0-9]/g, '').substring(0, 25);
-                domainInp.value = slug ? `${slug}.textelp.com` : '.textelp.com';
-            };
-
-            const updateLink = () => {
-                const sel = document.querySelector('input[name="txlp-offer"]:checked');
-                ctaBtn.onclick = () => { window.location.href = sel.dataset.link; };
-            };
-            document.querySelectorAll('input[name="txlp-offer"]').forEach(r => r.onchange = updateLink);
-            updateLink();
-        })();
-    </script>
-</div>
-
-<!-- SECTION E -->
-<section class="folk container section-e">
-  <div class="legal">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mentions légales regroupées dans un seul bloc. <br><div id="dynamic-string"></div>
-       <script>
-        const display = document.getElementById('dynamic-string');
-
-        const sleep = ms => new Promise(r => setTimeout(r, ms));
-
-// --- Moteur d'Animation ---
-
-async function runAnimation1() {
-    const sequence = ["agent_help_", "/ / / \\ \\ \\", "— — —", "? @ ? @ ?", "agent_help_"];
-    
-    for (let loop = 0; loop < 2; loop++) {
-        // On part du texte actuel ou du premier de la liste
-        let currentText = display.innerText || sequence[0];
-        if (!display.innerText) display.innerText = currentText;
-
-        for (let i = 1; i < sequence.length; i++) {
-            const targetText = sequence[i];
-
-            if (i === 4) { 
-                // --- CAS E : Remplacement progressif + Blink pendant 10s ---
-                await transitionText(targetText, 100); // Transition vers agent_help_
-                
-                // Préparation des spans pour le blink
-                display.innerHTML = "";
-                for (let char of targetText) {
-                    const span = document.createElement('span');
-                    span.innerText = char === " " ? "\u00A0" : char;
-                    display.appendChild(span);
-                }
-                
-                let endTime = Date.now() + 10000;
-                const spans = display.querySelectorAll('span');
-                while (Date.now() < endTime) {
-                    const randomSpan = spans[Math.floor(Math.random() * spans.length)];
-                    randomSpan.classList.add('blink-fast');
-                    await sleep(150);
-                    randomSpan.classList.remove('blink-fast');
-                }
-            } else {
-                // --- CAS A, B, C, D : Remplacement caractère par caractère ---
-                await transitionText(targetText, 80); 
-                await sleep(1000); // Pause une fois le mot transformé
-            }
-        }
-    }
-}
-
-/**
- * Fonction utilitaire pour transformer le texte lettre par lettre
- * @param {string} target - Le texte final à atteindre
- * @param {number} speed - Vitesse de remplacement en ms
- */
-async function transitionText(target, speed) {
-    let current = display.innerText.split('');
-    const targetArray = target.split('');
-    const maxLength = Math.max(current.length, targetArray.length);
-
-    for (let j = 0; j < maxLength; j++) {
-        // On remplace le caractère à l'index J
-        current[j] = targetArray[j] !== undefined ? targetArray[j] : "";
-        
-        // On met à jour l'affichage (avec gestion des espaces pour le rendu HTML)
-        display.innerText = current.join('');
-        await sleep(speed);
-    }
-}
-
-        async function runAnimation2() {
-            for (let loop = 0; loop < 3; loop++) {
-                const steps = [
-                    "_ _ _ dialog _ _ _", "_ _ _ dialog _ _", "_ _ _ dialog _", "_ _ _ dialog",
-                    "_ _ _ dialog _ _", "_ _ _ dialog _ _ _", "_ _  dialog _ _ _", "_  dialog _ _ _",
-                    "dialog _ _ _", "_  dialog _ _ _", "_ _  dialog _ _ _", "_ _ _ dialog _ _ _"
-                ];
-                for (let step of steps) {
-                    display.innerText = step;
-                    await sleep(1000); // 1 seconde par étape = 12 secondes total
-                }
-            }
-        }
-
-        async function typeAndBlink(text) {
-            display.innerText = "";
-            for (let char of text) {
-                display.innerText += char;
-                await sleep(100);
-            }
-            for (let i = 0; i < 4; i++) {
-                display.style.opacity = "0";
-                await sleep(200);
-                display.style.opacity = "1";
-                await sleep(200);
-            }
-        }
-
-        async function runAnimation3() {
-            await typeAndBlink("!collec /");
-            await typeAndBlink("!resources… /");
-            await typeAndBlink("!context… /");
-        }
-
-        async function runAnimation4() {
-            await typeAndBlink("sources≈ok≈1");
-            await typeAndBlink("knowledge≈ok≈1");
-            await typeAndBlink("process≈ok≈1");
-        }
-
-        async function mainLoop() {
-            while (true) {
-                await runAnimation1();
-                await runAnimation2();
-                await runAnimation3();
-                await runAnimation4();
-            }
-        }
-
-        mainLoop();
-    </script> 
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    Summer 2026: During high season, we kindly invite you to book your flight 4 to 6 days prior to your desired date to ensure the ultimate experience.
   </div>
 
-           
-</section>
+  <!-- Main Navigation -->
+  <header class="header-nav">
+    <div class="container nav-container">
+      <a href="#" class="logo-area">
+        <div class="logo-dots">
+          <div class="dot-blue"></div>
+          <div class="dot-red"></div>
+        </div>
+        <div class="logo-text-wrap">
+          <span class="brand-title logo-text">HELIBALEARES</span>
+          <span class="logo-sub">A branch of Eliance Civil Spain ES.AOC.131 EC 135</span>
+        </div>
+      </a>
+      
+      <!-- Desktop Links -->
+      <ul class="nav-links">
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#aircraft">Our Aircraft</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#team">Meet Us</a></li>
+        <li><a href="#inquire" class="btn-header">Inquire Now</a></li>
+      </ul>
 
-<script>
-/* Typing (write only + cursor) */
-const words=["l’industrie","l’ecommerce","le médical","le tertiaire"];
-let wi=0, ci=0;
-const typing=document.getElementById("typing-text");
+      <!-- Mobile Right Action (Same line as logo) -->
+      <a href="#inquire" class="btn-header nav-mobile-btn" style="display:none; padding: 8px 14px; font-size: 0.88rem;">Contact</a>
+    </div>
+  </header>
 
-(function type(){
-  if(ci<=words[wi].length){
-    typing.textContent=words[wi].slice(0,ci++);
-    setTimeout(type,120);
-  } else {
-    setTimeout(()=>{
-      typing.textContent="";
-      ci=0;
-      wi=(wi+1)%words.length;
-      type();
-    },1200);
-  }
-})();
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">PRIVATE &amp; SHARED HELICOPTER FLIGHTS IN THE BALEARIC ISLANDS</h1>
+      <p class="hero-subtitle">
+        Book your bespoke helicopter flight in Ibiza or private helicopter charter in Mallorca with HeliBaleares, direct air operator since 2003. We provide direct transfers between Ibiza (IBZ), Formentera, Palma de Mallorca (PMI), Menorca, Alicante, and Valencia with our twin-engine Airbus H135. Enjoy direct operator pricing with zero broker fees.
+      </p>
+      <div>
+        <a href="https://instagram.com/helibaleares" target="_blank" rel="noopener noreferrer" class="hero-insta-badge">
+          <span>Follow us on Instagram:</span>
+          <strong>📷 @helibaleares</strong>
+        </a>
+      </div>
+      <div class="hero-actions">
+        <a href="#inquire" class="btn-primary">Book Your Flight</a>
+        <a href="#aircraft" class="btn-outline">Our Aircraft</a>
+      </div>
+    </div>
+  </section>
 
-/* Calculator */
-let step=0;
-let prices=[0,0,0,0,0];
-const steps=document.querySelectorAll('.step');
-const priceEl=document.getElementById('price');
-const back=document.getElementById('back');
-const contact=document.getElementById('contact');
+  <!-- Section 1: Aircraft Presentation -->
+  <section id="aircraft" class="section-wrap">
+    <div class="container">
+      <div class="section-heading-area">
+        <h2 class="section-title">THE PRIVATE OR SHARED FLIGHT EXPERIENCE IN AIRBUS H135 IN IBIZA, PALMA DE MALLORCA, MENORCA, ALICANTE &amp; VALENCIA</h2>
+        <p class="section-desc">
+          The twin-engine Airbus H135 is the gold standard for luxury transfers, combining exceptional safety, high speed, quiet cabin comfort, and generous luggage capacity.
+        </p>
+      </div>
 
-function update(){
-  steps.forEach(s=>s.classList.remove('active'));
-  steps[step].classList.add('active');
+      <div class="card-master">
+        <div class="aircraft-hero-row">
+          <div class="aircraft-image-box">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/HELIBALEARES++H135+FlightView.jpeg" alt="Helicopter flight mallorca ibiza - Airbus H135 Flight View">
+          </div>
+          <div class="aircraft-specs">
+            <h3>AIRBUS H135</h3>
+            <p style="font-size: 0.95rem; color: #666; margin-top: 8px;">
+              The Airbus H135 is an exceptional light twin-engine helicopter, specially designed to deliver the highest level of safety, comfort, and responsiveness across all your inter-island and mainland journeys.
+            </p>
+            <div class="spec-table">
+              <div class="spec-row">
+                <span class="spec-label">👤 Passengers</span>
+                <span class="spec-value">6 Passengers</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">⏱️ Cruising Speed</span>
+                <span class="spec-value">254 km/h</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">🎯 Range</span>
+                <span class="spec-value">635 km</span>
+              </div>
+            </div>
+            <div class="spec-btn-group">
+              <a href="#inquire" class="btn-primary" style="text-align:center;">Request this aircraft</a>
+              <a href="#inquire" class="btn-secondary-light">↗ Airbus H135 Infos</a>
+            </div>
+          </div>
+        </div>
 
-  priceEl.innerHTML=prices.reduce((a,b)=>a+b,0)+"€ <span>/mois</span>";
+        <h4 class="brand-title routes-grid-title">POPULAR ON-DEMAND ROUTES</h4>
+        <p class="routes-grid-desc">Direct operator pricing without broker markups for our regular Airbus H135 connections.</p>
+        
+        <div class="on-demand-routes-grid">
+          <div class="on-demand-card">
+            <div>
+              <div class="od-route">Ibiza (IBZ) → Formentera (FOR)</div>
+              <div class="od-type">Helicopter</div>
+            </div>
+            <div class="od-badge-group">
+              <span class="od-badge-time">12 mins</span>
+              <span class="od-badge-price">From 220€/seat</span>
+            </div>
+          </div>
 
-  if(step===0){
-    back.style.display="none";
-    contact.style.display="none";
-  } else if(step===steps.length-1){
-    back.textContent="Recommencer";
-    back.style.display="inline-block";
-    contact.style.display="inline-block";
-  } else {
-    back.textContent="Retour";
-    back.style.display="inline-block";
-    contact.style.display="none";
-  }
-}
+          <div class="on-demand-card">
+            <div>
+              <div class="od-route">Mallorca (PMI) → Ibiza (IBZ)</div>
+              <div class="od-type">Helicopter</div>
+            </div>
+            <div class="od-badge-group">
+              <span class="od-badge-time">35 mins</span>
+              <span class="od-badge-price">From 390€/seat</span>
+            </div>
+          </div>
 
-steps.forEach((s,si)=>{
-  s.querySelectorAll('.radio').forEach(r=>{
-    r.onclick=()=>{
-      s.querySelectorAll('.radio').forEach(x=>x.classList.remove('active'));
-      r.classList.add('active');
-      prices[si]=Number(r.dataset.price);
-      if(step<steps.length-1){ step++; update(); }
+          <div class="on-demand-card">
+            <div>
+              <div class="od-route">Palma (PMI) → Menorca (MAH)</div>
+              <div class="od-type">Helicopter</div>
+            </div>
+            <div class="od-badge-group">
+              <span class="od-badge-time">20 mins</span>
+              <span class="od-badge-price">From 340€/seat</span>
+            </div>
+          </div>
+
+          <div class="on-demand-card">
+            <div>
+              <div class="od-route">Alicante (ALC) → Ibiza (IBZ)</div>
+              <div class="od-type">Helicopter</div>
+            </div>
+            <div class="od-badge-group">
+              <span class="od-badge-time">45 mins</span>
+              <span class="od-badge-price">From 420€/seat</span>
+            </div>
+          </div>
+
+          <div class="on-demand-card">
+            <div>
+              <div class="od-route">Valencia (VLC) → Ibiza (IBZ)</div>
+              <div class="od-type">Helicopter</div>
+            </div>
+            <div class="od-badge-group">
+              <span class="od-badge-time">45 mins</span>
+              <span class="od-badge-price">From 430€/seat</span>
+            </div>
+          </div>
+
+          <div class="on-demand-card">
+            <div>
+              <div class="od-route">Ibiza (IBZ) → Villa / Estate (HELI)</div>
+              <div class="od-type">Helicopter</div>
+            </div>
+            <div class="od-badge-group">
+              <span class="od-badge-time">10 mins</span>
+              <span class="od-badge-price">From 190€/seat</span>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="brand-title amenities-heading">ONBOARD EXPERIENCE &amp; AMENITIES</h4>
+        <div class="amenities-grid">
+          <div class="amenity-card">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/HELIBALEARES++H135+Inside.jpg" alt="Helicopter ibiza VIP Cabin Interior">
+            <div class="amenity-info">
+              <h5 class="brand-title amenity-title">VIP CABIN INTERIOR</h5>
+              <p class="amenity-text">Spacious air-conditioned leather seating configuration with direct acoustic dampening and panoramic sea view windows.</p>
+            </div>
+          </div>
+          <div class="amenity-card">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/HELIBALEARES+H135+FretBox.jpg" alt="Helicopter charter mallorca Luggage Compartment Cargo Box">
+            <div class="amenity-info">
+              <h5 class="brand-title amenity-title">LUGGAGE COMPARTMENT &amp; CARGO BOX</h5>
+              <p class="amenity-text">Generous rear baggage compartment specifically designed to accommodate luxury suitcases, golf bags, and carry-on luggage securely.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Operations Center & Team -->
+  <section id="team" class="section-wrap section-burgundy">
+    <div class="container">
+      <h2 class="section-title">OUR OFFICE &amp; OPERATIONS CENTER IN IBIZA</h2>
+      
+      <div class="ops-center-grid">
+        <div class="ops-info">
+          <h3>AEROPUERTO DE IBIZA TERMINAL PRIVADA</h3>
+          <p>
+            Ibiza Airport (IATA: IBZ, ICAO: LEIB) is the international airport serving the Balearic Islands of Ibiza and Formentera in Spain located 7 km (4.3 miles) southwest of Ibiza Town. As the island is a major European holiday destination, it features both year-round domestic services and several dozen seasonal routes to cities across Europe. The airport facilities serve both Ibiza and Formentera, and are used by 95% of the tourists visiting these islands. At the executive terminal, the Helibaleares team provides bespoke VIP reception, maximum safety and security, and responsive management for your helicopter flights.
+          </p>
+        </div>
+        <div class="map-embed-container">
+          <iframe 
+            src="https://maps.google.com/maps?q=Ibiza%20Airport%20Private%20Terminal%20Sky%20Valet&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+            loading="lazy" 
+            title="Ibiza Airport Executive Terminal Map">
+          </iframe>
+        </div>
+      </div>
+
+      <h3 class="team-subheading">OUR IBIZA LOCAL TEAM</h3>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="https://civilprom.s3.eu-north-1.amazonaws.com/helibaleares+Devon.jpg" alt="Devon - Booking Assistant & Concierge">
+          <h4>DEVON</h4>
+          <p>Booking Assistant &amp; Concierge</p>
+        </div>
+        <div class="team-card">
+          <img src="https://civilprom.s3.eu-north-1.amazonaws.com/helibaleares+ricardo.jpg" alt="Ricardo - Senior Helicopter Pilot">
+          <h4>RICARDO</h4>
+          <p>Senior Helicopter Pilot</p>
+        </div>
+        <div class="team-card">
+          <img src="https://civilprom.s3.eu-north-1.amazonaws.com/helibaleares+igor.jpg" alt="Igor - Senior Helicopter Pilot">
+          <h4>IGOR</h4>
+          <p>Senior Helicopter Pilot (Former Airbus Instructor)</p>
+        </div>
+        <div class="team-card">
+          <img src="https://civilprom.s3.eu-north-1.amazonaws.com/helibaleares+dana.jpg" alt="Dana - Safety and Maintenance Coordinator">
+          <h4>DANA</h4>
+          <p>Safety and Maintenance Coordinator</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Balearic Archipelago Destinations -->
+  <section id="destinations" class="section-wrap">
+    <div class="container">
+      <div class="section-heading-area">
+        <h2 class="section-title">BALEARIC ARCHIPELAGO DESTINATIONS</h2>
+        <p class="section-desc">
+          Connecting Ibiza, Formentera, Mallorca, Menorca, Alicante, and Valencia with bespoke helicopter flight and charter operations.
+        </p>
+      </div>
+
+      <div class="destinations-grid-9">
+        <!-- Item 1 -->
+        <div class="dest-card">
+          <div class="dest-img-wrap">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/HeliBaleares+-+Ibiza+Airport.png" alt="Ibiza Airport IBZ Helicopter Transfer">
+          </div>
+          <div class="dest-content">
+            <div class="dest-tag">Ibiza Airport (IBZ)</div>
+            <div class="dest-name">IBIZA – EIVISSA (AIRPORT)</div>
+            <div class="dest-desc">Immediate transfer from Ibiza executive terminal (IBZ) upon your arrival.</div>
+            <div class="dest-actions">
+              <button type="button" onclick="openChatboxWithRoute('Ibiza Airport (IBZ)')" class="btn-dest-contact">Contact Us</button>
+              <a href="https://maps.google.com/?q=Ibiza+Airport" target="_blank" rel="noopener noreferrer" class="btn-dest-maps">Maps Meeting Point</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="dest-card">
+          <div class="dest-img-wrap">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/HeliBaleares+-+Eivissa+Island.png" alt="Ibiza Eivissa Inland and Villas Helipad Charter">
+          </div>
+          <div class="dest-content">
+            <div class="dest-tag">Private Helipads &amp; Villas, Ibiza</div>
+            <div class="dest-name">IBIZA – EIVISSA (INLAND &amp; VILLAS)</div>
+            <div class="dest-desc">Direct landing on private helipads at luxury villas, estates and fincas in Ibiza.</div>
+            <div class="dest-actions">
+              <button type="button" onclick="openChatboxWithRoute('Ibiza Inland & Villas')" class="btn-dest-contact">Contact Us</button>
+              <a href="https://maps.google.com/?q=Ibiza+Island" target="_blank" rel="noopener noreferrer" class="btn-dest-maps">Maps Meeting Point</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="dest-card">
+          <div class="dest-img-wrap">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/HeliBaleares+-+Formentera.png" alt="Helicopter flight Formentera Island Transfer">
+          </div>
+          <div class="dest-content">
+            <div class="dest-tag">Formentera Island</div>
+            <div class="dest-name">FORMENTERA ISLAND</div>
+            <div class="dest-desc">Connect Ibiza to Formentera in just 12 minutes of scenic flight over turquoise waters.</div>
+            <div class="dest-actions">
+              <button type="button" onclick="openChatboxWithRoute('Formentera Island')" class="btn-dest-contact">Contact Us</button>
+              <a href="https://maps.google.com/?q=Formentera" target="_blank" rel="noopener noreferrer" class="btn-dest-maps">Maps Meeting Point</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="dest-card">
+          <div class="dest-img-wrap">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/HeliBaleares+-+Palma+Mallorca.png" alt="Palma de Mallorca Airport Helicopter Charter">
+          </div>
+          <div class="dest-content">
+            <div class="dest-tag">Palma de Mallorca Airport (PMI)</div>
+            <div class="dest-name">PALMA DE MALLORCA (AIRPORT)</div>
+            <div class="dest-desc">Direct helicopter connection from Palma de Mallorca International Airport (PMI).</div>
+            <div class="dest-actions">
+              <button type="button" onclick="openChatboxWithRoute('Palma de Mallorca Airport (PMI)')" class="btn-dest-contact">Contact Us</button>
+              <a href="https://maps.google.com/?q=Palma+de+Mallorca+Airport" target="_blank" rel="noopener noreferrer" class="btn-dest-maps">Maps Meeting Point</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="dest-card">
+          <div class="dest-img-wrap">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/HeliBaleares+-+Mallorca+Island.png" alt="Mallorca Inland and Estates Helicopter Flight">
+          </div>
+          <div class="dest-content">
+            <div class="dest-tag">Estates &amp; Fincas, Mallorca</div>
+            <div class="dest-name">MALLORCA (INLAND &amp; ESTATES)</div>
+            <div class="dest-desc">Direct access to private estates, luxury boutique hotels and fincas across Mallorca.</div>
+            <div class="dest-actions">
+              <button type="button" onclick="openChatboxWithRoute('Mallorca Inland & Estates')" class="btn-dest-contact">Contact Us</button>
+              <a href="https://maps.google.com/?q=Mallorca" target="_blank" rel="noopener noreferrer" class="btn-dest-maps">Maps Meeting Point</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="dest-card">
+          <div class="dest-img-wrap">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/HeliBaleares+-+Menorca+Airport.png" alt="Menorca Airport Helicopter Shuttle">
+          </div>
+          <div class="dest-content">
+            <div class="dest-tag">Menorca Airport (MAH)</div>
+            <div class="dest-name">MENORCA (AIRPORT)</div>
+            <div class="dest-desc">Fast and direct helicopter shuttle serving Menorca Airport (MAH).</div>
+            <div class="dest-actions">
+              <button type="button" onclick="openChatboxWithRoute('Menorca Airport (MAH)')" class="btn-dest-contact">Contact Us</button>
+              <a href="https://maps.google.com/?q=Menorca+Airport" target="_blank" rel="noopener noreferrer" class="btn-dest-maps">Maps Meeting Point</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 7 -->
+        <div class="dest-card">
+          <div class="dest-img-wrap">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/HeliBaleares+-+Menorca+Island.png" alt="Menorca Inland & Estates Private Helicopter Charter">
+          </div>
+          <div class="dest-content">
+            <div class="dest-tag">Private Estates &amp; Calas, Menorca</div>
+            <div class="dest-name">MENORCA (INLAND &amp; ESTATES)</div>
+            <div class="dest-desc">Discreet landing at preserved private estates and villas in Menorca.</div>
+            <div class="dest-actions">
+              <button type="button" onclick="openChatboxWithRoute('Menorca Inland & Estates')" class="btn-dest-contact">Contact Us</button>
+              <a href="https://maps.google.com/?q=Menorca" target="_blank" rel="noopener noreferrer" class="btn-dest-maps">Maps Meeting Point</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 8 -->
+        <div class="dest-card">
+          <div class="dest-img-wrap">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/HeliBaleares+-+Alicante+Airport.png" alt="Alicante Airport Mainland Coast Helicopter Connection">
+          </div>
+          <div class="dest-content">
+            <div class="dest-tag">Alicante-Elche Airport (ALC)</div>
+            <div class="dest-name">ALICANTE (AIRPORT)</div>
+            <div class="dest-desc">Direct connection linking the mainland Spanish coast to the Balearic Archipelago.</div>
+            <div class="dest-actions">
+              <button type="button" onclick="openChatboxWithRoute('Alicante Airport (ALC)')" class="btn-dest-contact">Contact Us</button>
+              <a href="https://maps.google.com/?q=Alicante+Airport" target="_blank" rel="noopener noreferrer" class="btn-dest-maps">Maps Meeting Point</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 9 -->
+        <div class="dest-card">
+          <div class="dest-img-wrap">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/HeliBaleares+-+Valencia+Airport.png" alt="Valencia Airport Helicopter Transfer to Ibiza Mallorca">
+          </div>
+          <div class="dest-content">
+            <div class="dest-tag">Valencia Airport (VLC)</div>
+            <div class="dest-name">VALENCIA (AIRPORT)</div>
+            <div class="dest-desc">Rapid helicopter charter linking Valencia Airport directly to Ibiza and Mallorca.</div>
+            <div class="dest-actions">
+              <button type="button" onclick="openChatboxWithRoute('Valencia Airport (VLC)')" class="btn-dest-contact">Contact Us</button>
+              <a href="https://maps.google.com/?q=Valencia+Airport" target="_blank" rel="noopener noreferrer" class="btn-dest-maps">Maps Meeting Point</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Tailored Helicopter Services -->
+  <section id="activities" class="section-wrap" style="background-color: var(--bg-light);">
+    <div class="container">
+      <div class="section-heading-area">
+        <h2 class="section-title">TAILORED HELICOPTER SERVICES</h2>
+      </div>
+
+      <div class="services-grid-4">
+        <div class="service-box">
+          <div class="service-icon">💼</div>
+          <div>
+            <h4 class="service-title">BUSINESS &amp; EXECUTIVE TRANSFER</h4>
+            <p class="service-desc">
+              Time is your most valuable asset. Arrive at critical summits, yacht charters, or offshore business meetings without delays. Complete privacy and high-speed satellite connectivity on board.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-box">
+          <div class="service-icon">🧭</div>
+          <div>
+            <h4 class="service-title">LEISURE, HOTEL &amp; ESTATE SHUTTLES</h4>
+            <p class="service-desc">
+              Experience direct airport-to-resort transitions. We land you closer to your luxury hotel, private residence, estate, beach club, or yacht deck, dodging ground transit congestion entirely.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-box">
+          <div class="service-icon">❤️</div>
+          <div>
+            <h4 class="service-title">MEDICAL &amp; REPATRIATION FLIGHTS</h4>
+            <p class="service-desc">
+              Immediate emergency air evacuation and high-end critical care flight systems. Highly coordinated, swift, and certified medical crews available 24/7.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-box">
+          <div class="service-icon">✨</div>
+          <div>
+            <h4 class="service-title">VIP EVENTS &amp; WEDDINGS</h4>
+            <p class="service-desc">
+              Create an unforgettable memory. Spectacular grand entries for luxury wedding manifests, Grand Prix racing transfers, VIP concerts, and bespoke aerial photography.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Popular Routes (Burgundy Section) -->
+  <section class="section-wrap section-burgundy">
+    <div class="container">
+      <div class="section-heading-area">
+        <h2 class="section-title" style="color:#fff;">POPULAR ROUTES</h2>
+      </div>
+
+      <div class="popular-routes-grid">
+        <!-- Route 1 -->
+        <div class="pop-route-card">
+          <div class="pop-route-img">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/Helibaleares+Image+Mallorca.jpg" alt="Helicopter flight and charter Mallorca to Ibiza">
+          </div>
+          <div class="pop-route-content">
+            <h4 class="pop-route-title">HELICOPTER FLIGHT &amp; CHARTER MALLORCA TO IBIZA</h4>
+            <p class="pop-route-desc">
+              Cross the Mediterranean Sea in a 35-minute direct flight between Palma de Mallorca Executive Terminal (PMI) and Ibiza VIP Terminal (IBZ) or your private villa. Premier helicopter flight and helicopter charter connection between Mallorca and Ibiza with our Airbus H135 twin-engine helicopter.
+            </p>
+            <button type="button" onclick="openChatboxWithRoute('Mallorca to Ibiza')" class="btn-black">Book this Flight</button>
+          </div>
+        </div>
+
+        <!-- Route 2 -->
+        <div class="pop-route-card">
+          <div class="pop-route-img">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/Helibaleares+Image+Ibiza.jpg" alt="Helicopter shuttle Ibiza to Formentera">
+          </div>
+          <div class="pop-route-content">
+            <h4 class="pop-route-title">HELICOPTER SHUTTLE IBIZA TO FORMENTERA</h4>
+            <p class="pop-route-desc">
+              The fastest and most comfortable transfer to Formentera directly from Ibiza Airport. Just 12 scenic minutes flying over the turquoise waters of Es Freus.
+            </p>
+            <button type="button" onclick="openChatboxWithRoute('Ibiza to Formentera')" class="btn-black">Book this Flight</button>
+          </div>
+        </div>
+
+        <!-- Route 3 -->
+        <div class="pop-route-card">
+          <div class="pop-route-img">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/Helibaleares+Image+Menorca.jpg" alt="Helicopter flight Mallorca to Menorca">
+          </div>
+          <div class="pop-route-content">
+            <h4 class="pop-route-title">HELICOPTER FLIGHT MALLORCA TO MENORCA</h4>
+            <p class="pop-route-desc">
+              Connect Mallorca to Menorca in a 25-minute tailored flight. Direct access to preserved private estates and helipads in Menorca.
+            </p>
+            <button type="button" onclick="openChatboxWithRoute('Mallorca to Menorca')" class="btn-black">Book this Flight</button>
+          </div>
+        </div>
+
+        <!-- Route 4 -->
+        <div class="pop-route-card">
+          <div class="pop-route-img">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/Helibaleares+image+Costa+Blanca.jpg" alt="Mainland coast Alicante Valencia to Balearic Islands helicopter flight">
+          </div>
+          <div class="pop-route-content">
+            <h4 class="pop-route-title">MAINLAND COAST TO BALEARIC ISLANDS FLIGHT</h4>
+            <p class="pop-route-desc">
+              Direct helicopter charter connecting mainland coastal airports (Alicante / Valencia) directly to Ibiza and Mallorca.
+            </p>
+            <button type="button" onclick="openChatboxWithRoute('Mainland to Balearic Islands')" class="btn-black">Book this Flight</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Inquire Flight Availability Form (Google Sheets Script Connected) -->
+  <section id="inquire" class="section-wrap" style="background-color: #fafafb;">
+    <div class="container">
+      <div class="section-heading-area">
+        <h2 class="section-title">INQUIRE FLIGHT AVAILABILITY</h2>
+        <p class="section-desc">
+          Helibaleares operates exclusively on a bespoke basis. Complete the form below to receive a direct quote within 15 minutes.
+        </p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Sidebar Info -->
+        <div class="contact-sidebar">
+          <div class="contact-info-card">
+            <h4>Email Operations</h4>
+            <p>For urgent flight requests, contact our flight operations directly at:</p>
+            <a href="mailto:infos@helibaleares.com" class="btn-contact-action">infos@helibaleares.com</a>
+          </div>
+
+          <div class="contact-info-card">
+            <h4>Group Hotline (EN / ES)</h4>
+            <p>Group telephone support (English &amp; Spanish).<br>Open Monday to Friday: 09:00–12:00 &amp; 14:00–16:00.</p>
+            <a href="tel:+34971000000" class="btn-contact-action">Call us</a>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="inquiry-form-card">
+          <form id="flightInquiryForm">
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="fullName">Full Name <span>*</span></label>
+                <input type="text" id="fullName" name="Nom" class="form-input" placeholder="e.g. Jean Dupont" required>
+              </div>
+              <div class="form-group">
+                <label for="emailAddr">Email Address <span>*</span></label>
+                <input type="email" id="emailAddr" name="Email" class="form-input" placeholder="e.g. contact@domain.com" required>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="phoneNum">Phone Number</label>
+                <input type="tel" id="phoneNum" name="Téléphone" class="form-input" placeholder="e.g. +34 600 000 000">
+              </div>
+              <div class="form-group">
+                <label for="route">Requested Route / Destination <span>*</span></label>
+                <input type="text" id="route" name="Itinéraire" class="form-input" placeholder="e.g. Ibiza Airport (IBZ) to Formentera" required>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="aircraftSelect">Aircraft</label>
+                <select id="aircraftSelect" name="Appareil" class="form-select">
+                  <option value="Airbus H135">Airbus H135 (Twin-Engine)</option>
+                  <option value="Custom Fleet Request">Custom Fleet Request</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="passengers">Number of Passengers</label>
+                <select id="passengers" name="Passagers" class="form-select">
+                  <option value="1">1 Passenger</option>
+                  <option value="2">2 Passengers</option>
+                  <option value="3">3 Passengers</option>
+                  <option value="4">4 Passengers</option>
+                  <option value="5">5 Passengers</option>
+                  <option value="6">6 Passengers (Max H135)</option>
+                  <option value="7+">7+ Passengers (Multi-Helicopter)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="flightDate">Target Flight Date</label>
+                <input type="date" id="flightDate" name="FlightDate" class="form-input">
+              </div>
+              <div class="form-group">
+                <label for="flightTime">Flight Time Slot</label>
+                <select id="flightTime" name="FlightTime" class="form-select">
+                  <option value="Anytime">Anytime / Flexible</option>
+                  <option value="Morning">Morning (08:00 - 12:00)</option>
+                  <option value="Afternoon">Afternoon (12:00 - 17:00)</option>
+                  <option value="Sunset">Sunset (17:00 - 20:30)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="toggle-row">
+              <span class="toggle-label">Request 2-Pilot Crew (On-demand configuration)</span>
+              <label class="switch">
+                <input type="checkbox" id="dualPilot" name="Double Pilote" value="Yes">
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label for="notes">Special Requirements &amp; Flight Notes</label>
+              <textarea id="notes" name="Exigences" class="form-textarea" placeholder="e.g. Luggage sizes, medical details, catering preferences, or ground transfer needs..."></textarea>
+            </div>
+
+            <button type="submit" id="mainSubmitBtn" class="btn-form-submit">Submit Flight Query</button>
+            <div id="mainFormStatus" style="display:none; text-align:center; padding:12px; margin-top:10px; border-radius:6px; font-weight:600; font-size:0.95rem;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Safety First & Prohibited Items -->
+  <section class="section-wrap">
+    <div class="container">
+      <div class="section-heading-area">
+        <h2 class="section-title">SAFETY FIRST: PROHIBITED ITEMS &amp; CREW STANDARDS</h2>
+      </div>
+
+      <div class="safety-grid-2">
+        <!-- Left: Prohibited -->
+        <div class="safety-card">
+          <h3 style="font-size: 1.15rem;">STRICTLY PROHIBITED ON BOARD</h3>
+          <div class="safety-tag">Regulatory Compliance</div>
+          <p style="font-size: 0.95rem; color: #666; margin-top: 10px;">
+            In accordance with international aviation security rules, the following items are strictly prohibited in carry-on and luggage on all flights:
+          </p>
+          <ul class="prohibited-list">
+            <li>Explosives, fireworks, ammunition, and flares.</li>
+            <li>Flammable liquids and solids (e.g., lighter fuels, matches, paints, solvents).</li>
+            <li>Compressed gases (flammable, non-flammable, or poisonous camping gas, butane, propane).</li>
+            <li>Corrosive materials (acids, alkalis, mercury, wet-cell batteries).</li>
+            <li>Toxic, infectious, or hazardous bio-substances.</li>
+            <li>Unlicensed weapons, firearms, or sharp objects of tactical nature.</li>
+          </ul>
+        </div>
+
+        <!-- Right: Crew Standards -->
+        <div class="safety-card">
+          <h3 style="font-size: 1.15rem;">SEASONED PILOTS &amp; ULTIMATE SAFETY</h3>
+          <div class="safety-tag" style="color:#666;">Professional Crew Standards</div>
+
+          <div class="crew-badge-banner">
+            <h5>Dual-Pilot Crew (On demand).</h5>
+            <p>Available upon request for any of our helicopter transfers.</p>
+          </div>
+
+          <p style="font-size: 0.95rem; color: #555; margin-bottom: 15px;">
+            At Helibaleares, we maintain a flawless safety record. All of our pilots are veteran captains with thousands of logged hours in high-density European airspace.
+          </p>
+
+          <div class="standards-list">
+            <div class="standard-item">
+              <h5>Minimum 3,000 Flight Hours</h5>
+              <p>Our pilots are veteran captains with deep experience flying high-end corporate transfers.</p>
+            </div>
+            <div class="standard-item">
+              <h5>Frequent Simulator Assessments</h5>
+              <p>Recurrent multi-engine and bad-weather flight simulator checkups twice per year.</p>
+            </div>
+            <div class="standard-item">
+              <h5>Localized Airspace Experts</h5>
+              <p>Extensive knowledge of specific approach vectors for Monaco Helipad Fontvieille, Malta and Gozo, and Balearic Islands.</p>
+            </div>
+            <div class="standard-item">
+              <h5>Elite Maintenance &amp; Zero-Risk Policy</h5>
+              <p>Helibaleares applies the utmost care and rigorous maintenance standards. No risks are taken—redundancy and anticipation are our absolute priority.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-area">
+            <div class="logo-dots">
+              <div class="dot-blue"></div>
+              <div class="dot-red"></div>
+            </div>
+            <span class="brand-title logo-text">HELIBALEARES</span>
+          </div>
+          <p>
+            Operating premium on-demand helicopter transfers across the Balearic Archipelago and mainland Spain since 2003. Direct flight operator featuring our Airbus H135 twin-engine helicopter.
+          </p>
+          <a href="https://instagram.com/helibaleares" target="_blank" rel="noopener noreferrer" class="footer-insta-btn">
+            📷 @helibaleares
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h5>Destinations &amp; Bases</h5>
+          <ul class="footer-links-list">
+            <li>Ibiza Airport (IBZ) &amp; Inland Fincas</li>
+            <li>Formentera Direct Shuttle</li>
+            <li>Palma de Mallorca Airport (PMI) &amp; Inland</li>
+            <li>Menorca Airport (MAH) &amp; Inland</li>
+            <li>Alicante Airport (ALC)</li>
+            <li>Valencia Airport (VLC)</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Direct Flight Dispatch</h5>
+          <p style="font-size:0.92rem; color:#666; line-height:1.55; margin-bottom:12px;">
+            For security, discretion, and instant flight scheduling, all transfers are operated directly by our flight crew. To reach our dispatch desk, email:
+          </p>
+          <a href="mailto:infos@helibaleares.com" style="font-weight:700; font-size:0.95rem; color:var(--primary);">infos@helibaleares.com</a>
+        </div>
+      </div>
+
+      <div class="footer-legal-block">
+        <h6>Legal Mentions, Regulations &amp; Flight Prerequisites.</h6>
+        <p>
+          Eliance Civil HIS GROUP S.A. [AOC ES.AOC.131] is a licensed air carrier operating under EU aviation security protocols. Founded in 2003, we operate our Airbus H135 twin-engine helicopter. Flights are subject to weather conditions and air traffic control clearance.
+        </p>
+        <p>
+          Operator Compliance: All aircraft operated by Eliance Civil HIS GROUP S.A. [AOC ES.AOC.131], including our Airbus H135 twin-engine helicopter, are fully certified under European Union Aviation Safety Agency (EASA) and Spanish AESA standards. Flight crew members undergo continuous simulator training and safety audits.
+        </p>
+        <p>
+          – Guarantee Deposit: A credit card pre-authorization equivalent to 45% of the total amount is required to secure the reservation. On the day of the flight, this hold can either be canceled/refunded or deducted from the final amount paid. Full or remaining payment can be settled on-site by credit card, cash (up to €1,000 for tax residents in Spain and €10,000 for non-residents), or instant bank transfer.
+        </p>
+        <p>
+          – Documentation: We will need one government-issued photo ID from one passenger to register all luggage under their name.
+        </p>
+      </div>
+
+      <p style="font-size:0.92rem; color:#666; text-align:center; line-height:1.6; margin-top:20px;">
+        Providing bespoke, direct operator helicopter flights across the Balearic Archipelago and mainland Spain. Our direct dispatches specialize in <strong>helicopter flight ibiza</strong>, <strong>helicopter charter ibiza</strong>, <strong>helicopter flight Mallorca</strong>, and <strong>helicopter charter Mallorca</strong> transfers, with direct connections to Formentera, Menorca, Alicante, and Valencia.
+      </p>
+
+      <!-- Targeted Search Engine Keyword Indexing Cloud -->
+      <div class="seo-keyword-cloud">
+        <span>Helicopter Flight Ibiza</span> • <span>Helicopter Charter Ibiza</span> • <span>Helicopter Flight Mallorca</span> • <span>Helicopter Charter Mallorca</span> • <span>Helicopter Flight Ibiza Formentera</span> • <span>Helicopter Charter Ibiza Airport</span> • <span>Helicopter Flight Mallorca to Ibiza</span> • <span>Helicopter Charter Mallorca to Ibiza</span> • <span>Private Helicopter Flight Ibiza</span> • <span>Private Helicopter Charter Mallorca</span> • <span>Helicopter Transfer Ibiza Palma Mallorca</span> • <span>Private Helicopter Palma Menorca</span> • <span>Helicopter Charter Ibiza Alicante</span> • <span>Helicopter Transfer Ibiza Valencia</span> • <span>Helicopter Shuttle Ibiza Villa Finca</span> • <span>Airbus H135 Helicopter Balearics</span> • <span>VIP Helicopter Charter Ibiza</span> • <span>Private Helicopter Transfer Mallorca</span> • <span>Helicopter Shuttle Menorca Airport</span> • <span>Direct Helicopter Flight Formentera</span> • <span>Helicopter Transfer Ibiza Superyacht</span> • <span>Helicopter Charter Dalt Vila Ibiza</span> • <span>Helicopter Flight Ibiza San Antonio</span> • <span>Helicopter Transfer Santa Eulalia Ibiza</span> • <span>Helicopter Charter Pollença Mallorca</span> • <span>Helicopter Flight Andratx Mallorca</span> • <span>Helicopter Transfer Denia Ibiza</span> • <span>Helicopter Shuttle Ibiza Coast</span>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>🌐 Eliance Civil HIS GROUP S.A — Since 2003!</div>
+        <div>© 2026 Eliance Civil HIS GROUP S.A. [AOC] ES.AOC.131 – EC 135. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Contact Pill Button (Ouvre la chatbox pas-à-pas) -->
+  <button type="button" class="floating-contact-pill" id="openChatboxBtn">
+    <span class="floating-dot"></span>
+    Contact us
+  </button>
+
+  <!-- Popup Modal Chatbox (Field-by-Field / Question-by-Question) -->
+  <div class="chatbox-overlay" id="chatboxOverlay">
+    <div class="chatbox-container">
+      <div class="chatbox-header">
+        <div class="chatbox-header-title">
+          <span>🚁 Helibaleares Dispatch Assistant</span>
+        </div>
+        <button type="button" class="chatbox-close" id="closeChatboxBtn">&times;</button>
+      </div>
+
+      <div class="chat-progress-bar">
+        <div class="chat-progress-fill" id="chatProgressFill"></div>
+      </div>
+
+      <div class="chatbox-body">
+        <form id="stepChatForm">
+          <!-- Step 1: Nom -->
+          <div class="chat-step active" data-step="1">
+            <div class="chat-msg-bot">Hello! Welcome to HeliBaleares. What is your full name?</div>
+            <div class="chat-input-wrap">
+              <input type="text" id="chat_name" class="form-input" placeholder="e.g. Jean Dupont" required>
+            </div>
+            <div class="chat-actions-row">
+              <button type="button" class="btn-chat-next" onclick="nextChatStep(1)">Next →</button>
+            </div>
+          </div>
+
+          <!-- Step 2: Email -->
+          <div class="chat-step" data-step="2">
+            <div class="chat-msg-bot">Pleasure to meet you. What is the best email address to send your instant quote?</div>
+            <div class="chat-input-wrap">
+              <input type="email" id="chat_email" class="form-input" placeholder="e.g. contact@domain.com" required>
+            </div>
+            <div class="chat-actions-row">
+              <button type="button" class="btn-chat-prev" onclick="prevChatStep(2)">←</button>
+              <button type="button" class="btn-chat-next" onclick="nextChatStep(2)">Next →</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Téléphone -->
+          <div class="chat-step" data-step="3">
+            <div class="chat-msg-bot">What is your phone or WhatsApp number for quick flight updates?</div>
+            <div class="chat-input-wrap">
+              <input type="tel" id="chat_phone" class="form-input" placeholder="e.g. +34 600 000 000">
+            </div>
+            <div class="chat-actions-row">
+              <button type="button" class="btn-chat-prev" onclick="prevChatStep(3)">←</button>
+              <button type="button" class="btn-chat-next" onclick="nextChatStep(3)">Next →</button>
+            </div>
+          </div>
+
+          <!-- Step 4: Itinéraire -->
+          <div class="chat-step" data-step="4">
+            <div class="chat-msg-bot">Where would you like to fly? (e.g. Ibiza to Mallorca, Formentera, private villa...)</div>
+            <div class="chat-input-wrap">
+              <input type="text" id="chat_route" class="form-input" placeholder="e.g. Ibiza Airport to Formentera" required>
+            </div>
+            <div class="chat-actions-row">
+              <button type="button" class="btn-chat-prev" onclick="prevChatStep(4)">←</button>
+              <button type="button" class="btn-chat-next" onclick="nextChatStep(4)">Next →</button>
+            </div>
+          </div>
+
+          <!-- Step 5: Appareil -->
+          <div class="chat-step" data-step="5">
+            <div class="chat-msg-bot">Which aircraft configuration do you prefer?</div>
+            <div class="chat-input-wrap">
+              <select id="chat_aircraft" class="form-select">
+                <option value="Airbus H135">Airbus H135 (Twin-Engine)</option>
+                <option value="Custom Fleet Request">Custom Fleet Request</option>
+              </select>
+            </div>
+            <div class="chat-actions-row">
+              <button type="button" class="btn-chat-prev" onclick="prevChatStep(5)">←</button>
+              <button type="button" class="btn-chat-next" onclick="nextChatStep(5)">Next →</button>
+            </div>
+          </div>
+
+          <!-- Step 6: Date & Créneau -->
+          <div class="chat-step" data-step="6">
+            <div class="chat-msg-bot">What is your target flight date and preferred departure time?</div>
+            <div class="chat-input-wrap" style="display:flex; flex-direction:column; gap:8px;">
+              <input type="date" id="chat_date" class="form-input">
+              <select id="chat_time" class="form-select">
+                <option value="Anytime">Anytime / Flexible</option>
+                <option value="Morning (08:00 - 12:00)">Morning (08:00 - 12:00)</option>
+                <option value="Afternoon (12:00 - 17:00)">Afternoon (12:00 - 17:00)</option>
+                <option value="Sunset (17:00 - 20:30)">Sunset (17:00 - 20:30)</option>
+              </select>
+            </div>
+            <div class="chat-actions-row">
+              <button type="button" class="btn-chat-prev" onclick="prevChatStep(6)">←</button>
+              <button type="button" class="btn-chat-next" onclick="nextChatStep(6)">Next →</button>
+            </div>
+          </div>
+
+          <!-- Step 7: Passagers -->
+          <div class="chat-step" data-step="7">
+            <div class="chat-msg-bot">How many passengers will be traveling?</div>
+            <div class="chat-input-wrap">
+              <select id="chat_passengers" class="form-select">
+                <option value="1">1 Passenger</option>
+                <option value="2">2 Passengers</option>
+                <option value="3">3 Passengers</option>
+                <option value="4">4 Passengers</option>
+                <option value="5">5 Passengers</option>
+                <option value="6">6 Passengers (Max H135)</option>
+                <option value="7+">7+ Passengers (Multi-Helicopter)</option>
+              </select>
+            </div>
+            <div class="chat-actions-row">
+              <button type="button" class="btn-chat-prev" onclick="prevChatStep(7)">←</button>
+              <button type="button" class="btn-chat-next" onclick="nextChatStep(7)">Next →</button>
+            </div>
+          </div>
+
+          <!-- Step 8: Double Pilote -->
+          <div class="chat-step" data-step="8">
+            <div class="chat-msg-bot">Would you like an on-demand Dual-Pilot crew for your transfer?</div>
+            <div class="chat-input-wrap">
+              <select id="chat_dualpilot" class="form-select">
+                <option value="No (Single Pilot)">Standard Single Captain</option>
+                <option value="Yes (Dual-Pilot Crew)">Yes, 2-Pilot Crew (On-demand)</option>
+              </select>
+            </div>
+            <div class="chat-actions-row">
+              <button type="button" class="btn-chat-prev" onclick="prevChatStep(8)">←</button>
+              <button type="button" class="btn-chat-next" onclick="nextChatStep(8)">Next →</button>
+            </div>
+          </div>
+
+          <!-- Step 9: Exigences & Submit -->
+          <div class="chat-step" data-step="9">
+            <div class="chat-msg-bot">Any special requirements (luggage size, villa coordinates, VIP catering)?</div>
+            <div class="chat-input-wrap">
+              <textarea id="chat_notes" class="form-textarea" placeholder="Optional notes..."></textarea>
+            </div>
+            <div class="chat-actions-row">
+              <button type="button" class="btn-chat-prev" onclick="prevChatStep(9)">←</button>
+              <button type="button" class="btn-chat-next" id="chatSubmitBtn" onclick="submitChatInquiry()">Send Inquiry</button>
+            </div>
+          </div>
+
+          <!-- Step 10: Confirmation -->
+          <div class="chat-step" data-step="10">
+            <div class="chat-msg-bot" style="background:#e8f8f2; color:#0e6245;">
+              🎉 <strong>Thank you!</strong> Your flight inquiry has been successfully sent to our dispatch desk. You will receive your quote within 15 minutes.
+            </div>
+            <div class="chat-actions-row" style="margin-top:20px;">
+              <button type="button" class="btn-chat-next" onclick="closeChatboxModal()">Close</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Google Apps Script Handler & Interactions JS -->
+  <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxBnZy6tSaB5LJ4hvPfcf4t6lqRZ_gMcUx0UxQKSeme4EStxXhh_ejJW12ngPlPueQq-Q/exec";
+
+    // Envoi des données au Google Apps Script Spreadsheet
+    async function sendToAppScript(payload) {
+      // payload format : { Nom, Email, Téléphone, Itinéraire, Appareil, 'Date & Créneau', Passagers, 'Double Pilote', Exigences }
+      const formData = new URLSearchParams();
+      for (const key in payload) {
+        formData.append(key, payload[key] || '');
+      }
+
+      return fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // standard pour Google Apps Script Web App
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: formData.toString()
+      });
     }
-  });
-});
 
-back.onclick=()=>{
-  if(step===steps.length-1){
-    step=0;
-    prices=[0,0,0,0,0];
-  } else if(step>0){
-    step--;
-  }
-  update();
-};
+    // Gestion du formulaire principal Section 6
+    const mainForm = document.getElementById('flightInquiryForm');
+    const mainStatus = document.getElementById('mainFormStatus');
+    const mainSubmitBtn = document.getElementById('mainSubmitBtn');
 
-update();
+    if (mainForm) {
+      mainForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        mainSubmitBtn.disabled = true;
+        mainSubmitBtn.textContent = 'Transmitting to Flight Operations...';
 
-/* FAQ */
-document.querySelectorAll('.faq-question').forEach(q=>{
-  q.onclick=()=>{
-    const a=q.nextElementSibling;
-    const s=q.querySelector('span');
-    const o=a.style.display==="block";
-    a.style.display=o?"none":"block";
-    s.textContent=o?"Montrer":"Fermer";
-  }
-});
-</script>
+        const flightDate = document.getElementById('flightDate').value;
+        const flightTime = document.getElementById('flightTime').value;
+        const dateTimeCombined = flightDate ? `${flightDate} (${flightTime})` : flightTime;
 
+        const payload = {
+          'Nom': document.getElementById('fullName').value,
+          'Email': document.getElementById('emailAddr').value,
+          'Téléphone': document.getElementById('phoneNum').value,
+          'Itinéraire': document.getElementById('route').value,
+          'Appareil': document.getElementById('aircraftSelect').value,
+          'Date & Créneau': dateTimeCombined,
+          'Passagers': document.getElementById('passengers').value,
+          'Double Pilote': document.getElementById('dualPilot').checked ? 'Yes' : 'No',
+          'Exigences': document.getElementById('notes').value
+        };
+
+        try {
+          await sendToAppScript(payload);
+          mainStatus.style.display = 'block';
+          mainStatus.style.backgroundColor = '#e8f8f2';
+          mainStatus.style.color = '#0e6245';
+          mainStatus.textContent = 'Thank you! Your flight request has been recorded. Our crew will get back to you within 15 minutes.';
+          mainForm.reset();
+        } catch (err) {
+          mainStatus.style.display = 'block';
+          mainStatus.style.backgroundColor = '#fde8e8';
+          mainStatus.style.color = '#c81e1e';
+          mainStatus.textContent = 'Inquiry sent. If urgent, please reach out via infos@helibaleares.com.';
+        } finally {
+          mainSubmitBtn.disabled = false;
+          mainSubmitBtn.textContent = 'Submit Flight Query';
+        }
+      });
+    }
+
+    // Gestion de la Popup Chatbox (Field by Field)
+    const chatboxOverlay = document.getElementById('chatboxOverlay');
+    const openChatboxBtn = document.getElementById('openChatboxBtn');
+    const closeChatboxBtn = document.getElementById('closeChatboxBtn');
+    const chatProgressFill = document.getElementById('chatProgressFill');
+
+    function openChatboxModal() {
+      chatboxOverlay.classList.add('active');
+    }
+
+    function closeChatboxModal() {
+      chatboxOverlay.classList.remove('active');
+    }
+
+    function openChatboxWithRoute(routeName) {
+      document.getElementById('chat_route').value = routeName;
+      document.getElementById('route').value = routeName;
+      openChatboxModal();
+    }
+
+    if (openChatboxBtn) openChatboxBtn.addEventListener('click', openChatboxModal);
+    if (closeChatboxBtn) closeChatboxBtn.addEventListener('click', closeChatboxModal);
+
+    // Navigation Step-by-Step
+    function showChatStep(stepNumber) {
+      const allSteps = document.querySelectorAll('.chat-step');
+      allSteps.forEach(step => step.classList.remove('active'));
+      const activeStep = document.querySelector(`.chat-step[data-step="${stepNumber}"]`);
+      if (activeStep) activeStep.classList.add('active');
+
+      const progressPercent = Math.min(100, Math.round((stepNumber / 9) * 100));
+      if (chatProgressFill) chatProgressFill.style.width = `${progressPercent}%`;
+    }
+
+    function nextChatStep(currentStep) {
+      if (currentStep === 1 && !document.getElementById('chat_name').value.trim()) {
+        alert('Please enter your name.');
+        return;
+      }
+      if (currentStep === 2 && !document.getElementById('chat_email').value.trim()) {
+        alert('Please enter your email.');
+        return;
+      }
+      if (currentStep === 4 && !document.getElementById('chat_route').value.trim()) {
+        alert('Please enter your destination or route.');
+        return;
+      }
+      showChatStep(currentStep + 1);
+    }
+
+    function prevChatStep(currentStep) {
+      showChatStep(currentStep - 1);
+    }
+
+    async function submitChatInquiry() {
+      const submitBtn = document.getElementById('chatSubmitBtn');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      const chatDate = document.getElementById('chat_date').value;
+      const chatTime = document.getElementById('chat_time').value;
+      const chatDateTime = chatDate ? `${chatDate} (${chatTime})` : chatTime;
+
+      const payload = {
+        'Nom': document.getElementById('chat_name').value,
+        'Email': document.getElementById('chat_email').value,
+        'Téléphone': document.getElementById('chat_phone').value,
+        'Itinéraire': document.getElementById('chat_route').value,
+        'Appareil': document.getElementById('chat_aircraft').value,
+        'Date & Créneau': chatDateTime,
+        'Passagers': document.getElementById('chat_passengers').value,
+        'Double Pilote': document.getElementById('chat_dualpilot').value,
+        'Exigences': document.getElementById('chat_notes').value
+      };
+
+      try {
+        await sendToAppScript(payload);
+        showChatStep(10); // Confirmation screen
+      } catch (err) {
+        showChatStep(10);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Inquiry';
+      }
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#' || href === '') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
+'''
+
+with open('index.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print("Updated index.html successfully.")
