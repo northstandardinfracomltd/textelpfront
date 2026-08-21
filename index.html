@@ -212,8 +212,9 @@
     }
 
     .logo-sub {
-      font-size: 0.72rem; /* Augmenté */
-      color: #777;
+    font-size: 0.72rem;
+    color: #000000;
+    margin-top: -12px;
     }
 
     .nav-links {
@@ -272,7 +273,7 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 860px;
+      max-width: 950px;
       margin: 0 auto;
     }
 
@@ -348,6 +349,7 @@
     }
 
     .btn-black {
+          font-family: 'Civilprom';
       background: #0b0b0d;
       color: #ffffff !important;
       padding: 12px 24px;
@@ -529,6 +531,7 @@
       padding: 3px 8px;
       border-radius: 4px;
       font-weight: 600;
+          white-space: nowrap;
     }
 
     /* Onboard Amenities 2-col */
@@ -728,8 +731,11 @@
 
     .btn-dest-contact {
       background: #000;
+      border: none;
+    height: 42px;
       color: #fff !important;
-      font-size: 0.9rem; /* Augmenté */
+      font-family: 'Civilprom';
+      font-size: 15px; /* Augmenté */
       padding: 10px;
       border-radius: 6px;
       text-align: center;
@@ -779,7 +785,7 @@
       width: 48px;
       height: 48px;
       min-width: 48px;
-      background: var(--primary);
+      background: #efefef;
       color: #fff;
       border-radius: 50%;
       display: flex;
@@ -1007,6 +1013,7 @@
     }
 
     .btn-form-submit {
+          font-family: 'Civilprom';
       background: var(--primary);
       color: #fff !important;
       border: none;
@@ -1194,15 +1201,15 @@
     }
 
     .seo-keyword-cloud {
-      background: #fafafa;
-      border: 1px solid #f0f0f2;
-      border-radius: 8px;
-      padding: 18px;
-      margin: 25px 0;
-      font-size: 0.85rem; /* Augmenté */
-      color: #888;
-      line-height: 1.9;
-      text-align: center;
+text-align: left;
+    background: transparent;
+    border: none;
+    border-radius: 0px;
+    padding: 0px;
+    margin: 25px 0;
+    font-size: 0.85rem;
+    color: #000;
+    line-height: 1.9;
     }
 
     .seo-keyword-cloud span {
@@ -1221,6 +1228,7 @@
 
     /* Floating Contact Pill Button */
     .floating-contact-pill {
+      font-family: 'Civilprom';
       position: fixed;
       bottom: 24px;
       right: 24px;
@@ -1230,7 +1238,6 @@
       border-radius: 30px;
       font-size: 0.95rem;
       font-weight: 600;
-      box-shadow: 0 6px 22px rgba(138, 36, 63, 0.45);
       z-index: 999;
       display: flex;
       align-items: center;
@@ -1488,7 +1495,7 @@
 
 
     .uplift {
-        margin-top: -200px;
+        margin-top: -20px;
       }
 
   </style>
@@ -1533,7 +1540,7 @@
   <section class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1 class="hero-title">THE PRIVATE OR SHARED FLIGHT EXPERIENCE IN AIRBUS H135 IN IBIZA, PALMA DE MALLORCA, MENORCA, ALICANTE & VALENCIA</h1>
+      <h1 class="hero-title">Private or Shared Flights by Airbus H135 in Ibiza, Palma de Mallorca, Menorca, Alicante & Valencia</h1>
       <p class="hero-subtitle">
         Book your bespoke helicopter flight in Ibiza or private helicopter charter in Mallorca with HeliBaleares, direct air operator since 2003. We provide direct transfers between Ibiza (IBZ), Formentera, Palma de Mallorca (PMI), Menorca, Alicante, and Valencia with our twin-engine Airbus H135. Enjoy direct operator pricing with zero broker fees.
       </p>
@@ -2647,6 +2654,7 @@
     width: 100%;
     height: auto;
     display: block;
+    margin-bottom: -30px; 
   }
 
   /* Spinner style Apple (iOS Petals) */
