@@ -2578,6 +2578,139 @@ html_content = r'''<!DOCTYPE html>
     });
   </script>
 </body>
+
+
+<!-- PRELOADER HELIBALEARES -->
+<div id="app-preloader">
+  <div class="preloader-content">
+    <!-- Logo -->
+    <img 
+      src="https://civilprom.s3.eu-north-1.amazonaws.com/HelibalearesLogo.svg" 
+      alt="Helibaleares" 
+      class="preloader-logo"
+    />
+    
+    <!-- Apple-like Spinner (12 pétales) -->
+    <div class="ios-spinner">
+      <div class="blade"></div>
+      <div class="blade"></div>
+      <div class="blade"></div>
+      <div class="blade"></div>
+      <div class="blade"></div>
+      <div class="blade"></div>
+      <div class="blade"></div>
+      <div class="blade"></div>
+      <div class="blade"></div>
+      <div class="blade"></div>
+      <div class="blade"></div>
+      <div class="blade"></div>
+    </div>
+    
+    <!-- Texte -->
+    <p class="preloader-text">Loading your experience.</p>
+  </div>
+</div>
+
+<style>
+  #app-preloader {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+  }
+
+  #app-preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .preloader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+  }
+
+  .preloader-logo {
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Spinner style Apple (iOS Petals) */
+  .ios-spinner {
+    position: relative;
+    width: 28px;
+    height: 28px;
+  }
+
+  .ios-spinner .blade {
+    position: absolute;
+    left: 46%;
+    top: 0;
+    width: 8%;
+    height: 28%;
+    background-color: #8e8e93;
+    border-radius: 4px;
+    transform-origin: center 175%;
+    animation: ios-fade 1s linear infinite;
+  }
+
+  .ios-spinner .blade:nth-child(1)  { transform: rotate(0deg); animation-delay: 0s; }
+  .ios-spinner .blade:nth-child(2)  { transform: rotate(30deg); animation-delay: -0.9167s; }
+  .ios-spinner .blade:nth-child(3)  { transform: rotate(60deg); animation-delay: -0.8333s; }
+  .ios-spinner .blade:nth-child(4)  { transform: rotate(90deg); animation-delay: -0.75s; }
+  .ios-spinner .blade:nth-child(5)  { transform: rotate(120deg); animation-delay: -0.6667s; }
+  .ios-spinner .blade:nth-child(6)  { transform: rotate(150deg); animation-delay: -0.5833s; }
+  .ios-spinner .blade:nth-child(7)  { transform: rotate(180deg); animation-delay: -0.5s; }
+  .ios-spinner .blade:nth-child(8)  { transform: rotate(210deg); animation-delay: -0.4167s; }
+  .ios-spinner .blade:nth-child(9)  { transform: rotate(240deg); animation-delay: -0.3333s; }
+  .ios-spinner .blade:nth-child(10) { transform: rotate(270deg); animation-delay: -0.25s; }
+  .ios-spinner .blade:nth-child(11) { transform: rotate(300deg); animation-delay: -0.1667s; }
+  .ios-spinner .blade:nth-child(12) { transform: rotate(330deg); animation-delay: -0.0833s; }
+
+  @keyframes ios-fade {
+    0% { opacity: 1; }
+    100% { opacity: 0.15; }
+  }
+
+  .preloader-text {
+    font-family: 'Civilprom', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    color: #6e6e73;
+    margin: 0;
+  }
+</style>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    // Bloque le scroll pendant le preloader
+    document.body.style.overflow = 'hidden';
+
+    setTimeout(() => {
+      const preloader = document.getElementById('app-preloader');
+      if (preloader) {
+        preloader.classList.add('fade-out');
+        document.body.style.overflow = '';
+        // Supprime l'élément du DOM après la transition de fade-out
+        setTimeout(() => preloader.remove(), 600);
+      }
+    }, 4000); // 4 secondes
+  });
+</script>
+<!-- FIN PRELOADER -->
+
+
 </html>
 '''
 
