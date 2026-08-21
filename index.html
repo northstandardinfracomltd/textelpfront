@@ -10,7 +10,7 @@
   <link rel="canonical" href="https://www.helibaleares.com/">
 
     <!-- Favicon -->
-  <link rel="icon" href="https://civilprom.s3.eu-north-1.amazonaws.com/FaviconHelibaleares2026.png" type="image/png">
+  <link rel="icon" href="https://civilprom.s3.eu-north-1.amazonaws.com/faviconV2helibaleares.png" type="image/png">
 
   <!-- 1. Google Site Verification (Search Console) -->
   <meta name="google-site-verification" content="google-site-verification=2038472910384729" />
@@ -90,7 +90,7 @@
       --primary: #8a243f;
       --primary-hover: #721b32;
       --text-main: #1d1d1f;
-      --text-muted: #666668;
+      --text-muted: #000668;
       --bg-light: #f7f7f8;
       --bg-white: #ffffff;
       --border-color: #e5e5ea;
@@ -593,6 +593,7 @@ font-size: 17px;
     .section-burgundy {
       background-color: #000;
       color: #ffffff;
+      border-radius: 33px;
     }
 
     .section-burgundy .section-title {
@@ -1123,7 +1124,7 @@ background: #ffffff;
 
     .standard-item p {
       font-size: 0.92rem; /* Augmenté */
-      color: #666;
+      color: #000;
       padding-left: 14px;
       line-height: 1.5;
     }
@@ -1744,7 +1745,7 @@ src="https://maps.google.com/maps?q=38.879403,1.374097&t=&z=14&ie=UTF8&iwloc=&ou
   <section id="destinations" class="section-wrap">
     <div class="container">
       <div class="section-heading-area">
-        <h2 class="section-title">ALL DESTINATIONS</h2>
+        <h2 class="section-title">DESTINATIONS</h2>
       </div>
 
       <div class="destinations-grid-9">
@@ -1899,7 +1900,7 @@ src="https://maps.google.com/maps?q=38.879403,1.374097&t=&z=14&ie=UTF8&iwloc=&ou
   <section id="activities" class="section-wrap" style="background-color: var(--bg-light);">
     <div class="container">
       <div class="section-heading-area">
-        <h2 class="section-title">ALL HELICOPTER SERVICES</h2>
+        <h2 class="section-title">HELICOPTER SERVICES</h2>
       </div>
 
       <div class="services-grid-4">
@@ -1951,7 +1952,7 @@ src="https://maps.google.com/maps?q=38.879403,1.374097&t=&z=14&ie=UTF8&iwloc=&ou
   <section id="inquire" class="section-wrap" style="background-color: #fafafb;">
     <div class="container">
       <div class="section-heading-area">
-        <h2 class="section-title">CONTACT FORM</h2>
+        <h2 class="section-title">Share your request with us, and we will contact you today</h2>
       </div>
 
       <div class="contact-layout">
@@ -2143,8 +2144,7 @@ src="https://maps.google.com/maps?q=38.879403,1.374097&t=&z=14&ie=UTF8&iwloc=&ou
         <!-- Left: Prohibited -->
         <div class="safety-card">
           <h3 style="font-size: 1.15rem;">PROHIBITED ITEMS</h3>
-          <div class="safety-tag">Important notice.</div>
-          <p style="font-size: 0.95rem; color: #666; margin-top: 10px;">
+          <p style="font-size: 0.95rem; color: #000; margin-top: 10px;">
             In accordance with international aviation security rules, the following items are strictly prohibited in carry-on and luggage on all flights:
           </p>
           <ul class="prohibited-list">
@@ -2157,39 +2157,7 @@ src="https://maps.google.com/maps?q=38.879403,1.374097&t=&z=14&ie=UTF8&iwloc=&ou
           </ul>
         </div>
 
-        <!-- Right: Crew Standards -->
-        <div class="safety-card">
-          <h3 style="font-size: 1.15rem;">SEASONED PILOTS &amp; ULTIMATE SAFETY</h3>
-          <div class="safety-tag" style="color:#666;">Professional Crew Standards</div>
 
-          <div class="crew-badge-banner">
-            <h5>Dual-Pilot Crew (On demand).</h5>
-            <p>Available upon request for any of our helicopter transfers.</p>
-          </div>
-
-          <p style="font-size: 0.95rem; color: #555; margin-bottom: 15px;">
-            At Helibaleares, we maintain a flawless safety record. All of our pilots are veteran captains with thousands of logged hours in high-density European airspace.
-          </p>
-
-          <div class="standards-list">
-            <div class="standard-item">
-              <h5>Minimum 3,000 Flight Hours</h5>
-              <p>Our pilots are veteran captains with deep experience flying high-end corporate transfers.</p>
-            </div>
-            <div class="standard-item">
-              <h5>Frequent Simulator Assessments</h5>
-              <p>Recurrent multi-engine and bad-weather flight simulator checkups twice per year.</p>
-            </div>
-            <div class="standard-item">
-              <h5>Localized Airspace Experts</h5>
-              <p>Extensive knowledge of specific approach vectors for Monaco Helipad Fontvieille, Malta and Gozo, and Balearic Islands.</p>
-            </div>
-            <div class="standard-item">
-              <h5>Elite Maintenance &amp; Zero-Risk Policy</h5>
-              <p>Helibaleares applies the utmost care and rigorous maintenance standards. No risks are taken—redundancy and anticipation are our absolute priority.</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -2286,12 +2254,12 @@ Instagram: @helibaleares
       </div>
 
       <div class="chatbox-body">
-<form id="stepChatForm">
+<form id="stepChatForm" onsubmit="return false;">
   <!-- Step 1: Nom -->
   <div class="chat-step active" data-step="1">
     <div class="chat-msg-bot">Hello! Welcome to HeliBaleares. What is your full name?</div>
     <div class="chat-input-wrap">
-      <input type="text" id="chat_name" class="form-input" placeholder="e.g. Jean Dupont" required>
+      <input type="text" id="chat_name" class="form-input" placeholder="e.g. Jean Dupont">
     </div>
     <div class="chat-actions-row">
       <button type="button" class="btn-chat-next" onclick="nextChatStep(1)">Next →</button>
@@ -2299,10 +2267,10 @@ Instagram: @helibaleares
   </div>
 
   <!-- Step 2: Email -->
-  <div class="chat-step" data-step="2">
+  <div class="chat-step" data-step="2" style="display:none;">
     <div class="chat-msg-bot">Pleasure to meet you. What is the best email address to send your instant quote?</div>
     <div class="chat-input-wrap">
-      <input type="email" id="chat_email" class="form-input" placeholder="e.g. contact@domain.com" required>
+      <input type="email" id="chat_email" class="form-input" placeholder="e.g. contact@domain.com">
     </div>
     <div class="chat-actions-row">
       <button type="button" class="btn-chat-prev" onclick="prevChatStep(2)">Back</button>
@@ -2311,7 +2279,7 @@ Instagram: @helibaleares
   </div>
 
   <!-- Step 3: Téléphone -->
-  <div class="chat-step" data-step="3">
+  <div class="chat-step" data-step="3" style="display:none;">
     <div class="chat-msg-bot">What is your phone or WhatsApp number for quick flight updates?</div>
     <div class="chat-input-wrap">
       <input type="tel" id="chat_phone" class="form-input" placeholder="e.g. +34 600 000 000">
@@ -2323,10 +2291,10 @@ Instagram: @helibaleares
   </div>
 
   <!-- Step 4: Itinéraire -->
-  <div class="chat-step" data-step="4">
+  <div class="chat-step" data-step="4" style="display:none;">
     <div class="chat-msg-bot">Where would you like to fly? (e.g. Ibiza to Mallorca, Formentera, private villa...)</div>
     <div class="chat-input-wrap">
-      <input type="text" id="chat_route" class="form-input" placeholder="e.g. Ibiza Airport to Formentera" required>
+      <input type="text" id="chat_route" class="form-input" placeholder="e.g. Ibiza Airport to Formentera">
     </div>
     <div class="chat-actions-row">
       <button type="button" class="btn-chat-prev" onclick="prevChatStep(4)">Back</button>
@@ -2335,7 +2303,7 @@ Instagram: @helibaleares
   </div>
 
   <!-- Step 5: Appareil -->
-  <div class="chat-step" data-step="5">
+  <div class="chat-step" data-step="5" style="display:none;">
     <div class="chat-msg-bot">Which aircraft configuration do you prefer?</div>
     <div class="chat-input-wrap">
       <select id="chat_aircraft" class="form-select">
@@ -2350,7 +2318,7 @@ Instagram: @helibaleares
   </div>
 
   <!-- Step 6: Date & Créneau -->
-  <div class="chat-step" data-step="6">
+  <div class="chat-step" data-step="6" style="display:none;">
     <div class="chat-msg-bot">What is your target flight date and preferred departure time?</div>
     <div class="chat-input-wrap" style="display:flex; flex-direction:column; gap:8px;">
       <input type="date" id="chat_date" class="form-input">
@@ -2368,7 +2336,7 @@ Instagram: @helibaleares
   </div>
 
   <!-- Step 7: Passagers -->
-  <div class="chat-step" data-step="7">
+  <div class="chat-step" data-step="7" style="display:none;">
     <div class="chat-msg-bot">How many passengers will be traveling?</div>
     <div class="chat-input-wrap">
       <select id="chat_passengers" class="form-select">
@@ -2388,7 +2356,7 @@ Instagram: @helibaleares
   </div>
 
   <!-- Step 8: Double Pilote -->
-  <div class="chat-step" data-step="8">
+  <div class="chat-step" data-step="8" style="display:none;">
     <div class="chat-msg-bot">Would you like an on-demand Dual-Pilot crew for your transfer?</div>
     <div class="chat-input-wrap">
       <select id="chat_dualpilot" class="form-select">
@@ -2403,20 +2371,20 @@ Instagram: @helibaleares
   </div>
 
   <!-- Step 9: Exigences & Submit -->
-  <div class="chat-step" data-step="9">
+  <div class="chat-step" data-step="9" style="display:none;">
     <div class="chat-msg-bot">Any special requirements (luggage size, villa coordinates, VIP catering)?</div>
     <div class="chat-input-wrap">
       <textarea id="chat_notes" class="form-textarea" placeholder="Optional notes..."></textarea>
     </div>
     <div class="chat-actions-row">
-      <button type="button" class="btn-chat-prev" onclick="prevChatStep(9)">←</button>
-      <button type="button" class="btn-chat-next" id="chatSubmitBtn" onclick="submitChatInquiry()">Send Inquiry</button>
+      <button type="button" class="btn-chat-prev" onclick="prevChatStep(9)">Back</button>
+      <button type="button" class="btn-chat-next" id="chatSubmitBtn" onclick="submitChatInquiry(event)">Send Inquiry</button>
     </div>
   </div>
 
   <!-- Step 10: Confirmation -->
-  <div class="chat-step" data-step="10">
-    <div class="chat-msg-bot" style="background:#e8f8f2; color:#0e6245;">
+  <div class="chat-step" data-step="10" style="display:none;">
+    <div class="chat-msg-bot" style="background:#e8f8f2; color:#0e6245; padding:15px; border-radius:8px;">
       🎉 <strong>Thank you!</strong> Your flight inquiry has been successfully sent to our dispatch desk. You will receive your quote within 1 hour.
     </div>
     <div class="chat-actions-row" style="margin-top:20px;">
@@ -2428,7 +2396,7 @@ Instagram: @helibaleares
 <script>
   const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxBnZy6tSaB5LJ4hvPfcf4t6lqRZ_gMcUx0UxQKSeme4EStxXhh_ejJW12ngPlPueQq-Q/exec';
 
-  // Initialisation de la date par défaut (+4 jours)
+  // Initialisation Date (+4 jours)
   document.addEventListener('DOMContentLoaded', () => {
     const chatDateInput = document.getElementById('chat_date');
     if (chatDateInput) {
@@ -2441,32 +2409,41 @@ Instagram: @helibaleares
     }
   });
 
-  // Navigation étape par étape
+  // Gestion des étapes
   function showStep(stepNumber) {
-    document.querySelectorAll('#stepChatForm .chat-step').forEach(el => {
+    const steps = document.querySelectorAll('#stepChatForm .chat-step');
+    steps.forEach(el => {
       el.classList.remove('active');
       el.style.display = 'none';
     });
-    const current = document.querySelector(`#stepChatForm .chat-step[data-step="${stepNumber}"]`);
-    if (current) {
-      current.classList.add('active');
-      current.style.display = 'block';
+    const target = document.querySelector(`#stepChatForm .chat-step[data-step="${stepNumber}"]`);
+    if (target) {
+      target.classList.add('active');
+      target.style.display = 'block';
     }
   }
 
   function nextChatStep(currentStep) {
-    // Validations rapides avant passage à l'étape suivante
     if (currentStep === 1) {
       const name = document.getElementById('chat_name').value.trim();
-      if (!name) { alert('Please enter your name.'); return; }
+      if (!name) {
+        alert('Please enter your full name.');
+        return;
+      }
     }
     if (currentStep === 2) {
       const email = document.getElementById('chat_email').value.trim();
-      if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+      if (!email || !email.includes('@')) {
+        alert('Please enter a valid email address.');
+        return;
+      }
     }
     if (currentStep === 4) {
       const route = document.getElementById('chat_route').value.trim();
-      if (!route) { alert('Please specify your requested route.'); return; }
+      if (!route) {
+        alert('Please enter your requested route.');
+        return;
+      }
     }
     showStep(currentStep + 1);
   }
@@ -2475,50 +2452,66 @@ Instagram: @helibaleares
     showStep(currentStep - 1);
   }
 
-  // Envoi des données vers Google Sheets via Apps Script
-  async function submitChatInquiry() {
+  // Soumission finale
+  async function submitChatInquiry(event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
     const submitBtn = document.getElementById('chatSubmitBtn');
     const originalText = submitBtn.textContent;
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
 
-    const flightDate = document.getElementById('chat_date').value || '';
-    const flightTime = document.getElementById('chat_time').value || '';
-    const combinedDateTime = flightDate ? `${flightDate} (${flightTime})` : flightTime;
+    // Extraction sécurisée des valeurs
+    const nameVal = document.getElementById('chat_name') ? document.getElementById('chat_name').value.trim() : '';
+    const emailVal = document.getElementById('chat_email') ? document.getElementById('chat_email').value.trim() : '';
+    const phoneVal = document.getElementById('chat_phone') ? document.getElementById('chat_phone').value.trim() : '';
+    const routeVal = document.getElementById('chat_route') ? document.getElementById('chat_route').value.trim() : '';
+    const aircraftVal = document.getElementById('chat_aircraft') ? document.getElementById('chat_aircraft').value : 'Airbus H135';
+    const dateVal = document.getElementById('chat_date') ? document.getElementById('chat_date').value : '';
+    const timeVal = document.getElementById('chat_time') ? document.getElementById('chat_time').value : '';
+    const passengersVal = document.getElementById('chat_passengers') ? document.getElementById('chat_passengers').value : '1';
+    const dualVal = document.getElementById('chat_dualpilot') ? document.getElementById('chat_dualpilot').value : 'Non';
+    const notesVal = document.getElementById('chat_notes') ? document.getElementById('chat_notes').value.trim() : '';
+
+    const combinedDateTime = dateVal ? `${dateVal} (${timeVal})` : timeVal;
 
     const payload = {
-      FullName: document.getElementById('chat_name').value.trim(),
-      EmailAddress: document.getElementById('chat_email').value.trim(),
-      PhoneWhatsApp: document.getElementById('chat_phone').value.trim() || 'Non spécifié',
-      RouteDest: document.getElementById('chat_route').value.trim(),
-      Aircraft: document.getElementById('chat_aircraft').value,
-      DateTime: combinedDateTime,
-      Passengers: document.getElementById('chat_passengers').value,
-      Dual: document.getElementById('chat_dualpilot').value,
-      Requirements: document.getElementById('chat_notes').value.trim() || 'Aucune'
+      FullName: nameVal || "Non spécifié",
+      EmailAddress: emailVal || "Non spécifié",
+      PhoneWhatsApp: phoneVal || "Non spécifié",
+      RouteDest: routeVal || "Custom Flight",
+      Aircraft: aircraftVal,
+      DateTime: combinedDateTime || "À confirmer",
+      Passengers: passengersVal,
+      Dual: dualVal,
+      Requirements: notesVal || "Aucune"
     };
 
     try {
       await fetch(APPS_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
+        keepalive: true,
         headers: {
           'Content-Type': 'text/plain;charset=utf-8'
         },
         body: JSON.stringify(payload)
       });
 
-      // Passage à l'écran de confirmation
+      // Affiche l'étape 10 (Remerciement)
       showStep(10);
     } catch (error) {
-      alert('An error occurred while submitting your inquiry. Please try again or email infos@helibaleares.com.');
+      console.error("Submission error:", error);
+      alert('An error occurred while sending your request. Please contact infos@helibaleares.com directly.');
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = originalText;
     }
   }
 
-  // Fermeture du chat/modal si présent
   function closeChatboxModal() {
     const modal = document.getElementById('chatboxModal') || document.querySelector('.chat-modal');
     if (modal) {
