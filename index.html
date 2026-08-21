@@ -10,7 +10,7 @@
   <link rel="canonical" href="https://www.helibaleares.com/">
 
     <!-- Favicon -->
-  <link rel="icon" href="https://civilprom.s3.eu-north-1.amazonaws.com/faviconV2helibaleares.png" type="image/png">
+  <link rel="icon" href="https://civilprom.s3.eu-north-1.amazonaws.com/FaviconHELIBALEARESV8.png" type="image/png">
 
   <!-- 1. Google Site Verification (Search Console) -->
   <meta name="google-site-verification" content="google-site-verification=2038472910384729" />
@@ -1840,7 +1840,7 @@ src="https://maps.google.com/maps?q=38.879403,1.374097&t=&z=14&ie=UTF8&iwloc=&ou
             <div class="dest-desc">Fast and direct helicopter shuttle serving Menorca Airport (MAH).</div>
             <div class="dest-actions">
               <button type="button" onclick="openChatboxWithRoute('Menorca Airport (MAH)')" class="btn-dest-contact">Contact Us</button>
-              <a href="????????" target="_blank" rel="noopener noreferrer" class="btn-dest-maps">Maps Meeting Point</a>
+              <a href="https://maps.app.goo.gl/s4TgBG4GEyV3P5FQ8" target="_blank" rel="noopener noreferrer" class="btn-dest-maps">Maps Meeting Point</a>
             </div>
           </div>
         </div>
@@ -1856,7 +1856,7 @@ src="https://maps.google.com/maps?q=38.879403,1.374097&t=&z=14&ie=UTF8&iwloc=&ou
             <div class="dest-desc">Discreet landing at preserved private estates and villas in Menorca.</div>
             <div class="dest-actions">
               <button type="button" onclick="openChatboxWithRoute('Menorca Inland & Estates')" class="btn-dest-contact">Contact Us</button>
-              <a href="??????" target="_blank" rel="noopener noreferrer" class="btn-dest-maps">Maps Meeting Point</a>
+              <a href="https://maps.app.goo.gl/s4TgBG4GEyV3P5FQ8" target="_blank" rel="noopener noreferrer" class="btn-dest-maps">Maps Meeting Point</a>
             </div>
           </div>
         </div>
@@ -2218,6 +2218,9 @@ Instagram: @helibaleares
         <p>
           – Documentation: We will need one government-issued photo ID from one passenger to register all luggage under their name.
         </p>
+                <p>
+          <a href="/terms2026helibaleares" style="font-weight:700; font-size:0.95rem; color: #3c0fff;">Terms and conditions 2026.</a>
+        </p>
       </div>
 
 
@@ -2254,7 +2257,11 @@ Instagram: @helibaleares
       </div>
 
       <div class="chatbox-body">
-<form id="stepChatForm" onsubmit="return false;">
+
+
+
+
+<form id="stepChatForm" onsubmit="event.preventDefault();">
   <!-- Step 1: Nom -->
   <div class="chat-step active" data-step="1">
     <div class="chat-msg-bot">Hello! Welcome to HeliBaleares. What is your full name?</div>
@@ -2267,7 +2274,7 @@ Instagram: @helibaleares
   </div>
 
   <!-- Step 2: Email -->
-  <div class="chat-step" data-step="2" style="display:none;">
+  <div class="chat-step" data-step="2">
     <div class="chat-msg-bot">Pleasure to meet you. What is the best email address to send your instant quote?</div>
     <div class="chat-input-wrap">
       <input type="email" id="chat_email" class="form-input" placeholder="e.g. contact@domain.com">
@@ -2279,7 +2286,7 @@ Instagram: @helibaleares
   </div>
 
   <!-- Step 3: Téléphone -->
-  <div class="chat-step" data-step="3" style="display:none;">
+  <div class="chat-step" data-step="3">
     <div class="chat-msg-bot">What is your phone or WhatsApp number for quick flight updates?</div>
     <div class="chat-input-wrap">
       <input type="tel" id="chat_phone" class="form-input" placeholder="e.g. +34 600 000 000">
@@ -2291,7 +2298,7 @@ Instagram: @helibaleares
   </div>
 
   <!-- Step 4: Itinéraire -->
-  <div class="chat-step" data-step="4" style="display:none;">
+  <div class="chat-step" data-step="4">
     <div class="chat-msg-bot">Where would you like to fly? (e.g. Ibiza to Mallorca, Formentera, private villa...)</div>
     <div class="chat-input-wrap">
       <input type="text" id="chat_route" class="form-input" placeholder="e.g. Ibiza Airport to Formentera">
@@ -2303,7 +2310,7 @@ Instagram: @helibaleares
   </div>
 
   <!-- Step 5: Appareil -->
-  <div class="chat-step" data-step="5" style="display:none;">
+  <div class="chat-step" data-step="5">
     <div class="chat-msg-bot">Which aircraft configuration do you prefer?</div>
     <div class="chat-input-wrap">
       <select id="chat_aircraft" class="form-select">
@@ -2318,7 +2325,7 @@ Instagram: @helibaleares
   </div>
 
   <!-- Step 6: Date & Créneau -->
-  <div class="chat-step" data-step="6" style="display:none;">
+  <div class="chat-step" data-step="6">
     <div class="chat-msg-bot">What is your target flight date and preferred departure time?</div>
     <div class="chat-input-wrap" style="display:flex; flex-direction:column; gap:8px;">
       <input type="date" id="chat_date" class="form-input">
@@ -2336,7 +2343,7 @@ Instagram: @helibaleares
   </div>
 
   <!-- Step 7: Passagers -->
-  <div class="chat-step" data-step="7" style="display:none;">
+  <div class="chat-step" data-step="7">
     <div class="chat-msg-bot">How many passengers will be traveling?</div>
     <div class="chat-input-wrap">
       <select id="chat_passengers" class="form-select">
@@ -2356,7 +2363,7 @@ Instagram: @helibaleares
   </div>
 
   <!-- Step 8: Double Pilote -->
-  <div class="chat-step" data-step="8" style="display:none;">
+  <div class="chat-step" data-step="8">
     <div class="chat-msg-bot">Would you like an on-demand Dual-Pilot crew for your transfer?</div>
     <div class="chat-input-wrap">
       <select id="chat_dualpilot" class="form-select">
@@ -2371,7 +2378,7 @@ Instagram: @helibaleares
   </div>
 
   <!-- Step 9: Exigences & Submit -->
-  <div class="chat-step" data-step="9" style="display:none;">
+  <div class="chat-step" data-step="9">
     <div class="chat-msg-bot">Any special requirements (luggage size, villa coordinates, VIP catering)?</div>
     <div class="chat-input-wrap">
       <textarea id="chat_notes" class="form-textarea" placeholder="Optional notes..."></textarea>
@@ -2383,7 +2390,7 @@ Instagram: @helibaleares
   </div>
 
   <!-- Step 10: Confirmation -->
-  <div class="chat-step" data-step="10" style="display:none;">
+  <div class="chat-step" data-step="10">
     <div class="chat-msg-bot" style="background:#e8f8f2; color:#0e6245; padding:15px; border-radius:8px;">
       🎉 <strong>Thank you!</strong> Your flight inquiry has been successfully sent to our dispatch desk. You will receive your quote within 1 hour.
     </div>
@@ -2396,7 +2403,7 @@ Instagram: @helibaleares
 <script>
   const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxBnZy6tSaB5LJ4hvPfcf4t6lqRZ_gMcUx0UxQKSeme4EStxXhh_ejJW12ngPlPueQq-Q/exec';
 
-  // Initialisation Date (+4 jours)
+  // 1. Initialisation Date (+4 jours)
   document.addEventListener('DOMContentLoaded', () => {
     const chatDateInput = document.getElementById('chat_date');
     if (chatDateInput) {
@@ -2409,103 +2416,85 @@ Instagram: @helibaleares
     }
   });
 
-  // Gestion des étapes
+  // 2. Navigation entre étapes
   function showStep(stepNumber) {
     const steps = document.querySelectorAll('#stepChatForm .chat-step');
-    steps.forEach(el => {
-      el.classList.remove('active');
-      el.style.display = 'none';
-    });
+    steps.forEach(el => el.classList.remove('active'));
+    
     const target = document.querySelector(`#stepChatForm .chat-step[data-step="${stepNumber}"]`);
     if (target) {
       target.classList.add('active');
-      target.style.display = 'block';
     }
   }
 
   function nextChatStep(currentStep) {
+    // Validation des champs
     if (currentStep === 1) {
       const name = document.getElementById('chat_name').value.trim();
       if (!name) {
         alert('Please enter your full name.');
         return;
       }
-    }
-    if (currentStep === 2) {
+    } else if (currentStep === 2) {
       const email = document.getElementById('chat_email').value.trim();
       if (!email || !email.includes('@')) {
         alert('Please enter a valid email address.');
         return;
       }
-    }
-    if (currentStep === 4) {
+    } else if (currentStep === 4) {
       const route = document.getElementById('chat_route').value.trim();
       if (!route) {
         alert('Please enter your requested route.');
         return;
       }
     }
-    showStep(currentStep + 1);
+
+    showStep(Number(currentStep) + 1);
   }
 
   function prevChatStep(currentStep) {
-    showStep(currentStep - 1);
+    showStep(Number(currentStep) - 1);
   }
 
-  // Soumission finale
+  // 3. Soumission vers Google Apps Script
   async function submitChatInquiry(event) {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+    if (event) event.preventDefault();
 
     const submitBtn = document.getElementById('chatSubmitBtn');
     const originalText = submitBtn.textContent;
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
 
-    // Extraction sécurisée des valeurs
-    const nameVal = document.getElementById('chat_name') ? document.getElementById('chat_name').value.trim() : '';
-    const emailVal = document.getElementById('chat_email') ? document.getElementById('chat_email').value.trim() : '';
-    const phoneVal = document.getElementById('chat_phone') ? document.getElementById('chat_phone').value.trim() : '';
-    const routeVal = document.getElementById('chat_route') ? document.getElementById('chat_route').value.trim() : '';
-    const aircraftVal = document.getElementById('chat_aircraft') ? document.getElementById('chat_aircraft').value : 'Airbus H135';
-    const dateVal = document.getElementById('chat_date') ? document.getElementById('chat_date').value : '';
-    const timeVal = document.getElementById('chat_time') ? document.getElementById('chat_time').value : '';
-    const passengersVal = document.getElementById('chat_passengers') ? document.getElementById('chat_passengers').value : '1';
-    const dualVal = document.getElementById('chat_dualpilot') ? document.getElementById('chat_dualpilot').value : 'Non';
-    const notesVal = document.getElementById('chat_notes') ? document.getElementById('chat_notes').value.trim() : '';
-
-    const combinedDateTime = dateVal ? `${dateVal} (${timeVal})` : timeVal;
+    const flightDate = document.getElementById('chat_date').value || '';
+    const flightTime = document.getElementById('chat_time').value || '';
+    const combinedDateTime = flightDate ? `${flightDate} (${flightTime})` : flightTime;
 
     const payload = {
-      FullName: nameVal || "Non spécifié",
-      EmailAddress: emailVal || "Non spécifié",
-      PhoneWhatsApp: phoneVal || "Non spécifié",
-      RouteDest: routeVal || "Custom Flight",
-      Aircraft: aircraftVal,
+      FullName: document.getElementById('chat_name').value.trim() || "Non spécifié",
+      EmailAddress: document.getElementById('chat_email').value.trim() || "Non spécifié",
+      PhoneWhatsApp: document.getElementById('chat_phone').value.trim() || "Non spécifié",
+      RouteDest: document.getElementById('chat_route').value.trim() || "Custom Flight",
+      Aircraft: document.getElementById('chat_aircraft').value,
       DateTime: combinedDateTime || "À confirmer",
-      Passengers: passengersVal,
-      Dual: dualVal,
-      Requirements: notesVal || "Aucune"
+      Passengers: document.getElementById('chat_passengers').value,
+      Dual: document.getElementById('chat_dualpilot').value,
+      Requirements: document.getElementById('chat_notes').value.trim() || "Aucune"
     };
 
     try {
       await fetch(APPS_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
-        keepalive: true,
         headers: {
           'Content-Type': 'text/plain;charset=utf-8'
         },
         body: JSON.stringify(payload)
       });
 
-      // Affiche l'étape 10 (Remerciement)
+      // Affiche l'étape 10 (Confirmation)
       showStep(10);
     } catch (error) {
-      console.error("Submission error:", error);
-      alert('An error occurred while sending your request. Please contact infos@helibaleares.com directly.');
+      alert('An error occurred while sending your request. Please contact infos@helibaleares.com.');
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = originalText;
