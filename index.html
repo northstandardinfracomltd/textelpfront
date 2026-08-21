@@ -1,4 +1,4 @@
-html_content = r'''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -1484,6 +1484,13 @@ html_content = r'''<!DOCTYPE html>
         max-height: 90vh;
       }
     }
+
+
+
+    .uplift {
+        margin-top: -200px;
+      }
+
   </style>
 </head>
 <body>
@@ -1526,7 +1533,7 @@ html_content = r'''<!DOCTYPE html>
   <section class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1 class="hero-title">PRIVATE &amp; SHARED HELICOPTER FLIGHTS IN THE BALEARIC ISLANDS</h1>
+      <h1 class="hero-title">THE PRIVATE OR SHARED FLIGHT EXPERIENCE IN AIRBUS H135 IN IBIZA, PALMA DE MALLORCA, MENORCA, ALICANTE & VALENCIA</h1>
       <p class="hero-subtitle">
         Book your bespoke helicopter flight in Ibiza or private helicopter charter in Mallorca with HeliBaleares, direct air operator since 2003. We provide direct transfers between Ibiza (IBZ), Formentera, Palma de Mallorca (PMI), Menorca, Alicante, and Valencia with our twin-engine Airbus H135. Enjoy direct operator pricing with zero broker fees.
       </p>
@@ -1546,14 +1553,8 @@ html_content = r'''<!DOCTYPE html>
   <!-- Section 1: Aircraft Presentation -->
   <section id="aircraft" class="section-wrap">
     <div class="container">
-      <div class="section-heading-area">
-        <h2 class="section-title">THE PRIVATE OR SHARED FLIGHT EXPERIENCE IN AIRBUS H135 IN IBIZA, PALMA DE MALLORCA, MENORCA, ALICANTE &amp; VALENCIA</h2>
-        <p class="section-desc">
-          The twin-engine Airbus H135 is the gold standard for luxury transfers, combining exceptional safety, high speed, quiet cabin comfort, and generous luggage capacity.
-        </p>
-      </div>
 
-      <div class="card-master">
+      <div class="card-master uplift">
         <div class="aircraft-hero-row">
           <div class="aircraft-image-box">
             <img src="https://civilprom.s3.eu-north-1.amazonaws.com/HELIBALEARES++H135+FlightView.jpeg" alt="Helicopter flight mallorca ibiza - Airbus H135 Flight View">
@@ -2592,7 +2593,7 @@ html_content = r'''<!DOCTYPE html>
     />
         <!-- Texte -->
     <p class="preloader-text">Loading your experience.</p>
-    
+
     <!-- Apple-like Spinner (12 pétales) -->
     <div class="ios-spinner">
       <div class="blade"></div>
@@ -2714,9 +2715,3 @@ html_content = r'''<!DOCTYPE html>
 
 
 </html>
-'''
-
-with open('index.html', 'w', encoding='utf-8') as f:
-    f.write(html_content)
-
-print("Updated index.html successfully.")
