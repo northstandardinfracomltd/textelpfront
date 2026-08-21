@@ -591,9 +591,11 @@ font-size: 17px;
 
     /* Section 2: Burgundy Operations & Team */
     .section-burgundy {
-      background-color: #000;
-      color: #ffffff;
-      border-radius: 33px;
+    background-color: #000;
+    color: #ffffff;
+    max-width: 98%;
+    border-radius: 30px;
+    margin: auto;
     }
 
     .section-burgundy .section-title {
@@ -617,13 +619,13 @@ font-size: 17px;
     }
 
     .ops-info p {
-      font-size: 1rem; /* Augmenté */
-      line-height: 1.65;
-      color: rgba(255, 255, 255, 0.92);
+font-size: 18px;
+    line-height: 1.65;
+    color: #fff;
     }
 
     .map-embed-container {
-      border-radius: 12px;
+      border-radius: 25px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
       background: #fff;
@@ -652,13 +654,13 @@ font-size: 17px;
     }
 
     .team-card img {
-width: 110px;
+    width: 110px;
     height: 110px;
     border-radius: 50%;
     object-fit: cover;
     margin: 0 auto 16px auto;
-    outline-offset: 7px;
-    outline: 3.5px solid #5df6ff;
+    outline-offset: 8px;
+    outline: 4px solid #5df6ff;
     border: none;
     }
 
@@ -1071,13 +1073,13 @@ background: #ffffff;
       position: relative;
       padding-left: 22px;
       font-size: 0.95rem; /* Augmenté */
-      color: #555;
+      color: #000;
       line-height: 1.5;
     }
 
     .prohibited-list li::before {
       content: "•";
-      color: #e04b6b;
+      color: #3c0fff;
       font-size: 1.4rem;
       position: absolute;
       left: 0;
@@ -1952,7 +1954,7 @@ src="https://maps.google.com/maps?q=38.879403,1.374097&t=&z=14&ie=UTF8&iwloc=&ou
   <section id="inquire" class="section-wrap" style="background-color: #fafafb;">
     <div class="container">
       <div class="section-heading-area">
-        <h2 class="section-title">Share your request with us, and we will contact you today</h2>
+        <h2 class="section-title">Share your request, and we will contact you today</h2>
       </div>
 
       <div class="contact-layout">
@@ -1967,7 +1969,7 @@ src="https://maps.google.com/maps?q=38.879403,1.374097&t=&z=14&ie=UTF8&iwloc=&ou
           <div class="contact-info-card">
             <h4>Phone (EN / ES)</h4>
             <p>Group telephone support (English &amp; Spanish). Open Monday to Friday: 09:00–12:00 &amp; 14:00–16:00.</p>
-            <a href="tel:+34971000000" class="btn-contact-action">Call us</a>
+            <a href="tel:+44(746)2111601" class="btn-contact-action">Call us</a>
           </div>
         </div>
 
@@ -2176,7 +2178,7 @@ src="https://maps.google.com/maps?q=38.879403,1.374097&t=&z=14&ie=UTF8&iwloc=&ou
   />
 </div>
           <p>
-            Operating premium on-demand helicopter transfers across the Balearic Archipelago and mainland Spain since 2003. Direct flight operator featuring our Airbus H135 twin-engine helicopter.
+            Operating premium on-demand helicopter transfers across the Balearic Islands and Mainland Spain since 2003. Direct flight operator featuring our Airbus H135 twin-engine helicopter.
           </p>
           <a href="https://instagram.com/helibaleares" target="_blank" rel="noopener noreferrer" class="footer-insta-btn">
 Instagram: @helibaleares
@@ -2186,19 +2188,18 @@ Instagram: @helibaleares
         <div class="footer-col">
           <h5>Destinations &amp; Bases</h5>
           <ul class="footer-links-list">
-            <li>Ibiza Airport (IBZ) &amp; Inland Fincas</li>
-            <li>Formentera Direct Shuttle</li>
-            <li>Palma de Mallorca Airport (PMI) &amp; Inland</li>
-            <li>Menorca Airport (MAH) &amp; Inland</li>
+            <li>Ibiza Airport (IBZ)</li>
+            <li>Palma de Mallorca Airport (PMI)</li>
+            <li>Menorca Airport (MAH)</li>
             <li>Alicante Airport (ALC)</li>
             <li>Valencia Airport (VLC)</li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h5>Direct Flight Dispatch</h5>
+          <h5>Free Quote, Quick Response</h5>
           <p style="font-size:0.92rem; color:#000; line-height:1.55; margin-bottom:12px;">
-            For security, discretion, and instant flight scheduling, all transfers are operated directly by our flight crew. To reach our dispatch desk, email:
+A personalized request for a unique experience—contact us for a quote. Here is our email address, which we monitor 24/7:
           </p>
           <a href="mailto:infos@helibaleares.com" style="font-weight:700; font-size:0.95rem; color: #3c0fff;">infos@helibaleares.com</a>
         </div>
@@ -2268,7 +2269,7 @@ Instagram: @helibaleares
       <input type="text" id="chat_name" class="form-input" placeholder="e.g. Jean Dupont">
     </div>
     <div class="chat-actions-row">
-      <button type="button" class="btn-chat-next" data-next="2">Next →</button>
+      <button type="button" class="btn-chat-next" data-next="2">Next</button>
     </div>
   </div>
 
@@ -2314,7 +2315,6 @@ Instagram: @helibaleares
     <div class="chat-input-wrap">
       <select id="chat_aircraft" class="form-select">
         <option value="Airbus H135">Airbus H135 (Twin-Engine)</option>
-        <option value="Custom Fleet Request">Custom Fleet Request</option>
       </select>
     </div>
     <div class="chat-actions-row">
