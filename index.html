@@ -262,14 +262,15 @@ background: #ffffff !important;
 
     /* Hero Section avec fond subtil et fondu */
     .hero-section {
-      position: relative;
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: #f7f7f8 url('https://civilprom.s3.eu-north-1.amazonaws.com/Charter+HeliBaleares+-+Hero+Helico.png') center center/cover no-repeat;
-      padding: 90px 20px 110px 20px;
+padding-bottom: 0px !important;
+    margin-bottom: -20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #f7f7f8 url(https://civilprom.s3.eu-north-1.amazonaws.com/Charter+HeliBaleares+-+Hero+Helico.png) center center / cover no-repeat;
+    padding: 70px 20px 107px 20px;
     }
 
     /* Overlay fort pour estomper et fondre l'image d'arrière plan */
@@ -283,22 +284,24 @@ background: #ffffff !important;
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 1100px;
+      max-width: 1300px;
       margin: 0 auto;
     }
 
     .hero-title {
       font-size: clamp(2rem, 5vw, 3.4rem);
-      line-height: 1.15;
-      color: #0b0b0d;
+      line-height: 1.4;
+      color: #000;
       margin-bottom: 24px;
+      letter-spacing: -1px;
     }
 
     .hero-subtitle {
-      font-size: 1.12rem; /* Augmenté */
-      color: #333336;
-      line-height: 1.65;
-      margin-bottom: 28px;
+font-size: 20px;
+    color: #000;
+    font-weight: 500;
+    line-height: 1.65;
+    margin-bottom: 28px;
     }
 
     .hero-insta-badge {
@@ -313,7 +316,7 @@ display: inline-flex;
     font-size: 0.98rem;
     color: #222;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-    margin-bottom: 35px;
+    margin-bottom: 0px;
     }
 
     .hero-actions {
@@ -1513,7 +1516,7 @@ width: 9px;
         <li><a href="#aircraft">Our Aircraft</a></li>
         <li><a href="#activities">Activities</a></li>
         <li><a href="#team">Meet Us</a></li>
-        <li><a href="#inquire" class="btn-header">Inquire Now</a></li>
+        <li><a href="#inquire" class="btn-header">Book Your Flight</a></li>
       </ul>
 
       <!-- Mobile Right Action (Same line as logo) -->
@@ -1526,29 +1529,32 @@ width: 9px;
     <div class="hero-overlay"></div>
     <div class="hero-content">
 <h1 class="hero-title">
-  Private or Shared Flights by Airbus H135 in <span class="highlightXXX">Ibiza</span>, Palma de <span class="highlightXXX">Mallorca</span>, Menorca, Alicante & Valencia
+  Private or Shared Flights by Airbus H135 <span class="highlightMMM">Helicopter</span> in <span class="highlightXXX">Ibiza</span>, Palma de <span class="highlightXXX">Mallorca</span>, Menorca, Alicante & Valencia
 </h1>
 <style>
   .highlightXXX {
-  background-color: #000;
-  color: #fff; /* Assure la lisibilité sur fond noir */
-  padding: 0.1em 0.35em; /* Espace autour du texte */
-  border-radius: 4px; /* Optionnel : adoucit les angles */
-  display: inline-block; /* Maintient un rendu propre */
+    background-color: #000;
+    color: #fff;
+    padding: 5px 16px 0px 16px;
+    border-radius: 0px;
+    display: inline-block;
 }
+
+  .highlightMMM {
+    background-color: #3c0fff;
+    color: #fff;
+    padding: 5px 16px 0px 16px;
+    border-radius: 0px;
+    display: inline-block;
+}
+
+
 </style>
-      <p class="hero-subtitle">
-        Book your bespoke helicopter flight in Ibiza or private helicopter charter in Mallorca with HeliBaleares, direct air operator since 2003. We provide direct transfers between Ibiza (IBZ), Formentera, Palma de Mallorca (PMI), Menorca, Alicante, and Valencia with our twin-engine Airbus H135. Enjoy direct operator pricing with zero broker fees.
-      </p>
       <div>
         <a href="https://instagram.com/helibaleares" target="_blank" rel="noopener noreferrer" class="hero-insta-badge">
-          <span>Follow us on Instagram: </span>
+          <span>Follow us on Instagram:</span>
           <strong>@helibaleares</strong>
         </a>
-      </div>
-      <div class="hero-actions">
-        <a href="#inquire" class="btn-primary">Book Your Flight</a>
-        <a href="#aircraft" class="btn-outline">Our Aircraft</a>
       </div>
     </div>
   </section>
