@@ -276,7 +276,7 @@ background: #ffffff !important;
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.82) 50%, rgba(255,255,255,0.94) 100%);
+      background: #fff;
       pointer-events: none;
     }
 
@@ -439,7 +439,7 @@ background: #ffffff;
     }
 
     .spec-label {
-      color: #666;
+      color: #000;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -511,7 +511,7 @@ background: #000000;
 
     .od-type {
       font-size: 0.82rem; /* Augmenté */
-      color: #888;
+      color: #000;
     }
 
     .od-badge-group {
@@ -1001,7 +1001,7 @@ background: #ffffff;
     }
 
     input:checked + .slider {
-      background-color: var(--primary);
+      background-color: #3c0fff;
     }
 
     input:checked + .slider:before {
@@ -1124,7 +1124,7 @@ background: #ffffff;
     /* Section 8: Footer */
     .site-footer {
       background: #ffffff;
-      border-top: 1px solid #ebebee;
+      border-top: 1px solid #dddddd;
       padding: 70px 0 30px 0;
     }
 
@@ -1137,7 +1137,7 @@ background: #ffffff;
 
     .footer-brand p {
       font-size: 0.95rem; /* Augmenté */
-      color: #666;
+      color: #000;
       line-height: 1.6;
       margin: 14px 0 20px 0;
       max-width: 340px;
@@ -1167,11 +1167,7 @@ background: #ffffff;
       flex-direction: column;
       gap: 10px;
       font-size: 0.92rem; /* Augmenté */
-      color: #666;
-    }
-
-    .footer-links-list a:hover {
-      color: var(--primary);
+      color: #000;
     }
 
     .footer-legal-block {
@@ -1194,6 +1190,7 @@ background: #ffffff;
     }
 
     .seo-keyword-cloud {
+          opacity: 0.3;
 text-align: left;
     background: transparent;
     border: none;
@@ -1294,7 +1291,7 @@ width: 9px;
     }
 
     .chatbox-header {
-      background: var(--primary);
+    background: rgb(60 15 255);
       color: #ffffff;
       padding: 16px 20px;
       display: flex;
@@ -1362,20 +1359,17 @@ width: 9px;
     }
 
     .btn-chat-next {
-      background: var(--primary);
-      color: #ffffff !important;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.92rem;
-      cursor: pointer;
-      flex-grow: 1;
-      text-align: center;
-    }
-
-    .btn-chat-next:hover {
-      background: var(--primary-hover);
+    background: rgb(60 15 255);
+    color: #ffffff !important;
+    border: none;
+    padding: 16px 18px;
+    border-radius: 0px;
+    font-weight: 800;
+    font-size: 17px;
+    font-family: 'Civilprom';
+    cursor: pointer;
+    flex-grow: 1;
+    text-align: center;
     }
 
     .btn-chat-prev {
@@ -1390,13 +1384,13 @@ width: 9px;
 
     .chat-progress-bar {
       height: 4px;
-      background: #eee;
+      background: #d0f0ff;
       width: 100%;
     }
 
     .chat-progress-fill {
       height: 100%;
-      background: var(--primary);
+      background: #40bfff;
       width: 10%;
       transition: width 0.3s ease;
     }
@@ -1531,14 +1525,25 @@ width: 9px;
   <section class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1 class="hero-title">Private or Shared Flights by Airbus H135 in Ibiza, Palma de Mallorca, Menorca, Alicante & Valencia</h1>
+<h1 class="hero-title">
+  Private or Shared Flights by Airbus H135 in <span class="highlightXXX">Ibiza</span>, Palma de <span class="highlightXXX">Mallorca</span>, Menorca, Alicante & Valencia
+</h1>
+<style>
+  .highlightXXX {
+  background-color: #000;
+  color: #fff; /* Assure la lisibilité sur fond noir */
+  padding: 0.1em 0.35em; /* Espace autour du texte */
+  border-radius: 4px; /* Optionnel : adoucit les angles */
+  display: inline-block; /* Maintient un rendu propre */
+}
+</style>
       <p class="hero-subtitle">
         Book your bespoke helicopter flight in Ibiza or private helicopter charter in Mallorca with HeliBaleares, direct air operator since 2003. We provide direct transfers between Ibiza (IBZ), Formentera, Palma de Mallorca (PMI), Menorca, Alicante, and Valencia with our twin-engine Airbus H135. Enjoy direct operator pricing with zero broker fees.
       </p>
       <div>
         <a href="https://instagram.com/helibaleares" target="_blank" rel="noopener noreferrer" class="hero-insta-badge">
-          <span>Follow us on Instagram:</span>
-          <strong>📷 @helibaleares</strong>
+          <span>Follow us on Instagram: </span>
+          <strong>@helibaleares</strong>
         </a>
       </div>
       <div class="hero-actions">
@@ -1924,46 +1929,6 @@ width: 9px;
     </div>
   </section>
 
-  <!-- Section 5: Popular Routes (Burgundy Section) -->
-  <section class="section-wrap section-burgundy">
-    <div class="container">
-      <div class="section-heading-area">
-        <h2 class="section-title" style="color:#fff;">POPULAR EXPERIENCES</h2>
-      </div>
-
-      <div class="popular-routes-grid">
-        <!-- Route 1 -->
-        <div class="pop-route-card">
-          <div class="pop-route-img">
-            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/Helibaleares+Image+Mallorca.jpg" alt="Helicopter flight and charter Mallorca to Ibiza">
-          </div>
-          <div class="pop-route-content">
-            <h4 class="pop-route-title">HELICOPTER FLIGHT &amp; CHARTER MALLORCA TO IBIZA</h4>
-            <p class="pop-route-desc">
-              Cross the Mediterranean Sea in a 35-minute direct flight between Palma de Mallorca Executive Terminal (PMI) and Ibiza VIP Terminal (IBZ) or your private villa. Premier helicopter flight and helicopter charter connection between Mallorca and Ibiza with our Airbus H135 twin-engine helicopter.
-            </p>
-          </div>
-        </div>
-
-        <!-- Route 2 -->
-        <div class="pop-route-card">
-          <div class="pop-route-img">
-            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/Helibaleares+Image+Ibiza.jpg" alt="Helicopter shuttle Ibiza to Formentera">
-          </div>
-          <div class="pop-route-content">
-            <h4 class="pop-route-title">HELICOPTER SHUTTLE IBIZA TO FORMENTERA</h4>
-            <p class="pop-route-desc">
-              The fastest and most comfortable transfer to Formentera directly from Ibiza Airport. Just 12 scenic minutes flying over the turquoise waters of Es Freus.
-            </p>
-          </div>
-        </div>
-
-
-
-
-      </div>
-    </div>
-  </section>
 
   <!-- Section 6: Inquire Flight Availability Form (Google Sheets Script Connected) -->
   <section id="inquire" class="section-wrap" style="background-color: #fafafb;">
@@ -2101,8 +2066,8 @@ width: 9px;
       <div class="safety-grid-2">
         <!-- Left: Prohibited -->
         <div class="safety-card">
-          <h3 style="font-size: 1.15rem;">STRICTLY PROHIBITED ON BOARD</h3>
-          <div class="safety-tag">Regulatory Compliance</div>
+          <h3 style="font-size: 1.15rem;">PROHIBITED ITEMS</h3>
+          <div class="safety-tag">Important notice.</div>
           <p style="font-size: 0.95rem; color: #666; margin-top: 10px;">
             In accordance with international aviation security rules, the following items are strictly prohibited in carry-on and luggage on all flights:
           </p>
@@ -2198,10 +2163,10 @@ Instagram: @helibaleares
       <div class="footer-legal-block">
         <h6>Legal Mentions, Regulations &amp; Flight Prerequisites.</h6>
         <p>
-          Eliance Civil HIS GROUP S.A. [AOC ES.AOC.131] is a licensed air carrier operating under EU aviation security protocols. Founded in 2003, we operate our Airbus H135 twin-engine helicopter. Flights are subject to weather conditions and air traffic control clearance.
+          – Eliance Civil HIS GROUP S.A. [AOC ES.AOC.131] is a licensed air carrier operating under EU aviation security protocols. Founded in 2003, we operate our Airbus H135 twin-engine helicopter. Flights are subject to weather conditions and air traffic control clearance.
         </p>
         <p>
-          Operator Compliance: All aircraft operated by Eliance Civil HIS GROUP S.A. [AOC ES.AOC.131], including our Airbus H135 twin-engine helicopter, are fully certified under European Union Aviation Safety Agency (EASA) and Spanish AESA standards. Flight crew members undergo continuous simulator training and safety audits.
+          – Operator Compliance: All aircraft operated by Eliance Civil HIS GROUP S.A. [AOC ES.AOC.131], including our Airbus H135 twin-engine helicopter, are fully certified under European Union Aviation Safety Agency (EASA) and Spanish AESA standards. Flight crew members undergo continuous simulator training and safety audits.
         </p>
         <p>
           – Guarantee Deposit: A credit card pre-authorization equivalent to 45% of the total amount is required to secure the reservation. On the day of the flight, this hold can either be canceled/refunded or deducted from the final amount paid. Full or remaining payment can be settled on-site by credit card, cash (up to €1,000 for tax residents in Spain and €10,000 for non-residents), or instant bank transfer.
@@ -2376,7 +2341,7 @@ Instagram: @helibaleares
           <!-- Step 10: Confirmation -->
           <div class="chat-step" data-step="10">
             <div class="chat-msg-bot" style="background:#e8f8f2; color:#0e6245;">
-              🎉 <strong>Thank you!</strong> Your flight inquiry has been successfully sent to our dispatch desk. You will receive your quote within 15 minutes.
+              🎉 <strong>Thank you!</strong> Your flight inquiry has been successfully sent to our dispatch desk. You will receive your quote within 1 hour.
             </div>
             <div class="chat-actions-row" style="margin-top:20px;">
               <button type="button" class="btn-chat-next" onclick="closeChatboxModal()">Close</button>
@@ -2667,10 +2632,11 @@ Instagram: @helibaleares
 
   .preloader-text {
     font-family: 'Civilprom', sans-serif;
-    font-size: 14px;
-    letter-spacing: 0.04em;
-    color: #6e6e73;
+    font-size: 17px;
+    letter-spacing: none;
+    color: #000;
     margin: 0;
+        margin-bottom: -15px;
   }
 </style>
 
