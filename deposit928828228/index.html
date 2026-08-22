@@ -42,7 +42,7 @@
     }
 
     body {
-      background-color: #fcfbf9;
+      background-color: #fff;
       color: #1c1917;
       font-family: 'Civilprom', sans-serif;
       min-height: 100vh;
@@ -101,7 +101,7 @@
       gap: 0.5rem;
       font-size: 0.875rem;
       font-weight: 500;
-      color: #57534e;
+      color: #000;
       text-decoration: none;
       padding: 0.375rem 0.75rem;
       border-radius: 0.5rem;
@@ -152,15 +152,15 @@
        5. CARD CONTAINERS
        ------------------------------------------------------------- */
     .content-card-section {
-      background-color: rgba(250, 250, 249, 0.6);
-      border: 1px solid #e7e5e4;
-      border-radius: 1rem;
-      padding: 2rem;
-      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    background-color: rgb(255 255 255 / 60%);
+    border: 1px solid #cfcfcf;
+    border-radius: 0px;
+    padding: 2rem;
+    box-shadow: none;
     }
 
     .card-header-block {
-      border-bottom: 1px solid rgba(231, 229, 228, 0.8);
+      border-bottom: none; 
       padding-bottom: 1rem;
       margin-bottom: 1.5rem;
     }
@@ -173,10 +173,10 @@
     }
 
     .card-heading-description {
-      font-size: 0.875rem;
-      color: #57534e;
-      margin-top: 0.375rem;
-      line-height: 1.6;
+font-size: 17px;
+    color: #000;
+    margin-top: 0.375rem;
+    line-height: 1.6;
     }
 
     /* -------------------------------------------------------------
@@ -216,14 +216,15 @@
 
     .form-text-input,
     .form-select-input {
-      width: 100%;
-      padding: 0.625rem 1rem;
-      border-radius: 0.75rem;
-      border: 1px solid #d6d3d1;
-      background-color: #ffffff;
-      color: #1c1917;
-      outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+width: 100%;
+    padding: 17px;
+    border-radius: 0px;
+    border: 1px solid #cecece;
+    font-size: 17px;
+    background-color: #ffffff;
+    color: #000000;
+    outline: none;
+    transition: none;
     }
 
     .form-text-input:focus,
@@ -244,13 +245,13 @@
     }
 
     .file-dropzone-box {
-      border: 2px dashed #d6d3d1;
-      border-radius: 1rem;
-      padding: 1.5rem;
-      text-align: center;
-      cursor: pointer;
-      background-color: #ffffff;
-      transition: border-color 0.2s ease, background-color 0.2s ease;
+    border: 1px dashed #d6d3d1;
+    border-radius: 0px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: none;
     }
 
     .file-dropzone-box:hover {
@@ -278,7 +279,7 @@
       padding: 0.75rem;
       background-color: #f5f5f4;
       border-radius: 9999px;
-      color: #57534e;
+      color: #000;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -393,23 +394,22 @@
     .callouts-list-container {
       margin-top: 1.5rem;
       padding-top: 1rem;
-      border-top: 1px solid rgba(231, 229, 228, 0.8);
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
     }
 
     .callout-info-box {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      padding: 0.875rem;
-      background-color: rgba(245, 245, 244, 0.7);
-      border: 1px solid #e7e5e4;
-      border-radius: 0.75rem;
-      color: #57534e;
-      font-size: 0.8125rem;
-      line-height: 1.6;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 20px;
+    background-color: #000;
+    border: none; 
+    border-radius: 0px;
+    color: #fff;
+    font-size: 17px;
+    line-height: 1.6;
     }
 
     .callout-icon {
@@ -428,11 +428,11 @@
        10. GUARANTEE DEPOSIT OPTIONS (SECTION 2)
        ------------------------------------------------------------- */
     .deposit-options-instruction {
-      display: block;
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: #292524;
-      margin-bottom: 0.875rem;
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 0.875rem;
     }
 
     .deposit-options-grid {
@@ -448,15 +448,15 @@
     }
 
     .deposit-radio-option-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem;
-      border-radius: 0.75rem;
-      border: 1px solid #e7e5e4;
-      background-color: #ffffff;
-      cursor: pointer;
-      transition: border-color 0.2s ease, background-color 0.2s ease;
+display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 0px;
+    border: 1px solid #cecece;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: 0s;
     }
 
     .deposit-radio-option-card:hover {
@@ -483,9 +483,9 @@
     }
 
     .deposit-option-title {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: #1c1917;
+    font-size: 17px;
+    font-weight: 500;
+    color: #000;
     }
 
     .deposit-currency-badge {
@@ -494,10 +494,11 @@
       color: #a8a29e;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      display: none; 
     }
 
     .deposit-radio-option-card.selected-option .deposit-currency-badge {
-      color: #57534e;
+      color: #000;
     }
 
     /* -------------------------------------------------------------
@@ -508,34 +509,27 @@
     }
 
     .deposit-pay-button {
-      width: 100%;
-      height: 50px;
-      border-radius: 13px;
-      background-color: #000000;
-      color: #ffffff;
-      font-size: 1rem;
-      font-weight: 500;
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      cursor: pointer;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-      transition: background-color 0.2s ease, transform 0.1s ease;
+    width: 100%;
+    min-height: 60px;
+    border-radius: 0px;
+    background-color: rgb(60 15 255);
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 800;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    box-shadow: none;
+    transition: 0s;
     }
 
-    .deposit-pay-button:hover {
-      background-color: #292524;
-    }
-
-    .deposit-pay-button:active {
-      transform: scale(0.99);
-    }
 
     .stripe-trust-notice {
-      font-size: 0.75rem;
-      color: #78716c;
+      font-size: 14px;
+      color: #000;
       text-align: center;
       margin-top: 0.75rem;
       display: flex;
@@ -545,6 +539,7 @@
     }
 
     .stripe-trust-icon {
+      display: none; 
       width: 16px;
       height: 16px;
       color: #a8a29e;
@@ -578,11 +573,12 @@
 </head>
 <body>
 
-  <!-- SITE HEADER -->
-  <header class="site-header">
-    <div class="site-header-container">
-      
-      <!-- Logo Link -->
+  <!-- MAIN WRAPPER -->
+  <main class="page-main-content">
+    
+    <!-- Title -->
+    <div class="page-main-header">
+              <!-- Logo Link -->
       <a href="/" class="site-header-logo-link">
         <img 
           src="https://civilprom.s3.eu-north-1.amazonaws.com/HelibalearesLogo.svg" 
@@ -590,22 +586,7 @@
           class="site-header-logo-image"
         />
       </a>
-
-      <!-- Return Button -->
-      <a href="/" class="site-header-back-button">
-        <i data-lucide="arrow-left" class="site-header-back-icon"></i>
-        <span>Back to website</span>
-      </a>
-
-    </div>
-  </header>
-
-  <!-- MAIN WRAPPER -->
-  <main class="page-main-content">
-    
-    <!-- Title -->
-    <div class="page-main-header">
-      <h1 class="page-main-title">Booking Prerequisites:</h1>
+      <h1 class="page-main-title">BOOKING PREREQUISITES</h1>
     </div>
 
     <div class="page-cards-wrapper">
@@ -710,7 +691,6 @@
           
           <!-- Data Protection Callout -->
           <div class="callout-info-box">
-            <i data-lucide="lock" class="callout-icon"></i>
             <div class="callout-content-text">
               Your personal data will be completely deleted 48 hours after your flight, unless you choose to save your information for future flights.
             </div>
@@ -718,7 +698,6 @@
 
           <!-- Luggage Callout -->
           <div class="callout-info-box">
-            <i data-lucide="briefcase" class="callout-icon"></i>
             <div class="callout-content-text">
               As a reminder, for private flights, you may bring up to 1 m³ of luggage. We recommend cabin-sized suitcases or large soft duffel bags to optimize space, up to a maximum total weight of approximately 1,000 kg. For further details, please contact your HeliBaleares representative.
             </div>
@@ -807,8 +786,9 @@
             </button>
             
             <p class="stripe-trust-notice">
-              <i data-lucide="shield-check" class="stripe-trust-icon"></i>
-              <span>The system is powered and secured by Stripe, the global leader in online payments.</span>
+<span>The system is powered and secured by Stripe, the global leader in online payments.<br>
+&copy; 2026 Eliance Civil HIS GROUP S.A. (AOC) ES.AOC.131 &mdash; EC 135. All rights reserved.
+              </span>
             </p>
           </div>
 
@@ -818,14 +798,6 @@
     </div>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="site-footer-container">
-      <p class="site-footer-copyright">
-        &copy; 2026 Eliance Civil HIS GROUP S.A. (AOC) ES.AOC.131 &mdash; EC 135. All rights reserved.
-      </p>
-    </div>
-  </footer>
 
   <!-- SCRIPT -->
   <script>
