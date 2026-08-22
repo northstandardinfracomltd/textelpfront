@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HeliBaleares | Booking Prerequisites & Deposit</title>
+
+  <!-- Strict SEO Protection -->
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="googlebot" content="noindex, nofollow, noarchive" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    @font-face {
+      font-family: 'Civilprom';
+      src: url('https://civilprom.s3.eu-north-1.amazonaws.com/Civilprom1.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'DefibeoBold';
+      src: url('https://datacenter64000pau.s3.eu-north-1.amazonaws.com/De%CC%81fibeoBold+(1).otf') format('opentype');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* Application stricte et globale des polices sur l'ensemble du document */
+    *, html, body, input, select, textarea, button {
+      font-family: 'Civilprom', sans-serif !important;
+    }
+
+    h1, h2, h3, h4, h5, h6, .font-heading {
+      font-family: 'DefibeoBold', serif !important;
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Civilprom', 'sans-serif'],
+            serif: ['DefibeoBold', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#fcfbf9] text-stone-900 min-h-screen flex flex-col antialiased selection:bg-stone-200">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-stone-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      
+      <!-- Logo Image Header -->
+      <a href="/" class="flex items-center gap-3.5 group text-decoration-none">
+        <img 
+          src="https://civilprom.s3.eu-north-1.amazonaws.com/HelibalearesLogo.svg" 
+          alt="HeliBaleares Logo" 
+          class="h-9 w-auto max-w-[220px] object-contain"
+        />
+      </a>
+
+      <!-- Back Button -->
+      <a href="/" class="inline-flex items-center gap-2 text-sm font-medium text-stone-600 hover:text-black transition-colors px-3 py-1.5 rounded-lg hover:bg-stone-100">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Back to website</span>
+      </a>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="flex-1 max-w-3xl w-full mx-auto px-4 sm:px-6 py-10 sm:py-12">
+    
+    <!-- Title -->
+    <div class="mb-8">
+      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-stone-900">Booking Prerequisites:</h1>
+    </div>
+
+    <div class="space-y-10">
+
+      <!-- SECTION 1: Check-in and luggage registration -->
+      <section class="bg-stone-50/50 border border-stone-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+        <div class="border-b border-stone-200/80 pb-4 mb-6">
+          <h2 class="text-xl sm:text-2xl font-bold text-stone-900">1. Check-in and luggage registration</h2>
+          <p class="text-sm text-stone-600 mt-1.5 leading-relaxed">
+            Please upload one government-issued photo ID. The document must be valid on the date of the flight.
+          </p>
+        </div>
+
+        <!-- Check-in Form -->
+        <form id="checkin-form" class="space-y-5" onsubmit="return false;">
+          
+          <!-- Full Name -->
+          <div>
+            <label for="fullName" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="e.g. John Doe" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black transition" />
+          </div>
+
+          <!-- Date of Birth & Nationality -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="dob" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Date of Birth</label>
+              <input type="date" id="dob" name="dob" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black transition" />
+            </div>
+            <div>
+              <label for="nationality" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Nationality</label>
+              <input type="text" id="nationality" name="nationality" placeholder="e.g. French, British, Spanish" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black transition" />
+            </div>
+          </div>
+
+          <!-- Email & Phone -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="email" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black transition" />
+            </div>
+            <div>
+              <label for="phone" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Phone Number with Country Code</label>
+              <input type="tel" id="phone" name="phone" placeholder="+34 600 000 000" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black transition" />
+            </div>
+          </div>
+
+          <!-- Document Type -->
+          <div>
+            <label for="docType" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Document Type</label>
+            <select id="docType" name="docType" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black transition">
+              <option value="Passport">Passport</option>
+              <option value="Driver's License">Driver's License</option>
+              <option value="Other National ID">Other National ID</option>
+            </select>
+          </div>
+
+          <!-- Upload ID Area -->
+          <div class="pt-2">
+            <label class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Government ID Document</label>
+            
+            <div id="drop-zone" class="relative border-2 border-dashed border-stone-300 hover:border-stone-500 transition-colors rounded-2xl p-6 text-center cursor-pointer bg-white">
+              <input type="file" id="file-input" class="hidden" accept=".pdf,.jpg,.jpeg,.png,.webp" />
+              
+              <!-- Idle Upload Prompt -->
+              <div id="upload-idle" class="flex flex-col items-center justify-center space-y-2">
+                <div class="p-3 bg-stone-100 rounded-full text-stone-600">
+                  <i data-lucide="upload" class="w-6 h-6"></i>
+                </div>
+                <div class="text-sm font-medium text-stone-800">
+                  Click or drag &amp; drop to upload Government ID
+                </div>
+                <div class="text-xs text-stone-400">PDF, JPG, PNG or WEBP (Max 10MB)</div>
+              </div>
+
+              <!-- Uploaded File Display -->
+              <div id="upload-success" class="hidden flex items-center justify-between bg-stone-50 border border-stone-200 rounded-xl p-3 text-left">
+                <div class="flex items-center space-x-3 overflow-hidden">
+                  <div class="p-2 bg-emerald-100 text-emerald-600 rounded-lg flex-shrink-0">
+                    <i data-lucide="file-check" class="w-5 h-5"></i>
+                  </div>
+                  <div class="truncate">
+                    <div id="filename-display" class="text-sm font-medium text-stone-900 truncate">document.pdf</div>
+                    <div id="filesize-display" class="text-xs text-stone-500">1.2 MB</div>
+                  </div>
+                </div>
+                <button type="button" id="remove-file-btn" class="p-1.5 text-stone-400 hover:text-stone-700 rounded-lg hover:bg-stone-200/60 transition">
+                  <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Save for future flights Checkbox -->
+          <div class="flex items-start gap-3 pt-2">
+            <input type="checkbox" id="saveInfo" name="saveInfo" class="mt-1 h-4 w-4 rounded border-stone-300 text-black focus:ring-black cursor-pointer" />
+            <label for="saveInfo" class="text-sm text-stone-700 cursor-pointer select-none">Save my information for future flights</label>
+          </div>
+
+        </form>
+
+        <!-- Information Callouts -->
+        <div class="mt-6 space-y-3 pt-4 border-t border-stone-200/80">
+          
+          <!-- Data Protection Callout -->
+          <div class="flex items-start gap-3 p-3.5 bg-stone-100/70 border border-stone-200 rounded-xl text-stone-600 text-xs sm:text-[13px] leading-relaxed">
+            <i data-lucide="lock" class="w-4 h-4 text-stone-500 flex-shrink-0 mt-0.5"></i>
+            <div>
+              Your personal data will be completely deleted 48 hours after your flight, unless you choose to save your information for future flights.
+            </div>
+          </div>
+
+          <!-- Luggage Callout -->
+          <div class="flex items-start gap-3 p-3.5 bg-stone-100/70 border border-stone-200 rounded-xl text-stone-600 text-xs sm:text-[13px] leading-relaxed">
+            <i data-lucide="briefcase" class="w-4 h-4 text-stone-500 flex-shrink-0 mt-0.5"></i>
+            <div>
+              As a reminder, for private flights, you may bring up to 1 m³ of luggage. We recommend cabin-sized suitcases or large soft duffel bags to optimize space, up to a maximum total weight of approximately 1,000 kg. For further details, please contact your HeliBaleares representative.
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 2: Guarantee Deposit -->
+      <section class="bg-stone-50/50 border border-stone-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+        <div class="border-b border-stone-200/80 pb-4 mb-6">
+          <h2 class="text-xl sm:text-2xl font-bold text-stone-900">2. Guarantee Deposit</h2>
+          <p class="text-sm text-stone-600 mt-2 leading-relaxed">
+            We require a pre-authorization—typically representing 45% to 60% of the total flight cost—processed in increments of €1,000, €1,500, or €2,500, etc. You may choose to have this amount either canceled/refunded or applied as a deduction from the total during your final payment. The final payment is made in person (at the time of the flight) via bank card, cash, or instant transfer. If you are departing from Ibiza, the process takes place at our physical office; otherwise, it happens directly at the helicopter. The security deposit also allows us to protect ourselves against the risk of no-shows. The flight can be canceled free of charge up to 48 hours before the scheduled flight time.
+          </p>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-stone-800 mb-3.5">
+            Select the amount requested by your HeliBaleares representative:
+          </label>
+
+          <!-- Deposit Options Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="deposit-options">
+            
+            <!-- 600 EUR -->
+            <label class="deposit-option flex items-center justify-between p-4 border rounded-xl cursor-pointer transition border-stone-200 bg-white hover:border-stone-400">
+              <div class="flex items-center gap-3">
+                <input type="radio" name="deposit_amount" value="600" data-label="€600" data-url="https://book.stripe.com/14AeVdgOd0tbdx3e6IdUY06" class="h-4 w-4 text-black border-stone-300 focus:ring-black" />
+                <span class="text-sm font-medium text-stone-900">Deposit : €600.</span>
+              </div>
+              <span class="text-xs font-semibold text-stone-400 uppercase tracking-wider">EUR</span>
+            </label>
+
+            <!-- 1000 EUR (Selected by default) -->
+            <label class="deposit-option flex items-center justify-between p-4 border-2 border-black bg-stone-100/60 rounded-xl cursor-pointer transition">
+              <div class="flex items-center gap-3">
+                <input type="radio" name="deposit_amount" value="1000" data-label="€1,000" data-url="https://book.stripe.com/14A6oH8hH1xf8cJ2o0dUY01" checked class="h-4 w-4 text-black border-stone-300 focus:ring-black" />
+                <span class="text-sm font-medium text-stone-900">Deposit : €1,000.</span>
+              </div>
+              <span class="text-xs font-semibold text-stone-600 uppercase tracking-wider">EUR</span>
+            </label>
+
+            <!-- 1500 EUR -->
+            <label class="deposit-option flex items-center justify-between p-4 border rounded-xl cursor-pointer transition border-stone-200 bg-white hover:border-stone-400">
+              <div class="flex items-center gap-3">
+                <input type="radio" name="deposit_amount" value="1500" data-label="€1,500" data-url="https://book.stripe.com/dRm7sLdC17VD3WtgeQdUY02" class="h-4 w-4 text-black border-stone-300 focus:ring-black" />
+                <span class="text-sm font-medium text-stone-900">Deposit : €1,500.</span>
+              </div>
+              <span class="text-xs font-semibold text-stone-400 uppercase tracking-wider">EUR</span>
+            </label>
+
+            <!-- 2000 EUR -->
+            <label class="deposit-option flex items-center justify-between p-4 border rounded-xl cursor-pointer transition border-stone-200 bg-white hover:border-stone-400">
+              <div class="flex items-center gap-3">
+                <input type="radio" name="deposit_amount" value="2000" data-label="€2,000" data-url="https://book.stripe.com/3cI00jeG53Fn0Kh0fSdUY03" class="h-4 w-4 text-black border-stone-300 focus:ring-black" />
+                <span class="text-sm font-medium text-stone-900">Deposit : €2,000.</span>
+              </div>
+              <span class="text-xs font-semibold text-stone-400 uppercase tracking-wider">EUR</span>
+            </label>
+
+            <!-- 2500 EUR -->
+            <label class="deposit-option flex items-center justify-between p-4 border rounded-xl cursor-pointer transition border-stone-200 bg-white hover:border-stone-400">
+              <div class="flex items-center gap-3">
+                <input type="radio" name="deposit_amount" value="2500" data-label="€2,500" data-url="https://book.stripe.com/00w9AT2Xn5NvgJf6EgdUY04" class="h-4 w-4 text-black border-stone-300 focus:ring-black" />
+                <span class="text-sm font-medium text-stone-900">Deposit : €2,500.</span>
+              </div>
+              <span class="text-xs font-semibold text-stone-400 uppercase tracking-wider">EUR</span>
+            </label>
+
+            <!-- 3000 EUR -->
+            <label class="deposit-option flex items-center justify-between p-4 border rounded-xl cursor-pointer transition border-stone-200 bg-white hover:border-stone-400">
+              <div class="flex items-center gap-3">
+                <input type="radio" name="deposit_amount" value="3000" data-label="€3,000" data-url="https://book.stripe.com/28EeVd41rdfX8cJ8ModUY05" class="h-4 w-4 text-black border-stone-300 focus:ring-black" />
+                <span class="text-sm font-medium text-stone-900">Deposit : €3,000.</span>
+              </div>
+              <span class="text-xs font-semibold text-stone-400 uppercase tracking-wider">EUR</span>
+            </label>
+
+          </div>
+
+          <!-- Pay CTA Button -->
+          <div class="mt-8">
+            <button id="pay-button" type="button" style="border-radius: 13px; height: 50px;" class="w-full bg-black hover:bg-stone-800 text-white font-medium flex items-center justify-center gap-2 shadow-lg shadow-black/5 active:scale-[0.99] transition">
+              <span id="pay-button-text">Pay Guarantee Deposit (€1,000)</span>
+            </button>
+            
+            <p class="text-xs text-stone-500 text-center mt-3 flex items-center justify-center gap-1.5">
+              <i data-lucide="shield-check" class="w-4 h-4 text-stone-400"></i>
+              <span>The system is powered and secured by Stripe, the global leader in online payments.</span>
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-stone-200 py-6 mt-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-xs text-stone-500">
+        &copy; 2026 Eliance Civil HIS GROUP S.A. (AOC) ES.AOC.131 &mdash; EC 135. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize Lucide Icons
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+
+      // --- LOCALSTORAGE PERSISTENCE ---
+      const fields = ['fullName', 'dob', 'nationality', 'email', 'phone', 'docType', 'saveInfo'];
+      fields.forEach(fieldId => {
+        const el = document.getElementById(fieldId);
+        if (!el) return;
+
+        // Restore saved value
+        const savedVal = localStorage.getItem('helibaleares_' + fieldId);
+        if (savedVal !== null) {
+          if (el.type === 'checkbox') {
+            el.checked = savedVal === 'true';
+          } else {
+            el.value = savedVal;
+          }
+        }
+
+        // Save on input change
+        el.addEventListener('input', () => {
+          if (el.type === 'checkbox') {
+            localStorage.setItem('helibaleares_' + fieldId, el.checked);
+          } else {
+            localStorage.setItem('helibaleares_' + fieldId, el.value);
+          }
+        });
+        el.addEventListener('change', () => {
+          if (el.type === 'checkbox') {
+            localStorage.setItem('helibaleares_' + fieldId, el.checked);
+          } else {
+            localStorage.setItem('helibaleares_' + fieldId, el.value);
+          }
+        });
+      });
+
+      // --- FILE UPLOAD LOGIC ---
+      const dropZone = document.getElementById('drop-zone');
+      const fileInput = document.getElementById('file-input');
+      const uploadIdle = document.getElementById('upload-idle');
+      const uploadSuccess = document.getElementById('upload-success');
+      const filenameDisplay = document.getElementById('filename-display');
+      const filesizeDisplay = document.getElementById('filesize-display');
+      const removeFileBtn = document.getElementById('remove-file-btn');
+
+      dropZone.addEventListener('click', (e) => {
+        if (e.target.closest('#remove-file-btn')) return;
+        fileInput.click();
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) {
+          handleFile(e.target.files[0]);
+        }
+      });
+
+      // Drag and drop events
+      ['dragenter', 'dragover'].forEach(eventName => {
+        dropZone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropZone.classList.add('border-black', 'bg-stone-50');
+        }, false);
+      });
+
+      ['dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropZone.classList.remove('border-black', 'bg-stone-50');
+        }, false);
+      });
+
+      dropZone.addEventListener('drop', (e) => {
+        const dt = e.dataTransfer;
+        if (dt.files && dt.files[0]) {
+          handleFile(dt.files[0]);
+        }
+      });
+
+      function handleFile(file) {
+        filenameDisplay.textContent = file.name;
+        const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
+        filesizeDisplay.textContent = `${sizeMb} MB`;
+        uploadIdle.classList.add('hidden');
+        uploadSuccess.classList.remove('hidden');
+        if (window.lucide) {
+          lucide.createIcons();
+        }
+      }
+
+      removeFileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        fileInput.value = '';
+        uploadSuccess.classList.add('hidden');
+        uploadIdle.classList.remove('hidden');
+      });
+
+      // --- DEPOSIT AMOUNT SELECTION & STRIPE REDIRECT ---
+      const radioOptions = document.querySelectorAll('input[name="deposit_amount"]');
+      const payButton = document.getElementById('pay-button');
+      const payButtonText = document.getElementById('pay-button-text');
+
+      function updateDepositSelection() {
+        radioOptions.forEach(radio => {
+          const parentLabel = radio.closest('.deposit-option');
+          if (radio.checked) {
+            parentLabel.className = 'deposit-option flex items-center justify-between p-4 border-2 border-black bg-stone-100/60 rounded-xl cursor-pointer transition';
+            const badge = parentLabel.querySelector('span:last-child');
+            if (badge) badge.className = 'text-xs font-semibold text-stone-600 uppercase tracking-wider';
+            payButtonText.textContent = `Pay Guarantee Deposit (${radio.getAttribute('data-label')})`;
+          } else {
+            parentLabel.className = 'deposit-option flex items-center justify-between p-4 border border-stone-200 bg-white hover:border-stone-400 rounded-xl cursor-pointer transition';
+            const badge = parentLabel.querySelector('span:last-child');
+            if (badge) badge.className = 'text-xs font-semibold text-stone-400 uppercase tracking-wider';
+          }
+        });
+      }
+
+      radioOptions.forEach(radio => {
+        radio.addEventListener('change', updateDepositSelection);
+      });
+
+      payButton.addEventListener('click', () => {
+        const selectedRadio = document.querySelector('input[name="deposit_amount"]:checked');
+        if (selectedRadio) {
+          const stripeUrl = selectedRadio.getAttribute('data-url');
+          if (stripeUrl) {
+            window.location.href = stripeUrl;
+          }
+        }
+      });
+
+      // Initial state refresh
+      updateDepositSelection();
+    });
+  </script>
+</body>
+</html>
