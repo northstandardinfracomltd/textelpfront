@@ -40,6 +40,12 @@
     h1, h2, h3, h4, h5, h6, .font-heading {
       font-family: 'DefibeoBold', serif !important;
     }
+
+
+    .LOGOHLBA {
+width: 100% !important;
+max-width: 250px !important;
+    }
   </style>
 
   <script>
@@ -57,41 +63,27 @@
 </head>
 <body class="bg-[#fcfbf9] text-stone-900 min-h-screen flex flex-col antialiased selection:bg-stone-200">
 
-  <!-- HEADER -->
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-stone-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-      
-      <!-- Logo Image Header -->
-      <a href="/" class="flex items-center gap-3.5 group text-decoration-none">
-        <img 
-          src="https://civilprom.s3.eu-north-1.amazonaws.com/HelibalearesLogo.svg" 
-          alt="HeliBaleares Logo" 
-          class="h-9 w-auto max-w-[220px] object-contain"
-        />
-      </a>
-
-      <!-- Back Button -->
-      <a href="/" class="inline-flex items-center gap-2 text-sm font-medium text-stone-600 hover:text-black transition-colors px-3 py-1.5 rounded-lg hover:bg-stone-100">
-        <i data-lucide="arrow-left" class="w-4 h-4"></i>
-        <span>Back to website</span>
-      </a>
-
-    </div>
-  </header>
 
   <!-- MAIN CONTENT CONTAINER -->
   <main class="flex-1 max-w-3xl w-full mx-auto px-4 sm:px-6 py-10 sm:py-12">
     
     <!-- Title -->
     <div class="mb-8">
-      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-stone-900">Booking Prerequisites:</h1>
+              <a href="/" class="flex items-center gap-3.5 group text-decoration-none">
+        <img 
+          src="https://civilprom.s3.eu-north-1.amazonaws.com/HelibalearesLogo.svg" 
+          alt="HeliBaleares Logo" 
+          class="LOGOHLBA h-9 w-auto max-w-[220px] object-contain"
+        />
+      </a><br>
+      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-stone-900">BOOKING PREREQUISITES</h1>
     </div>
 
     <div class="space-y-10">
 
       <!-- SECTION 1: Check-in and luggage registration -->
       <section class="bg-stone-50/50 border border-stone-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-        <div class="border-b border-stone-200/80 pb-4 mb-6">
+        <div class="border-stone-200/80 pb-4 mb-6">
           <h2 class="text-xl sm:text-2xl font-bold text-stone-900">1. Check-in and luggage registration</h2>
           <p class="text-sm text-stone-600 mt-1.5 leading-relaxed">
             Please upload one government-issued photo ID. The document must be valid on the date of the flight.
@@ -210,7 +202,7 @@
 
       <!-- SECTION 2: Guarantee Deposit -->
       <section class="bg-stone-50/50 border border-stone-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-        <div class="border-b border-stone-200/80 pb-4 mb-6">
+        <div class="border-stone-200/80 pb-4 mb-6">
           <h2 class="text-xl sm:text-2xl font-bold text-stone-900">2. Guarantee Deposit</h2>
           <p class="text-sm text-stone-600 mt-2 leading-relaxed">
             We require a pre-authorization—typically representing 45% to 60% of the total flight cost—processed in increments of €1,000, €1,500, or €2,500, etc. You may choose to have this amount either canceled/refunded or applied as a deduction from the total during your final payment. The final payment is made in person (at the time of the flight) via bank card, cash, or instant transfer. If you are departing from Ibiza, the process takes place at our physical office; otherwise, it happens directly at the helicopter. The security deposit also allows us to protect ourselves against the risk of no-shows. The flight can be canceled free of charge up to 48 hours before the scheduled flight time.
@@ -283,13 +275,14 @@
 
           <!-- Pay CTA Button -->
           <div class="mt-8">
-            <button id="pay-button" type="button" style="border-radius: 13px; height: 50px;" class="w-full bg-black hover:bg-stone-800 text-white font-medium flex items-center justify-center gap-2 shadow-lg shadow-black/5 active:scale-[0.99] transition">
-              <span id="pay-button-text">Pay Guarantee Deposit (€1,000)</span>
+            <button id="pay-button" type="button" style="height: 50px; background: rgb(60 15 255); border-radius: 0px !important; font-weight: 800; padding: 30px; font-size: 17px;" class="w-full bg-black hover:bg-stone-800 text-white font-medium flex items-center justify-center gap-2 shadow-lg shadow-black/5 active:scale-[0.99] transition">
+              <span id="pay-button-text">Confirm Guarantee Deposit (€1,000)</span>
             </button>
             
             <p class="text-xs text-stone-500 text-center mt-3 flex items-center justify-center gap-1.5">
-              <i data-lucide="shield-check" class="w-4 h-4 text-stone-400"></i>
-              <span>The system is powered and secured by Stripe, the global leader in online payments.</span>
+              <span>The system is powered and secured by Stripe, the global leader in online payments.<br><br>
+                © 2026 Eliance Civil HIS GROUP S.A. (AOC) ES.AOC.131 — EC 135. All rights reserved.
+              </span>
             </p>
           </div>
 
@@ -299,14 +292,6 @@
     </div>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-white border-t border-stone-200 py-6 mt-12">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <p class="text-xs text-stone-500">
-        &copy; 2026 Eliance Civil HIS GROUP S.A. (AOC) ES.AOC.131 &mdash; EC 135. All rights reserved.
-      </p>
-    </div>
-  </footer>
 
   <!-- SCRIPT -->
   <script>
@@ -423,7 +408,7 @@
             parentLabel.className = 'deposit-option flex items-center justify-between p-4 border-2 border-black bg-stone-100/60 rounded-xl cursor-pointer transition';
             const badge = parentLabel.querySelector('span:last-child');
             if (badge) badge.className = 'text-xs font-semibold text-stone-600 uppercase tracking-wider';
-            payButtonText.textContent = `Pay Guarantee Deposit (${radio.getAttribute('data-label')})`;
+            payButtonText.textContent = `Confirm Guarantee Deposit (${radio.getAttribute('data-label')})`;
           } else {
             parentLabel.className = 'deposit-option flex items-center justify-between p-4 border border-stone-200 bg-white hover:border-stone-400 rounded-xl cursor-pointer transition';
             const badge = parentLabel.querySelector('span:last-child');
