@@ -9,13 +9,13 @@
   <meta name="robots" content="noindex, nofollow, noarchive" />
   <meta name="googlebot" content="noindex, nofollow, noarchive" />
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
+    /* -------------------------------------------------------------
+       1. CUSTOM TYPOGRAPHY (@font-face)
+       ------------------------------------------------------------- */
     @font-face {
       font-family: 'Civilprom';
       src: url('https://civilprom.s3.eu-north-1.amazonaws.com/Civilprom1.otf') format('opentype');
@@ -32,167 +32,694 @@
       font-display: swap;
     }
 
-    /* Application stricte et globale des polices sur l'ensemble du document */
-    *, html, body, input, select, textarea, button {
-      font-family: 'Civilprom', sans-serif !important;
+    /* -------------------------------------------------------------
+       2. RESET & BASE ELEMENTS
+       ------------------------------------------------------------- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    h1, h2, h3, h4, h5, h6, .font-heading {
-      font-family: 'DefibeoBold', serif !important;
+    body {
+      background-color: #fcfbf9;
+      color: #1c1917;
+      font-family: 'Civilprom', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
     }
 
-
-    .LOGOHLBA {
-width: 100% !important;
-max-width: 250px !important;
+    input, select, textarea, button {
+      font-family: 'Civilprom', sans-serif;
+      font-size: 1rem;
     }
-  </style>
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Civilprom', 'sans-serif'],
-            serif: ['DefibeoBold', 'serif']
-          }
-        }
+    /* -------------------------------------------------------------
+       3. SITE HEADER
+       ------------------------------------------------------------- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e7e5e4;
+    }
+
+    .site-header-container {
+      max-width: 896px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-header-logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .site-header-logo-image {
+      height: 36px;
+      width: auto;
+      max-width: 220px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .site-header-back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #57534e;
+      text-decoration: none;
+      padding: 0.375rem 0.75rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .site-header-back-button:hover {
+      color: #000000;
+      background-color: #f5f5f4;
+    }
+
+    .site-header-back-icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* -------------------------------------------------------------
+       4. MAIN PAGE LAYOUT
+       ------------------------------------------------------------- */
+    .page-main-content {
+      flex: 1;
+      max-width: 768px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2.5rem 1.5rem 3rem 1.5rem;
+    }
+
+    .page-main-header {
+      margin-bottom: 2rem;
+    }
+
+    .page-main-title {
+      font-family: 'DefibeoBold', serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: #1c1917;
+    }
+
+    .page-cards-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    /* -------------------------------------------------------------
+       5. CARD CONTAINERS
+       ------------------------------------------------------------- */
+    .content-card-section {
+      background-color: rgba(250, 250, 249, 0.6);
+      border: 1px solid #e7e5e4;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .card-header-block {
+      border-bottom: 1px solid rgba(231, 229, 228, 0.8);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-heading-title {
+      font-family: 'DefibeoBold', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1c1917;
+    }
+
+    .card-heading-description {
+      font-size: 0.875rem;
+      color: #57534e;
+      margin-top: 0.375rem;
+      line-height: 1.6;
+    }
+
+    /* -------------------------------------------------------------
+       6. FORM ELEMENTS (SECTION 1)
+       ------------------------------------------------------------- */
+    .checkin-form-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .form-group-full {
+      width: 100%;
+    }
+
+    .form-group-grid-two-columns {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .form-group-grid-two-columns {
+        grid-template-columns: 1fr 1fr;
       }
     }
-  </script>
+
+    .form-field-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #44403c;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.375rem;
+    }
+
+    .form-text-input,
+    .form-select-input {
+      width: 100%;
+      padding: 0.625rem 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid #d6d3d1;
+      background-color: #ffffff;
+      color: #1c1917;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-text-input:focus,
+    .form-select-input:focus {
+      border-color: #000000;
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-text-input::placeholder {
+      color: #a8a29e;
+    }
+
+    /* -------------------------------------------------------------
+       7. FILE UPLOAD DROPZONE
+       ------------------------------------------------------------- */
+    .file-upload-container {
+      padding-top: 0.5rem;
+    }
+
+    .file-dropzone-box {
+      border: 2px dashed #d6d3d1;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      background-color: #ffffff;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .file-dropzone-box:hover {
+      border-color: #78716c;
+    }
+
+    .file-dropzone-box.drag-over {
+      border-color: #000000;
+      background-color: #f5f5f4;
+    }
+
+    .file-hidden-input {
+      display: none;
+    }
+
+    .upload-state-idle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .upload-idle-icon-badge {
+      padding: 0.75rem;
+      background-color: #f5f5f4;
+      border-radius: 9999px;
+      color: #57534e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .upload-idle-title {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #292524;
+    }
+
+    .upload-idle-subtitle {
+      font-size: 0.75rem;
+      color: #a8a29e;
+    }
+
+    .upload-state-success {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #fafaf9;
+      border: 1px solid #e7e5e4;
+      border-radius: 0.75rem;
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    .upload-success-file-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      overflow: hidden;
+    }
+
+    .upload-success-icon-badge {
+      padding: 0.5rem;
+      background-color: #d1fae5;
+      color: #059669;
+      border-radius: 0.5rem;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .upload-file-meta-text {
+      overflow: hidden;
+    }
+
+    .uploaded-file-name {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #1c1917;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .uploaded-file-size {
+      font-size: 0.75rem;
+      color: #78716c;
+    }
+
+    .upload-remove-file-button {
+      padding: 0.375rem;
+      color: #a8a29e;
+      background: transparent;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .upload-remove-file-button:hover {
+      color: #44403c;
+      background-color: #e7e5e4;
+    }
+
+    /* -------------------------------------------------------------
+       8. CHECKBOX ROW
+       ------------------------------------------------------------- */
+    .form-checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding-top: 0.5rem;
+    }
+
+    .form-checkbox-input {
+      margin-top: 0.25rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 0.25rem;
+      border: 1px solid #d6d3d1;
+      cursor: pointer;
+      accent-color: #000000;
+    }
+
+    .form-checkbox-label {
+      font-size: 0.875rem;
+      color: #44403c;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* -------------------------------------------------------------
+       9. CALLOUT BOXES
+       ------------------------------------------------------------- */
+    .callouts-list-container {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(231, 229, 228, 0.8);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .callout-info-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.875rem;
+      background-color: rgba(245, 245, 244, 0.7);
+      border: 1px solid #e7e5e4;
+      border-radius: 0.75rem;
+      color: #57534e;
+      font-size: 0.8125rem;
+      line-height: 1.6;
+    }
+
+    .callout-icon {
+      width: 16px;
+      height: 16px;
+      color: #78716c;
+      flex-shrink: 0;
+      margin-top: 0.125rem;
+    }
+
+    .callout-content-text {
+      flex: 1;
+    }
+
+    /* -------------------------------------------------------------
+       10. GUARANTEE DEPOSIT OPTIONS (SECTION 2)
+       ------------------------------------------------------------- */
+    .deposit-options-instruction {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #292524;
+      margin-bottom: 0.875rem;
+    }
+
+    .deposit-options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .deposit-options-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .deposit-radio-option-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid #e7e5e4;
+      background-color: #ffffff;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .deposit-radio-option-card:hover {
+      border-color: #a8a29e;
+    }
+
+    .deposit-radio-option-card.selected-option {
+      border: 2px solid #000000;
+      background-color: rgba(245, 245, 244, 0.6);
+    }
+
+    .deposit-option-left-content {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .deposit-radio-input {
+      width: 1rem;
+      height: 1rem;
+      border: 1px solid #d6d3d1;
+      accent-color: #000000;
+      cursor: pointer;
+    }
+
+    .deposit-option-title {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #1c1917;
+    }
+
+    .deposit-currency-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #a8a29e;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .deposit-radio-option-card.selected-option .deposit-currency-badge {
+      color: #57534e;
+    }
+
+    /* -------------------------------------------------------------
+       11. CTA BUTTON & TRUST BADGE
+       ------------------------------------------------------------- */
+    .deposit-action-container {
+      margin-top: 2rem;
+    }
+
+    .deposit-pay-button {
+      width: 100%;
+      height: 50px;
+      border-radius: 13px;
+      background-color: #000000;
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 500;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .deposit-pay-button:hover {
+      background-color: #292524;
+    }
+
+    .deposit-pay-button:active {
+      transform: scale(0.99);
+    }
+
+    .stripe-trust-notice {
+      font-size: 0.75rem;
+      color: #78716c;
+      text-align: center;
+      margin-top: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.375rem;
+    }
+
+    .stripe-trust-icon {
+      width: 16px;
+      height: 16px;
+      color: #a8a29e;
+    }
+
+    /* -------------------------------------------------------------
+       12. FOOTER
+       ------------------------------------------------------------- */
+    .site-footer {
+      background-color: #ffffff;
+      border-top: 1px solid #e7e5e4;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .site-footer-container {
+      max-width: 896px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      text-align: center;
+    }
+
+    .site-footer-copyright {
+      font-size: 0.75rem;
+      color: #78716c;
+    }
+  </style>
 </head>
-<body class="bg-[#fcfbf9] text-stone-900 min-h-screen flex flex-col antialiased selection:bg-stone-200">
+<body>
 
-
-  <!-- MAIN CONTENT CONTAINER -->
-  <main class="flex-1 max-w-3xl w-full mx-auto px-4 sm:px-6 py-10 sm:py-12">
-    
-    <!-- Title -->
-    <div class="mb-8">
-              <a href="/" class="flex items-center gap-3.5 group text-decoration-none">
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="site-header-container">
+      
+      <!-- Logo Link -->
+      <a href="/" class="site-header-logo-link">
         <img 
           src="https://civilprom.s3.eu-north-1.amazonaws.com/HelibalearesLogo.svg" 
           alt="HeliBaleares Logo" 
-          class="LOGOHLBA h-9 w-auto max-w-[220px] object-contain"
+          class="site-header-logo-image"
         />
-      </a><br>
-      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-stone-900">BOOKING PREREQUISITES</h1>
+      </a>
+
+      <!-- Return Button -->
+      <a href="/" class="site-header-back-button">
+        <i data-lucide="arrow-left" class="site-header-back-icon"></i>
+        <span>Back to website</span>
+      </a>
+
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main class="page-main-content">
+    
+    <!-- Title -->
+    <div class="page-main-header">
+      <h1 class="page-main-title">Booking Prerequisites:</h1>
     </div>
 
-    <div class="space-y-10">
+    <div class="page-cards-wrapper">
 
       <!-- SECTION 1: Check-in and luggage registration -->
-      <section class="bg-stone-50/50 border border-stone-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-        <div class="border-stone-200/80 pb-4 mb-6">
-          <h2 class="text-xl sm:text-2xl font-bold text-stone-900">1. Check-in and luggage registration</h2>
-          <p class="text-sm text-stone-600 mt-1.5 leading-relaxed">
+      <section class="content-card-section">
+        <div class="card-header-block">
+          <h2 class="card-heading-title">1. Check-in and luggage registration</h2>
+          <p class="card-heading-description">
             Please upload one government-issued photo ID. The document must be valid on the date of the flight.
           </p>
         </div>
 
-        <!-- Check-in Form -->
-        <form id="checkin-form" class="space-y-5" onsubmit="return false;">
+        <!-- Form Elements -->
+        <form id="checkin-form" class="checkin-form-wrapper" onsubmit="return false;">
           
           <!-- Full Name -->
-          <div>
-            <label for="fullName" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Full Name</label>
-            <input type="text" id="fullName" name="fullName" placeholder="e.g. John Doe" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black transition" />
+          <div class="form-group-full">
+            <label for="fullName" class="form-field-label">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="e.g. John Doe" class="form-text-input" />
           </div>
 
           <!-- Date of Birth & Nationality -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label for="dob" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Date of Birth</label>
-              <input type="date" id="dob" name="dob" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black transition" />
+          <div class="form-group-grid-two-columns">
+            <div class="form-group-item">
+              <label for="dob" class="form-field-label">Date of Birth</label>
+              <input type="date" id="dob" name="dob" class="form-text-input" />
             </div>
-            <div>
-              <label for="nationality" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Nationality</label>
-              <input type="text" id="nationality" name="nationality" placeholder="e.g. French, British, Spanish" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black transition" />
+            <div class="form-group-item">
+              <label for="nationality" class="form-field-label">Nationality</label>
+              <input type="text" id="nationality" name="nationality" placeholder="e.g. French, British, Spanish" class="form-text-input" />
             </div>
           </div>
 
           <!-- Email & Phone -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label for="email" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="john@example.com" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black transition" />
+          <div class="form-group-grid-two-columns">
+            <div class="form-group-item">
+              <label for="email" class="form-field-label">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" class="form-text-input" />
             </div>
-            <div>
-              <label for="phone" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Phone Number with Country Code</label>
-              <input type="tel" id="phone" name="phone" placeholder="+34 600 000 000" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black transition" />
+            <div class="form-group-item">
+              <label for="phone" class="form-field-label">Phone Number with Country Code</label>
+              <input type="tel" id="phone" name="phone" placeholder="+34 600 000 000" class="form-text-input" />
             </div>
           </div>
 
           <!-- Document Type -->
-          <div>
-            <label for="docType" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Document Type</label>
-            <select id="docType" name="docType" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black transition">
+          <div class="form-group-full">
+            <label for="docType" class="form-field-label">Document Type</label>
+            <select id="docType" name="docType" class="form-select-input">
               <option value="Passport">Passport</option>
               <option value="Driver's License">Driver's License</option>
               <option value="Other National ID">Other National ID</option>
             </select>
           </div>
 
-          <!-- Upload ID Area -->
-          <div class="pt-2">
-            <label class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Government ID Document</label>
+          <!-- ID Upload Dropzone -->
+          <div class="file-upload-container">
+            <label class="form-field-label">Government ID Document</label>
             
-            <div id="drop-zone" class="relative border-2 border-dashed border-stone-300 hover:border-stone-500 transition-colors rounded-2xl p-6 text-center cursor-pointer bg-white">
-              <input type="file" id="file-input" class="hidden" accept=".pdf,.jpg,.jpeg,.png,.webp" />
+            <div id="drop-zone" class="file-dropzone-box">
+              <input type="file" id="file-input" class="file-hidden-input" accept=".pdf,.jpg,.jpeg,.png,.webp" />
               
-              <!-- Idle Upload Prompt -->
-              <div id="upload-idle" class="flex flex-col items-center justify-center space-y-2">
-                <div class="p-3 bg-stone-100 rounded-full text-stone-600">
-                  <i data-lucide="upload" class="w-6 h-6"></i>
+              <!-- Idle State -->
+              <div id="upload-idle" class="upload-state-idle">
+                <div class="upload-idle-icon-badge">
+                  <i data-lucide="upload" style="width: 24px; height: 24px;"></i>
                 </div>
-                <div class="text-sm font-medium text-stone-800">
-                  Click or drag &amp; drop to upload Government ID
-                </div>
-                <div class="text-xs text-stone-400">PDF, JPG, PNG or WEBP (Max 10MB)</div>
+                <div class="upload-idle-title">Click or drag &amp; drop to upload Government ID</div>
+                <div class="upload-idle-subtitle">PDF, JPG, PNG or WEBP (Max 10MB)</div>
               </div>
 
-              <!-- Uploaded File Display -->
-              <div id="upload-success" class="hidden flex items-center justify-between bg-stone-50 border border-stone-200 rounded-xl p-3 text-left">
-                <div class="flex items-center space-x-3 overflow-hidden">
-                  <div class="p-2 bg-emerald-100 text-emerald-600 rounded-lg flex-shrink-0">
-                    <i data-lucide="file-check" class="w-5 h-5"></i>
+              <!-- Uploaded State -->
+              <div id="upload-success" class="upload-state-success">
+                <div class="upload-success-file-info">
+                  <div class="upload-success-icon-badge">
+                    <i data-lucide="file-check" style="width: 20px; height: 20px;"></i>
                   </div>
-                  <div class="truncate">
-                    <div id="filename-display" class="text-sm font-medium text-stone-900 truncate">document.pdf</div>
-                    <div id="filesize-display" class="text-xs text-stone-500">1.2 MB</div>
+                  <div class="upload-file-meta-text">
+                    <div id="filename-display" class="uploaded-file-name">document.pdf</div>
+                    <div id="filesize-display" class="uploaded-file-size">1.2 MB</div>
                   </div>
                 </div>
-                <button type="button" id="remove-file-btn" class="p-1.5 text-stone-400 hover:text-stone-700 rounded-lg hover:bg-stone-200/60 transition">
-                  <i data-lucide="x" class="w-4 h-4"></i>
+                <button type="button" id="remove-file-btn" class="upload-remove-file-button">
+                  <i data-lucide="x" style="width: 16px; height: 16px;"></i>
                 </button>
               </div>
 
             </div>
           </div>
 
-          <!-- Save for future flights Checkbox -->
-          <div class="flex items-start gap-3 pt-2">
-            <input type="checkbox" id="saveInfo" name="saveInfo" class="mt-1 h-4 w-4 rounded border-stone-300 text-black focus:ring-black cursor-pointer" />
-            <label for="saveInfo" class="text-sm text-stone-700 cursor-pointer select-none">Save my information for future flights</label>
+          <!-- Save info Checkbox -->
+          <div class="form-checkbox-row">
+            <input type="checkbox" id="saveInfo" name="saveInfo" class="form-checkbox-input" />
+            <label for="saveInfo" class="form-checkbox-label">Save my information for future flights</label>
           </div>
 
         </form>
 
         <!-- Information Callouts -->
-        <div class="mt-6 space-y-3 pt-4 border-t border-stone-200/80">
+        <div class="callouts-list-container">
           
           <!-- Data Protection Callout -->
-          <div class="flex items-start gap-3 p-3.5 bg-stone-100/70 border border-stone-200 rounded-xl text-stone-600 text-xs sm:text-[13px] leading-relaxed">
-            <i data-lucide="lock" class="w-4 h-4 text-stone-500 flex-shrink-0 mt-0.5"></i>
-            <div>
+          <div class="callout-info-box">
+            <i data-lucide="lock" class="callout-icon"></i>
+            <div class="callout-content-text">
               Your personal data will be completely deleted 48 hours after your flight, unless you choose to save your information for future flights.
             </div>
           </div>
 
           <!-- Luggage Callout -->
-          <div class="flex items-start gap-3 p-3.5 bg-stone-100/70 border border-stone-200 rounded-xl text-stone-600 text-xs sm:text-[13px] leading-relaxed">
-            <i data-lucide="briefcase" class="w-4 h-4 text-stone-500 flex-shrink-0 mt-0.5"></i>
-            <div>
+          <div class="callout-info-box">
+            <i data-lucide="briefcase" class="callout-icon"></i>
+            <div class="callout-content-text">
               As a reminder, for private flights, you may bring up to 1 m³ of luggage. We recommend cabin-sized suitcases or large soft duffel bags to optimize space, up to a maximum total weight of approximately 1,000 kg. For further details, please contact your HeliBaleares representative.
             </div>
           </div>
@@ -201,88 +728,87 @@ max-width: 250px !important;
       </section>
 
       <!-- SECTION 2: Guarantee Deposit -->
-      <section class="bg-stone-50/50 border border-stone-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-        <div class="border-stone-200/80 pb-4 mb-6">
-          <h2 class="text-xl sm:text-2xl font-bold text-stone-900">2. Guarantee Deposit</h2>
-          <p class="text-sm text-stone-600 mt-2 leading-relaxed">
+      <section class="content-card-section">
+        <div class="card-header-block">
+          <h2 class="card-heading-title">2. Guarantee Deposit</h2>
+          <p class="card-heading-description">
             We require a pre-authorization—typically representing 45% to 60% of the total flight cost—processed in increments of €1,000, €1,500, or €2,500, etc. You may choose to have this amount either canceled/refunded or applied as a deduction from the total during your final payment. The final payment is made in person (at the time of the flight) via bank card, cash, or instant transfer. If you are departing from Ibiza, the process takes place at our physical office; otherwise, it happens directly at the helicopter. The security deposit also allows us to protect ourselves against the risk of no-shows. The flight can be canceled free of charge up to 48 hours before the scheduled flight time.
           </p>
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-stone-800 mb-3.5">
+          <label class="deposit-options-instruction">
             Select the amount requested by your HeliBaleares representative:
           </label>
 
           <!-- Deposit Options Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="deposit-options">
+          <div class="deposit-options-grid" id="deposit-options">
             
             <!-- 600 EUR -->
-            <label class="deposit-option flex items-center justify-between p-4 border rounded-xl cursor-pointer transition border-stone-200 bg-white hover:border-stone-400">
-              <div class="flex items-center gap-3">
-                <input type="radio" name="deposit_amount" value="600" data-label="€600" data-url="https://book.stripe.com/14AeVdgOd0tbdx3e6IdUY06" class="h-4 w-4 text-black border-stone-300 focus:ring-black" />
-                <span class="text-sm font-medium text-stone-900">Deposit : €600.</span>
+            <label class="deposit-radio-option-card">
+              <div class="deposit-option-left-content">
+                <input type="radio" name="deposit_amount" value="600" data-label="€600" data-url="https://book.stripe.com/14AeVdgOd0tbdx3e6IdUY06" class="deposit-radio-input" />
+                <span class="deposit-option-title">Deposit : €600.</span>
               </div>
-              <span class="text-xs font-semibold text-stone-400 uppercase tracking-wider">EUR</span>
+              <span class="deposit-currency-badge">EUR</span>
             </label>
 
             <!-- 1000 EUR (Selected by default) -->
-            <label class="deposit-option flex items-center justify-between p-4 border-2 border-black bg-stone-100/60 rounded-xl cursor-pointer transition">
-              <div class="flex items-center gap-3">
-                <input type="radio" name="deposit_amount" value="1000" data-label="€1,000" data-url="https://book.stripe.com/14A6oH8hH1xf8cJ2o0dUY01" checked class="h-4 w-4 text-black border-stone-300 focus:ring-black" />
-                <span class="text-sm font-medium text-stone-900">Deposit : €1,000.</span>
+            <label class="deposit-radio-option-card selected-option">
+              <div class="deposit-option-left-content">
+                <input type="radio" name="deposit_amount" value="1000" data-label="€1,000" data-url="https://book.stripe.com/14A6oH8hH1xf8cJ2o0dUY01" checked class="deposit-radio-input" />
+                <span class="deposit-option-title">Deposit : €1,000.</span>
               </div>
-              <span class="text-xs font-semibold text-stone-600 uppercase tracking-wider">EUR</span>
+              <span class="deposit-currency-badge">EUR</span>
             </label>
 
             <!-- 1500 EUR -->
-            <label class="deposit-option flex items-center justify-between p-4 border rounded-xl cursor-pointer transition border-stone-200 bg-white hover:border-stone-400">
-              <div class="flex items-center gap-3">
-                <input type="radio" name="deposit_amount" value="1500" data-label="€1,500" data-url="https://book.stripe.com/dRm7sLdC17VD3WtgeQdUY02" class="h-4 w-4 text-black border-stone-300 focus:ring-black" />
-                <span class="text-sm font-medium text-stone-900">Deposit : €1,500.</span>
+            <label class="deposit-radio-option-card">
+              <div class="deposit-option-left-content">
+                <input type="radio" name="deposit_amount" value="1500" data-label="€1,500" data-url="https://book.stripe.com/dRm7sLdC17VD3WtgeQdUY02" class="deposit-radio-input" />
+                <span class="deposit-option-title">Deposit : €1,500.</span>
               </div>
-              <span class="text-xs font-semibold text-stone-400 uppercase tracking-wider">EUR</span>
+              <span class="deposit-currency-badge">EUR</span>
             </label>
 
             <!-- 2000 EUR -->
-            <label class="deposit-option flex items-center justify-between p-4 border rounded-xl cursor-pointer transition border-stone-200 bg-white hover:border-stone-400">
-              <div class="flex items-center gap-3">
-                <input type="radio" name="deposit_amount" value="2000" data-label="€2,000" data-url="https://book.stripe.com/3cI00jeG53Fn0Kh0fSdUY03" class="h-4 w-4 text-black border-stone-300 focus:ring-black" />
-                <span class="text-sm font-medium text-stone-900">Deposit : €2,000.</span>
+            <label class="deposit-radio-option-card">
+              <div class="deposit-option-left-content">
+                <input type="radio" name="deposit_amount" value="2000" data-label="€2,000" data-url="https://book.stripe.com/3cI00jeG53Fn0Kh0fSdUY03" class="deposit-radio-input" />
+                <span class="deposit-option-title">Deposit : €2,000.</span>
               </div>
-              <span class="text-xs font-semibold text-stone-400 uppercase tracking-wider">EUR</span>
+              <span class="deposit-currency-badge">EUR</span>
             </label>
 
             <!-- 2500 EUR -->
-            <label class="deposit-option flex items-center justify-between p-4 border rounded-xl cursor-pointer transition border-stone-200 bg-white hover:border-stone-400">
-              <div class="flex items-center gap-3">
-                <input type="radio" name="deposit_amount" value="2500" data-label="€2,500" data-url="https://book.stripe.com/00w9AT2Xn5NvgJf6EgdUY04" class="h-4 w-4 text-black border-stone-300 focus:ring-black" />
-                <span class="text-sm font-medium text-stone-900">Deposit : €2,500.</span>
+            <label class="deposit-radio-option-card">
+              <div class="deposit-option-left-content">
+                <input type="radio" name="deposit_amount" value="2500" data-label="€2,500" data-url="https://book.stripe.com/00w9AT2Xn5NvgJf6EgdUY04" class="deposit-radio-input" />
+                <span class="deposit-option-title">Deposit : €2,500.</span>
               </div>
-              <span class="text-xs font-semibold text-stone-400 uppercase tracking-wider">EUR</span>
+              <span class="deposit-currency-badge">EUR</span>
             </label>
 
             <!-- 3000 EUR -->
-            <label class="deposit-option flex items-center justify-between p-4 border rounded-xl cursor-pointer transition border-stone-200 bg-white hover:border-stone-400">
-              <div class="flex items-center gap-3">
-                <input type="radio" name="deposit_amount" value="3000" data-label="€3,000" data-url="https://book.stripe.com/28EeVd41rdfX8cJ8ModUY05" class="h-4 w-4 text-black border-stone-300 focus:ring-black" />
-                <span class="text-sm font-medium text-stone-900">Deposit : €3,000.</span>
+            <label class="deposit-radio-option-card">
+              <div class="deposit-option-left-content">
+                <input type="radio" name="deposit_amount" value="3000" data-label="€3,000" data-url="https://book.stripe.com/28EeVd41rdfX8cJ8ModUY05" class="deposit-radio-input" />
+                <span class="deposit-option-title">Deposit : €3,000.</span>
               </div>
-              <span class="text-xs font-semibold text-stone-400 uppercase tracking-wider">EUR</span>
+              <span class="deposit-currency-badge">EUR</span>
             </label>
 
           </div>
 
-          <!-- Pay CTA Button -->
-          <div class="mt-8">
-            <button id="pay-button" type="button" style="height: 50px; background: rgb(60 15 255); border-radius: 0px !important; font-weight: 800; padding: 30px; font-size: 17px;" class="w-full bg-black hover:bg-stone-800 text-white font-medium flex items-center justify-center gap-2 shadow-lg shadow-black/5 active:scale-[0.99] transition">
-              <span id="pay-button-text">Confirm Guarantee Deposit (€1,000)</span>
+          <!-- Action Button & Trust -->
+          <div class="deposit-action-container">
+            <button id="pay-button" type="button" class="deposit-pay-button">
+              <span id="pay-button-text">Pay Guarantee Deposit (€1,000)</span>
             </button>
             
-            <p class="text-xs text-stone-500 text-center mt-3 flex items-center justify-center gap-1.5">
-              <span>The system is powered and secured by Stripe, the global leader in online payments.<br><br>
-                © 2026 Eliance Civil HIS GROUP S.A. (AOC) ES.AOC.131 — EC 135. All rights reserved.
-              </span>
+            <p class="stripe-trust-notice">
+              <i data-lucide="shield-check" class="stripe-trust-icon"></i>
+              <span>The system is powered and secured by Stripe, the global leader in online payments.</span>
             </p>
           </div>
 
@@ -292,6 +818,14 @@ max-width: 250px !important;
     </div>
   </main>
 
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer-container">
+      <p class="site-footer-copyright">
+        &copy; 2026 Eliance Civil HIS GROUP S.A. (AOC) ES.AOC.131 &mdash; EC 135. All rights reserved.
+      </p>
+    </div>
+  </footer>
 
   <!-- SCRIPT -->
   <script>
@@ -317,21 +851,17 @@ max-width: 250px !important;
           }
         }
 
-        // Save on input change
-        el.addEventListener('input', () => {
+        // Save on input / change
+        const saveField = () => {
           if (el.type === 'checkbox') {
             localStorage.setItem('helibaleares_' + fieldId, el.checked);
           } else {
             localStorage.setItem('helibaleares_' + fieldId, el.value);
           }
-        });
-        el.addEventListener('change', () => {
-          if (el.type === 'checkbox') {
-            localStorage.setItem('helibaleares_' + fieldId, el.checked);
-          } else {
-            localStorage.setItem('helibaleares_' + fieldId, el.value);
-          }
-        });
+        };
+
+        el.addEventListener('input', saveField);
+        el.addEventListener('change', saveField);
       });
 
       // --- FILE UPLOAD LOGIC ---
@@ -354,12 +884,12 @@ max-width: 250px !important;
         }
       });
 
-      // Drag and drop events
+      // Drag and drop visual feedback
       ['dragenter', 'dragover'].forEach(eventName => {
         dropZone.addEventListener(eventName, (e) => {
           e.preventDefault();
           e.stopPropagation();
-          dropZone.classList.add('border-black', 'bg-stone-50');
+          dropZone.classList.add('drag-over');
         }, false);
       });
 
@@ -367,7 +897,7 @@ max-width: 250px !important;
         dropZone.addEventListener(eventName, (e) => {
           e.preventDefault();
           e.stopPropagation();
-          dropZone.classList.remove('border-black', 'bg-stone-50');
+          dropZone.classList.remove('drag-over');
         }, false);
       });
 
@@ -382,8 +912,8 @@ max-width: 250px !important;
         filenameDisplay.textContent = file.name;
         const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
         filesizeDisplay.textContent = `${sizeMb} MB`;
-        uploadIdle.classList.add('hidden');
-        uploadSuccess.classList.remove('hidden');
+        uploadIdle.style.display = 'none';
+        uploadSuccess.style.display = 'flex';
         if (window.lucide) {
           lucide.createIcons();
         }
@@ -392,8 +922,8 @@ max-width: 250px !important;
       removeFileBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         fileInput.value = '';
-        uploadSuccess.classList.add('hidden');
-        uploadIdle.classList.remove('hidden');
+        uploadSuccess.style.display = 'none';
+        uploadIdle.style.display = 'flex';
       });
 
       // --- DEPOSIT AMOUNT SELECTION & STRIPE REDIRECT ---
@@ -403,16 +933,12 @@ max-width: 250px !important;
 
       function updateDepositSelection() {
         radioOptions.forEach(radio => {
-          const parentLabel = radio.closest('.deposit-option');
+          const parentLabel = radio.closest('.deposit-radio-option-card');
           if (radio.checked) {
-            parentLabel.className = 'deposit-option flex items-center justify-between p-4 border-2 border-black bg-stone-100/60 rounded-xl cursor-pointer transition';
-            const badge = parentLabel.querySelector('span:last-child');
-            if (badge) badge.className = 'text-xs font-semibold text-stone-600 uppercase tracking-wider';
-            payButtonText.textContent = `Confirm Guarantee Deposit (${radio.getAttribute('data-label')})`;
+            parentLabel.classList.add('selected-option');
+            payButtonText.textContent = `Pay Guarantee Deposit (${radio.getAttribute('data-label')})`;
           } else {
-            parentLabel.className = 'deposit-option flex items-center justify-between p-4 border border-stone-200 bg-white hover:border-stone-400 rounded-xl cursor-pointer transition';
-            const badge = parentLabel.querySelector('span:last-child');
-            if (badge) badge.className = 'text-xs font-semibold text-stone-400 uppercase tracking-wider';
+            parentLabel.classList.remove('selected-option');
           }
         });
       }
@@ -431,7 +957,7 @@ max-width: 250px !important;
         }
       });
 
-      // Initial state refresh
+      // Initial state call
       updateDepositSelection();
     });
   </script>
