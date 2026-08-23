@@ -2492,8 +2492,6 @@ A personalized request for a unique experience—contact us for a quote. Here is
           Requirements: document.getElementById('chat_notes')?.value.trim() || "Aucune"
         };
 
-        console.log("Submitting chat inquiry:", payload);
-
         try {
           await fetch(SCRIPT_URL, {
             method: 'POST',
@@ -2504,15 +2502,26 @@ A personalized request for a unique experience—contact us for a quote. Here is
             body: JSON.stringify(payload)
           });
 
-          console.log("Inquiry sent successfully to Apps Script.");
+          // Étape 10 = Message de succès
           goToStep(10);
 
-          // Redirection forcée après 10 secondes
+          // Compte à rebours de 10 secondes puis redirection forcée
           setTimeout(() => {
-            window.top.location.href = 'https://helibaleares.com/#contactreceived';
-            // Force le rechargement si l'URL courante contient déjà l'ancre
-            if (window.location.href.includes('#contactreceived')) {
-              window.location.reload();
+            const redirectUrl = 'https://helibaleares.com/#contactreceived';
+            
+            // Si on est déjà sur helibaleares.com
+            if (window.location.href.includes('helibaleares.com')) {
+              window.location.hash = 'contactreceived';
+              // Scroll automatique vers l'élément si existant, sinon reload
+              const el = document.getElementById('contactreceived');
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                window.location.reload();
+              }
+            } else {
+              // Si le script tourne depuis un autre domaine / iframe
+              window.top.location.replace(redirectUrl);
             }
           }, 10000);
 
