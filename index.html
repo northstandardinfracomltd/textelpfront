@@ -2494,7 +2494,6 @@ A personalized request for a unique experience—contact us for a quote. Here is
         console.log("Submitting chat inquiry:", payload);
 
         try {
-          // Envoi identique à celui du formulaire de contact qui fonctionne
           await fetch(SCRIPT_URL, {
             method: 'POST',
             mode: 'no-cors',
@@ -2507,9 +2506,24 @@ A personalized request for a unique experience—contact us for a quote. Here is
           console.log("Inquiry sent successfully to Apps Script.");
           goToStep(10);
 
-          // Redirection automatique après 10 secondes
+          // Compte à rebours de 10s avec redirection garantie
+          console.log("Redirection timer started (10 seconds)...");
           setTimeout(() => {
-            window.location.href = 'https://helibaleares.com/#contactreceived';
+            console.log("Redirecting now...");
+            const targetUrl = 'https://helibaleares.com/#contactreceived';
+            
+            // Si on est déjà sur le site, on force le hash et le rechargement si nécessaire
+            if (window.location.hostname.includes('helibaleares.com')) {
+              window.location.hash = 'contactreceived';
+              const targetElem = document.getElementById('contactreceived');
+              if (targetElem) {
+                targetElem.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                window.location.reload();
+              }
+            } else {
+              window.top.location.href = targetUrl;
+            }
           }, 10000);
 
         } catch (err) {
