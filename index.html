@@ -9,8 +9,11 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.helibaleares.com/">
 
-    <!-- Favicon -->
-  <link rel="icon" href="https://civilprom.s3.eu-north-1.amazonaws.com/FaviconHeliBalearesTRD.png" type="image/png">
+<!-- Favicon Google-->
+<link rel="icon" href="https://civilprom.s3.eu-north-1.amazonaws.com/Favicon48pxHelibaleares.png" type="image/png" sizes="48x48">
+<link rel="icon" href="https://civilprom.s3.eu-north-1.amazonaws.com/Favicon192pxHelibaleares.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://civilprom.s3.eu-north-1.amazonaws.com/Favicon192pxHelibaleares.png">
+
 
   <!-- 1. Google Site Verification (Search Console) -->
   <meta name="google-site-verification" content="google-site-verification=2038472910384729" />
@@ -2503,6 +2506,12 @@ A personalized request for a unique experience—contact us for a quote. Here is
 
           console.log("Inquiry sent successfully to Apps Script.");
           goToStep(10);
+
+          // Redirection automatique après 10 secondes
+          setTimeout(() => {
+            window.location.href = 'https://helibaleares.com/#contactreceived';
+          }, 10000);
+
         } catch (err) {
           console.error("Error submitting inquiry:", err);
           alert('An error occurred. Please try again or email infos@helibaleares.com.');
